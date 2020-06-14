@@ -1,0 +1,83 @@
+[@铁布杉1]
+{
+#IF
+CheckJob Warrior
+CHECKVAR HUMAN 技能状态2 = 禁止
+#ACT
+SENDMSG 5 暂时无法施展【铁布杉】,冷却时间未到!
+break
+#IF
+CheckJob Warrior
+CHECKVAR HUMAN 技能状态2 = 允许
+#ACT
+;PlayEffectEx 160 172 1 1 39 -50
+;SCREENEFFECT 0 0 0 140 13 200 1 1
+PLAYEFFECT 0 140 13 1 100
+movr M94 5 10
+MUL M95 <$MAXDC> <$STR(M94)>
+Div M96 <$STR(M95)> 100
+movr M97 10 20
+ChangeHumAbility 2 + <$STR(M96)>
+CALCVAR HUMAN 技能时间2 = <$STR(M97)>
+CALCVAR HUMAN 技能状态2 = 禁止
+SENDMSG 5 施展【铁布杉】成功,瞬间提升<$STR(M96)>点防御力,持续<$HUMAN(技能时间2)>秒!
+SetOnTimer 2 1
+break
+}
+
+
+
+[@铁布杉2]
+{
+#IF
+CheckJob Warrior
+CHECKVAR HUMAN 技能状态2 = 禁止
+#ACT
+SENDMSG 5 暂时无法施展【铁布杉】,冷却时间未到!
+break
+#IF
+CheckJob Warrior
+CHECKVAR HUMAN 技能状态2 = 允许
+#ACT
+;PlayEffectEx 160 172 1 1 39 -50
+;SCREENEFFECT 0 0 0 140 13 200 1 1
+PLAYEFFECT 0 140 13 1 100
+movr M94 10 20
+MUL M95 <$MAXDC> <$STR(M94)>
+Div M96 <$STR(M95)> 100
+movr M97 15 22
+ChangeHumAbility 2 + <$STR(M96)>
+CALCVAR HUMAN 技能时间2 = <$STR(M97)>
+CALCVAR HUMAN 技能状态2 = 禁止
+SENDMSG 5 施展【铁布杉】成功,瞬间提升<$STR(M96)>点防御力,持续<$HUMAN(技能时间2)>秒!
+SetOnTimer 2 1
+break
+}
+
+
+[@铁布杉3]
+{
+#IF
+CheckJob Warrior
+CHECKVAR HUMAN 技能状态2 = 禁止
+#ACT
+SENDMSG 5 暂时无法施展【铁布杉】,冷却时间未到!
+break
+#IF
+CheckJob Warrior
+CHECKVAR HUMAN 技能状态2 = 允许
+#ACT
+;PlayEffectEx 160 172 1 1 39 -50
+;SCREENEFFECT 0 0 0 140 13 200 1 1
+PLAYEFFECT 0 140 13 1 100
+movr M94 20 30
+MUL M95 <$MAXDC> <$STR(M94)>
+Div M96 <$STR(M95)> 100
+movr M97 20 25
+ChangeHumAbility 2 + <$STR(M96)>
+CALCVAR HUMAN 技能时间2 = <$STR(M97)>
+CALCVAR HUMAN 技能状态2 = 禁止
+SENDMSG 5 施展【铁布杉】成功,瞬间提升<$STR(M96)>点防御力,持续<$HUMAN(技能时间2)>秒!
+SetOnTimer 2 1
+break
+}

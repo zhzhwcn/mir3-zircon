@@ -1,0 +1,735 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @race
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 2
+#ACT
+goto @cube
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第7间房. \
+你想赌博吗? \
+赌或者不赌完全由<$USERNAME>决定. \
+不要错过赢筹码的机会.  \
+<移动./@race> \
+<赌博./@presen> \
+<筹码太多了，让我帮你包起来吧./@bind> 
+
+[@bind]
+#IF
+checkitem 筹码 6
+#ACT
+take 筹码 6
+give 筹码包 1
+#SAY
+已经帮你把筹码包好了. \ \
+<返回/@main-1>
+#ELSESAY
+你连筹码都没有，怎么包筹码啊？请重新确认一下. \ \
+<返回/@main-1>
+
+[@race]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 1
+#SAY
+我给您提供投骰子的机会. \
+祝你好运. \ \
+<下一步/@pre_cube>
+
+[@presen]
+#IF
+#SAY 
+{3,4,5,6}  : 筹码 40个  ,  {2,3,4,5}  : 筹码 35个\
+{1,2,3,4}  : 筹码 35个  ,  {6,6,6,6}  : 筹码 30个\
+{5,5,5,5}  : 筹码 28个  ,  {4,4,4,4}  : 筹码 26个\
+{3,3,3,3}  : 筹码 24个  ,  {2,2,2,2}  : 筹码 22个\
+{1,1,1,1}  : 筹码 20个  \
+同样数字3位数连续出现时   : 筹码  10\
+同样数字2组连续出现时     : 筹码  8个\
+同样数字2位数连续出现时   : 筹码  1个\
+<下一步/@dicestart>
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@dicestart]
+#IF
+checkitem 筹码 2
+#ACT
+take 筹码 2
+movr d0 6
+movr d1 6
+movr d2 6
+movr d3 6
+inc d0 1
+inc d1 1
+inc d2 1
+inc d3 1
+playdice 4 @next
+#SAY
+正在投骰子. \ \
+<下一个/@next>
+#ELSESAY
+你没有筹码了. \
+你无法继续赌博. \ \
+<下一步/@dicestart>
+
+[@next]
+#IF
+equal d0 3
+equal d1 4
+equal d2 5
+equal d3 6
+#ACT
+goto @Dedice1
+break
+
+#IF
+equal d0 2
+equal d1 3
+equal d2 4
+equal d3 5
+#ACT
+goto @Dedice2
+break
+
+#IF
+equal d0 1
+equal d1 2
+equal d2 3
+equal d3 4
+#ACT
+goto @Dedice3
+break
+
+#IF
+equal d0 6
+equal d1 6
+equal d2 6
+equal d3 6
+#ACT
+goto @4dice1
+break
+
+#IF
+equal d0 5
+equal d1 5
+equal d2 5
+equal d3 5
+#ACT
+goto @4dice2
+break
+
+#IF
+equal d0 4
+equal d1 4
+equal d2 4
+equal d3 4
+#ACT
+goto @4dice3
+break
+
+#IF
+equal d0 3
+equal d1 3
+equal d2 3
+equal d3 3
+#ACT
+goto @4dice4
+break
+
+#IF
+equal d0 2
+equal d1 2
+equal d2 2
+equal d3 2
+#ACT
+goto @4dice5
+break
+
+#IF
+equal d0 1
+equal d1 1
+equal d2 1
+equal d3 1
+#ACT
+goto @4dice6
+break
+
+#IF
+equal d0 6
+equal d1 6
+equal d2 6
+#ACT
+goto @3dice
+break
+
+#IF
+equal d0 5
+equal d1 5
+equal d2 5
+#ACT
+goto @3dice
+break
+
+#IF
+equal d0 4
+equal d1 4
+equal d2 4
+#ACT
+goto @3dice
+break
+
+#IF
+equal d0 3
+equal d1 3
+equal d2 3
+#ACT
+goto @3dice
+break
+
+#IF
+equal d0 2
+equal d1 2
+equal d2 2
+#ACT
+goto @3dice
+break
+
+#IF
+equal d0 1
+equal d1 1
+equal d2 1
+#ACT
+goto @3dice
+break
+
+#IF
+equal d1 6
+equal d2 6
+equal d3 6
+#ACT
+goto @3dice
+break
+
+#IF
+equal d1 5
+equal d2 5
+equal d3 5
+#ACT
+goto @3dice
+break
+
+#IF
+equal d1 4
+equal d2 4
+equal d3 4
+#ACT
+goto @3dice
+break
+
+#IF
+equal d1 3
+equal d2 3
+equal d3 3
+#ACT
+goto @3dice
+break
+
+#IF
+equal d1 2
+equal d2 2
+equal d3 2
+#ACT
+goto @3dice
+break
+
+#IF
+equal d1 1
+equal d2 1
+equal d3 1
+#ACT
+goto @3dice
+break
+
+#IF
+equal d0 6
+equal d1 6
+#ACT
+goto @2dice1
+break
+
+#IF
+equal d0 5
+equal d1 5
+#ACT
+goto @2dice1
+break
+
+#IF
+equal d0 4
+equal d1 4
+#ACT
+goto @2dice1
+break
+
+#IF
+equal d0 3
+equal d1 3
+#ACT
+goto @2dice1
+break
+
+#IF
+equal d0 2
+equal d1 2
+#ACT
+goto @2dice1
+break
+
+#IF
+equal d0 1
+equal d1 1
+#ACT
+goto @2dice1
+break
+
+#IF
+equal d1 6
+equal d2 6
+#ACT
+goto @2dice
+break
+
+#IF
+equal d1 5
+equal d2 5
+#ACT
+goto @2dice
+break
+
+#IF
+equal d1 4
+equal d2 4
+#ACT
+goto @2dice
+break
+
+#IF
+equal d1 3
+equal d2 3
+#ACT
+goto @2dice
+break
+
+#IF
+equal d1 2
+equal d2 2
+#ACT
+goto @2dice
+break
+
+#IF
+equal d1 1
+equal d2 1
+#ACT
+goto @2dice
+break
+
+#IF
+equal d2 6
+equal d3 6
+#ACT
+goto @2dice
+break
+
+#IF
+equal d2 5
+equal d3 5
+#ACT
+goto @2dice
+break
+
+#IF
+equal d2 4
+equal d3 4
+#ACT
+goto @2dice
+break
+
+#IF
+equal d2 3
+equal d3 3
+#ACT
+goto @2dice
+break
+
+#IF
+equal d2 2
+equal d3 2
+#ACT
+goto @2dice
+break
+
+#IF
+equal d2 1
+equal d3 1
+#ACT
+goto @2dice
+break
+#ELSEACT
+goto @normal
+
+[@Dedice1]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你40个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 40
+
+[@Dedice2]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你35个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 35
+
+[@Dedice3]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你35个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 35
+
+[@4dice1]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你30个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 30
+
+[@4dice2]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你28个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 28
+
+[@4dice3]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你26个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 26
+
+[@4dice4]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你24个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 24
+
+[@4dice5]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你22个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 22
+
+[@4dice6]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你20个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 20
+
+[@3dice]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你10个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 10
+
+[@2dice1]
+#IF
+equal d2 1
+equal d3 1
+#ACT
+goto @2pair
+break
+
+#IF
+equal d2 2
+equal d3 2
+#ACT
+goto @2pair
+break
+
+#IF
+equal d2 3
+equal d3 3
+#ACT
+goto @2pair
+break
+
+#IF
+equal d2 4
+equal d3 4
+#ACT
+goto @2pair
+break
+
+#IF
+equal d2 5
+equal d3 5
+#ACT
+goto @2pair
+break
+
+#IF
+equal d2 6
+equal d3 6
+#ACT
+goto @2pair
+break
+#ELSEACT
+goto @2dice
+
+[@2pair]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你8个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 8
+
+[@2dice]
+#IF
+#SAY
+祝贺你!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+送给你1个筹码作为礼物. \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+#ACT
+give 筹码 1
+
+[@normal]
+#IF
+#SAY
+很可惜, 一个也没得到!! \ 
+你获得了 <$STR(D0)> , <$STR(D1)> , <$STR(D2)> , <$STR(D3)> \
+继续赌还是放弃? \ \
+<继续赌./@dicestart> \
+<放弃./@main-1>
+
+[@pre_cube]
+#IF
+checkitem 筹码 1
+#ACT
+CALCVAR HUMAN Cache = 2
+take 筹码 1
+movr d0 6
+inc d0 1
+playdice 1 @cube
+#SAY
+正在投骰子.\\
+<下一个/@cube>
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@cube]
+#SAY
+骰子的点数 <$STR(D0)>  \
+你可以前进 <$STR(D0)>  \ \
+<移动/@next_cube>
+
+[@next_cube]
+#IF
+equal d0 1 
+#ACT
+goto @posi1
+break
+
+#IF
+equal d0 2 
+#ACT
+goto @posi2
+break
+
+#IF
+equal d0 3 
+#ACT
+goto @posi3
+break
+
+#IF
+equal d0 4 
+#ACT
+goto @posi4
+break
+
+#IF
+equal d0 5
+#ACT
+goto @posi5
+break
+
+#IF
+equal d0 6 
+#ACT
+goto @posi6
+break
+
+[@Posi1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B108
+batchmove
+
+[@Posi2]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B108
+addbatch B109
+batchmove
+
+[@Posi3]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B108
+addbatch B109
+addbatch B110
+batchmove
+
+[@Posi4]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B108
+addbatch B109
+addbatch B110
+addbatch B111
+batchmove
+
+[@Posi5]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B108
+addbatch B109
+addbatch B110
+addbatch B111
+addbatch B112
+batchmove
+
+[@Posi6]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B108
+addbatch B109
+addbatch B110
+addbatch B111
+addbatch B112
+addbatch B113
+batchmove

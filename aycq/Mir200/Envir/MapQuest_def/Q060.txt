@@ -1,0 +1,18 @@
+[@main]
+#IF
+check [235] 1
+check [236] 0
+CheckHumInRange disimu 443 70 500
+#ACT
+#say 
+<"一个以前这么神圣的人，怎么会离开正道得这么离谱呢？"/SCOLOR=253> \
+<"即使是堕落的天使也应享有自由。"/SCOLOR=253> \
+<>\
+<>\
+(<与衣卒尔的灵魂对话/@duihua>).\
+
+
+[@duihua]
+#if
+#act
+map linghun

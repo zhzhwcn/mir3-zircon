@@ -1,0 +1,31 @@
+[@main]
+您想要干什么？ \
+根据这个城堡的主人[<$LORD>]的命令，\
+我专门守卫在这里，特别对[<$OWNERGUILD>]的成员进行前往真天宫的传送服务。\ \
+<>\
+<移动到入口/@chuansong>\
+<退出/@exit>
+
+[@chuansong]
+#IF
+ISCASTLEGUILD
+#ACT
+mapmove shabakemimi 88 91
+#elsesay
+你不是沙城成员，我不能让你通过这里!\\
+<>\
+<>\
+<确定/@exit>
+
+
+
+
+
+
+
+
+
+
+
+
+

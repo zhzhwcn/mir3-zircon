@@ -1,0 +1,14 @@
+[@main]
+#if                                    
+check [434] 1  
+check [435] 0 
+CHECKBAGSIZE  1
+#act
+set [435] 1
+give 山克的战盔 1
+#say
+<如果你已经把士兵们全部解救出来了,那么就带着/SCOLOR=254>\
+<这颗头颅回去找龙魄复命吧!/SCOLOR=254>\
+<>\
+<>\
+<确定./@exit>

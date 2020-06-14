@@ -1,0 +1,15 @@
+[@main]
+#if  
+checkjob Warr 
+check [495] 1
+check [496] 0
+CHECKBAGSIZE  1
+#act
+set [496] 1
+give 钢铁之心 1
+#say
+恭喜你获得了<钢铁之心/SCOLOR=253>!\
+赶紧拿去给魂十五证明你的实力。\\
+<>\
+<>\
+<确定/@exit>

@@ -1,0 +1,15 @@
+[@main]
+#if                                    
+check [204] 1
+check [209] 0
+check [210] 0
+CHECKBAGSIZE  1
+#act
+set [209] 1
+set [210] 1
+give 极邪之能 1
+#say
+恭喜你获得了极邪之能!\\
+<>\
+<>\
+<确定/@exit>

@@ -1,0 +1,14 @@
+[@main]
+#if                                    
+check [423] 1  
+check [424] 0 
+CHECKBAGSIZE  1
+RANDOM 20
+#act 
+set [424] 1
+give 魔树汁 1
+#say
+你从沙漠树魔上提取了一瓶魔树汁,把它带回去给药剂师吧!\\
+<>\
+<>\
+<确定./@exit>

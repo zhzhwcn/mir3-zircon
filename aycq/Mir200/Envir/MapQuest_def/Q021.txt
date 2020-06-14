@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [179] 1
+check [181] 0
+CHECKBAGSIZE  1
+CheckHumInRange zhizhuboss 26 19 100
+#act 
+set [181] 1
+give 克林姆的眼睛 1
+#say
+<"好。现在我可以离开这里，呼吸点新鲜空气了！" /SCOLOR=253> \\
+<>\
+<确定/@exit>

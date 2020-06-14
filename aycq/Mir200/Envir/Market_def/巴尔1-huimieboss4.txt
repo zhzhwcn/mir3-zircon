@@ -1,0 +1,100 @@
+[@main]
+#if
+CheckRangeMonCountEx huimieboss4 毁灭的仆从1 25 25 100 > 0
+#act
+goto @jixu1
+break
+#if
+CheckRangeMonCountEx huimieboss4 毁灭的仆从2 25 25 100 > 0
+#act
+goto @jixu1
+break
+#if
+CheckRangeMonCountEx huimieboss4 毁灭的仆从3 25 25 100 > 0
+#act
+goto @jixu1
+break
+#if
+CheckRangeMonCountEx huimieboss4 毁灭的仆从4 25 25 100 > 0
+#act
+goto @jixu1
+break
+#if
+CheckRangeMonCountEx huimieboss4 毁灭的仆从5 25 25 100 > 0
+#act
+goto @jixu2
+break
+#if
+CheckRangeMonCountEx huimieboss4 毁灭的仆从6 25 25 100 > 0
+#act
+goto @jixu2
+break
+#if
+CheckRangeMonCountEx huimieboss4 毁灭的仆从7 25 25 100 > 0
+#act
+goto @jixu2
+break
+#if
+CheckRangeMonCountEx huimieboss4 毁灭的仆从8 25 25 100 > 0
+#act
+goto @jixu2
+break
+#elseact
+goto @jixu3
+
+[@jixu1]
+逃走吧！否则就太迟啦！\\
+<>\
+<退出./@exit> 
+
+[@jixu2]
+你们正在挑战一个无比强大的存在！\
+虽然你们经历了千难万险，才来到世界之石的领域……\
+来到了我的面前……\
+但是现在，活下来的唯一途径，就是加入暗黑大军！\
+<>\
+<退出/@exit>
+
+[@jixu3]
+蠢货！你们以为胜券在握了吗？\
+你们只是离地狱更近了一步而以…… \
+<>\
+<>\
+<为了荣誉而战！/@jixu4>
+
+[@jixu4]
+#if
+CheckRangeMonCountEx huimieboss 巴尔1 25 25 100 < 1
+#act
+DelNpc 巴尔
+CreateNPC 世界之石 huimieboss4 35 18 95 世界之石-huimieboss4
+MonGenEx huimieboss 32 44 巴尔1 0 1 0 253
+GOTOLABEL 2 @jixu5
+
+[@jixu5]
+<毁灭之王-巴尔:/SCOLOR=253>                                <Img:294:0>\
+这场游戏已经让我觉得无聊啦。\
+继续吧，到我这里来，我会亲自毁灭你们的灵魂！\\
+<>\
+<>\
+<确定/@exit>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

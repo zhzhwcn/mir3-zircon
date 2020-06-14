@@ -1,0 +1,17 @@
+[@main]
+#IF
+CheckHumInRange anying8 23 22 500
+#ACT
+addnamelist ..\QuestDiary\日常任务\暗影8.txt
+SENDMSG 7 恭喜你已经完成了今日的暗影禁地挑战!!!
+SENDMSG 1 恭喜『%s』完成了今日的暗影禁地挑战!!!
+#say
+恭喜你已经完成了今日全部的暗影禁地挑战!\
+现在你可以返回挑战处找神秘老人领取今日的奖励了!\
+<>\
+<确定/@exit>
+
+
+
+
+

@@ -1,0 +1,1131 @@
+[@main]
+#IF
+ISADMIN
+#say
+—————————<管理员后台操控平台>———————————\ 
+庄园还剩：<$STR(G7)> 天结束 现在时间：<$DATETIME>\ 
+<进行怪物攻城活动/@进行怪物攻城>        <开启闯天关的活动/@开启天关活动>\ \
+<开启全服经验双倍/@开放双倍>        <调整申请攻沙时间/@调整攻沙>\ \
+<开放全服双倍力量/@开放双倍攻击>        <开启关闭脱机系统/@开关防脱机系统>\
+——————————————————————————————\
+当前在线人数为:<$USERCOUNT>人                       <返回到盟重省土城/@闪人>\
+#elseact
+messagebox 对不起!!!你不是管理员!!!快点闪开!!!!
+
+[@开关防脱机系统]
+#IF
+ISADMIN
+equal G10 0
+#ACT
+mov G10 1
+SENDMSG 6 系统提示：防脱机系统关闲！
+Close
+break
+#IF
+ISADMIN
+equal G10 1
+#ACT
+mov G10 0
+SENDMSG 6 系统提示：防脱机系统开启！
+
+[@调整攻沙]
+————————————<调整攻沙>——————————————\
+请你选择需要设定可以申请攻沙城的时间，以星期为单位!!!\ \
+<星期一/@dknskq01>        <星期二/@dknskq02>        <星期三/@dknskq03>        <星期四/@dknskq04>\ \
+<星期五/@dknskq05>        <星期六/@dknskq06>        <星期天/@dknskq07>        <无限制/@dknskq08>\
+——————————————————————————————\
+目前申请攻沙是:星期<$STR(G15)> (星期0:表示无限制)   <返回首页/@main>\
+
+[@dknskq08]
+#IF
+  ISADMIN
+#act
+MOV G15 0
+messagebox 对申请进攻沙城所做的限制已经生效!!!!
+[@dknskq07]
+#IF
+  ISADMIN
+#act
+MOV G15 7
+messagebox 对申请进攻沙城所做的限制已经生效!!!!
+[@dknskq06]
+#IF
+  ISADMIN
+#act
+MOV G15 6
+messagebox 对申请进攻沙城所做的限制已经生效!!!!
+[@dknskq05]
+#IF
+  ISADMIN
+#act
+MOV G15 5
+messagebox 对申请进攻沙城所做的限制已经生效!!!!
+[@dknskq04]
+#IF
+  ISADMIN
+#act
+MOV G15 4
+messagebox 对申请进攻沙城所做的限制已经生效!!!!
+[@dknskq03]
+#IF
+  ISADMIN
+#act
+MOV G15 3
+messagebox 对申请进攻沙城所做的限制已经生效!!!!
+[@dknskq02]
+#IF
+  ISADMIN
+#act
+MOV G15 2
+messagebox 对申请进攻沙城所做的限制已经生效!!!!
+[@dknskq01]
+#IF
+  ISADMIN
+#act
+MOV G15 1
+messagebox 对申请进攻沙城所做的限制已经生效!!!!
+
+[@清除庄园]
+#IF
+  ISADMIN
+#ACT
+CLEARNAMELIST ..\QuestDiary\活动\庄园管理员.txt
+MOV G7 0
+messagebox 庄园的管理者及时间已经全部清除!!!!!
+
+[@闪人]
+#IF
+  ISADMIN
+#ACT
+mapmove 3 327 321
+
+[@清除所有数据]
+;注意：清除数据后将无法还原，一般情况下不要使用此功能！\ \ 
+;<清除庄园资格时间/@清除庄园>     <清除所有数据/@清除数据>
+
+[@清除数据]
+注意：清除数据后将无法还原，一般情况下不要使用此功能！\ \ 
+确定要清除所有数据吗！！！！！\ \ \
+<确定清除数据/@清除数据1>
+
+[@清除数据1]
+#IF
+ISADMIN
+#ACT
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\001\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\001\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\001\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\001\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\001\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\002\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\002\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\002\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\002\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\002\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\003\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\003\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\003\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\003\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\003\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\004\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\004\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\004\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\004\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\004\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\005\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\005\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\005\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\005\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\005\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\006\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\006\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\006\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\006\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\006\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\007\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\007\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\007\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\007\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\007\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\008\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\008\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\008\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\008\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\008\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\009\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\009\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\009\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\009\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\009\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\010\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\010\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\010\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\010\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\010\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\011\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\011\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\011\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\011\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\011\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\012\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\012\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\012\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\012\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\012\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\013\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\013\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\013\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\013\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\013\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\014\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\014\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\014\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\014\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\014\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\015\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\015\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\015\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\015\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\015\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\016\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\016\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\016\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\016\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\016\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\017\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\017\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\017\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\017\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\017\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\018\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\018\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\018\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\018\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\018\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\019\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\019\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\019\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\019\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\019\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\020\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\020\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\020\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\020\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\020\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\021\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\021\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\021\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\021\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\021\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\022\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\022\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\022\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\022\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\022\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\023\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\023\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\023\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\023\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\023\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\024\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\024\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\024\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\024\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\024\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\025\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\025\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\025\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\025\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\025\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\026\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\026\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\026\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\026\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\026\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\027\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\027\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\027\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\027\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\027\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\028\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\028\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\028\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\028\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\028\5.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\029\1.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\029\2.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\029\3.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\029\4.txt
+CLEARNAMELIST ..\QuestDiary\彩票系统\博彩\029\5.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\CWCZSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\CWDJSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\CWFYSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\CWMJSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\CWMYSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\CWWLSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\CWZHSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\CWZQSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\JGSSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\RWSRSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\RWSWSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\XYSave.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\弑魔1级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\弑魔2级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\弑魔3级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\弑魔4级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\弑魔5级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\弑魔6级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\弑魔7级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\弑魔8级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\弑魔国王.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\弑魔名单.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\神影1级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\神影2级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\神影3级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\神影4级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\神影5级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\神影6级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\神影7级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\神影8级.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\神影国王.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\部落功能\神影名单.txt
+CLEARNAMELIST ..\QuestDiary\雇佣兵团\封号名单\1级名单.txt
+CLEARNAMELIST ..\QuestDiary\雇佣兵团\封号名单\2级名单.txt
+CLEARNAMELIST ..\QuestDiary\雇佣兵团\封号名单\3级名单.txt
+CLEARNAMELIST ..\QuestDiary\雇佣兵团\封号名单\4级名单.txt
+CLEARNAMELIST ..\QuestDiary\雇佣兵团\封号名单\5级名单.txt
+CLEARNAMELIST ..\QuestDiary\活动专区\活动名单\道宗名单.txt
+CLEARNAMELIST ..\QuestDiary\活动专区\活动名单\武宗名单.txt
+CLEARNAMELIST ..\QuestDiary\活动专区\活动名单\法宗名单.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\白虎.txt
+CLEARNAMELIST ..\QuestDiary\活动\庄园管理员.txt
+mov G0 0
+mov G1 0
+mov G2 0
+mov G3 0
+mov G4 0
+mov G5 0
+mov G6 0
+MOV G7 0
+SENDMSG 6 数据清除完毕！
+goto @main
+
+[@清除怪物]
+#IF
+ISADMIN
+#ACT
+CLEARMAPMON 0
+CLEARMAPMON 4
+CLEARMAPMON 5
+SENDMSG 6 怪物清除完毕！
+goto @main
+#ELSEACT
+SENDMSG 6 你的权限不够，无法清除怪物！
+goto @main
+
+[@进行怪物攻城]
+这里可以控制怪物攻城，你想要怪物进攻哪个城市？\ \
+<盟重省/@盟重省>　　<比奇城/@比奇城>\ \
+<封魔谷/@封魔谷>　　<苍月岛/@苍月岛>\ \
+<返回/@main>
+[@盟重省]
+请选择进攻盟重省的怪物！\ 
+<暗之系怪物进攻/@盟暗之系>　<祖玛系怪物进攻/@盟祖玛系>\
+<牛魔系怪物进攻/@盟牛魔系>　<猪洞系怪物进攻/@盟猪洞系>\
+<魔龙系怪物进攻/@盟幽冥系>　<赤月系怪物进攻/@盟虹魔系>\
+<统领系怪物进攻/@盟统领系>　<BOSS系怪物进攻/@盟BOSS系>\ \
+<返回/@进行怪物攻城>
+[@比奇城]
+请选择进攻比奇城的怪物！\ 
+<暗之系怪物进攻/@比暗之系>　<祖玛系怪物进攻/@比祖玛系>\
+<牛魔系怪物进攻/@比牛魔系>　<猪洞系怪物进攻/@比猪洞系>\
+<魔龙系怪物进攻/@比幽冥系>　<赤月系怪物进攻/@比虹魔系>\
+<统领系怪物进攻/@比统领系>　<BOSS系怪物进攻/@比BOSS系>\ \
+<返回/@进行怪物攻城>
+[@封魔谷]
+请选择进攻封魔谷的怪物！\ 
+<暗之系怪物进攻/@封暗之系>　<祖玛系怪物进攻/@封祖玛系>\
+<牛魔系怪物进攻/@封牛魔系>　<猪洞系怪物进攻/@封猪洞系>\
+<魔龙系怪物进攻/@封幽冥系>　<赤月系怪物进攻/@封虹魔系>\
+<统领系怪物进攻/@封统领系>　<BOSS系怪物进攻/@封BOSS系>\ \
+<返回/@进行怪物攻城>
+[@苍月岛]
+请选择进攻苍月岛的怪物！\ 
+<暗之系怪物进攻/@苍暗之系>　<祖玛系怪物进攻/@苍祖玛系>\
+<牛魔系怪物进攻/@苍牛魔系>　<猪洞系怪物进攻/@苍猪洞系>\
+<魔龙系怪物进攻/@苍幽冥系>　<赤月系怪物进攻/@苍虹魔系>\
+<统领系怪物进攻/@苍统领系>　<BOSS系怪物进攻/@苍BOSS系>\ \
+<返回/@进行怪物攻城>
+
+[@苍BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 1
+PARAM4 50
+MOBPLACE 魔龙教主
+MOBPLACE 重装使者
+MOBPLACE 镜像明王
+MOBPLACE 嗜血教主
+MOBPLACE 地藏魔王
+MOBPLACE 堕落明王
+MOBPLACE 圣地魔王
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+
+[@苍统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 1
+PARAM4 50
+MOBPLACE 蝎蛇统领
+MOBPLACE 沃玛统领
+MOBPLACE 沃玛统领
+MOBPLACE 钳虫统领
+MOBPLACE 骷髅统领
+MOBPLACE 幽冥统领
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+
+[@苍虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 5
+PARAM4 50
+MOBPLACE 双头金刚
+MOBPLACE 双头血魔
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+
+[@苍幽冥系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 3
+PARAM4 50
+MOBPLACE 魔龙刀兵2
+MOBPLACE 魔龙破甲兵2
+MOBPLACE 魔龙射手2
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+
+[@苍猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 5
+PARAM4 50
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 黑野猪
+MOBPLACE 红野猪
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之魔龙教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@封BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 1
+PARAM4 50
+MOBPLACE 魔龙教主
+MOBPLACE 重装使者
+MOBPLACE 镜像明王
+MOBPLACE 嗜血教主
+MOBPLACE 地藏魔王
+MOBPLACE 堕落明王
+MOBPLACE 圣地魔王
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 1
+PARAM4 50
+MOBPLACE 蝎蛇统领
+MOBPLACE 沃玛统领
+MOBPLACE 沃玛统领
+MOBPLACE 钳虫统领
+MOBPLACE 骷髅统领
+MOBPLACE 幽冥统领
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 5
+PARAM4 50
+MOBPLACE 双头血魔
+MOBPLACE 双头金刚
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封幽冥系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 3
+PARAM4 50
+MOBPLACE 魔龙刀兵2
+MOBPLACE 魔龙破甲兵2
+MOBPLACE 魔龙射手2
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 5
+PARAM4 50
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 黑野猪
+MOBPLACE 红野猪
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像3
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之魔龙教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王8
+MOBPLACE 暗之魔龙教主
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@比BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 1
+PARAM4 50
+MOBPLACE 魔龙教主
+MOBPLACE 重装使者
+MOBPLACE 镜像明王
+MOBPLACE 嗜血教主
+MOBPLACE 地藏魔王
+MOBPLACE 堕落明王
+MOBPLACE 圣地魔王
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比奇城
+[@比统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 1
+PARAM4 50
+MOBPLACE 蝎蛇统领
+MOBPLACE 沃玛统领
+MOBPLACE 沃玛统领
+MOBPLACE 钳虫统领
+MOBPLACE 骷髅统领
+MOBPLACE 幽冥统领
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比奇城
+[@比虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 5
+PARAM4 50
+MOBPLACE 双头血魔
+MOBPLACE 双头金刚
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比奇城
+[@比幽冥系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 3
+PARAM4 50
+MOBPLACE 魔龙刀兵2
+MOBPLACE 魔龙破甲兵2
+MOBPLACE 魔龙射手2
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比奇城
+[@比猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 5
+PARAM4 50
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 黑野猪
+MOBPLACE 红野猪
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比奇城
+[@比牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比奇城
+[@比祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像3
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比奇城
+[@比暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之魔龙教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王8
+MOBPLACE 暗之魔龙教主
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比奇城
+[@盟BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 1
+PARAM4 50
+MOBPLACE 魔龙教主
+MOBPLACE 重装使者
+MOBPLACE 镜像明王
+MOBPLACE 嗜血教主
+MOBPLACE 地藏魔王
+MOBPLACE 堕落明王
+MOBPLACE 圣地魔王
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 1
+PARAM4 50
+MOBPLACE 蝎蛇统领
+MOBPLACE 沃玛统领
+MOBPLACE 沃玛统领
+MOBPLACE 钳虫统领
+MOBPLACE 骷髅统领
+MOBPLACE 幽冥统领
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 双头血魔
+MOBPLACE 双头金刚
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟幽冥系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 3
+PARAM4 50
+MOBPLACE 魔龙刀兵2
+MOBPLACE 魔龙破甲兵2
+MOBPLACE 魔龙射手2
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 黑野猪
+MOBPLACE 红野猪
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像3
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之魔龙教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王8
+MOBPLACE 暗之魔龙教主
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+
+[@开启天关活动]
+#if
+equal G2 1
+#ACT
+#SAY
+闯天关活动状况为：开启\ \
+<关闭闯天关活动/@guantian>      <返回/@main>
+#ELSESAY
+闯天关活动状况为：关闭\ \
+<开启闯天关活动/@guanbi>      <返回/@main>
+
+[@guantian]
+#if
+ISADMIN
+#ACT
+mov G2 0
+#ACT
+SENDMSG 0 “闯天关”活动已关闭，请各位玩家等待下次开放时间！
+#ACT
+SENDMSG 0 “闯天关”活动已关闭，请各位玩家等待下次开放时间！
+#ACT
+SENDMSG 0 “闯天关”活动已关闭，请各位玩家等待下次开放时间！
+#ACT
+SENDMSG 0 “闯天关”活动已关闭，请各位玩家等待下次开放时间！
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@guanbi]
+#if
+ISADMIN
+#ACT
+mov G2 1
+#ACT
+SENDMSG 0 “闯天关”活动已开启，请各位玩家到盟重老兵处进入！
+#ACT
+SENDMSG 0 “闯天关”活动已开启，请各位玩家到盟重老兵处进入！
+#ACT
+SENDMSG 0 “闯天关”活动已开启，请各位玩家到盟重老兵处进入！
+#ACT
+SENDMSG 0 “闯天关”活动已开启，请各位玩家到盟重老兵处进入！
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@开放双倍]
+#if
+equal G0 23
+#ACT
+#SAY
+经验双倍系统状况为：开启\ \
+<关闭经验双倍/@guanjinyan>      <返回/@main>
+#ELSESAY
+经验双倍系统状况为：关闭\ \
+<开启经验双倍/@kaijinyan>      <返回/@main>
+
+[@guanjinyan]
+#if
+ISADMIN
+#ACT
+MOV G0 0
+#ACT
+SENDMSG 0 双倍经验活动已关闭，请各位玩家等待下次活动时间！
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@kaijinyan]
+#if
+ISADMIN
+#ACT
+MOV G0 23
+#ACT
+SENDMSG 0  双倍经验活动开启!!!不是双倍经验的请小退即可!!!
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@开放双倍攻击]
+#if
+equal G6 23
+#ACT
+#SAY
+双倍攻击系统状况为：开启\ \
+<关闭双倍攻击/@guangongji>      <返回/@main>
+#ELSESAY
+双倍攻击系统状况为：关闭\ \
+<开启双倍攻击/@kaigongji>      <返回/@main>
+
+[@guangongji]
+#if
+ISADMIN
+#ACT
+MOV G6 0
+#ACT
+SENDMSG 0 双倍攻击活动已关闭，请各位玩家等待下次活动时间！
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@kaigongji]
+#if
+ISADMIN
+#ACT
+MOV G6 23
+#ACT
+SENDMSG 0  双倍攻击活动开启!!!不是双倍攻击的请小退即可!!!
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！

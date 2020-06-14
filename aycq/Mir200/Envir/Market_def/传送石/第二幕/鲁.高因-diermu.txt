@@ -1,0 +1,180 @@
+[@main]
+鲁.高因\
+<>\\
+<>\
+<激活传送石/@jihuo>\
+<>\
+<传送/@chuansong>\
+<>\
+<退出/@exit>
+
+[@jihuo]
+#if
+check [006] 0
+#act
+goto @ok
+#elsesay
+你已经激活过该点.\\
+<确定/@exit>
+
+[@ok]
+#if
+#act
+set [006] 1
+#say
+鲁.高因传送点成功激活!\\
+<确定/@exit>
+
+[@chuansong]
+请选择你需要传送的地区:\
+<>\
+<>\
+<城镇/@城镇>\
+<>\
+<险恶地区/@险恶>\
+<>\
+<>\
+<退出/@exit>
+
+[@城镇]
+请选择你需要传送的地点:\
+<>\
+<萝格营地/@萝格营地>5000金币      <库拉斯特海港/@库拉斯特海港>5000金币\
+<>\
+<群魔堡垒/@群魔堡垒>10000金币    <东部王国/@东部王国>5000金币\
+<>\
+<哈洛加斯/@哈洛加斯>10000金币\
+<>\
+<返回/@chuansong>                   <退出/@exit>
+
+[@萝格营地]
+#IF
+check [001] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove diyimu 76 51
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@库拉斯特海港]
+#IF
+check [011] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove disanmu 422 320
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@群魔堡垒]
+#IF
+check [017] 1
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove disimu 24 33
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@东部王国]
+#IF
+check [021] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove diwumu1 295 486
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@哈洛加斯]
+#IF
+check [025] 1
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove diwumu2 183 377
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@险恶]
+请选择你需要传送的地点:\
+<>\
+<诺玛遗址/@nuoma>5000金币\
+<蚂蚁洞穴/@mayi>5000金币\
+<腹蛇山谷/@dushe>5000金币\
+<神秘避难所/@binansuo>10000金币\
+<>\
+<取消/@exit>
+
+[@nuoma]
+#IF
+check [006] 1
+check [007] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove NM00 16 30
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@mayi]
+#IF
+check [006] 1
+check [008] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove diermu 146 108
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@dushe]
+#IF
+check [006] 1
+check [009] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove diermu 426 397
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@binansuo]
+#IF
+check [006] 1
+check [010] 1
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove binansuo 175 155
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+
+
+
+
+
+
+
+
+

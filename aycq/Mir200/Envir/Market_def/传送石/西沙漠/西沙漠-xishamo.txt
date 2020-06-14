@@ -1,0 +1,73 @@
+[@main]
+西沙漠\
+<>\\
+<>\
+<激活传送石/@jihuo>\
+<>\
+<传送/@chuansong>\
+<>\
+<退出/@exit>
+
+[@jihuo]
+#if
+check [024] 0
+#act
+goto @ok
+#elsesay
+你已经激活过该点.\\
+<确定/@exit>
+
+[@ok]
+#if
+#act
+set [024] 1
+#say
+西沙漠传送点成功激活!\\
+<确定/@exit>
+
+[@chuansong]
+请选择你需要传送的地点:\
+<>\
+<东部王国/@dongbu>4000金币\
+<>\
+<哈洛加斯/@haluo>5000金币\
+<>\
+<取消/@exit>
+
+[@dongbu]
+#IF
+check [024] 1
+check [021] 1
+checkgold 4000
+#ACT
+take 金币 4000
+mapmove diwumu1 295 486
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@dongbu]
+#IF
+check [024] 1
+check [025] 1
+checkgold 4000
+#ACT
+take 金币 4000
+mapmove diwumu2 183 377
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@haluo]
+#IF
+check [027] 1
+check [025] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove diwumu2 183 377
+#elsesay
+你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>

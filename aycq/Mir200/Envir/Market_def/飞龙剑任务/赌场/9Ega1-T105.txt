@@ -1,0 +1,23 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 1
+#SAY
+你好?你到了活动室. \
+您在5名当中选择了我. \
+我将给你3个筹码. \ \
+<下一步/@next>
+
+[@next]
+#IF
+#ACT
+give 筹码 3
+mapmove B105 10 10

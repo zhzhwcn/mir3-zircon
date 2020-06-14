@@ -1,0 +1,18 @@
+[@main]
+#if
+check [445] 1
+check [446] 0
+RANDOM 30
+CheckRangeMonCountEx panyemimi 尼拉塞克 87 85 500 < 1
+#act
+MonGenEx panyemimi 42 82 尼拉塞克 0 1 0 253
+#say
+<尼拉塞克:/SCOLOR=253>                                <Img:327:0>\
+<>\
+是谁胆敢打扰我的静修?\\
+<>\
+<>\
+<退出./@exit>
+
+
+

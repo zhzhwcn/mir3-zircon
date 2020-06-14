@@ -1,0 +1,30 @@
+[@main]
+#if                                    
+RANDOM 3
+#act
+Param1 shourenboss
+Param2 36
+Param3 33
+MonGen 兽人酋长 1 5
+SENDMSG 1 兽人战神【洛泰】的倒下使【酋长】出现在了兽人神庙大厅!!!
+SENDMSG 1 兽人战神【洛泰】的倒下使【酋长】出现在了兽人神庙大厅!!!
+SENDMSG 1 兽人战神【洛泰】的倒下使【酋长】出现在了兽人神庙大厅!!!
+#say
+兽人战神【洛泰】的倒下使【酋长】出现在了兽人神庙大厅!!!\\
+<>\
+<>\
+<单人传送/@qianjin>前往兽人神殿大厅\
+<>\
+<队伍传送/@zudui>前往兽人神殿大厅\
+<>\
+<取消/@exit>
+
+[@qianjin]
+#if
+#act
+mapmove shourenboss
+
+[@zudui]
+#if
+#act
+GROUPMAPMOVE  shourenboss 16 27

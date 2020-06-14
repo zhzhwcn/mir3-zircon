@@ -1,0 +1,95 @@
+[@main]
+#if
+checkjob Wizard
+check [214] 1
+#act
+goto @zhaohuan1
+#elsesay
+我奉命守护着这些长存于此的勇士.\
+不要惊讶,这是我的职责...\\
+<>\
+<确定/@exit>
+
+[@zhaohuan1]
+很高兴见到你,你为勇士们所做的一切都将会永远铭刻在大家的心中!\
+勇士之魂也很乐意随时听从你的召唤,并与你一起面对黑暗的力量!\
+<>\
+<召唤勇士之魂/@zhaohuan2><2只./SCOLOR=253>\
+<>\
+<>\
+<>                                                  <取消/@exit>
+
+
+[@zhaohuan2]
+#IF
+CHECKSLAVECOUNT < 2
+CHECKLEVELEX > 44
+CHECKLEVELEX < 46
+#ACT
+;PlayEffectEx 149 159 1 1 39 -50
+RECALLMOB 勇士之魂 1 1000
+SENDMSG 5 召唤勇士之魂成功....
+break
+
+#IF
+CHECKSLAVECOUNT < 2
+CHECKLEVELEX > 45
+CHECKLEVELEX < 47
+#ACT
+;PlayEffectEx 149 159 1 1 39 -50
+RECALLMOB 勇士之魂 2 1000
+SENDMSG 5 召唤勇士之魂成功....
+break
+
+#IF
+CHECKSLAVECOUNT < 2
+CHECKLEVELEX > 46
+CHECKLEVELEX < 48
+#ACT
+;PlayEffectEx 149 159 1 1 39 -50
+RECALLMOB 勇士之魂 3 1000
+SENDMSG 5 召唤勇士之魂成功....
+break
+
+#IF
+CHECKSLAVECOUNT < 2
+CHECKLEVELEX > 47
+CHECKLEVELEX < 49
+#ACT
+;PlayEffectEx 149 159 1 1 39 -50
+RECALLMOB 勇士之魂 4 1000
+SENDMSG 5 召唤勇士之魂成功....
+break
+
+#IF
+CHECKSLAVECOUNT < 2
+CHECKLEVELEX > 48
+CHECKLEVELEX < 50
+#ACT
+;PlayEffectEx 149 159 1 1 39 -50
+RECALLMOB 勇士之魂 5 1000
+SENDMSG 5 召唤勇士之魂成功....
+break
+
+#IF
+CHECKSLAVECOUNT < 2
+CHECKLEVELEX > 49
+CHECKLEVELEX < 51
+#ACT
+;PlayEffectEx 149 159 1 1 39 -50
+RECALLMOB 勇士之魂 6 1000
+SENDMSG 5 召唤勇士之魂成功....
+break
+
+#IF
+CHECKSLAVECOUNT < 2
+CHECKLEVELEX > 50
+#ACT
+;PlayEffectEx 149 159 1 1 39 -50
+RECALLMOB 勇士之魂 7 1000
+SENDMSG 5 召唤勇士之魂成功....
+break
+
+#ELSEACT
+SENDMSG 5 召唤勇士之魂失败....您的宝宝携带数量已满....
+close

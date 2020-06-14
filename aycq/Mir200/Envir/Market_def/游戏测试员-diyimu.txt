@@ -1,0 +1,432 @@
+[@main]
+<欢迎参加暗影传奇的内测!/SCOLOR=250>\
+ \
+ \
+ \
+<退出/@exit>\
+
+
+[@zhuangbei]
+#if
+gender man
+#act 
+goto @nanren
+break
+#elseact
+goto @nvren
+break
+
+[@nanren]
+#if
+checkjob Warr 
+#act
+goto @nanzs
+break
+#if
+checkjob Wizard 
+#act
+goto @nanfs
+break
+#if
+checkjob Taos 
+#act
+goto @nands
+break
+
+[@nvren]
+#if
+checkjob Warr 
+#act
+goto @nvzs
+break
+#if
+checkjob Wizard 
+#act
+goto @nvfs
+break
+#if
+checkjob Taos 
+#act
+goto @nvds
+break
+
+[@nanzs]
+#if
+check [600] 0 
+#act
+ChangeHumAbility 6 + 30 1 
+set [600] 1
+set [001] 1
+set [006] 1
+set [011] 1
+set [017] 1
+set [021] 1
+set [025] 1
+USEBONUSPOINT 8 + 15
+give 裁决之杖 1
+give 战神盔甲(男) 1
+give 圣战项链 1
+give 圣战手镯 2
+give 圣战戒指 2
+give 斗笠 1
+give 秘银腰带 1
+give 天掌靴子 1
+give 狂热护符 1
+give 金砖 1
+AutoTakeOnItem 裁决之杖 1
+AutoTakeOnItem 战神盔甲(男) 0
+AutoTakeOnItem 圣战项链 3
+AutoTakeOnItem 圣战手镯 5
+AutoTakeOnItem 圣战手镯 6
+AutoTakeOnItem 圣战戒指 7
+AutoTakeOnItem 圣战戒指 8
+AutoTakeOnItem 斗笠 10
+AutoTakeOnItem 秘银腰带 11
+AutoTakeOnItem 天掌靴子 12
+AutoTakeOnItem 狂热护符 2
+ADDSKILL 基本剑术
+ADDSKILL 攻杀剑术
+ADDSKILL 刺杀剑术
+ADDSKILL 半月弯刀
+ADDSKILL 烈火剑法
+SKILLLEVEL 基本剑术 = 3
+SKILLLEVEL 攻杀剑术 = 3
+SKILLLEVEL 刺杀剑术 = 3
+SKILLLEVEL 半月弯刀 = 3
+SKILLLEVEL 烈火剑法 = 3
+SENDMSG 7 恭喜你成功领取内测装备,并为你激活了各大地图的传送石.祝你游戏愉快!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗一个人物只能领取一次内测装备!
+break
+
+[@nvzs]
+#if
+check [600] 0 
+#act
+ChangeHumAbility 6 + 30 1 
+set [600] 1
+set [001] 1
+set [006] 1
+set [011] 1
+set [017] 1
+set [021] 1
+set [025] 1
+USEBONUSPOINT 8 + 15
+give 裁决之杖 1
+give 战神盔甲(女) 1
+give 圣战项链 1
+give 圣战手镯 2
+give 圣战戒指 2
+give 斗笠 1
+give 秘银腰带 1
+give 天掌靴子 1
+give 狂热护符 1
+AutoTakeOnItem 裁决之杖 1
+AutoTakeOnItem 战神盔甲(女) 0
+AutoTakeOnItem 圣战项链 3
+AutoTakeOnItem 圣战手镯 5
+AutoTakeOnItem 圣战手镯 6
+AutoTakeOnItem 圣战戒指 7
+AutoTakeOnItem 圣战戒指 8
+AutoTakeOnItem 斗笠 10
+AutoTakeOnItem 秘银腰带 11
+AutoTakeOnItem 天掌靴子 12
+AutoTakeOnItem 狂热护符 2
+give 金砖 1
+ADDSKILL 基本剑术
+ADDSKILL 攻杀剑术
+ADDSKILL 刺杀剑术
+ADDSKILL 半月弯刀
+ADDSKILL 烈火剑法
+SKILLLEVEL 基本剑术 = 3
+SKILLLEVEL 攻杀剑术 = 3
+SKILLLEVEL 刺杀剑术 = 3
+SKILLLEVEL 半月弯刀 = 3
+SKILLLEVEL 烈火剑法 = 3
+SENDMSG 7 恭喜你成功领取内测装备,并为你激活了各大地图的传送石.祝你游戏愉快!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗一个人物只能领取一次内测装备!
+break
+
+[@nanfs]
+#if
+check [600] 0 
+#act
+ChangeHumAbility 8 + 30 1 
+set [600] 1
+set [001] 1
+set [006] 1
+set [011] 1
+set [017] 1
+set [021] 1
+set [025] 1
+USEBONUSPOINT 8 + 8
+give 血饮 1
+give 恶魔长袍(男) 1
+give 法神项链 1
+give 法神手镯 2
+give 法神戒指 2
+give 斗笠 1
+give 秘银腰带 1
+give 天掌靴子 1
+give 迅捷护符 1
+AutoTakeOnItem 血饮 1
+AutoTakeOnItem 恶魔长袍(男) 0
+AutoTakeOnItem 法神项链 3
+AutoTakeOnItem 法神手镯 5
+AutoTakeOnItem 法神手镯 6
+AutoTakeOnItem 法神戒指 7
+AutoTakeOnItem 法神戒指 8
+AutoTakeOnItem 斗笠 10
+AutoTakeOnItem 秘银腰带 11
+AutoTakeOnItem 天掌靴子 12
+AutoTakeOnItem 迅捷护符 2
+give 金砖 1
+ADDSKILL 大火球
+ADDSKILL 雷电术
+ADDSKILL 疾光电影
+ADDSKILL 诱惑之光
+ADDSKILL 瞬息移动
+ADDSKILL 火墙
+ADDSKILL 爆裂火焰
+ADDSKILL 地狱雷光
+ADDSKILL 魔法盾
+ADDSKILL 圣言术
+ADDSKILL 冰咆哮
+SKILLLEVEL 大火球 = 3
+SKILLLEVEL 雷电术 = 3
+SKILLLEVEL 疾光电影 = 3
+SKILLLEVEL 诱惑之光 = 3
+SKILLLEVEL 瞬息移动 = 3
+SKILLLEVEL 火墙 = 3
+SKILLLEVEL 爆裂火焰 = 3
+SKILLLEVEL 地狱雷光 = 3
+SKILLLEVEL 魔法盾 = 3
+SKILLLEVEL 圣言术 = 3
+SKILLLEVEL 冰咆哮 = 3
+SENDMSG 7 恭喜你成功领取内测装备,并为你激活了各大地图的传送石.祝你游戏愉快!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗一个人物只能领取一次内测装备!
+break
+
+[@nvfs]
+#if
+check [600] 0 
+#act
+ChangeHumAbility 8 + 30 1 
+set [600] 1
+set [001] 1
+set [006] 1
+set [011] 1
+set [017] 1
+set [021] 1
+set [025] 1
+USEBONUSPOINT 8 + 8
+give 血饮 1
+give 恶魔长袍(女) 1
+give 法神项链 1
+give 法神手镯 2
+give 法神戒指 2
+give 斗笠 1
+give 秘银腰带 1
+give 天掌靴子 1
+give 迅捷护符 1
+AutoTakeOnItem 血饮 1
+AutoTakeOnItem 恶魔长袍(女) 0
+AutoTakeOnItem 法神项链 3
+AutoTakeOnItem 法神手镯 5
+AutoTakeOnItem 法神手镯 6
+AutoTakeOnItem 法神戒指 7
+AutoTakeOnItem 法神戒指 8
+AutoTakeOnItem 斗笠 10
+AutoTakeOnItem 秘银腰带 11
+AutoTakeOnItem 天掌靴子 12
+AutoTakeOnItem 迅捷护符 2
+give 金砖 1
+ADDSKILL 大火球
+ADDSKILL 雷电术
+ADDSKILL 疾光电影
+ADDSKILL 诱惑之光
+ADDSKILL 瞬息移动
+ADDSKILL 火墙
+ADDSKILL 爆裂火焰
+ADDSKILL 地狱雷光
+ADDSKILL 魔法盾
+ADDSKILL 圣言术
+ADDSKILL 冰咆哮
+SKILLLEVEL 大火球 = 3
+SKILLLEVEL 雷电术 = 3
+SKILLLEVEL 疾光电影 = 3
+SKILLLEVEL 诱惑之光 = 3
+SKILLLEVEL 瞬息移动 = 3
+SKILLLEVEL 火墙 = 3
+SKILLLEVEL 爆裂火焰 = 3
+SKILLLEVEL 地狱雷光 = 3
+SKILLLEVEL 魔法盾 = 3
+SKILLLEVEL 圣言术 = 3
+SKILLLEVEL 冰咆哮 = 3
+SENDMSG 7 恭喜你成功领取内测装备,并为你激活了各大地图的传送石.祝你游戏愉快!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗一个人物只能领取一次内测装备!
+break
+
+[@nands]
+#if
+check [600] 0 
+#act
+ChangeHumAbility 10 + 30 1 
+set [600] 1
+set [001] 1
+set [006] 1
+set [011] 1
+set [017] 1
+set [021] 1
+set [025] 1
+USEBONUSPOINT 8 + 8
+give 龙纹剑 1
+give 幽灵战衣(男) 1
+give 天尊项链 1
+give 天尊手镯 2
+give 天尊戒指 2
+give 斗笠 1
+give 秘银腰带 1
+give 天掌靴子 1
+give 暗影护符 1
+AutoTakeOnItem 龙纹剑 1
+AutoTakeOnItem 幽灵战衣(男) 0
+AutoTakeOnItem 天尊项链 3
+AutoTakeOnItem 天尊手镯 5
+AutoTakeOnItem 天尊手镯 6
+AutoTakeOnItem 天尊戒指 7
+AutoTakeOnItem 天尊戒指 8
+AutoTakeOnItem 斗笠 10
+AutoTakeOnItem 秘银腰带 11
+AutoTakeOnItem 天掌靴子 12
+AutoTakeOnItem 暗影护符 2
+give 金砖 1
+give 超级灰色药粉 2
+give 超级黄色药粉 2
+give 超级护身符 5
+ADDSKILL 治愈术
+ADDSKILL 精神力战法
+ADDSKILL 施毒术
+ADDSKILL 灵魂火符
+ADDSKILL 幽灵盾
+ADDSKILL 神圣战甲术
+ADDSKILL 困魔咒
+ADDSKILL 召唤骷髅
+ADDSKILL 隐身术
+ADDSKILL 集体隐身术
+ADDSKILL 心灵启示
+ADDSKILL 群体治疗术
+ADDSKILL 召唤神兽
+SKILLLEVEL 治愈术 = 3
+SKILLLEVEL 精神力战法 = 3
+SKILLLEVEL 施毒术 = 3
+SKILLLEVEL 灵魂火符 = 3
+SKILLLEVEL 幽灵盾 = 3
+SKILLLEVEL 神圣战甲术 = 3
+SKILLLEVEL 困魔咒 = 3
+SKILLLEVEL 召唤骷髅 = 3
+SKILLLEVEL 隐身术 = 3
+SKILLLEVEL 集体隐身术 = 3
+SKILLLEVEL 心灵启示 = 3
+SKILLLEVEL 群体治疗术 = 3
+SKILLLEVEL 召唤神兽 = 3
+SENDMSG 7 恭喜你成功领取内测装备,并为你激活了各大地图的传送石.祝你游戏愉快!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗一个人物只能领取一次内测装备!
+break
+
+[@nvds]
+#if
+check [600] 0 
+#act
+ChangeHumAbility 10 + 30 1 
+set [600] 1
+set [001] 1
+set [006] 1
+set [011] 1
+set [017] 1
+set [021] 1
+set [025] 1
+USEBONUSPOINT 8 + 8
+give 龙纹剑 1
+give 幽灵战衣(女) 1
+give 天尊项链 1
+give 天尊手镯 2
+give 天尊戒指 2
+give 斗笠 1
+give 秘银腰带 1
+give 天掌靴子 1
+give 暗影护符 1
+AutoTakeOnItem 龙纹剑 1
+AutoTakeOnItem 幽灵战衣(女) 0
+AutoTakeOnItem 天尊项链 3
+AutoTakeOnItem 天尊手镯 5
+AutoTakeOnItem 天尊手镯 6
+AutoTakeOnItem 天尊戒指 7
+AutoTakeOnItem 天尊戒指 8
+AutoTakeOnItem 斗笠 10
+AutoTakeOnItem 秘银腰带 11
+AutoTakeOnItem 天掌靴子 12
+AutoTakeOnItem 暗影护符 2
+give 金砖 1
+give 超级灰色药粉 2
+give 超级黄色药粉 2
+give 超级护身符 5
+ADDSKILL 治愈术
+ADDSKILL 精神力战法
+ADDSKILL 施毒术
+ADDSKILL 灵魂火符
+ADDSKILL 幽灵盾
+ADDSKILL 神圣战甲术
+ADDSKILL 困魔咒
+ADDSKILL 召唤骷髅
+ADDSKILL 隐身术
+ADDSKILL 集体隐身术
+ADDSKILL 心灵启示
+ADDSKILL 群体治疗术
+ADDSKILL 召唤神兽
+SKILLLEVEL 治愈术 = 3
+SKILLLEVEL 精神力战法 = 3
+SKILLLEVEL 施毒术 = 3
+SKILLLEVEL 灵魂火符 = 3
+SKILLLEVEL 幽灵盾 = 3
+SKILLLEVEL 神圣战甲术 = 3
+SKILLLEVEL 困魔咒 = 3
+SKILLLEVEL 召唤骷髅 = 3
+SKILLLEVEL 隐身术 = 3
+SKILLLEVEL 集体隐身术 = 3
+SKILLLEVEL 心灵启示 = 3
+SKILLLEVEL 群体治疗术 = 3
+SKILLLEVEL 召唤神兽 = 3
+SENDMSG 7 恭喜你成功领取内测装备,并为你激活了各大地图的传送石.祝你游戏愉快!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗一个人物只能领取一次内测装备!
+break
+
+
+
+
+
+
+
+
+
+
+
+
+

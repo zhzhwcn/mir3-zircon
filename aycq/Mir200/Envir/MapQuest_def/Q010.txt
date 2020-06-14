@@ -1,0 +1,11 @@
+[@main]
+#if                                    
+check [117] 1
+check [118] 0
+CheckHumInRange muxueboss 65 20 500
+#act 
+set [118] 1
+#say
+<"回到你出生的地狱去吧，安达利尔。" /SCOLOR=253> \\
+<>\
+<确定/@exit>

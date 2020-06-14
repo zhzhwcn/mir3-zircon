@@ -1,0 +1,14 @@
+[@main]
+#if
+check [446] 1
+check [447] 0
+#act
+DELAYGOTO 2000 @feilong1
+break
+
+[@feilong1]
+<ÄãËÆºõÌýµ½ÁËÒ»Ë¿Î¢ÈõµÄºô¾ÈÉù....../SCOLOR=254>\\
+<>\
+<>\
+<>\
+<È·¶¨./@exit>

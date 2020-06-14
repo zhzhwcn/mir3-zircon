@@ -1,0 +1,31 @@
+[@炸弹]
+{
+#if
+#act
+#say
+请输入要轰炸的人物名字\
+<输入名字/@@InPutString75>\
+<我不炸了/@取消炸弹>
+
+[@InPutString75]
+#IF
+#ACT
+MessageBox 请确定<$STR(S75)>在线！ @确定人物在线 @取消炸弹
+
+[@取消炸弹]
+#act
+Give 天雷弹 1
+
+
+[@确定人物在线]
+#if
+<$STR(S75)>.checkonline
+#act
+HCALL <$STR(S75)> @确定人物在线2
+Close
+#elseact
+messagebox 人物不在线,无法传送炸弹！
+Give 天雷弹 1
+
+
+}

@@ -1,0 +1,4 @@
+[@main]
+#IF
+#ACT
+mapmove bihusuoboss 15 15

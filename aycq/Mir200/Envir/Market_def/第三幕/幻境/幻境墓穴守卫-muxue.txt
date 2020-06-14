@@ -1,0 +1,39 @@
+[@main]
+这里是幻境之脑的灵魂墓穴.\
+我奉命守护着这里.\
+任何人也不要妄想接近灵柩.\
+<对话/@duihua>\
+<确定/@exit>
+
+[@duihua]
+#if                                    
+check [144] 1
+check [145] 0
+#act
+goto @renwu1
+break
+
+#elseact
+goto @meishi
+
+[@meishi]
+我劝你赶快离开这里.\\
+<确定/@exit>
+
+[@renwu1]
+赤红蛇王已经到达了墓穴回廊了.\
+你说魂十五?他已经往回廊那边赶去了.\
+情况异常危急,不要再等了,\
+我现在就送你出去与他会合吧.\\
+<好的/@chuansong>
+
+[@chuansong]
+#IF
+#ACT
+mapmove muxue11 29 11
+
+
+
+
+
+

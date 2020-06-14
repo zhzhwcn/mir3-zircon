@@ -1,0 +1,51 @@
+[@main]
+#IF
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+check [799] 0
+#ACT
+goto @main-2
+BreakTimeRecall
+#ELSESAY
+你没有在十分钟之内把人就出来. \ 
+我怀疑你的能力，请重新开始. \ \
+<关闭/@quit>
+
+[@main-2]
+#IF
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第38间房  \
+紧急求助,有人正受到老鼠的攻击 \
+赶快把那人救出来吧！\ \
+<移动/@race>
+
+[@Quit]
+#IF
+#ACT
+SET [799] 0
+map B011
+
+[@race]
+#IF
+checkhum T138 1
+#SAY
+有人正接受考验,请稍等 \ \
+<退出/@exit>
+#ELSEACT
+goto @next
+
+[@next]
+#IF
+#ACT
+SET [799] 1
+Monclear T138
+MonGenEx T138 10 20 大老鼠22 5 10 0 255
+TimeRecall 5
+map T138
+

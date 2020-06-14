@@ -1,0 +1,2037 @@
+;传奇世界所有场所/地图座标配置文件
+[0 比奇省] ALLOWUSEMYSHOP
+[1 沃玛森林] ALLOWUSEMYSHOP
+[2 毒蛇山谷] ALLOWUSEMYSHOP
+[3 盟重省]  ALLOWUSEMYSHOP
+[11 白日门] 
+[4 封魔谷]
+[M001 未知暗殿 ]
+[5 苍月岛]  DAY 
+[xinmo 幻境] NORANDOMMOVE NOTALLOWUSEITEMS(随机传送卷) NORECONNECT(diyimu)
+;[0136 休息间]
+;diyimu 67 45   -> 0136 3 19
+;0136  2 20  -> diyimu 66 46
+[feikuang 废矿] MINE NODROPITEM
+feikuang 63 90  -> diermu 102 300
+diermu  103 299  -> feikuang 64 89
+[geluokuang 废矿] MINE NODROPITEM
+diyimu 212 51   -> geluokuang 165 137
+geluokuang  166 138 -> diyimu 213 52
+[feikuang5 废矿] MINE NODROPITEM
+diwumu1 446 394  -> feikuang5 51 91
+feikuang5 51 91 -> diwumu1 446 395
+[hongmingkuang 废矿] MINE NODROPITEM
+hongming 166 101   -> hongmingkuang 37 173
+hongmingkuang  36 174 -> hongming 165 103
+[hongmingdong 赎罪洞穴]
+hongming 36 201   -> hongmingdong 49 85
+hongmingdong  49 86 -> hongming 37 202
+hongmingdong 87 189   -> hongming 64 245
+hongming  65 245 -> hongmingdong 88 188
+;..............................................................................................
+;..............................................................................................
+[anjinboss 暗影密室] NORANDOMMOVE
+[anjinboss1|anjinboss  暗影密室] NORANDOMMOVE
+;..............................................................................................
+;..............................................................................................
+[D2083 火龙殿]
+[hongming 恶人谷]
+diyimu 310 678   -> hongming 230 48
+hongming  230 45 -> diyimu 309 677
+;..............................................................................................
+;..............................................................................................
+;八大暗影
+[anying1 暗影禁地] NORECONNECT(diyimu)
+[anying2 暗影禁地] NORECONNECT(diyimu)
+[anying3 暗影禁地] NORECONNECT(diyimu)
+[anying4 暗影禁地] NORECONNECT(diyimu)
+[anying5 暗影禁地] NORECONNECT(diyimu)
+[anying6 暗影禁地] NORECONNECT(diyimu)
+[anying7 暗影禁地] NORECONNECT(diyimu)
+[anying8 暗影禁地] NORECONNECT(diyimu)
+;..............................................................................................
+;..............................................................................................
+;..............................................................................................
+;..............................................................................................
+;..............................................................................................
+[nainiu 秘密母牛关卡] 
+[cuisi 崔斯特瑞姆] NORANDOMMOVE NORECONNECT(diyimu)
+[diyimu 西部王国] ALLOWUSEMYSHOP MUSIC(..\Wav\biqi.mp3)
+diyimu 526 179   ->  diyimu 544 164
+diyimu 543 165     ->  diyimu 525 180
+
+[gaota 遗忘之塔入口] 
+[gaota1 遗忘之塔一层] 
+[gaota2 遗忘之塔二层] 
+[gaota3 遗忘之塔三层] NORANDOMMOVE
+[gaotalianjie 秘密入口]
+[gaotamimi 秘室] NORECONNECT(gaotalianjie)
+[gaotamm1|gaotamimi 秘室] NORECONNECT(gaotalianjie)
+[gaotamm2|gaotamimi 秘室] NORECONNECT(gaotalianjie)
+[gaotamm3|gaotamimi 秘室] NORECONNECT(gaotalianjie)
+[gaotamm4|gaotamimi 秘室] NORECONNECT(gaotalianjie)
+[gaotachukou 密室] NORECONNECT(gaotalianjie)
+[gaotaboss 遗忘大厅] NORANDOMMOVE NORECONNECT(gaota)
+[gaotaboss1 遗忘密室] NORANDOMMOVE NORECONNECT(gaota)
+
+diyimu 126 400    ->  gaota 17 17
+gaota   15 18    ->  diyimu 125 402
+gaota 7 13     ->  gaota1 33 117
+gaota1   34 118    ->  gaota 8 14
+gaota1 128 9     ->  gaota2 46 92
+gaota2  45 93    ->  gaota1 127 11
+gaota2 95 21    ->  gaota3  203 229
+gaota3  202 229    ->  gaota2 94 23
+gaota3 56 97     ->  gaotalianjie 30 16
+gaotalianjie   31 15   ->  gaota3 57 96
+gaotachukou 18 21   ->  gaotaboss 12 63
+gaotaboss 68 39   -> gaotaboss1 7 14
+gaotaboss1  6 15  -> gaotaboss 68 40
+;秘室
+gaotalianjie 25 15    ->  gaotamm1 24 31
+gaotamm1  25 32   ->  gaotalianjie 26 16
+gaotalianjie 20 30    ->  gaotamm1 9 17
+gaotamm1  8 16    ->  gaotalianjie 19 29
+gaotalianjie 31 27    ->  gaotamm1 11 31
+gaotamm1  10 32   ->  gaotalianjie 30 28
+gaotamm2 27 16   ->  gaotamm1 11 31
+gaotamm2 8 16   ->  gaotamm1 24 31
+gaotamm2 25 32   ->  gaotamm1 9 17
+gaotamm3 27 16   ->  gaotamm1 11 31
+gaotamm3 10 32   ->  gaotamm1 26 17
+gaotamm3 25 32   ->  gaotamm2 9 17
+gaotamm4 27 16   ->  gaotamm2 11 31
+gaotamm4 8 16   ->  gaotamm3 24 31
+gaotamm4 10 32   ->  gaotamm1 26 17
+gaotachukou 27 16   ->  gaotamm1 11 31
+gaotachukou 8 16   ->  gaotamm2 24 31
+gaotachukou 10 32   ->  gaotamm3 26 17
+gaotachukou 25 32   ->  gaotamm1 9 17
+
+;正确走法
+gaotalianjie 14 18    ->  gaotamm1 26 17
+gaotamm1 27 16  ->  gaotamm2 11 31
+gaotamm2 10 32   ->  gaotamm3 26 17
+gaotamm3 8 16   ->  gaotamm4 24 31
+gaotamm4 25 32   ->  gaotachukou 9 17
+
+[gujing 古井] NORANDOMMOVE
+diyimu 186 579   ->  gujing 180 168
+
+[kulou 埋骨陵墓]
+[kulou11|kulou 埋骨陵墓]
+[kulou1 被盗的陵墓]
+[shiwang 尸王殿] NEEDHOLE NORECONNECT(kulou1)
+[shiwang1|shiwang 尸王殿] NEEDHOLE NORECONNECT(kulou1)
+[shiwang2|shiwang 尸王殿] NEEDHOLE NORECONNECT(kulou1)
+[shiwang3|shiwang 尸王殿] NEEDHOLE NORECONNECT(kulou1)
+;尸王殿入口
+kulou1 84 74   ->  shiwang 48 38
+kulou1 96 16   ->  shiwang1 48 38
+kulou1 19 27   ->  shiwang2 48 38
+kulou1 26 88   ->  shiwang3 48 38
+
+diyimu 569 93    ->  kulou 10 29
+kulou 9 30    ->  diyimu 569 94
+diyimu 664 97   ->  kulou11 10 29
+kulou11  9 30    ->  diyimu 664 98
+kulou 27 20   ->  kulou1 40 111
+kulou1  38 112   ->  kulou 26 21
+kulou11 27 20   ->  kulou1 106 108
+kulou1  104 109    ->  kulou11 26 21
+
+
+[muxue1 地下墓穴第一层]
+[muxue2 地下墓穴第二层]
+[muxue3 地下墓穴第三层] NOTALLOWUSEITEMS(随机传送卷) NORANDOMMOVE
+[muxuemishi 密室]
+[muxueboss 地下墓穴第四层] NORANDOMMOVE NORECONNECT(neiche)
+[neiche 内侧回廊]
+[waiche 外侧回廊]
+[tiejiang 铁匠房]
+[jianyu1 监牢第一层]
+[jianyu2 监牢第二层]
+[jianyu3 监牢第三层]
+[jianyulianjie 连接通道]
+[jiaotang 大教堂]
+[junying 军营]
+
+diyimu 577 525    ->  waiche 51 193
+waiche  49 195    ->  diyimu 576 526
+waiche 182 54    ->  junying 19 175
+waiche 183 55     ->  junying 20 176
+junying  17 177    ->  waiche 182 56
+junying 167 4    ->  tiejiang 11 34
+tiejiang  10 35  ->  junying 167 5
+junying 33 8   ->  jianyu1 166 216
+jianyu1  165 217  ->  junying 33 9
+jianyu1 295 146   ->  jianyu2 166 216
+jianyu2 165 217   ->  jianyu1 295 147
+jianyu2 51 173   ->  jianyu3 29 44
+jianyu3  28 43  ->  jianyu2 51 173
+jianyu3 43 28   ->  jianyulianjie 39 43
+jianyulianjie 40 44   ->  jianyu3 44 29
+jianyulianjie 21 21   ->  neiche 67 74
+neiche  68 73  ->  jianyulianjie 24 20
+neiche 103 30   ->  jiaotang 9 25
+neiche 104 31   ->  jiaotang 10 26
+jiaotang  8 26  ->  neiche 103 32
+jiaotang  9 27  ->  neiche 103 32
+jiaotang 20 15  ->  muxue1 17 138
+muxue1  16 139   ->  jiaotang 19 16
+muxue1 281 247   ->  muxue2 19 125
+muxue2  18 124  ->  muxue1 280 246
+muxue2 287 215   ->  muxue3 82 84
+muxue3  81 83   ->  muxue2 286 214
+muxue3 196 194   ->  muxueboss 58 75
+
+muxue1 112 16   ->  muxue2 190 286
+muxue2  191 287   ->  muxue1 113 17
+muxue1 169 223    ->  muxuemishi 15 9
+muxuemishi  15 7   ->  muxue1 168 222
+muxue2 155 16    ->  muxuemishi 7 28
+muxuemishi  6 29   ->  muxue2 154 17
+muxuemishi 18 41    ->  junying 91 8
+
+；四层一格
+muxue3 153 11   ->   muxue3 42 186
+muxue3 141 23   ->   muxue3 50 138
+muxue3 129 35   ->   muxue3 114 74
+muxue3 117 47   ->   muxue3 162 26
+muxue3 105 59   ->   muxue3 26 162
+muxue3 93 71    ->   muxue3 74 114
+muxue3 69 95   ->    muxue3 150 38 
+muxue3 57 107  ->    muxue3 26 162
+muxue3 45 119  ->    muxue3 38 150
+muxue3 33 131  ->    muxue3 138 50
+muxue3 21 143  ->    muxue3 62 126 
+muxue3 9 155   ->    muxue3 126 62
+
+；四层二格
+muxue3 169 35  ->   muxue3 114 114
+muxue3 157 47  ->   muxue3 150 78
+muxue3 145 59  ->   muxue3 162 66    
+muxue3 133 71  ->   muxue3 186 42
+muxue3 121 83  ->   muxue3 174 54
+muxue3 109 95  ->   muxue3 90  138
+muxue3 93 111  ->   muxue3 78 150
+muxue3 81 123  ->   muxue3 38 150
+muxue3 69 135  ->   muxue3 102 126
+muxue3 57 147  ->   muxue3 126 102 
+muxue3 33 171  ->   muxue3 202 66          
+muxue3 45 159  ->   muxue3 138 90 
+
+；四层三格
+muxue3 193 51  -> muxue3 102 166
+muxue3 181 63  -> muxue3 178 90
+muxue3 169 75  -> muxue3 66 202 
+muxue3 157 87  -> muxue3 154 114
+muxue3 145 99  -> muxue3 142 126
+muxue3 133 111 -> muxue3 54 174
+muxue3 121 123 -> muxue3 78 190 
+muxue3 109 135 -> muxue3 190 78
+muxue3 97 147  -> muxue3 114 154
+muxue3 85 159  -> muxue3 166 102
+muxue3 73 171  -> muxue3 90 178
+muxue3 61 183  -> muxue3 126 142
+muxue3 49 195  -> muxue3  226 82      
+
+；四层四格
+muxue3 209 75 -> muxue3 154 154
+muxue3 197 87 -> muxue3 178 130
+muxue3 185 99 -> muxue3 106 202
+muxue3 173 111 -> muxue3 166 102
+muxue3 161 123 -> muxue3 202 106
+muxue3 149 135 -> muxue3 82 226
+muxue3 133 151 -> muxue3 214 94
+muxue3 121 163 -> muxue3 130 178
+muxue3 109 175 -> muxue3 118 190
+muxue3 97 187  -> muxue3 94 214  
+muxue3 85 199 -> muxue3 190 118
+muxue3 73 211 -> muxue3  230 118      
+
+；四层五格
+muxue3 233 91   ->  muxue3 142 206
+muxue3 221 103  ->  muxue3 206 142
+muxue3 209 115  ->  muxue3 106 242
+muxue3 197 127  ->  muxue3 242 106
+muxue3 185 139  ->  muxue3 118 230
+muxue3 173 151  ->  muxue3 166 142 
+muxue3 161 163  ->  muxue3 154 194
+muxue3 149 175  ->  muxue3 194 154
+muxue3 137 187  ->  muxue3 218 130
+muxue3 125 199  ->  muxue3 182 166 
+muxue3 113 211  ->  muxue3 166 182
+muxue3 101 223  ->  muxue3 130 218
+muxue3 89 235   ->  muxue3  150 238      
+
+；四层后四小格
+muxue3 249 115   ->   muxue3 122 266
+muxue3 237 127   ->   muxue3 142 286
+muxue3 225 139   ->   muxue3 262 126
+muxue3 213 151   ->   muxue3 254 174
+muxue3 149 215   ->   muxue3 154 274
+muxue3 137 227   ->   muxue3 154 194
+muxue3 125 239   ->   muxue3 250 138
+muxue3 113 251   ->   muxue3  215 213         
+muxue3 269 135   ->   muxue3 222 166
+muxue3 257 147   ->   muxue3 170 258
+muxue3 245 159   ->   muxue3 162 226
+muxue3 233 171   ->   muxue3 182 246
+muxue3 169 235   ->   muxue3 282 146
+muxue3 157 247   ->   muxue3 242 186
+muxue3 145 259   ->   muxue3 234 154
+muxue3 133 271   ->   muxue3 134 254
+
+;三层回到一二层
+muxue3 178 186    ->   muxue1 168 222
+muxue3 186 178    ->  muxue2 190 286
+
+
+[senlinlianjie 连接通道]
+diyimu 301 553   ->  senlinlianjie 12 130
+senlinlianjie  12 131   ->  diyimu 300 554
+senlinlianjie 136 52    ->  diyimu 395 510
+diyimu  394 509   ->  senlinlianjie 135 51
+
+[shimu 大陵墓]
+[shimu1 大陵墓一层]
+[shimu2 大陵墓二层]
+[shimu3 大陵墓三层] NORANDOMMOVE
+[shimu4 大陵墓四层] NORANDOMMOVE
+[shimuboss 勇士墓穴] NEEDHOLE NORECONNECT(shimu1)
+
+diyimu 103 513    ->  shimu 14 26
+shimu  13 27    ->  diyimu 102 514
+shimu 22 18    ->  shimu1 19 164
+shimu1 17 165     ->  shimu 21 19
+shimu1 262 101    ->  shimu2 58 85
+shimu2  56 86    ->  shimu1 261 102
+shimu2 49 45    ->  shimu3 48 99
+shimu3  48 100   ->  shimu2 48 46
+shimu3 38 18    ->  shimu4 27 74
+shimu4  25 75   ->  shimu3 37 19
+shimu4 83 25    ->  shimuboss 5 43
+
+[xiee1 邪恶洞穴一层]
+[xiee2 邪恶洞穴二层]
+[xieelianjie 连接通道]
+[xiee3 邪恶洞穴三层] 
+[xieeboss 邪恶之巢] NORANDOMMOVE NORECONNECT(xiee1)
+
+diyimu 211 135    ->  xiee1 265 35
+xiee1  264 36     ->  diyimu 210 136
+xiee1 24 268    ->  xiee2 155 144
+xiee2  156 145     ->  xiee1 25 269
+xiee2 47 235     ->  xieelianjie 10 42
+xieelianjie  9 43     ->  xiee2 47 236
+xieelianjie 31 8    ->  xiee3 71 239
+xiee3  69 240   ->  xieelianjie 31 9
+xiee3 261 34    ->  xieeboss 17 26
+
+;[shenmiao 废弃神庙]
+;[shenmiao1 废弃神庙一层]
+;[shenmiaolianjie 连接通道]
+;[shenmiao2 废弃神庙二层] NORANDOMMOVE
+;[shenmiaoboss 废弃神庙三层] NORANDOMMOVE NORECONNECT(shenmiao)
+;沃玛寺庙
+[D021	沃玛寺庙入口] 
+[D022	沃玛寺庙一层]
+[D023	沃玛寺庙二层] 
+[D024	沃玛教主大殿]	NORECALL	NORANDOMMOVE	NORECONNECT(D023) 
+
+diyimu 424 302   ->         D021       76,74
+D021       77,76                ->   diyimu 425 304
+
+D021 26 27 -> D022 338 356
+D021 26 26 -> D022 339 355
+D022 338 355 -> D021 25 26
+D022 338 354 -> D021 25 25
+
+D022 251 207 -> D023 198 195
+D022 251 206 -> D023 199 194
+D023 198 194 -> D022 250 206
+D023 198 193 -> D022 250 205
+
+D023 52 366 -> D024 16 19
+D024 16 18 -> D023 51 365
+
+;..............................................................................................
+;..............................................................................................
+;..............................................................................................
+;..............................................................................................
+;..............................................................................................
+
+[diermu 阿拉诺赫沙漠] ALLOWUSEMYSHOP
+diyimu 586 681   ->  diermu 11 269
+diermu 9 267    ->  diyimu 585 682
+diyimu 586 682   ->  diermu 11 269
+[shuixiamimi 地下隧道] 
+diermu 271 425   ->  shuixiamimi 15 108
+shuixiamimi 15 109   ->  diermu 270 426
+shuixiamimi 253 275   ->  diermu 317 553
+diermu  318 552  ->  shuixiamimi 254 274
+[0145 旅店一楼] 
+[0146 旅店二楼]
+diermu 197 434   ->  0145 6 16
+0145 6 17   ->  diermu 195 436
+0145 8 2   ->  0146 7 8
+0146  6 8  ->  0145 8 3
+
+[xiashuidao1 下水道一层]
+[xiashuidao2 下水道二层]
+[xiashuidao3 下水道三层] NORANDOMMOVE NORECONNECT(xiashuidao1)
+diermu 152 554   ->  xiashuidao1 211 201
+xiashuidao1  212 200   ->  diermu 153 553
+xiashuidao1  142 6   ->  diermu 115 437
+xiashuidao1 89 108   ->  xiashuidao2 78 19
+xiashuidao2  79 18   ->  xiashuidao1 88 109
+xiashuidao2 233 200   ->  xiashuidao3 43 190
+xiashuidao3  42 189   ->  xiashuidao2 232 199
+
+
+[NM00 诺玛遗址入口]
+[NM01 诺玛遗址一层]
+[NM02 诺玛遗址二层]
+[NM03 诺玛遗址三层] NORANDOMMOVE
+[NM04 诺玛遗址四层] NORANDOMMOVE NORECONNECT(NM01)
+[NM05 诺玛教主大厅] NORANDOMMOVE NORECONNECT(NM00)
+diermu 418 120   -> NM00 14 33
+NM00 13 34  -> diermu 417 122
+NM00 23 22   -> NM01 196 203
+NM01 197 202  -> NM00 24 21
+NM01 14 196  -> NM02 14 197
+NM02 14 196   -> NM01 14 197 
+NM01 201 16  -> NM02 201 17
+NM02 201 16   -> NM01 201 17
+NM01 386 208  -> NM02 385 207
+NM02 386 208   -> NM01 385 207
+NM01 189 388  -> NM02 190 387
+NM02 189 388   -> NM01 190 387
+NM02 193 206   -> NM03 199 178
+NM03 198 177  -> NM02 192 205
+NM03 133 297   -> NM04 103 106
+NM04 103 105 -> NM03 132 296
+NM04 323 212 -> NM05 9 26
+;-------------------诺玛遗址3层迷宫-------------------
+NM03 27,193 -> NM03 138,245
+NM03 59,168 -> NM03 173,147
+NM03 84,141 -> NM03 246,92
+NM03 127,109 -> NM03 179,211
+NM03 142,79 -> NM03 130,222
+NM03 166,59 -> NM03 138,245
+NM03 195,29 -> NM03 92,150
+NM03 35,201 -> NM03 213,116
+NM03 67,176 -> NM03 270,97
+NM03 92,149 -> NM03 165,58
+NM03 135,117 -> NM03 255,172
+NM03 150,87 -> NM03 242,107
+NM03 174,67 -> NM03 80,179
+NM03 203,37 -> NM03 226,60
+NM03 48,204 -> NM03 56,213
+NM03 81,180 -> NM03 179,211
+NM03 105,161 -> NM03 104,254
+NM03 131,135 -> NM03 194,125
+NM03 161,105 -> NM03 337,171
+NM03 181,77 -> NM03 58,167
+NM03 203,54 -> NM03 83,248
+NM03 56,212 -> NM03 47,203
+NM03 89,188 -> NM03 26,192
+NM03 113,169 -> NM03 26,192
+NM03 139,143 -> NM03 126,108
+NM03 169,113 -> NM03 170,201
+NM03 189,85 -> NM03 231,136
+NM03 211,62 -> NM03 165,58
+NM03 69,214 -> NM03 77,223
+NM03 77,222 -> NM03 68,213
+NM03 75,239 -> NM03 83,140
+NM03 98,209 -> NM03 130,222
+NM03 126,179 -> NM03 189,86
+NM03 165,138 -> NM03 169,114
+NM03 186,116 -> NM03 194,125
+NM03 205,89 -> NM03 113,274
+NM03 227,61 -> NM03 169,114
+NM03 83,247 -> NM03 104,160
+NM03 106,217 -> NM03 315,250
+NM03 134,187 -> NM03 242,107
+NM03 173,146 -> NM03 185,144
+NM03 194,124 -> NM03 185,115
+NM03 213,97 -> NM03 83,140
+NM03 235,69 -> NM03 26,192
+NM03 96,245 -> NM03 194,125
+NM03 122,213 -> NM03 67,177
+NM03 149,196 -> NM03 179,211
+NM03 171,172 -> NM03 299,219
+NM03 186,145 -> NM03 194,154
+NM03 214,117 -> NM03 89,189
+NM03 238,83 -> NM03 67,177
+NM03 104,253 -> NM03 242,107
+NM03 130,221 -> NM03 170,201
+NM03 157,204 -> NM03 83,140
+NM03 179,180 -> NM03 202,53
+NM03 194,153 -> NM03 185,144
+NM03 222,125 -> NM03 83,140
+NM03 246,91 -> NM03 104,160
+NM03 105,265 -> NM03 311,169
+NM03 130,236 -> NM03 89,189
+NM03 171,202 -> NM03 279,107
+NM03 207,152 -> NM03 235,70
+NM03 232,137 -> NM03 215,161
+NM03 243,108 -> NM03 203,38
+NM03 271,98 -> NM03 134,188
+NM03 113,273 -> NM03 206,151
+NM03 138,244 -> NM03 165,58
+NM03 179,210 -> NM03 226,60
+NM03 215,160 -> NM03 180,76
+NM03 240,145 -> NM03 126,108
+NM03 251,116 -> NM03 338,231
+NM03 279,106 -> NM03 121,212
+NM03 157,279 -> NM03 206,328
+NM03 177,251 -> NM03 235,322
+NM03 199,228 -> NM03 240,292
+NM03 141,305 -> NM03 197,257
+NM03 165,287 -> NM03 129,235
+NM03 185,259 -> NM03 165,58
+NM03 207,236 -> NM03 184,348
+NM03 153,312 -> NM03 246,336
+NM03 178,287 -> NM03 263,296
+NM03 198,258 -> NM03 161,321
+NM03 161,320 -> NM03 255,172
+NM03 186,295 -> NM03 254,286
+NM03 206,266 -> NM03 156,278
+NM03 174,318 -> NM03 373,209
+NM03 205,286 -> NM03 268,317
+NM03 228,257 -> NM03 221,352
+NM03 182,326 -> NM03 198,227
+NM03 213,294 -> NM03 237,326
+NM03 236,265 -> NM03 226,312
+NM03 198,319 -> NM03 221,352
+NM03 232,283 -> NM03 324,260
+NM03 206,327 -> NM03 185,144
+NM03 240,291 -> NM03 198,227
+NM03 185,349 -> NM03 193,358
+NM03 227,313 -> NM03 182,327
+NM03 255,287 -> NM03 141,306
+NM03 193,357 -> NM03 184,348
+NM03 235,321 -> NM03 152,311
+NM03 263,295 -> NM03 176,250
+NM03 241,199 -> NM03 141,306
+NM03 256,173 -> NM03 279,241
+NM03 281,156 -> NM03 324,260
+NM03 297,128 -> NM03 373,209
+NM03 249,207 -> NM03 270,231
+NM03 264,181 -> NM03 337,199
+NM03 289,164 -> NM03 337,199
+NM03 305,136 -> NM03 130,134
+NM03 260,206 -> NM03 194,125
+NM03 282,188 -> NM03 213,295
+NM03 303,160 -> NM03 299,258
+NM03 268,214 -> NM03 302,159
+NM03 290,196 -> NM03 296,127
+NM03 311,168 -> NM03 97,208
+NM03 271,232 -> NM03 289,165
+NM03 291,210 -> NM03 268,317
+NM03 315,191 -> NM03 347,241
+NM03 329,162 -> NM03 264,182
+NM03 279,240 -> NM03 328,161
+NM03 299,218 -> NM03 259,205
+NM03 323,199 -> NM03 280,155
+NM03 337,170 -> NM03 338,231
+NM03 291,249 -> NM03 321,233
+NM03 313,224 -> NM03 240,198
+NM03 338,200 -> NM03 67,177
+NM03 299,257 -> NM03 270,97
+NM03 321,232 -> NM03 259,307
+NM03 346,208 -> NM03 270,231
+NM03 316,251 -> NM03 299,258
+NM03 339,232 -> NM03 77,223
+NM03 365,200 -> NM03 290,197
+NM03 324,259 -> NM03 338,231
+NM03 347,240 -> NM03 270,231
+NM03 373,208 -> NM03 312,223
+NM03 213,343 -> NM03 227,256
+NM03 238,327 -> NM03 186,296
+NM03 260,308 -> NM03 186,296
+NM03 221,351 -> NM03 328,161
+NM03 246,335 -> NM03 152,311
+NM03 263,316 -> NM03 184,348
+
+;-------------------诺玛遗址4层迷宫-------------------
+NM04 115,93 -> NM04 63,240
+NM04 187,21 -> NM04 192,73
+NM04 175,33 -> NM04 129,99
+NM04 163,45 -> NM04 63,240
+NM04 151,57 -> NM03 207,97
+NM04 139,69 -> NM04 147,156
+NM04 127,81 -> NM04 195,108
+NM04 91,117 -> NM04 108,157
+NM04 79,129 -> NM04 177,51
+NM04 67,141 -> NM04 45,183
+NM04 55,153 -> NM04 195,160
+NM04 43,165 -> NM04 177,51
+NM04 31,177 -> NM04 141,87
+NM04 19,189 -> NM04 87,216
+NM04 210,35 -> NM04 207,96
+NM04 198,47 -> NM04 87,216
+NM04 186,59 -> NM04 141,87
+NM04 174,71 -> NM04 186,155
+NM04 162,83 -> NM04 219,84
+NM04 150,95 -> NM04 195,108
+NM04 138,107 -> NM04 105,123
+NM04 126,119 -> NM04 135,168
+NM04 114,131 -> NM04 204,61
+NM04 102,143 -> NM04 57,171
+NM04 90,155 -> NM03 97,208
+NM04 78,167 -> NM04 33,195
+NM04 66,179 -> NM04 180,85
+NM04 54,191 -> NM04 192,73
+NM04 42,203 -> NM04 177,51
+NM04 30,215 -> NM04 81,147
+NM04 229,54 -> NM04 36,229
+NM04 217,66 -> NM04 195,160
+NM04 205,78 -> NM04 57,171
+NM04 193,90 -> NM04 33,195
+NM04 181,102 -> NM04 144,121
+NM04 169,114 -> NM04 108,157
+NM04 157,126 -> d1604 84,181
+NM04 145,138 -> NM04 159,144
+NM04 133,150 -> NM04 156,109
+NM04 121,162 -> NM04 231,72
+NM04 109,174 -> NM04 147,156
+NM04 97,186 -> NM04 48,217
+NM04 85,198 -> NM04 120,145
+NM04 73,210 -> NM04 156,109
+NM04 61,222 -> NM04 231,72
+NM04 49,234 -> NM04 180,85
+NM04 248,73 -> NM04 93,135
+NM04 236,85 -> NM04 171,132
+NM04 224,97 -> NM04 258,83
+NM04 212,109 -> NM04 69,159
+NM04 200,121 -> NM04 112,304
+NM04 188,133 -> NM04 288,129
+NM04 176,145 -> NM04 187,22
+NM04 164,157 -> NM04 78,263
+NM04 152,169 -> NM04 153,77
+NM04 140,181 -> NM04 168,97
+NM04 128,193 -> NM03 212,342
+NM04 116,205 -> NM04 96,169
+NM04 104,217 -> NM04 216,49
+NM04 92,229 -> NM04 157,127
+NM04 80,241 -> NM04 123,180
+NM04 68,253 -> NM04 72,193
+NM04 267,92 -> NM04 99,204
+NM04 255,104 -> NM04 126,215
+NM04 243,116 -> NM04 174,167
+NM04 231,128 -> NM04 189,39
+NM04 286,111 -> NM04 132,133
+NM04 274,123 -> NM04 302,191
+NM04 262,135 -> NM04 307,148
+NM04 250,147 -> NM04 243,60
+NM04 305,130 -> NM04 114,227
+NM04 293,142 -> NM04 75,228
+NM04 281,154 -> NM04 198,143
+NM04 269,166 -> NM04 201,27
+NM04 324,149 -> NM04 210,131
+NM04 312,161 -> NM04 269,110
+NM04 300,172 -> NM04 264,153
+NM04 288,185 -> NM04 84,181
+NM04 343,168 -> NM04 319,136
+NM04 331,180 -> NM04 257,122
+NM04 319,192 -> NM04 345,186
+NM04 307,204 -> NM04 90,251
+NM04 111,247 -> NM04 345,186
+NM04 99,259 -> NM04 142,350
+NM04 87,271 -> NM04 135,319
+NM04 75,283 -> NM04 100,316
+NM04 130,266 -> NM04 338,155
+NM04 118,278 -> NM04 150,191
+NM04 106,290 -> NM04 60,205
+NM04 94,302 -> NM04 326,167
+NM04 153,281 -> NM04 276,141
+NM04 141,293 -> NM04 111,192
+NM04 129,305 -> NM04 101,277
+NM04 117,317 -> NM04 136,280
+NM04 172,300 -> NM04 123,331
+NM04 160,312 -> NM04 300,117
+NM04 148,324 -> NM04 147,307
+NM04 136,336 -> NM04 165,63
+NM04 191,319 -> NM04 124,292
+NM04 179,331 -> NM04 166,326
+NM04 167,343 -> NM04 283,172
+NM04 155,355 -> NM04 159,295
+NM04 203,29 -> NM04 133,151
+NM04 191,41 -> NM04 150,96
+NM04 179,53 -> NM04 49,235
+NM04 167,65 -> NM04 61,223
+NM04 155,77 -> NM04 61,223
+NM04 143,89 -> NM04 150,96
+NM04 131,101 -> NM04 121,163
+NM04 107,125 -> NM04 163,46
+NM04 95,137 -> NM04 121,163
+NM04 83,149 -> NM04 193,91
+NM04 71,161 -> NM04 97,187
+NM04 59,173 -> NM04 66,180
+NM04 47,185 -> NM04 79,130
+NM04 35,197 -> NM04 103,106
+NM04 217,50 -> NM04 150,96
+NM04 205,62 -> NM04 198,48
+NM04 193,74 -> NM04 151,58
+NM04 181,86 -> NM04 133,151
+NM04 169,98 -> NM04 163,46
+NM04 157,110 -> NM03 290,197
+NM04 145,122 -> NM04 103,106
+NM04 133,134 -> NM04 43,166
+NM04 121,146 -> NM04 198,48
+NM04 109,158 -> NM04 67,142
+NM04 97,170 -> NM04 19,190
+NM04 85,182 -> NM04 92,230
+NM04 73,194 -> NM04 163,46
+NM04 61,206 -> NM04 193,91
+NM04 49,218 -> NM04 79,130
+NM04 37,230 -> NM04 85,199
+NM04 245,62 -> NM04 127,82
+NM04 233,74 -> NM04 163,46
+NM04 221,86 -> NM04 162,84
+NM04 209,98 -> NM04 30,216
+NM04 197,110 -> NM04 78,168
+NM04 185,122 -> NM04 19,190
+NM04 173,134 -> NM04 262,136
+NM04 161,146 -> NM04 102,144
+NM04 149,158 -> NM04 42,204
+NM04 137,170 -> NM04 78,168
+NM04 125,182 -> NM04 102,144
+NM04 113,194 -> NM04 43,166
+NM04 101,206 -> NM04 198,48
+NM04 89,218 -> NM04 30,216
+NM04 77,230 -> NM04 127,82
+NM04 65,242 -> NM04 145,139
+NM04 260,85 -> NM04 169,115
+NM04 248,97 -> NM04 139,70
+NM04 236,109 -> NM04 55,154
+NM04 224,121 -> NM04 68,254
+NM04 212,133 -> NM04 186,60
+NM04 200,145 -> NM04 114,132
+NM04 188,157 -> NM04 205,79
+NM04 176,169 -> NM04 255,105
+NM04 164,181 -> NM04 91,118
+NM04 152,193 -> NM04 31,178
+NM04 140,205 -> NM04 210,36
+NM04 128,217 -> NM04 179,332
+NM04 116,229 -> NM04 54,192
+NM04 104,241 -> NM04 109,175
+NM04 92,253 -> NM04 175,34
+NM04 80,265 -> NM04 224,98
+NM04 283,100 -> NM04 138,108
+NM04 271,112 -> NM04 152,170
+NM04 258,123 -> NM04 148,325
+NM04 246,135 -> NM04 174,72
+NM04 301,118 -> NM04 229,55
+NM04 289,130 -> NM04 217,67
+NM04 277,142 -> NM04 248,74
+NM04 265,154 -> NM04 281,155
+NM04 320,137 -> NM04 129,306
+NM04 308,149 -> NM04 73,211
+NM04 296,161 -> NM04 90,156
+NM04 284,173 -> NM04 212,110
+NM04 339,156 -> NM04 75,284
+NM04 327,168 -> NM04 126,120
+NM04 315,180 -> NM04 116,206
+NM04 303,192 -> NM04 188,134
+NM04 358,175 -> NM04 288,186
+NM04 346,187 -> NM04 319,193
+NM04 334,199 -> NM04 231,129
+NM04 126,254 -> NM04 106,291
+NM04 114,266 -> NM04 243,117
+NM04 102,278 -> NM04 155,356
+NM04 90,290 -> NM04 324,150
+NM04 137,281 -> NM04 305,131
+NM04 125,293 -> NM04 136,337
+NM04 113,305 -> NM04 200,122
+NM04 101,317 -> NM04 286,112
+NM04 160,296 -> NM04 297,146
+NM04 148,308 -> NM04 130,267
+NM04 136,320 -> NM04 312,162
+NM04 124,332 -> NM04 172,301
+NM04 179,315 -> NM04 274,124
+NM04 167,327 -> NM04 267,93
+NM04 155,339 -> NM04 153,282
+NM04 143,351 -> NM04 269,167
+NM04 198,334 -> NM04 141,294
+NM04 186,346 -> NM04 160,313
+NM04 174,358 -> NM04 319,193
+NM04 162,370 -> NM04 160,313
+
+
+[mayi1 群虫巢穴一层]
+[mayi2 群虫巢穴二层]
+[mayi3 群虫巢穴三层]
+[mayi4 群虫巢穴四层]
+[mayi5 群虫巢穴五层]
+[mayi6 群虫巢穴六层] NORANDOMMOVE
+[mayi7 群虫巢穴七层] NORANDOMMOVE
+[mayiboss 群虫巢穴] NORANDOMMOVE NORECONNECT(mayidong)
+[mayidong 群虫巢穴东部]
+[mayinan  群虫巢穴南部]
+[mayixi   群虫巢穴西部]
+[mayibei  群虫巢穴北部]
+[mayimimi 储存间]
+;BOSS房间走法
+diermu 91 72  -> mayi1 185 209
+diermu 92 71  -> mayi1 185 209
+diermu 93 70  -> mayi1 185 209
+mayi1 186 209  -> diermu 93 74
+mayi1 81 82  -> mayi2 145 146
+mayi2 146 146  -> mayi1 80 83
+mayi2 35 162  -> mayi3 149 54
+mayi3 148 55  -> mayi2 36 161
+mayi3 159 172  -> mayi4 172 61
+mayi4 173 60 -> mayi3 158 173
+mayi4 40 144  -> mayi5 25 17
+mayi5 26 16  -> mayi4 41 143
+mayi5 86 17  -> mayi6 8 51
+mayi6 8 50  -> mayi5 85 18
+mayi6 12 13  -> mayi7 89 12
+mayi7  90 11 -> mayi6 12 14
+mayi7 43 42  -> mayiboss 52 53
+;乱七八糟走法
+mayi1 242 63  -> mayidong 43 241
+mayidong 42 242  -> mayi1 241 62
+mayidong 45 22  -> mayimimi 35 26
+mayimimi 36 26  -> mayidong 46 23
+mayidong 177 33  -> mayi2 154 38
+mayi2 155 37  -> mayidong 177 34
+mayi4 42 19  -> mayinan 46 21
+mayinan 47 21  -> mayi4 43 20
+mayinan 43 42  -> mayibei 87 76
+mayibei 88 75  -> mayinan 43 43
+mayibei 64 82  -> mayixi 13 21
+mayixi 13 19  -> mayibei 64 83
+mayixi 69 65  -> mayi3 13 84
+mayi3  13 83 -> mayixi 69 66
+
+[dushe  利爪腹蛇神殿]
+[dushe1 利爪腹蛇神殿遗址]
+[dushe2 神殿地下通道] 
+[dushemimi 利爪腹蛇巢穴入口]
+[dusheboss 利爪腹蛇神殿底层] NORANDOMMOVE NORECONNECT(dushe)
+diermu 486 492  -> dushe 102 92
+dushe 103 93  -> diermu 487 494
+dushe 57 49  -> dushe1 226 189
+dushe1 228 190  -> dushe 58 50
+dushe1 331 271  -> dushe2 279 329
+dushe2 278 330  -> dushe1 330 273
+dushe2 162 171  -> dushemimi 25 28
+dushemimi 26 29  -> dushe2 163 173
+dushemimi 20 18  -> dusheboss 69 19
+
+[zuinie1 罪孽洞穴一层]
+[zuinie2 罪孽洞穴二层]
+[zuinie3 罪孽洞穴三层] NORANDOMMOVE
+[zuinie4 罪孽洞穴四层] NORANDOMMOVE
+[zuinieboss  罪孽之巢] NORANDOMMOVE NORECONNECT(zuinie1)
+diermu 262 579   ->  zuinie1 269 384
+zuinie1 270 385   -> diermu 263 580
+zuinie1 123 24   -> zuinie2 52 286
+zuinie2 53 287   -> zuinie1 122 25
+zuinie2 290 76   -> zuinie3 9 158
+zuinie3 8 159  -> zuinie2 289 78
+zuinie3 201 148   -> zuinie4 48 188
+zuinie4 47 189  -> zuinie3 200 149
+zuinie4 178 53   -> zuinieboss 41 91
+
+
+[huanggong 皇宫]
+[hggelou 阁楼]
+[nvjuan1 女眷住处第一层]
+[nvjuan2 女眷住处第二层]
+[hgjianlao1 皇宫监牢第一层] CHECKQUEST(Q039)
+[hgjianlao2 皇宫监牢第二层] NORANDOMMOVE CHECKQUEST(Q040)
+[hgjianlao3 皇宫监牢第三层]
+[binansuo 神秘庇难所] NORANDOMMOVE
+[shushixiagu 术士的峡谷] NORANDOMMOVE
+[laxiarukou1 古墓入口]
+[laxiarukou2 古墓入口]
+[laxiarukou3 古墓入口]
+[laxiarukou4 古墓入口]
+[laxiamuxue 塔·拉夏的古墓] NORANDOMMOVE
+[laxiaboss1 塔·拉夏的灵柩] NORANDOMMOVE NORECONNECT(shushixiagu)
+[laxiaboss2 塔·拉夏的墓穴] NORANDOMMOVE
+
+diermu 72 442   -> huanggong 14 19
+diermu 73 441   -> huanggong 15 18
+huanggong 15 20   ->  diermu 73 443
+huanggong 16 19   ->  diermu 74 442
+huanggong 1 17   -> hggelou 26 20
+hggelou  26 19  -> huanggong 2 16
+hggelou 20 6   -> nvjuan1 20 14
+nvjuan1 19 15   -> hggelou 20 7
+nvjuan1 50 11   -> nvjuan2 214 114
+nvjuan2  214 113  -> nvjuan1 49 11
+nvjuan1  20 43  -> nvjuan2 172 152
+nvjuan2 172 151   -> nvjuan1 19 43
+nvjuan2 45 127   -> hgjianlao1 207 107
+hgjianlao1 207 106   -> nvjuan2 44 127
+hgjianlao1 104 16   -> hgjianlao2 4 50
+hgjianlao2 3 51   -> hgjianlao1 103 18
+hgjianlao2 23 17   -> hgjianlao3 83 85
+hgjianlao3 84 86   -> hgjianlao2 24 19
+hgjianlao2 70 18   -> hgjianlao3 18 85
+hgjianlao3 17 86   -> hgjianlao2 69 19
+hgjianlao2 68 67   -> hgjianlao3 19 19
+hgjianlao3 18 17   -> hgjianlao2 68 66
+hgjianlao2 25 66   -> hgjianlao3 82 19
+hgjianlao3 83 17   -> hgjianlao2 26 65
+;拉夏墓穴
+;入口一
+shushixiagu 105 70   -> laxiarukou1 36 35
+laxiarukou1 37 36   -> shushixiagu 106 72
+laxiarukou1 22 20   -> laxiamuxue 106 325
+laxiamuxue  107 326  -> laxiarukou1 23 21
+;入口二
+shushixiagu 225 43   -> laxiarukou2 36 35
+laxiarukou2 37 36   -> shushixiagu 226 45
+laxiarukou2 22 20   -> laxiamuxue 51 266
+laxiamuxue  52 267  -> laxiarukou2 23 21
+;入口三
+shushixiagu  41 86  -> laxiarukou3 35 36
+laxiarukou3 36 37   -> shushixiagu 41 87
+laxiarukou3 29 6   -> laxiamuxue 139 366
+laxiamuxue  138 367  -> laxiarukou3 28 8
+;入口四
+shushixiagu 166 64   -> laxiarukou4 9 38
+laxiarukou4 8 39   -> shushixiagu 165 65
+laxiarukou4 25 7   -> laxiamuxue 160 391
+laxiamuxue  160 392  -> laxiarukou4 24 9
+
+
+;..............................................................................................
+[disanmu 库拉斯特] ALLOWUSEMYSHOP
+[feikuang11 废矿] MINE NODROPITEM
+disanmu 529 254   -> feikuang11 44 165
+feikuang11 43 166 ->  disanmu 528 257
+
+[bopibuluo 剥皮部落]
+[bopibuluoboss 统领大厅]
+disanmu 755 303    ->  bopibuluo 14 78
+bopibuluo 14 79   ->  disanmu 754 303
+bopibuluo 59 25   ->  bopibuluoboss 11 13
+bopibuluoboss 11 13   ->  bopibuluo 59 26
+
+;剥皮洞穴
+[bopi1 剥皮洞穴一层]
+[bopi2 剥皮洞穴二层]
+[bopi3 剥皮洞穴三层]
+[bopiboss 剥皮地窖] NORECONNECT(bopi2)
+
+disanmu 722 461 ->  bopi1 17 38
+bopi1 18 39  ->  disanmu 723 462
+bopi1 185 161  ->  bopi2 12 156
+bopi2 11 155  ->  bopi1 184 160
+bopi2 36 225  ->  bopiboss 91 75
+bopiboss 92 76  ->  bopi2 36 226
+bopi2 192 279  ->  bopi3 212 166
+bopi3 213 165  ->  bopi2 193 278
+bopi3 285 281  ->  disanmu 522 695
+disanmu 521 694  ->  bopi3 284 281
+
+;神舰
+[SJ00 神舰入口] NORANDOMMOVE NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ03 神舰地下3层] NORANDOMMOVE NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ031 木工室] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ032 木工仓库] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ021 神舰地下2层] NORANDOMMOVE NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ0211 医务室] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ0212 机械室] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ022 神舰地下2层] NORANDOMMOVE NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ0221 医务室] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ0222 厨房] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ0223 士兵食堂] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ01 神舰地下1层] NORANDOMMOVE NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ011 参谋室] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ012 长官食堂] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ013 船长室] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+[SJ04 调控室] NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动) NORECONNECT(SJ03)
+SJ00 31,61 -> SJ03 19,79
+SJ00 32,60 -> SJ03 19,79
+SJ00 32,61 -> SJ03 19,79
+SJ00 32,62 -> SJ03 19,79
+SJ00 32,63 -> SJ03 19,79
+SJ03 122,143 -> SJ031 7,20
+SJ031 6,21 -> SJ03 121,144
+SJ03 142,123 -> SJ032 11,24
+SJ032 10, 25 -> SJ03 141,124
+SJ03 156,91 -> SJ021 156,93
+SJ03 156,92 -> SJ021 156,93
+SJ021 156,91 -> SJ03 156,93
+SJ021 156,92 -> SJ03 156,93
+SJ021 97,51 -> SJ0211 36,20
+SJ0211 37,21 -> SJ021 98,52
+SJ021 35,60 -> SJ0212 12,18
+SJ0212 13,19 -> SJ021 36,61
+SJ021 54,19 -> SJ022 25,76
+SJ021 54,20 -> SJ022 25,76
+SJ022 25,75 -> SJ021 54,21
+SJ022 66,32 -> SJ0222 22,18
+SJ022 66,33 -> SJ0222 22,18
+SJ0222 23,19 -> SJ022 67,34
+SJ022 103,152 -> SJ0221 36,20
+SJ0221 37,21 -> SJ022 103,153
+SJ022 149,101 -> SJ0223 12,20
+SJ022 149,102 -> SJ0223 12,20
+SJ0223 13,21 -> SJ022 148,103
+SJ022 164,159 -> SJ01 180,162
+SJ01 180,161 -> SJ022 164,160
+SJ01 137,191 -> SJ011 10,14
+SJ011 11,15 -> SJ01 137,192
+SJ01 80,129 -> SJ013 14,20
+SJ013 15,21 -> SJ01 80,130
+SJ01 65,73 -> SJ012 5,18
+SJ012 4,19 -> SJ01 65,74
+;SJ01 46,63 -> SJ04 49,24
+;-----------------------------------
+;陷阱
+;-----------------------------------
+SJ021 52,110 -> JS031 15,15
+SJ021 157,134 -> JS032 18,18
+SJ021 95,155 -> JS03 107,161
+SJ021 126,77 -> JS03 113,166
+SJ021 117,173 -> JS03 94,64
+SJ021 119,84 -> JS03 87,79
+SJ01 83,94 -> SJ0222 12,28
+SJ01 99,179 -> SJ0221 18,32
+SJ01 117,200 -> SJ0223 8,14
+;-----------------------------------
+;幽灵船任务
+[youlingboss|SJ04 调控室] NORECONNECT(SJ01) NORANDOMMOVE NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+youlingboss 49 23 -> SJ01 46 64
+[B355 占卜房]
+B355 9 17  -> disanmu 393 374
+disanmu 393 373 -> B355 10 16
+[B353 房屋]
+disanmu 428 403  -> B353 8 21
+B353  8 21 -> disanmu 427 404
+[youlingrenwu|SJ012 密室] NORECONNECT(SJ01) NORANDOMMOVE NOTALLOWUSEITEMS(随机传送卷|地牢逃脱卷|行会回城卷) NOTALLOWUSEMAGIC(瞬息移动)
+youlingrenwu 4 19  -> SJ01 45 67
+
+
+;新幻境
+[huanjing1 库拉斯特神庙]
+[huanjing2 长者大厅]
+disanmu 421 284   -> huanjing1 20 21
+huanjing1 18 22   -> disanmu 420 286
+;任务地图
+[B354 房屋]
+disanmu  434 277  -> B354  12 19
+B354 11 19  -> disanmu 433 277
+
+
+[shoudixue 神秘地穴]
+disanmu 126 134   ->  shoudixue 87 58
+shoudixue 87 59   ->  disanmu 125 136
+disanmu 46 131   ->  shoudixue 18 86
+shoudixue 19 87   ->  disanmu 47 132
+
+[shouren 废弃神庙入口]
+[shourenlianjie 废弃神庙]
+[shouren1 兽人地穴一层] NORANDOMMOVE
+[shouren2 兽人地穴二层] NORANDOMMOVE
+[shouren3 兽人地穴三层] NORANDOMMOVE
+[shouren4 兽人地穴四层] NORANDOMMOVE
+[shourenboss 酋长大厅] NORANDOMMOVE NORECONNECT(shourenlianjie)
+
+shouren 36 33  -> shourenlianjie 32 87
+shourenlianjie 31 85 -> shouren 35 32
+shouren 15 11  -> shourenlianjie 11 66
+shourenlianjie 12 67  -> shouren 16 13
+
+shourenlianjie 88 38  -> shoudixue 59 68
+shourenlianjie 84 42  -> shoudixue 73 37
+shourenlianjie 80 46  -> shoudixue 50 31
+shourenlianjie 76 50  -> shoudixue 38 61
+shourenlianjie 72 54  -> shoudixue 27 24
+shourenlianjie 68 58  -> shoudixue 8 66
+
+disanmu 106 78  -> shouren 20 29
+shouren 19 30  -> disanmu 105 80
+shouren 35 9  -> shouren1 51 153
+shouren1 50 153  -> shouren 35 10
+shouren1 179 114  -> shouren2 28 65
+shouren2 27 63  -> shouren1 178 113
+shouren2 63 163  -> shouren3 129 22
+shouren3  130 20 -> shouren2 64 163
+shouren3 29 70  -> shouren4 130 140
+shouren4  131 140 -> shouren3 30 72
+shouren4 48 88  -> shourenboss 18 59
+shouren4 48 58  -> shourenboss 18 29
+shouren4 71 35  -> shourenboss 49 13
+
+[zhizhu1 蜘蛛巢穴一层]
+[zhizhu2 蜘蛛巢穴二层] NORANDOMMOVE
+[zhizhuboss 蜘蛛巢穴] NORECONNECT(zhizhu1)
+disanmu 485 599   -> zhizhu1 31 38
+zhizhu1  31 39  -> disanmu 485 600
+disanmu 609 631   -> zhizhu1 108 63
+zhizhu1  108 64  -> disanmu 609 632
+disanmu 682 685   -> zhizhu1 184 135
+zhizhu1  183 136  -> disanmu 682 686
+zhizhu1 68 149   -> zhizhu2 103 98
+zhizhu2  103 99  -> zhizhu1 67 151
+zhizhu2 70 7   -> zhizhuboss 16 31
+
+[feiqi11|jiaotang 废弃寺庙入口]
+[feiqi22|jiaotang 废弃寺庙入口]
+[feiqi33|jiaotang 废弃寺庙入口]
+[feiqishendian 废弃寺庙]
+[feiqishendian2|feiqishendian 废弃寺庙]
+[feiqishendian3 废弃寺庙]
+[yuangulianjie 远古通道]
+
+disanmu 105 623   -> feiqi11 9 26
+feiqi11  9 27  -> disanmu 103 625
+disanmu 208 525   -> feiqi22 9 26
+feiqi22  9 27  -> disanmu 205 529
+disanmu 252 127   -> feiqi33 9 26
+feiqi33  9 27  -> disanmu 249 131
+feiqi11 20 15   -> feiqishendian 165 217
+feiqishendian 165 217   -> feiqi11 19 16
+feiqi22 20 15   -> feiqishendian2 165 217
+feiqishendian2 165 217   -> feiqi22 19 16
+feiqi33 20 15   -> feiqishendian3 165 217
+feiqishendian3 164 218   -> feiqi33 19 16
+feiqishendian 317 81   -> yuangulianjie 43 186
+yuangulianjie 43 186   -> feiqishendian 317 82
+feiqishendian2 317 81   -> yuangulianjie 59 113
+yuangulianjie 59 113   -> feiqishendian2 317 82
+yuangulianjie 74 16   -> feiqishendian3 326 97
+feiqishendian3  326 97  -> yuangulianjie 74 17
+
+;残破神殿
+[canpo 残破神殿入口]
+[canpo1 残破神殿一层]
+[canpo2 残破神殿二层] 
+[canpoboss 残破大殿] NORANDOMMOVE NORECONNECT(canpo)
+disanmu 377 598  -> canpo 21 22
+canpo 19 23   -> disanmu 376 600
+canpo 29 13   -> canpo1 190 93
+canpo1 189 94   -> canpo 29 14
+canpo1 133 176   -> canpo2 12 46
+canpo2 12 45   -> canpo1 132 177
+canpo2 84 49   -> canpoboss 70 34
+
+
+;囚牢连接通道
+yuangulianjie 4 106   -> qiulao2 87 45
+qiulao2  87 45  -> yuangulianjie 5 107
+
+;憎恨囚牢
+[qiulao 憎恨囚牢一层]
+disanmu  51 428 ->  qiulao 36 38
+disanmu  51 429 ->  qiulao 36 38
+qiulao 37 39  -> disanmu 52 430
+[qiulao2 憎恨囚牢二层]
+[qiulao3 憎恨囚牢三层]
+[qiulaochukou 密道] DECHP(2/20)
+[qiulao4 憎恨囚牢四层] NORANDOMMOVE
+[qiulaolianjie 黄泉路] NORANDOMMOVE NORECONNECT(qiulao)
+[qiulaoboss 憎恨大殿] NORECONNECT(qiulao)
+
+qiulao 10 11   ->  qiulao2 110 96
+qiulao2  111 97  ->  qiulao 11 13
+
+;迷幻地牢正确走法
+qiulao2 80 22   ->  qiulaomm1 19 57
+qiulaomm1 18 58  ->  qiulao2 80 23
+qiulaomm1 61 18   ->  qiulaomm2 19 57
+qiulaomm2 18 58   ->  qiulaomm1 60 20
+qiulaomm2 61 18   ->  qiulaomm3 19 57
+qiulaomm3 18 58   ->  qiulaomm2 60 20
+qiulaomm3 61 18   ->  qiulaomm4 21 58
+qiulaomm4 20 59   ->  qiulaomm3 60 20
+qiulaomm4 54 23   ->  qiulaomm5 9 46
+qiulaomm5 8 47    ->  qiulaomm4 53 25
+qiulaomm5 42 11   ->  qiulaomm6 33 70
+qiulaomm6 32 71   ->  qiulaomm5 41 13
+qiulaomm6 66 35   ->  qiulaochukou 4 14
+qiulaochukou  3 15  ->  qiulaomm6 65 37
+qiulaochukou 15 28   ->  qiulao3 33 54
+qiulao3 34 52   ->  qiulaochukou 15 28
+qiulao3 69 31   ->  qiulao4 20 82
+qiulao4 19 83   ->  qiulao3 68 32
+qiulao4 86 10   ->  qiulaolianjie 22 39
+qiulaolianjie 57 88   ->  qiulaoboss 123 92
+
+
+;迷幻地牢
+[qiulaomm1 迷幻地牢]
+[qiulaomm4 迷幻地牢]
+[qiulaonn    生死间]
+[qiulaosiwang 遭遇房] NORANDOMMOVE NORECONNECT(qiulaomm1)
+[qiulaomm2|qiulaomm1  迷幻地牢]
+[qiulaomm3|qiulaomm1  迷幻地牢]
+[qiulaomm7|qiulaomm1  迷幻地牢]
+[qiulaomm8|qiulaomm1  迷幻地牢]
+[qiulaomm5|qiulaomm4  迷幻地牢]
+[qiulaomm6|qiulaomm4  迷幻地牢]
+[qiulaomm9|qiulaomm4  迷幻地牢]
+[qiulaomm10|qiulaomm4  迷幻地牢]
+[qiulaonn1|qiulaonn 生死间]
+[qiulaonn2|qiulaonn 生死间]
+[qiulaonn3|qiulaonn 生死间]
+[qiulaonn4|qiulaonn 生死间]
+[qiulaonn5|qiulaonn 生死间]
+[qiulaonn6|qiulaonn 生死间]
+
+qiulao2 63 23   -> qiulaomm1 53 54
+qiulao2 62 40   -> qiulaomm1 60 20
+
+qiulaomm1 41 66   ->  qiulaomm7 12 35
+qiulaomm7 11 33   ->  qiulaomm1 41 66
+qiulaomm1 53 54   ->  qiulaomm7 24 23
+qiulaomm7 23 21   ->  qiulaomm1 53 54
+qiulaomm1 65 42   ->  qiulaomm7 36 11
+qiulaomm7 35 9    ->  qiulaomm1 65 42
+qiulaomm1 11 33   ->  qiulaomm8 41 66
+qiulaomm8 41 66   ->  qiulaomm1 12 35
+qiulaomm1 23 21   ->  qiulaomm8 53 54
+qiulaomm8 53 54   ->  qiulaomm1 24 23
+qiulaomm1 35 9    ->  qiulaomm8 65 42
+qiulaomm8 65 42   ->  qiulaomm1 36 11
+
+qiulaomm2 11 33   ->  qiulaomm7 41 66
+qiulaomm7 41 66   ->  qiulaomm2 12 35
+qiulaomm2 23 21   ->  qiulaomm7 53 54
+qiulaomm7 53 54   ->  qiulaomm2 24 23
+qiulaomm2 35 9    ->  qiulaomm7 65 42
+qiulaomm7 65 42   ->  qiulaomm2 36 11
+qiulaomm2 41 66   ->  qiulaomm8 12 35
+qiulaomm8 11 33   ->  qiulaomm2 41 66
+qiulaomm2 53 54   ->  qiulaomm8 24 23
+qiulaomm8 23 21   ->  qiulaomm2 53 54
+qiulaomm2 65 42   ->  qiulaomm8 36 11 
+qiulaomm8 35 9    ->  qiulaomm2 65 42
+
+qiulaomm3 11 33   ->  qiulaonn6 21 23
+qiulaonn6 22 23   ->  qiulaomm3 12 35
+qiulaomm3 23 21   ->  qiulaosiwang 26 31
+qiulaomm3 35 9    ->  qiulaonn5 21 23
+qiulaonn5 22 23   ->  qiulaomm3 36 11
+qiulaomm3 41 66   ->  qiulaonn6 13 13
+qiulaonn6 12 11   ->  qiulaomm3 41 66
+qiulaomm3 53 54   ->  qiulaosiwang 11 15
+qiulaomm3 65 42   ->  qiulaonn5 13 13
+qiulaonn5 12 11   ->  qiulaomm3 65 42
+qiulaonn5 13 23   ->  qiulaosiwang 26 14
+qiulaonn5 23 11   ->  qiulaosiwang 14 23
+qiulaonn6 13 23   ->  qiulaosiwang 26 14
+qiulaonn6 23 11   ->  qiulaosiwang 11 30
+
+qiulaomm4 13 19   ->  qiulaonn1 21 23
+qiulaonn1 22 23   ->  qiulaomm4 14 21
+qiulaomm4 42 11   ->  qiulaonn1 14 23
+qiulaonn1 13 23   ->  qiulaomm4 41 13
+qiulaomm4 66 35   ->  qiulaonn2 14 23
+qiulaonn2 13 23   ->  qiulaomm4 65 37
+qiulaomm4 32 71   ->  qiulaonn2 22 13
+qiulaonn2 23 11   ->  qiulaomm4 33 70
+qiulaomm4 8 47    ->  qiulaonn1 22 13
+qiulaonn1 23 11   ->  qiulaomm4 9 46
+qiulaomm4 59 66   ->  qiulaonn2 13 13
+qiulaonn2 12 11   ->  qiulaomm4 59 65
+qiulaonn1 12 11   ->  qiulaosiwang 26 31
+qiulaonn2 22 23   ->  qiulaosiwang 11 15
+
+qiulaomm5 13 19   ->  qiulaonn3 21 23
+qiulaonn3 22 23   ->  qiulaomm5 14 21
+qiulaomm5 54 23   ->  qiulaomm9 9 46
+qiulaomm9 8 47    ->  qiulaomm5 53 25
+qiulaomm5 66 35   ->  qiulaonn3 14 23
+qiulaonn3 13 23   ->  qiulaomm5 65 37
+qiulaomm5 59 66   ->  qiulaonn3 13 13 
+qiulaonn3 12 11   ->  qiulaomm5 59 65
+qiulaomm5 20 59   ->  qiulaonn3 22 13
+qiulaonn3 23 11   ->  qiulaomm5 21 58
+
+qiulaomm6 13 19   ->  qiulaonn4 21 23
+qiulaonn4 22 23   ->  qiulaomm6 14 21
+qiulaomm6 42 11   ->  qiulaomm9 21 58
+qiulaomm9 20 59   ->  qiulaomm6 41 13
+qiulaomm6 54 23   ->  qiulaomm9 33 70
+qiulaomm9 32 71   ->  qiulaomm6 53 25
+qiulaomm6 59 66   ->  qiulaonn4 13 13
+qiulaonn4 12 11   ->  qiulaomm6 59 65
+qiulaomm6 20 59   ->  qiulaomm9 65 37
+qiulaomm9 66 35   ->  qiulaomm6 21 58
+qiulaomm6 8 47    ->  qiulaomm9 53 25
+qiulaomm9 54 23   ->  qiulaomm6 9 46
+qiulaonn4 13 23   ->  qiulaosiwang 26 14
+qiulaonn4 23 11   ->  qiulaosiwang 11 30
+
+qiulaomm9 13 19   ->  qiulaomm10 59 65
+qiulaomm10 59 66   ->  qiulaomm9 14 21
+qiulaomm9 59 66   ->  qiulaomm10 14 21
+qiulaomm10 13 19   ->  qiulaomm9 59 65
+
+qiulaomm10 42 11   ->  qiulaosiwang 11 30
+qiulaomm10 32 71   ->  qiulaosiwang 26 14
+qiulaomm10 54 23   ->  qiulaomm7 19 57
+qiulaomm7 18 58   ->  qiulaomm10 53 25
+qiulaomm10 66 35   ->  qiulaomm8 19 57
+qiulaomm8 18 58   ->  qiulaomm10 65 37
+qiulaomm10 20 59   ->  qiulaomm8 60 20
+qiulaomm8 61 18   ->  qiulaomm10 21 58
+qiulaomm10 8 47   ->  qiulaomm7 60 20
+qiulaomm7 61 18   ->  qiulaomm10 9 46
+
+;召唤任务
+[shimulianjie 密室] NEEDHOLE
+shimuboss 62 31    ->  shimulianjie 7 8
+shimuboss 50 12    ->  shimulianjie 7 8
+[yongshimuxue  勇士墓穴]
+[yongshimuxue1 勇士墓穴]
+[yongshimuxue2|yongshimuxue  勇士墓穴]
+[bopishuidao1 蛟蛇洞穴] NORECONNECT(huanjing1)
+[bopishuidao2 蛟蛇洞穴] NORECONNECT(huanjing1)
+[bopishuidao3 蛟蛇洞穴] NORECONNECT(huanjing1)
+
+;战士职业任务
+[zhanshi1|Q004 念力空间]
+;法师召唤地图
+[fszhaohuan|yongshimuxue  勇士墓穴]
+
+
+;..............................................................................................
+;..............................................................................................
+;..第四幕......................................................................................
+;..............................................................................................
+;..............................................................................................
+[disimu 群魔堡垒]  NORANDOMMOVE ALLOWUSEMYSHOP
+
+[linghun|Q004 灵魂之地] 
+
+;邪魔迷窟
+[diyu1 邪魔迷窟一层]
+[diyu2 邪魔迷窟二层]
+[diyu3 邪魔迷窟三层]
+[diyu4 邪魔迷窟四层]
+[diyu5 邪魔迷窟五层]
+[diyu6 邪魔迷窟六层] NORANDOMMOVE
+[diyuboss 邪魔巢穴] NORANDOMMOVE NORECONNECT(diyu1)
+[diyunn1 迷窟]
+[diyunn2 迷窟]
+[diyunn3 迷窟]
+[diyunn4 迷窟]
+[diyunn5 迷窟]
+[diyumm1 迷窟]
+[diyumm2 迷窟]
+[diyumm3 迷窟]
+[diyumm4 迷窟]
+[diyunnsiwang 母巢] NORECONNECT(diyu6)
+
+[diyunn55|diyunn5 秘室]
+diyunn55 29 11   -> diyuboss 42 51
+
+disimu 65 283   -> diyu1 239 241
+diyu1 240 242 -> disimu 66 284
+
+diyu1 16 82    -> diyu2 30 233
+diyu2 31 234  -> diyu1 17 83
+diyu2 225 38   -> diyu3 200 201
+diyu3  199 202 -> diyu2 224 40
+diyu3 12 58   -> diyu4 233 218
+diyu4  234 219 -> diyu3 13 60
+diyu4 37 22   -> diyu5 229 243
+diyu5 230 244 -> diyu4 38 24
+diyu5 17 34   -> diyu6 225 239
+diyu6 226 240  -> diyu5 18 36
+diyu6 227 21   -> diyunn1 26 53
+diyunn1  25 54 -> diyu6 226 22
+
+;迷阵
+;正确走法
+diyunn1 30 28   -> diyunn2 28 31
+diyunn2 44 28   -> diyunn3 43 32
+diyunn3 31 43   -> diyunn4 29 48
+diyunn4 45 42   -> diyunn5 19 24
+diyunn5 29 11   -> diyuboss 42 51
+
+;乱走
+diyunn1 45 44   -> diyumm1 42 32
+diyunn1 44 28   -> diyunnsiwang 19 23
+diyunn2 31 42   -> diyumm2 27 31
+diyunn2 46 44   -> diyumm3 28 46
+diyunn3 30 28   -> diyumm4 42 47
+diyunn3 45 43   -> diyumm1 28 48
+diyunn4 30 28   -> diyumm2 28 47
+diyunn4 43 27   -> diyumm3 27 31
+diyumm1 30 28   -> diyumm2 43 41
+diyumm2 43 41   -> diyunn1 30 28
+diyumm3 42 26   -> diyumm4 30 28
+diyumm4 30 28   -> diyumm3 42 26
+diyumm1 43 42   -> diyunnsiwang 25 23
+diyumm2 42 26   -> diyunnsiwang 17 20
+diyumm3 44 42   -> diyunnsiwang 27 19
+
+;炼狱
+[lianyu 炼狱]
+[lianyu11 炼狱一层]
+[lianyu22 炼狱二层]
+[lianyu33 炼狱三层] NORANDOMMOVE
+[lianyuboss 炼狱大厅] NORANDOMMOVE NORECONNECT(lianyu)
+
+disimu 101 261   ->  lianyu 43 62
+lianyu  44 62  ->  disimu 102 262
+lianyu 56 9   -> lianyu11 21 50
+lianyu11 21 51    -> lianyu 55 10
+lianyu11 284 110   -> lianyu22 15 30
+lianyu22  15 29  -> lianyu11 283 109
+lianyu11  280 193  -> lianyu22 14 275
+lianyu22 14 276   -> lianyu11 279 194
+lianyu22 282 233   -> lianyu33 17 280
+lianyu33  17 281  -> lianyu22 281 234
+lianyu33 277 25   -> lianyuboss 30 74
+
+;混沌庇护所
+[bihusuo 庇护所]
+[bihusuoboss 混沌庇护所] NORANDOMMOVE NORECONNECT(bihusuo)
+disimu 475 350   ->  bihusuo 16 232
+bihusuo  15 234  ->  disimu 474 351
+
+
+;..............................................................................................
+;..............................................................................................
+;..第五幕1......................................................................................
+;..............................................................................................
+;..............................................................................................
+[diwumu1 东部王国] ALLOWUSEMYSHOP
+diyimu 696 258   ->  diwumu1 18 539
+diwumu1 15 539    ->  diyimu 691 259
+diwumu1 526 564   ->  diermu 256 27
+diermu 253 24    ->  diwumu1 524 562
+
+[0122 皇宫] ALLOWUSEMYSHOP
+0122 11 42  -> diwumu1 342 513
+0122 12 43  -> diwumu1 343 514
+diwumu1 343 512 -> 0122 12 42
+diwumu1 344 513 -> 0122 13 43
+[0110 研讨院]
+[0111 研讨院] 
+[0112 研讨院] 
+0110 11 16  -> diwumu1 248 475
+0110 12 15  -> diwumu1 250 474
+diwumu1 247 473 -> 0110 11 16
+diwumu1 248 472 -> 0110 12 15
+[0102 肉店] 
+[0108 药店] 
+[0109 药品房] 
+[0104 书店]
+diwumu1 309 503  -> 0104 4 11
+0104 4 11 -> diwumu1 309 503
+[0107 会议室]
+[0125 东方宫殿]
+[0126 东方宫殿二层]
+diwumu1 296 472   -> 0125 7 16
+0125 7 17 -> diwumu1 296 474
+0125 4 10 -> 0126 3 9
+0126 3 10 -> 0125 5 11
+[0103 武器店] 
+0103 16 25 -> diwumu1 340 484
+diwumu1 341 483 -> 0103 17 24
+diwumu1 331 474 -> 0103 5 12
+0103 4 13 -> diwumu1 330 475
+[0105 首饰店]
+diwumu1 306 467 -> 0105 9 24
+0105 9 25 -> diwumu1 307 468
+0105 21 13 -> diwumu1 316 459
+diwumu1 316 458 -> 0105 21 12
+[0106 衣服店] 
+diwumu1 325 486 -> 0106 21 12
+0106 21 13 -> diwumu1 325 487
+0106 9 25 -> diwumu1 316 496
+diwumu1 316 496 -> 0106 9 24
+[0101 客栈]
+diwumu1 315 530  -> 0101 18 14
+0101 18 14 -> diwumu1 316 531
+0101 10 22  -> diwumu1 312 534
+diwumu1 312 533 -> 0101 10 22
+[01011|0101 客栈]
+diwumu1 306 538  -> 01011 18 14
+01011 18 14 -> diwumu1 307 539
+01011 10 22  -> diwumu1 303 542
+diwumu1 303 541 -> 01011 10 22
+[0100 厨房] 
+[0128 密室]
+[0129 密室]
+[0123 房屋] 
+0123 12 18 -> diwumu1 285 494
+diwumu1 285 493 -> 0123 12 18
+[0124 密室]
+[0114 武士之家] 
+[0115 魔法师之家] 
+[0113 道士之家] 
+[0137 竞技之地]
+[0139 竞技之家一楼]
+0137 19 22  -> diwumu1 284 437
+diwumu1 283 436 -> 0137 18 22
+0137 13 17  -> 0139 16 21
+0139 17 20 -> 0137 14 16
+[1001 房屋] 
+1001 5 18  -> diwumu1 330 363
+diwumu1  330 362 -> 1001 5 18
+[1002 房屋] 
+1002 9 18  -> diwumu1 357 326
+diwumu1 357 325 -> 1002 9 18
+[10022|1002 房屋] 
+10022 9 18  -> diwumu1 366 351
+diwumu1 366 350 -> 10022 9 18
+[1003 房屋]
+1003 7 12 -> diwumu1 307 372
+diwumu1  307 371 -> 1003 7 12
+[1004 房屋] 
+1004 12 16  -> diwumu1 285 370
+diwumu1 285 369 -> 1004 12 16
+[1005 房屋] 
+[1006 房屋] 
+1006 8 16  -> diwumu1 310 345
+diwumu1 310 344 -> 1006 8 16
+[1007 房屋]
+[GA0 庄园] 
+[GA1 白日门宫廷]
+GA1 26 37  -> diwumu1 339 329
+diwumu1 339 328  -> GA1 25 36
+
+[GA2 宫廷阁楼]
+[GA3 宫廷阁楼]
+
+;沙巴克
+[0150 沙巴克皇宫] NORANDOMMOVE	NOPOSITIONMOVE NORECONNECT(diwumu1)
+0150 16 19  -> diwumu1 101 129
+0150 15 20  -> diwumu1 101 129
+0150 6 22   -> diwumu1 92 131
+
+diwumu1 100 128 -> 0150 15 20
+diwumu1 101 127 -> 0150 16 19
+diwumu1 93 130 -> 0150 6 22
+
+0150 8 23  -> diwumu1 93 124
+diwumu1 94 123  -> 0150 8 23
+[D701 秘密通道]
+[shabakemimi 沙巴克密道]  NORANDOMMOVE
+
+[B345 沙巴克服装店]
+diwumu1 148 137  -> B345 6 11
+B345 5 11 -> diwumu1 148 138
+diwumu1 155 142  -> B345 13 18	
+B345 13 19 -> diwumu1 155 143
+[B342 沙巴克铁匠铺]
+diwumu1 138 133  -> B342 17 12
+B342 18 13 -> diwumu1 138 133
+diwumu1 134 137  -> B342 9 20
+B342 10 21 -> diwumu1 138 133
+[B344 沙巴克首饰店]
+diwumu1 145 119  -> B344 7 11
+B344 6 11 -> diwumu1 145 119
+diwumu1 150 123  -> B344 14 18
+B344 13 18 -> diwumu1 150 124
+[B343 沙巴克药铺]
+diwumu1 134 113  -> B343 10 21
+B343 10 21 -> diwumu1 134 114
+diwumu1 141 111  -> B343 17 13
+B343 18 13 -> diwumu1 141 111
+[B347 沙巴克钱庄]
+diwumu1 123 102  -> B347 14 15
+B347 14 15 -> diwumu1 124 103
+[B346 沙巴克监狱]
+[1B346|B346 沙巴克监狱]
+[2B346|B346 沙巴克监狱]
+[3B346|B346 沙巴克监狱]
+diwumu1 98 186  -> B346 5 18
+B346 5 18 -> diwumu1 98 187
+diwumu1 88 176  -> 1B346 5 18
+1B346 5 18  -> diwumu1 88 177
+diwumu1 79 158  -> 2B346 5 18
+2B346 5 18  -> diwumu1 79 159
+diwumu1 69 150  -> 3B346 5 18
+3B346 5 18  -> diwumu1 69 151
+
+[zhentianmimi 远古通道]
+diwumu1 110 282   ->  shabakemimi 14 171
+shabakemimi 15 170    ->  diwumu1 111 280
+diwumu1 198 270    ->  shabakemimi 170 171
+shabakemimi  169 170   ->  diwumu1 197 268
+diwumu1 236 165    ->  shabakemimi 170 16
+shabakemimi  169 16   ->  diwumu1 236 166
+diwumu1 63 159    ->  shabakemimi 18 63
+shabakemimi 17 62    ->  diwumu1 63 159
+shabakemimi 92 87    ->  zhentianmimi 25 14
+zhentianmimi 24 16   ->  shabakemimi 91 88
+
+zhentianmimi 89 60    ->  zhentian 20 15
+zhentian 18 18   ->  zhentianmimi 88 62
+
+[zhentian 真天宫]
+[zhentian1 真天宫一层]
+[zhentian2 真天宫二层]
+[zhentian3 真天宫三层]
+[zhentian4 真天宫四层]
+[zhentian5 真天宫五层]
+[zhentian6 真天宫六层] NORECONNECT(zhentian1)
+[zhentianboss 神秘祭坛] NORANDOMMOVE NORECONNECT(zhentian1)
+diwumu1 258 329    ->  zhentian 66 76
+zhentian  67 76   ->  diwumu1 258 330
+diwumu1 248 326    ->  zhentian 39 71
+zhentian  39 72   ->  diwumu1 248 327
+
+zhentian 56 40    ->  zhentian1 152 111
+zhentian1 153 109   ->  zhentian 55 41
+zhentian 74 52   ->  zhentian1 164 123
+zhentian1 165 121   ->  zhentian 73 51
+zhentian 52 71    ->  zhentian1 137 155
+zhentian1  136 156  ->  zhentian 51 70
+zhentian 40 54    ->  zhentian1 125 122
+zhentian1  124 121  ->  zhentian 41 53
+zhentian1 286 11    ->  zhentian2 255 46
+zhentian2 254 47   ->  zhentian1 285 13
+zhentian1 35 255   ->  zhentian2 17 283
+zhentian2  16 284  ->  zhentian1 34 257
+zhentian2 39 37   ->  zhentian3 238 148
+zhentian3 239 149  ->  zhentian2 40 39
+zhentian2 264 263   ->  zhentian3 9 124
+zhentian3 8 122  ->  zhentian2 263 262
+zhentian3 98 95    ->  zhentian4 211 236
+zhentian4 212 237   ->  zhentian3 99 97
+zhentian4 53 12   ->  zhentian5 28 189
+zhentian5  27 190  ->  zhentian4 52 14
+zhentian5 158 26    ->  zhentian6 234 241
+zhentian6  233 239  ->  zhentian5 157 25
+zhentian6 279 285   ->  zhentianboss 49 56
+
+[guowang1 国王陵墓一层]  NORANDOMMOVE NORECONNECT(zhentian6)
+[guowang2 国王陵墓二层]  NORANDOMMOVE NORECONNECT(zhentian6)
+[guowang3 国王陵墓三层] NORANDOMMOVE NORECONNECT(zhentian6)
+[guowangboss 国王陵墓] NORANDOMMOVE NORECONNECT(zhentian6)
+;zhentianboss 22 35   -> guowang1 139 135
+;zhentianboss 31 27   -> guowang1 139 135
+
+guowang1 61 20   ->  guowang2 143 87
+guowang2 142 88  -> guowang1 61 21
+guowang1 218 16   -> guowang2 255 169
+guowang2 256 170  -> guowang1 219 17
+guowang1 251 253   -> guowang2 129 261
+guowang2 128 262  -> guowang1 250 254
+guowang1 26 247   -> guowang2 68 176
+guowang2 69 177  -> guowang1 27 248
+guowang2 152 150  -> guowang3 101 52
+guowang3 102 53 -> guowang2 153 151
+guowang3 155 109  -> guowang3 45 101
+guowang3 46 102 -> guowang3 156 110
+guowang3 92 151  -> guowangboss 16 42
+
+[she1 群蛇连接通道]
+[laohu1 深虎林]
+[laohuboss 深虎穴] NORANDOMMOVE
+diwumu1 399 142  -> she1 13 80
+she1 12 81 -> diwumu1 398 143
+she1 36 59  -> laohu1 112 248
+laohu1 112 247 -> she1 36 58
+laohu1 52 88  -> laohuboss 44 40
+laohuboss 45 41 -> laohu1 53 89
+
+;连接通道
+laohuboss 12 10  -> beishang1 264 77
+beishang1 264 77 -> laohuboss 13 11
+
+[beishang      悲伤丛林]
+[beishang1 悲伤魔穴一层]
+[beishang2 悲伤魔穴二层]
+[beishang3 悲伤魔穴三层]
+[beishang4 悲伤魔穴四层] NORANDOMMOVE
+[beishangboss  悲伤魔巢] NORANDOMMOVE NORECONNECT(beishang1)
+laohu1 34 181  -> beishang 325 475
+beishang 326 476 -> laohu1 35 182
+beishang 66 291  -> beishang1 9 159
+beishang1 8 159 -> beishang 65 292
+beishang1 201 148  -> beishang2 151 109
+beishang2 150 110 -> beishang1 200 149
+beishang2 291 153 -> beishang3 70 274
+beishang3 69 273 -> beishang2 290 153
+beishang3 285 64  -> beishang4 99 188
+beishang4 100 188 -> beishang3 285 65
+beishang4 140 23 -> beishangboss 15 63
+
+
+[B010  赌场  0] DARK FIGHT NORECALL 
+[B011  赌场  0] DARK FIGHT NORECALL 
+[B012  赌场  0] DARK FIGHT NORECALL
+[B013  赌场  0] DARK FIGHT NORECALL
+
+B010  16,16 ->  0101   8,7
+B010  16,60 ->  0101   8,7
+B010  66,30 ->  0101   8,7
+
+[B101  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B102  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B103  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B104  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B105  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B106  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B107  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B108  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B109  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B110  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B111  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B112  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B113  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B114  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B115  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B116  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B117  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B118  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B119  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B120  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B121  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B122  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B123  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B124  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B125  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B126  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B127  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B128  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B129  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B130  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B131  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B132  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B133  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B134  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B135  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B136  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B137  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B138  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B139  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+[B140  赌场   0] DARK FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+
+[T103  极品房   0] DAY NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T105  极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T1062 极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T1063 极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T109  极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T115  极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011) MINE
+[T118A|T118  极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T119  极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T125  极品房   0] SAFE DAY NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T1281 极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T1282 极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T1283 极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T131  极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T132  极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T134  极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T1361 极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T1362 极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T1363 极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T138  极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T139  极品房   0] DARK NORECALL NORANDOMMOVE NORECONNECT(B011)
+[T140  极品房   0]  DAY FIGHT NORECALL NORANDOMMOVE NORECONNECT(B011)
+
+B010  56,20  ->  B011  11,13
+B011  12,14  ->  B010  57,21
+
+B010  85,76  ->  B012  6,13
+B012  5,14   ->  B010  84,77
+
+B010  18,78  ->  B013  11,13
+B013  12,14  ->  B010  19,79
+
+T134  5,36   ->  B134  10,10
+
+;; 鞠孺狼规 傅农谅钎
+
+T1361 9,10   ->  T1362 9,10
+T1362 7,7    ->  T1361 7,7
+T1362 15,15  ->  T1363 10,10
+T1362 14,14  ->  T1361 14,14
+T1362 15,14  ->  T1361 14,15
+T1362 16,14  ->  T1361 15,14
+T1362 14,16  ->  T1361 14,14
+T1362 15,16  ->  T1361 14,14
+T1362 16,16  ->  T1361 14,15
+T1362 16,15  ->  T1361 15,14
+
+; 去捣狼规 傅农 谅钎
+T1283  19,31	-> T1283  30,28
+T1283  33,25	-> T1281  15,25
+T1281  17,22	-> T1283  20,19
+T1283  23,16	-> T1281  25,35
+T1281  28,32	-> T1281  21,29
+T1281  23,27	-> T1283  25,23
+T1283  28,20	-> T1282  30,19
+T1282  33,16	-> B128  10,10 
+
+T1282  19,31	-> T1282  30,28
+T1282  33,25	-> T1282  15,25
+T1282  17,22	-> T1281  30,19
+T1281  33,16	-> T1281  20,19
+T1281  23,16	-> T1282  25,35
+T1282  28,32	-> T1282  25,23
+T1282  28,20	-> T1281  16,34
+
+T1281  19,31	-> T1283  21,29
+T1283  23,27	-> T1283  30,19
+T1283  33,16	-> T1282  20,19
+T1282  23,16	-> T1282  21,29
+T1282  23,27	-> T1281  30,28
+T1281  33,25	-> T1283  15,25
+T1283  17,22	-> T1281  25,23
+T1281  28,20	-> T1283  25,35
+T1283  28,32	-> T1282  16,34 
+
+
+;..............................................................................................
+;..............................................................................................
+;..第五幕2(第六幕).............................................................................
+;..............................................................................................
+;..............................................................................................
+[diwumu2 哈洛加斯]  ALLOWUSEMYSHOP CHECKQUEST(Q001)
+diwumu1 590 131  -> diwumu2 31 427
+diwumu1 592 133  -> diwumu2 29 429
+diwumu1 594 135  -> diwumu2 27 431
+diwumu2 31 426  -> diwumu1 589 132
+diwumu2 29 428  -> diwumu1 592 134
+diwumu2 27 430  -> diwumu1 594 136
+
+[xishamo 西沙漠] 
+diwumu1 510 47  -> xishamo 19 385
+xishamo 18 389  -> diwumu1 507 51
+
+[xishafangzi1 残破的房屋]
+[xishafangzi2 残破的房屋]
+[xishafangzi3 残破的房屋]
+[xishafangzi4 残破的房屋]
+[xishafangzi5 残破的房屋]
+[xishafangzi6 残破的房屋]
+[xishafangzi7 残破的房屋]
+[xishafangzi8 残破的房屋]
+
+xishafangzi1 11 20  -> xishamo 150 148
+xishamo 150 147  -> xishafangzi1 10 19
+xishafangzi2 9 16  -> xishamo 119 133
+xishamo 119 132  -> xishafangzi2 8 15
+xishafangzi3 17 17  -> xishamo 136 217
+xishamo 135 216  -> xishafangzi3 17 17
+xishafangzi4 12 19  -> xishamo 173 193
+xishamo 173 192  -> xishafangzi4 13 20
+xishafangzi8 17 23  -> xishamo 99 149
+xishamo 98 148  -> xishafangzi8 17 23
+xishafangzi8 22 18  -> xishamo 103 145
+xishamo  103 144 -> xishafangzi8 22 18
+xishamo 133 195  -> xishafangzi7 11 19
+xishafangzi7 11 19  -> xishamo 133 197
+
+
+[xisha1     西沙漠地洞一层]
+[xisha2     西沙漠地洞二层]
+[xisha3     西沙漠地洞三层]
+[xisha4     西沙漠地洞四层]
+[xisha5     西沙漠地洞五层]
+[xishakuang 西沙漠地下矿脉] MINE  CHECKQUEST(Q098)
+[xisha6     地下城市一层] NORANDOMMOVE NORECONNECT(xisha1)
+[xisha7     地下城市二层] NORANDOMMOVE NORECONNECT(xisha1)
+[huimieboss3 暗黑之王墓穴]  CHECKQUEST(Q108) NORANDOMMOVE NORECONNECT(xisha1)
+
+
+[huimieboss1 地下魔宫一层] NORANDOMMOVE NORECONNECT(xisha1)
+[huimieboss2 地下魔宫二层] NORANDOMMOVE NORECONNECT(xisha1)
+[xishaboss  暗黑之王墓穴] NORANDOMMOVE NORECONNECT(xisha1)
+
+xisha1 72 271 -> xisha2 280 278
+xisha2 281 279  -> xisha1 72 272
+xisha2 21 22  -> xisha3 281 274
+xisha3  282 275 -> xisha2 21 23
+xisha3 19 18  -> xisha4 35 197
+xisha4 36 198 -> xisha3 19 19
+xisha4 278 273  -> xishakuang 14 23
+xishakuang  14 23 -> xisha4 277 272
+xisha4 274 30  -> xisha6 16 231
+xisha6  15 232 -> xisha4 274 31
+xisha6 176 38  -> xisha7 20 227
+xisha7  19 228 -> xisha6 176 39
+xisha7 225 21  -> huimieboss3 23 57
+
+
+[hanbing1 寒冰地牢一层] 
+[hanbing2 寒冰地牢二层]
+[hanbing3 寒冰地牢三层]
+[hanbing4 寒冰大殿] NORANDOMMOVE
+[hanbing5 寒冰宫殿一层]
+[hanbing6 寒冰宫殿二层]
+[hanbing7 寒冰地牢三层]
+[hanbing8 寒冰地牢四层] NORANDOMMOVE NORECONNECT(hanbing1)
+[hanbingboss 寒冰王座] NORANDOMMOVE NORECONNECT(hanbing1)
+[hanbing51 寒冰密室]
+hanbing5 74 27 -> hanbing51 14 58
+hanbing51 14 59 -> hanbing5 73 29
+
+hanbing1 420 41  -> hanbing2 30 478
+hanbing2 29 478  -> hanbing1 419 42
+hanbing2 449 48  -> hanbing3 53 281
+hanbing3  53 280 -> hanbing2 448 49
+hanbing3 226 221  -> hanbing4 34 171
+hanbing4  33 171 -> hanbing3 225 222
+hanbing4 147 46  -> hanbing5 120 182
+hanbing5 120 183  -> hanbing4 146 48
+hanbing5 27 80  -> hanbing6 141 156
+hanbing6 142 157  -> hanbing5 27 81
+hanbing6 13 18  -> hanbing7 98 52
+hanbing7 99 53  -> hanbing6 13 19
+hanbing7 10 73  -> hanbing8 132 199
+hanbing8  131 200 -> hanbing7 10 74
+hanbing8 289 9  -> hanbingboss 11 42
+
+[panye1 潘夜神殿一层] 
+[panye2 潘夜神殿二层]
+[panye3 潘夜神殿三层] MUSIC(.\MUSIC\biqi.mp3)
+[panye4 潘夜神殿四层]
+[panye5 潘夜神殿五层]
+[panye6 潘夜神殿六层]
+[panye7 潘夜神殿七层]
+[panye8 潘夜神殿八层] NORANDOMMOVE NORECONNECT(panye3)
+[panyeboss 潘夜大殿] NORANDOMMOVE NORECONNECT(panye3)
+[panyemimi 尼拉塞克神殿密室] NORANDOMMOVE  CHECKQUEST(Q112)
+
+panyemimi 118 65 -> panyemimi 102 58
+panyemimi 102 58 -> panyemimi 119 66
+panyemimi 72 19 -> panyemimi 102 150
+panyemimi 102 150 -> panyemimi 73 20
+panyemimi 69 114 -> panyemimi 58 102
+panyemimi 58 102 -> panyemimi 70 115
+panyemimi 69 114 -> panyemimi 152 100
+panyemimi 151 69 -> panyemimi 21 100
+panyemimi 21 100 -> panyemimi 150 70
+panyemimi 58 64 -> panyemimi 67 54
+panyemimi 67 54 -> panyemimi 57 65
+panyemimi 101 19 -> panyemimi 71 150
+panyemimi 71 150 -> panyemimi 100 20
+panyemimi 108 114 -> panyemimi 117 104 
+panyemimi 117 104-> panyemimi 107 115
+
+shuijing 52 38  -> panye1 198 182
+panye1 199 183  -> shuijing 53 39
+shuijing 33 58  -> panye1 178 202
+panye1 179 203  -> shuijing 34 59
+panye1 371 377  -> panye2 140 140
+panye2 140 139  -> panye1 370 376
+panye2 55 46  -> panyemimi 152 100
+panyemimi  152 100 -> panye2 56 47
+panye2 255 256  -> panye3 220 203
+panye3 220 202  -> panye2 254 255
+panye3 111 114  -> panye4 151 120
+panye4  151 121 -> panye3 112 115
+panye4 236 241  -> panye5 45 73
+panye5 45 72  -> panye4 236 240
+panye5 125 62  -> panye6 97 110
+panye6  97 109 -> panye5 126 61
+panye6 21 26  -> panye7 33 26
+panye7 33 25  -> panye6 20 26
+panye7 377 50  -> panye8 385 18
+panye8 385 17  -> panye7 376 51
+panye8 381 385  -> panye7 360 357
+panye7 359 356  -> panye8 381 384
+panye7 40 368  -> panye8 37 384
+panye8  37 385 -> panye7 41 369
+panye8 198 196  -> panyeboss 12 13
+panyeboss 12 12 -> panye8 197 196
+
+[shuijing 破败的神殿入口]
+[shuijing1 水晶通道]
+[shuijing2 冰河路径]
+[shuijing3 冰河路径]
+[shuijing4 远古之路] NORANDOMMOVE CHECKQUEST(Q119)
+[bingjiao1 冰窖] NORANDOMMOVE 
+[bingjiao2 冰窖] NORANDOMMOVE
+[bingjiao3 冰窖] NORANDOMMOVE
+
+diwumu2 152 23  -> shuijing 68 74
+shuijing 69 75  -> diwumu2 152 24
+shuijing 30 28  -> shuijing1 115 110
+shuijing1 116 111  -> shuijing 30 29
+shuijing1 41 21  -> shuijing2 227 269
+shuijing2 228 270  -> shuijing1 41 22
+shuijing2 48 258  -> shuijing3 13 65
+shuijing3 13 66  -> shuijing2 47 260
+shuijing3 247 17  -> shuijing4 18 323
+shuijing4 18 324  -> shuijing3 247 17
+shuijing4 22 28  -> bingjiao1 57 57
+bingjiao1 58 58  -> shuijing4 22 29
+shuijing4 316 55  -> bingjiao2 13 59
+bingjiao2 13 60  -> shuijing4 316 56
+shuijing4 320 309  -> bingjiao3 15 20
+bingjiao3 14 19  -> shuijing4 319 308
+
+;与寒冰地牢连接
+[shuijinglianjie 连接通道]
+[shuijinglianjie2 连接通道]
+[shuijinglianjie3 连接通道]
+
+bingjiao1 56 12  -> shuijinglianjie 116 179
+shuijinglianjie 115 180  -> bingjiao1 55 14
+hanbing51 59 45  -> shuijinglianjie3 23 90
+shuijinglianjie3 22 87  -> hanbing51 58 44
+shuijinglianjie3 131 45  -> shuijinglianjie2 13 80
+shuijinglianjie2 12 79  -> shuijinglianjie3 130 44
+shuijinglianjie2 189 109 -> shuijinglianjie 56 40
+shuijinglianjie 55 37  -> shuijinglianjie2 188 108
+
+[shanding 亚瑞特山脉颠峰] CHECKQUEST(Q018)
+[huimie1 世界之石要塞一层]
+[huimie2 世界之石要塞二层]
+[huimie3 世界之石要塞三层]
+[huimie4 世界之石要塞四层] NORANDOMMOVE NORECONNECT(huimie1)
+
+[huimieboss4 毁灭的王座] CHECKQUEST(Q082)  NORANDOMMOVE NORECONNECT(huimie1)
+[huimieboss 世界之石]  NORANDOMMOVE NORECONNECT(huimie1)
+
+shuijinglianjie 177 116  -> shanding 39 37
+shanding 38 39  -> shuijinglianjie 176 118
+shanding 60 8  -> huimie1 49 147
+huimie1 48 148  -> shanding 59 9
+huimie1 162 103  -> huimie2 171 98
+huimie2 171 99  -> huimie1 163 104
+huimie2 27 82  -> huimie3 99 173
+huimie3 100 173  -> huimie2 28 83
+huimie3 64 34  -> huimie4 77 116
+huimie4 78 116  -> huimie3 64 35
+
+;飞龙剑任务
+[andian11 恐怖暗殿] NORECONNECT(feikuang11)
+[andian33 神秘暗殿] NORECONNECT(feikuang11)
+[fangzi1 房屋]
+diwumu1 205 552  -> fangzi1 19 19
+fangzi1 19 19  -> diwumu1 206 553
+[fangzi2 房屋]
+fangzi2 10 18 -> disimu 60 44
+[huolong 火龙殿] NORECONNECT(disimu)
+[huolong1|huolong 火龙殿] NORECONNECT(disimu)
+[tulongmimi|Q004 大地暗殿] NEEDHOLE NORECONNECT(xishakuang) 
+xishakuang 31 36 -> tulongmimi 15 15
+xishakuang 36 26 -> tulongmimi 15 6
+xishakuang 49 33 -> tulongmimi 15 23
+xishakuang 54 43 -> tulongmimi 6 15
+xishakuang 38 45 -> tulongmimi 23 15
+xishakuang 17 53 -> tulongmimi 15 15
+[tulong 残破甬道] NORECONNECT(xishakuang)
+tulong 52 9  -> tulongboss 9 21
+tulongboss 9 21  -> tulong 51 11
+tulong 60 17  -> tulongboss 10 22
+tulongboss 10 22  -> tulong 59 19
+[tulongboss 大地神殿遗址] CHECKQUEST(Q106) NORECONNECT(xishakuang)
+[yuangubing 冰封古路] NEEDHOLE CHECKQUEST(Q111) DECHP(1/20) NORECONNECT(hanbing1)
+[yuangubing1|yuangubing 冰封古路] NORECONNECT(hanbing1)
+hanbing51 52 16  -> yuangubing 19 72
+[fangzi3|0145 旅店] 
+fangzi3 6 17  -> diwumu2 179 355
+[hanbing52 无尽寒冰之颠] NORANDOMMOVE NORECONNECT(hanbing1)
+[binglongboss 寒冰圣殿] NORECONNECT(hanbing1)
+
+[zc 国家战场] Fight Fight2 NODROPITEM ONKILLMON NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NOTALLOWUSEITEMS(随机传送卷|回城石|回城卷|穿云箭) NOHORSE NORECONNECT(0159) NOTALLOWUSEMAGIC(火墙) HITMON(@JQZC) NORANDOMMOVE MUSIC(.\Wav\zg.mp3)
+
+
+
+

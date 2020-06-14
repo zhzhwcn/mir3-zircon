@@ -1,0 +1,79 @@
+[@main]
+#if                                    
+check [213] 1
+check [214] 0
+#act
+goto @renwu1
+break
+
+#elsesay
+我奉命守护着这些长存于此的勇士.\
+不要惊讶,这是我的职责...\\
+<>\
+<确定/@exit>
+
+[@renwu1]
+#if
+checkjob Warr 
+#act
+set [214] 1
+CREDITPOINT + 5
+give 十方斩 1
+SENDMSG 6 您当前的声望点数为：<$CREDITPOINT>
+#say
+谢谢你为勇士们作出的无私的贡献,是你的英勇才使他们重心\
+得到安息.\
+为了对你表示谢意,请你一定要收下这些礼物!\
+希望能为你能在接下来与暗黑破坏神的战斗中提供到作用.\\
+<>\
+<确定/@exit>
+
+#if
+checkjob Wizard
+#act
+set [214] 1
+give 怒神霹雳 1
+CREDITPOINT + 5
+SENDMSG 6 您当前的声望点数为：<$CREDITPOINT>
+#say
+谢谢你为勇士们作出的无私的贡献,是你的英勇才使他们重心\
+得到安息.\
+为了对你表示谢意,请你一定要收下这些礼物!\
+希望能为你能在接下来与暗黑破坏神的战斗中提供到作用.\\
+<>\
+<确定/@exit>
+
+#if
+checkjob Taos
+#act
+set [214] 1
+give 飓风破 1
+CREDITPOINT + 5
+SENDMSG 6 您当前的声望点数为：<$CREDITPOINT>
+#say
+谢谢你为勇士们作出的无私的贡献,是你的英勇才使他们重心\
+得到安息.\
+为了对你表示谢意,请你一定要收下这些礼物!\
+希望能为你能在接下来与暗黑破坏神的战斗中提供到作用.\\
+<>\
+<确定/@exit>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

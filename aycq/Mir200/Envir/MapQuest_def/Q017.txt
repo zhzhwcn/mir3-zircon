@@ -1,0 +1,7 @@
+[@main]
+#IF
+#ACT
+DelNpc 灵柩传送门
+SENDMSG 1  都瑞尔的死亡使通往灵柩的传送门再次关闭了......
+CreateNPC 神秘的传送门 laxiaboss1 21 21 94 大天使传送门-laxiaboss1
+

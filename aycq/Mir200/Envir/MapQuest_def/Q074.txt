@@ -1,0 +1,34 @@
+[@main]
+#IF
+RANDOM 15
+CheckRangeMonCountEx zhizhuboss 邪恶手伊斯梅尔 65 442 500 < 1
+#ACT
+MonGenEx disanmu 65 442 邪恶手伊斯梅尔 5 1 0 253
+SENDMSG 7 小喽罗的死亡迫使暗金怪物【邪恶手伊斯梅尔】出现在【憎恨囚牢大门】!!!
+SENDMSG 7 小喽罗的死亡迫使暗金怪物【邪恶手伊斯梅尔】出现在【憎恨囚牢大门】!!!
+SENDMSG 7 小喽罗的死亡迫使暗金怪物【邪恶手伊斯梅尔】出现在【憎恨囚牢大门】!!!
+break
+
+#IF
+RANDOM 15
+CheckRangeMonCountEx zhizhuboss 火焰之指吉列布 65 442 500 < 1
+#ACT
+MonGenEx disanmu 65 442 火焰之指吉列布 5 1 0 253
+SENDMSG 7 小喽罗的死亡迫使暗金怪物【火焰之指吉列布】出现在【憎恨囚牢大门】!!!
+SENDMSG 7 小喽罗的死亡迫使暗金怪物【火焰之指吉列布】出现在【憎恨囚牢大门】!!!
+SENDMSG 7 小喽罗的死亡迫使暗金怪物【火焰之指吉列布】出现在【憎恨囚牢大门】!!!
+break
+
+#IF
+RANDOM 15
+CheckRangeMonCountEx zhizhuboss 冰拳托克 65 442 500 < 1
+#ACT
+MonGenEx disanmu 65 442 冰拳托克 5 1 0 253
+SENDMSG 7 小喽罗的死亡迫使暗金怪物【冰拳托克】出现在【憎恨囚牢大门】!!!
+SENDMSG 7 小喽罗的死亡迫使暗金怪物【冰拳托克】出现在【憎恨囚牢大门】!!!
+SENDMSG 7 小喽罗的死亡迫使暗金怪物【冰拳托克】出现在【憎恨囚牢大门】!!!
+break
+
+
+
+

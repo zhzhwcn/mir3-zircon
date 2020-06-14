@@ -1,0 +1,52 @@
+[@main]
+#if
+CheckRangeMonCountEx huimieboss4 毁灭的仆从1 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从2 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从3 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从4 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从5 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从6 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从7 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从8 25 25 100 < 1
+#act
+#say
+当心, 在你踏入山顶大门后, 毁灭之王巴尔已经在里面等着你了.\
+泰瑞尔曾多次充当我们的保护神, 但现在他也无能为力了. \
+巴尔已经封锁了泰瑞尔进入世界之石大殿的精神力量. \
+只有人类才有可能打倒他. \
+他威胁着世界之石和整个世界. 如果他控制了世界之石那么一切\
+都结束了, 我们必须尽快干掉它! \
+当然,你必须给我找来一些世界之石碎片,我才能够帮助你进入里面!\\
+<>\
+<递交10块世界之石碎片打开通往世界之石大殿的传送门./@dakai>       <关闭/@exit>
+#elsesay
+进入毁灭王座, 在巴尔的王座击败所有的仆从之后进入世界之石\
+的房间, 然后干掉巴尔. \
+巴尔有很多特别的技能, 必须集中精神攻击他. 打败他!\\
+<>\
+<确定/@exit>
+
+[@dakai]
+#if
+checkitem 世界之石碎片 10
+#act
+goto @dakaimen
+#elsesay
+开启世界之石大殿的传送门必须要先收集到10块世界之石碎片!\\
+<>\
+<>\
+<>\
+<返回/@main>   <退出/@exit>      
+
+[@dakaimen]
+#if
+#act
+take 世界之石碎片 10
+CreateNPC 深渊之门 huimie4 131 51 95 深渊之门-huimie4
+CreateNPC 巴尔 huimieboss4 34 19 1028 巴尔1-huimieboss4
+SENDMSG 1 一位勇士协助迪卡.凯恩打开了通往世界之石大殿的传送门...
+MonGenEx huimieboss4 25 25 毁灭的仆从1 5 2 0 253
+MonGenEx huimieboss4 25 25 毁灭的仆从2 5 2 0 253
+MonGenEx huimieboss4 25 25 毁灭的仆从3 5 2 0 253
+MonGenEx huimieboss4 25 25 毁灭的仆从4 5 2 0 253
+close

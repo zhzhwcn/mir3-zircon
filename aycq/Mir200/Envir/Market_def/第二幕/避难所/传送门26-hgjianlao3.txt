@@ -1,0 +1,11 @@
+[@main]
+一个神秘的传送门，通向未知的世界......\\
+<>\
+<进入/@jinru>(单向)\
+<>\
+<取消/@exit>
+
+[@jinru]
+#if
+#act
+mapmove binansuo 176 153

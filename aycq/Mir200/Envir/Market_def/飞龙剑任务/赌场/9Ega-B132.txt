@@ -1,0 +1,185 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @race
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 2
+#ACT
+goto @cube
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第32间房  \
+这房间有很多带有恶魂的钳虫,他们比一般的钳虫厉害多了\
+希望你坚持3分钟以后再回来 \
+一不小心,会送上小命的,小心点儿 \ \
+<下一步/@Pena1>
+
+[@Pena1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 1
+TimeRecall 3
+map T132
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@race]
+祝贺你能够活着回来.\
+给你提供投骰子的机会. \
+祝你好运.\ \ 
+<下一步/@pre_Cube>
+
+[@pre_cube]
+#IF
+checkitem 筹码 1
+#ACT
+take 筹码 1
+CALCVAR HUMAN Cache = 2
+movr d0 6
+inc d0 1
+playdice 1 @cube
+#SAY
+正在投骰子.\ \
+<下一个/@cube>
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@cube]
+#SAY
+骰子的点数 <$STR(D0)>  \
+你可以前进 <$STR(D0)>  \ \
+<移动/@next_cube>
+
+[@next_cube]
+#IF
+equal d0 1 
+#ACT
+goto @posi1
+break
+
+#IF
+equal d0 2 
+#ACT
+goto @posi2
+break
+
+#IF
+equal d0 3 
+#ACT
+goto @posi3
+break
+
+#IF
+equal d0 4 
+#ACT
+goto @posi4
+break
+
+#IF
+equal d0 5
+#ACT
+goto @posi5
+break
+
+#IF
+equal d0 6 
+#ACT
+goto @posi6
+break
+
+[@Posi1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B133
+batchmove
+
+[@Posi2]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B133
+addbatch B134
+batchmove
+
+[@Posi3]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B133
+addbatch B134
+addbatch B135
+batchmove
+
+[@Posi4]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B133
+addbatch B134
+addbatch B135
+addbatch B136
+batchmove
+
+[@Posi5]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B133
+addbatch B134
+addbatch B135
+addbatch B136
+addbatch B137
+batchmove
+
+[@Posi6]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B133
+addbatch B134
+addbatch B135
+addbatch B136
+addbatch B137
+addbatch B138
+batchmove

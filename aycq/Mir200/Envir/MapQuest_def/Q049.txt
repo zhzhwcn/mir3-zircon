@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [223] 1
+check [224] 0
+CheckHumInRange youlingrenwu 13 13 100
+#act
+set [224] 1
+#say
+你已经打败了迷失的幽灵并证明了你的实力！\
+<出去跟霸王幽灵谈谈./SCOLOR=253>\\
+<>\
+<>\
+<确定/@exit>

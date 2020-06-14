@@ -1,0 +1,294 @@
+[@main]
+ 哎,最近天气太热了,不是么?\
+你想找点娱乐吗?那就来挑战八大暗影禁地吧!!!<Img:220:6>\\
+<>\
+<看挑战说明/@shuoming>\
+<挑战八大暗影/@gan>(日常,每天一次)\
+<>\
+<特别提醒注意:本地图禁止法师带特殊宝宝进入,进入后系统将会自/SCOLOR=253>\
+<动杀死宝宝!/SCOLOR=253>\
+<注:特殊宝宝目前包括-半兽勇士-虎卫-沙漠脊背龙三种/SCOLOR=253>\
+<退出/@exit>
+
+[@shuoming]
+每天可以挑战1次八大暗影,挑战中途掉线或者死亡都会失败!\
+挑战开始后你将传送至暗影地图.一共八层,杀死每一层的BOSS将可以\
+直接传送到下一层.每个BOSS都可以掉落经验卷轴,最后BOSS将随机掉\
+落各种装备和宝石!!!\\
+<特别提醒注意:本地图禁止法师带宝宝进入,进入后系统将会自动杀死宝宝!/SCOLOR=253>\
+<>\
+<我要挑战/@main>\
+<退出/@exit>
+
+
+
+[@gana]
+暂时未开放组队八大!!!\\
+<>\
+<>\
+<退出/@exit>
+
+[@gan]
+#if            
+dayofweek sun    
+#act          
+goto @星期天 
+break 
+
+#if            
+dayofweek mon   
+#act          
+goto @星期一 
+break   
+
+#if            
+dayofweek tue  
+#act          
+goto @星期二
+break   
+
+#if            
+dayofweek wed  
+#act          
+goto @星期三
+break
+
+#if            
+dayofweek thu  
+#act          
+goto @星期四
+break
+
+#if            
+dayofweek fri 
+#act          
+goto @星期五
+break
+
+#if            
+dayofweek sat 
+#act          
+goto @星期六
+break
+
+[@星期天]
+#IF 
+check [160] 0
+#act
+goto @tiaozhan7
+#elsesay
+你今天已经挑战过八大暗影了!\
+请明天再来尝试吧.\\
+<退出/@exit>
+
+[@tiaozhan7]
+#if
+checkhum bada1 1
+#SAY
+现在有人正在挑战呢，你等一下吧.\ \
+<退出/@exit>
+#ELSEACT
+goto @jixu7
+
+[@jixu7]
+#if
+#act
+reset [160] 7
+set [160] 1
+KILLCALLMOB 半兽勇士5 5
+KILLCALLMOB 虎卫 5
+KILLCALLMOB 沙漠脊背龙 5 
+mapmove bada1
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』向八大暗影发起了挑战!!!
+
+;--------------------------------------------------------
+[@星期一]
+#IF 
+check [161] 0
+#act
+goto @tiaozhan1
+#elsesay
+你今天已经挑战过八大暗影了!\
+请明天再来尝试吧.\\
+<退出/@exit>
+
+[@tiaozhan1]
+#if
+checkhum bada1 1
+#SAY
+现在有人正在挑战呢，你等一下吧.\ \
+<退出/@exit>
+#ELSEACT
+goto @jixu1
+
+[@jixu1]
+#if
+#act
+reset [160] 7
+set [161] 1
+KILLCALLMOB 半兽勇士5 5
+KILLCALLMOB 虎卫 5
+KILLCALLMOB 沙漠脊背龙 5 
+mapmove bada1
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』向八大暗影发起了挑战!!!
+
+;--------------------------------------------------------
+[@星期二]
+#IF 
+check [162] 0
+#act
+goto @tiaozhan2
+#elsesay
+你今天已经挑战过八大暗影了!\
+请明天再来尝试吧.\\
+<退出/@exit>
+
+[@tiaozhan2]
+#if
+checkhum bada1 1
+#SAY
+现在有人正在挑战呢，你等一下吧.\ \
+<退出/@exit>
+#ELSEACT
+goto @jixu2
+
+[@jixu2]
+#if
+#act
+reset [160] 7
+set [162] 1
+KILLCALLMOB 半兽勇士5 5
+KILLCALLMOB 虎卫 5
+KILLCALLMOB 沙漠脊背龙 5 
+mapmove bada1
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』向八大暗影发起了挑战!!!
+
+;--------------------------------------------------------
+[@星期三]
+#IF 
+check [163] 0
+#act
+goto @tiaozhan3
+#elsesay
+你今天已经挑战过八大暗影了!\
+请明天再来尝试吧.\\
+<退出/@exit>
+
+[@tiaozhan3]
+#if
+checkhum bada1 1
+#SAY
+现在有人正在挑战呢，你等一下吧.\ \
+<退出/@exit>
+#ELSEACT
+goto @jixu3
+
+[@jixu3]
+#if
+#act
+reset [160] 7
+set [163] 1
+KILLCALLMOB 半兽勇士5 5
+KILLCALLMOB 虎卫 5
+KILLCALLMOB 沙漠脊背龙 5 
+mapmove bada1
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』向八大暗影发起了挑战!!!
+
+;--------------------------------------------------------
+[@星期四]
+#IF 
+check [164] 0
+#act
+goto @tiaozhan4
+#elsesay
+你今天已经挑战过八大暗影了!\
+请明天再来尝试吧.\\
+<退出/@exit>
+
+[@tiaozhan4]
+#if
+checkhum bada1 1
+#SAY
+现在有人正在挑战呢，你等一下吧.\ \
+<退出/@exit>
+#ELSEACT
+goto @jixu4
+
+[@jixu4]
+#if
+#act
+reset [160] 7
+set [164] 1
+KILLCALLMOB 半兽勇士5 5
+KILLCALLMOB 虎卫 5
+KILLCALLMOB 沙漠脊背龙 5 
+mapmove bada1
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』向八大暗影发起了挑战!!!
+
+;--------------------------------------------------------
+[@星期五]
+#IF 
+check [165] 0
+#act
+goto @tiaozhan5
+#elsesay
+你今天已经挑战过八大暗影了!\
+请明天再来尝试吧.\\
+<退出/@exit>
+
+[@tiaozhan5]
+#if
+checkhum bada1 1
+#SAY
+现在有人正在挑战呢，你等一下吧.\ \
+<退出/@exit>
+#ELSEACT
+goto @jixu5
+
+[@jixu5]
+#if
+#act
+reset [160] 7
+set [165] 1
+KILLCALLMOB 半兽勇士5 5
+KILLCALLMOB 虎卫 5
+KILLCALLMOB 沙漠脊背龙 5 
+mapmove bada1
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』向八大暗影发起了挑战!!!
+
+;--------------------------------------------------------
+[@星期六]
+#IF 
+check [166] 0
+#act
+goto @tiaozhan6
+#elsesay
+你今天已经挑战过八大暗影了!\
+请明天再来尝试吧.\\
+<退出/@exit>
+
+[@tiaozhan6]
+#if
+checkhum bada1 1
+#SAY
+现在有人正在挑战呢，你等一下吧.\ \
+<退出/@exit>
+#ELSEACT
+goto @jixu6
+
+[@jixu6]
+#act
+reset [160] 7
+set [166] 1
+KILLCALLMOB 半兽勇士5 5
+KILLCALLMOB 虎卫 5
+KILLCALLMOB 沙漠脊背龙 5 
+mapmove bada1
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』向八大暗影发起了挑战!!!

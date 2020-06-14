@@ -1,0 +1,22 @@
+[@main]
+#if                                    
+check [170] 0
+CHECKBAGSIZE  1
+#act
+goto @renwu
+#elseact
+SENDMSG 5 提示：背包已满，无法获取任务物品。
+
+[@renwu]
+#if
+RANDOM 10
+#act 
+set [170] 1
+give 玉制小人 1
+#say
+<"一个无用的雕像。也许我可以拿去换些好东西。"/SCOLOR=253> \
+<>\
+(提示:把它拿给迪卡.凯恩看看。)\\
+<>\
+<确定/@exit>
+

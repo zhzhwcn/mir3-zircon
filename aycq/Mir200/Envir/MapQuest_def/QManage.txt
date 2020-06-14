@@ -1,0 +1,201 @@
+[@Login]
+#IF
+CHECKLEVELEX > 0
+#ACT
+VAR Integer HUMAN Cache
+CALCVAR HUMAN Cache = 0
+
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+VAR String HUMAN 技能状态1
+VAR Integer HUMAN 技能时间1
+CALCVAR HUMAN 技能状态1 = 允许
+CALCVAR HUMAN 技能时间1 = 0
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+VAR String HUMAN 技能状态2
+VAR Integer HUMAN 技能时间2
+CALCVAR HUMAN 技能状态2 = 允许
+CALCVAR HUMAN 技能时间2 = 0
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+VAR String HUMAN 技能状态3
+VAR Integer HUMAN 技能时间3
+CALCVAR HUMAN 技能状态3 = 允许
+CALCVAR HUMAN 技能时间3 = 0
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+VAR String HUMAN 技能状态4
+VAR Integer HUMAN 技能时间4
+CALCVAR HUMAN 技能状态4 = 允许
+CALCVAR HUMAN 技能时间4 = 0
+
+#IF
+ISDUMMY
+#act
+movr g80 1 3
+goto @jiqiren
+
+#IF
+#ACT		    
+PLAYMAGICBALLEFFECT 0 790 14 250 -1 0 1 1
+#ACT
+PLAYMAGICBALLEFFECT 0 810 14 250 -1 1 1 1
+#ACT
+
+#IF
+#ACT
+#CALL [\\幽默登陆\幽默登陆.txt] @笑话
+SENDMSG 6 提示：当前的声望值为:<$CREDITPOINT>点...
+
+#IF
+ISNEWHUMAN
+#ACT
+give 蜡烛 1
+SENDMSG 5 欢迎进入【暗影传奇】!祝你游戏愉快!!!
+
+
+[@显示头盔]
+看看行不行~~~~\\
+<确定/@exit>
+
+
+
+
+;............................................................................................
+;铁布衫
+[@ontimer0]
+#if
+LARGE M99 0
+#act
+DEC M99 1
+#ELSEACT
+SETOFFTIMER 0
+break
+
+;破血狂杀
+[@ontimer1]
+#if
+LARGE M98 0
+#act
+DEC M98 1
+#ELSEACT
+SETOFFTIMER 1
+break
+
+;凝血离魂
+[@ontimer2]
+#if
+LARGE M97 0
+#act
+DEC M97 1
+#ELSEACT
+SETOFFTIMER 2
+break
+
+;妙影无踪
+[@ontimer3]
+#if
+LARGE M96 0
+#act
+DEC M96 1
+#ELSEACT
+SETOFFTIMER 3
+break
+
+;强魔战法
+[@ontimer4]
+#if
+LARGE M95 0
+#act
+DEC M95 1
+#ELSEACT
+SETOFFTIMER 4
+break
+
+;阴阳法环
+[@ontimer5]
+#if
+LARGE M94 0
+#act
+DEC M94 1
+#ELSEACT
+SETOFFTIMER 5
+break
+
+;无极真气
+[@ontimer6]
+#if
+LARGE M93 0
+#act
+DEC M93 1
+#ELSEACT
+SETOFFTIMER 6
+break
+;............................................................................................
+
+[@jiqiren]
+#if
+equal g80 1
+#act
+SETDUMMYCONFIGFILENAME ..\QuestDiary\智能陪练\一级女法陪练.txt
+LOADDUMMYCONFIGFILE
+ChangeAttatckMode 4
+DUMMYSTART
+GOTO @分配地图
+break
+
+#IF
+ISDUMMY
+equal g80 2
+#act
+SETDUMMYCONFIGFILENAME ..\QuestDiary\智能陪练\一级女道陪练.txt
+LOADDUMMYCONFIGFILE
+ChangeAttatckMode 4
+DUMMYSTART
+GOTO @分配地图
+break
+
+#IF
+ISDUMMY
+equal g80 3
+#act
+SETDUMMYCONFIGFILENAME ..\QuestDiary\智能陪练\一级女战陪练.txt
+LOADDUMMYCONFIGFILE
+ChangeAttatckMode 4
+DUMMYSTART
+GOTO @分配地图
+break
+
+[@分配地图]
+#IF
+equal g80 1
+ISDUMMY
+#ACT
+GETRANDOMLINETEXT ..\QuestDiary\智能陪练\假人分配地图\假人活动地图.txt <$STR(S10)>
+MAP <$STR(S10)>
+break
+
+#IF
+equal g80 2
+ISDUMMY
+#ACT
+GETRANDOMLINETEXT ..\QuestDiary\智能陪练\假人分配地图\假人活动地图1.txt <$STR(S10)>
+MAP <$STR(S10)>
+break
+
+#IF
+equal g80 3
+ISDUMMY
+#ACT
+GETRANDOMLINETEXT ..\QuestDiary\智能陪练\假人分配地图\假人活动地图2.txt <$STR(S10)>
+MAP <$STR(S10)>
+break

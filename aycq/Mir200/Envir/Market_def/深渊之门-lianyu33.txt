@@ -1,0 +1,4 @@
+[@main]
+#if
+#act
+mapmove lianyu33 240 71

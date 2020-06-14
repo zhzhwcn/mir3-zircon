@@ -1,0 +1,191 @@
+[@登陆陪练]
+#IF
+EQUAL A51 开启
+#ACT
+GOTO @开始登陆
+#elseact
+BREAK
+
+[@开始登陆]
+#IF
+CHECKDUMMYCOUNT < <$STR(G56)>
+#ACT
+DUMMYLOGON <$STR(A50)> <$STR(G50)> <$STR(G51)> 1
+BREAK
+
+
+
+[@假人假充值]
+#IF
+EQUAL A56 开启
+#ACT
+GETRANDOMLINETEXT ..\QuestDiary\白黑论坛\变量文件\玩家名字.txt S12
+GETRANDOMLINETEXT ..\QuestDiary\白黑论坛\变量文件\冲值数量.txt S13
+SENDMSG 0 ★恭喜玩家[<$STR(S12)>]使用我服推出的在线支付自动冲值系统，购买了<$STR(S13)>元宝★
+SENDMSG 0 ★恭喜玩家[<$STR(S12)>]使用我服推出的在线支付自动冲值系统，购买了<$STR(S13)>元宝★
+BREAK
+
+[@一号攻城点]
+#IF
+EQUAL A61 开启
+;CHECKUNDERWAR 沙巴克
+#ACT
+Gmexecute 开始提问 @攻城点一
+BREAK
+[@二号攻城点]
+#IF
+EQUAL A62 开启
+;CHECKUNDERWAR 沙巴克
+#ACT
+Gmexecute 开始提问 @攻城点二
+BREAK
+[@三号攻城点]
+#IF
+EQUAL A63 开启
+;CHECKUNDERWAR 沙巴克
+#ACT
+Gmexecute 开始提问 @攻城点三
+BREAK
+[@攻打皇宫]
+#IF
+EQUAL A64 开启
+;CHECKUNDERWAR 沙巴克
+#ACT
+Gmexecute 开始提问 @攻城点四
+BREAK
+
+[@假人跟踪]
+#IF
+EQUAL A65 开启
+#ACT
+Gmexecute 开始提问 @假人定位
+BREAK
+
+
+
+
+[@guanf]
+#IF
+#ACT
+SendCenterMsg 180 251 服务器还有5分钟关闭!!请大家整理好,每天准时晚上7点-1点开服. 0 30
+SendCenterMsg 180 251 服务器还有5分钟关闭!!请大家整理好,每天准时晚上7点-1点开服. 0 30
+SendCenterMsg 180 251 服务器还有5分钟关闭!!请大家整理好,每天准时晚上7点-1点开服. 0 30
+SendCenterMsg 180 251 服务器还有5分钟关闭!!请大家整理好,每天准时晚上7点-1点开服. 0 30
+
+[@123]
+#if
+#act
+CLEARNAMELIST ..\QuestDiary\日常任务\八大暗影.txt
+CLEARNAMELIST ..\QuestDiary\日常任务\暗影1.txt
+CLEARNAMELIST ..\QuestDiary\日常任务\暗影2.txt
+CLEARNAMELIST ..\QuestDiary\日常任务\暗影3.txt
+CLEARNAMELIST ..\QuestDiary\日常任务\暗影4.txt
+CLEARNAMELIST ..\QuestDiary\日常任务\暗影5.txt
+CLEARNAMELIST ..\QuestDiary\日常任务\暗影6.txt
+CLEARNAMELIST ..\QuestDiary\日常任务\暗影7.txt
+CLEARNAMELIST ..\QuestDiary\日常任务\暗影8.txt
+CLEARNAMELIST ..\QuestDiary\日常任务\暗影奖励.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\材料一完成.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\材料二完成.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\材料三完成.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\材料四完成.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\材料五完成.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\材料六完成.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\骸骨.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\僵尸骨头.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\号角.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\牙齿.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\皇家徽章.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\血色印记.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\粗布.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\虫卵.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\毒蛇胆汁.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\遗物.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\宝玉.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\思念珍珠.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\跳蚤皮.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\蜘蛛线.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\神灵雕像.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\献祭石像.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\旧缆绳.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\灼热之核.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\粗皮革.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\魔石碎片.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\血石碎片.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\灵魂碎片.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\震天魔印.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\魔晶石.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\厚皮.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\水晶球.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\潘夜珠.txt
+CLEARNAMELIST ..\QuestDiary\日常材料任务\恶魔连枷.txt
+SENDMSG 0 新的一天到来了！！！
+
+[@早上提示]
+#IF
+#act
+SENDMSG 1 亲爱的玩家，现在已经是早上了
+SENDMSG 1 游戏虽然好玩，可别忘了工作和学习的时间
+
+[@中午提示]
+#IF
+#act
+SENDMSG 1 亲爱的玩家，现在已经是中午了
+SENDMSG 1 游戏虽然好玩，可别忘了多陪陪你的朋友和家人
+
+[@晚上提示]
+#IF
+#act
+SENDMSG 1 亲爱的玩家，现在已经是晚上了
+SENDMSG 1 游戏虽然好玩，也别忘了陪朋友和家人吃顿晚饭
+
+[@凌晨提示]
+#IF
+#act
+SENDMSG 1 亲爱的玩家，现在已经是凌晨了
+SENDMSG 1 游戏虽然好玩，也别忘了是不是该休息了
+
+[@登陆陪练]
+#IF
+#ACT
+GOTO @开始登陆
+BREAK
+
+[@开始登陆]
+#IF
+CHECKDUMMYCOUNT < 200
+#ACT
+DUMMYLOGON huanggong 16 15 1
+BREAK
+
+[@开启国王陵墓]
+#if
+#act
+ADDMAPGATE 国王陵墓 zhentian6 -1 -1 1 guowang1 138 139 1800
+GetMapGate 国王陵墓 zhentian6 <$STR(G10)> <$STR(G11)> <$STR(S$10)> <$STR(G12)> <$STR(G13)>
+SENDMSG 1 国王陵墓的封印被打开了:真天宫6层<$STR(G10)>:<$STR(G11)>(30分钟后关闭)
+
+
+[@关闭国王陵墓]
+#if
+#act
+DELMAPGATE 国王陵墓 zhentian6
+SENDMSG 1 国王陵墓的封印被再次关闭了!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

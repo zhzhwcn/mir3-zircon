@@ -1,0 +1,23 @@
+[@main]
+<你要离开这里吗?/SCOLOR=224>\\
+<>\
+<返回/@luoge><萝格营地/SCOLOR=253>\
+<>\
+<返回/@lugaoen><鲁.高因/SCOLOR=253>\
+<>\
+<返回/@haigang><库拉斯特海港/SCOLOR=253>\
+
+[@luoge]
+#IF
+#ACT
+mapmove diyimu 65 72
+
+[@lugaoen]
+#IF
+#ACT
+mapmove diermu 168 465
+
+[@haigang]
+#IF
+#ACT
+mapmove disanmu 422 320

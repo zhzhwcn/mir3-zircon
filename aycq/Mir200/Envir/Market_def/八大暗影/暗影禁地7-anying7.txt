@@ -1,0 +1,31 @@
+[@main]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\暗影7.txt
+#act
+#say
+你获得了挑战下一层的资格.\\
+<>\
+<我准备好了/@renwu2>\
+<我还没准备好/@exit>
+
+#elsesay
+对不起,你还未能获得挑战下一层的资格!请努力!\
+<>\
+<退出/@exit>
+
+[@renwu2]
+#if
+#act
+map anying8
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,113 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @cube
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第12间房  . \
+在这里点数在5以下,你会倒退回7个房间.\
+如果你的点数在5或者以上,按照实际点数倒退 \ \
+;<投骰子/@next>
+<投骰子/@pre_cube>
+
+[@pre_cube]
+#IF
+checkitem 筹码 1
+#ACT
+CALCVAR HUMAN Cache = 1
+movr d0 6
+inc d0 1
+playdice 1 @next1
+#SAY
+正在投骰子.\\
+<下一个/@cube>
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@cube]
+#IF
+small d0 5
+#SAY
+骰子的点数是 <$STR(D0)>. \
+点数没有超过4,你只能倒退7个房间. \ \
+<下一步/@move>
+#ELSESAY
+骰子的点数是 <$STR(D0)>. \
+按你的点数 倒退<$STR(D0)>个房间 . \ \
+;<移动/@next_cube>
+<移动/@dicemove>
+
+[@dicemove]
+#IF
+equal d0 5 
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B111
+addbatch B110
+addbatch B109
+addbatch B108
+addbatch B107
+batchmove
+break
+
+#IF
+equal d0 6 
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B111
+addbatch B110
+addbatch B109
+addbatch B108
+addbatch B107
+addbatch B106
+batchmove
+break
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@move]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B111
+addbatch B110
+addbatch B109
+addbatch B108
+addbatch B107
+addbatch B106
+addbatch B105
+batchmove

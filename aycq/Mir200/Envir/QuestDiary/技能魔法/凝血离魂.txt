@@ -1,0 +1,24 @@
+[@凝血离魂1]
+{
+#IF
+CheckJob Wizard
+CHECKVAR HUMAN 技能状态3 = 禁止
+#ACT
+SENDMSG 5 暂时无法施放【凝血离魂】,冷却时间未到!
+break
+#IF
+CheckJob Wizard
+CHECKVAR HUMAN 技能状态3 = 允许
+#ACT
+;PlayEffectEx 26 41 1 1 39 -50
+movr M80 20 60
+MUL M81 <$MAXDC> <$STR(M80)>
+Div M82 <$STR(M81)> 100
+movr M83 10 20
+ChangeHumAbility 8 + <$STR(M82)>
+CALCVAR HUMAN 技能时间3 = <$STR(M83)>
+CALCVAR HUMAN 技能状态3 = 禁止
+SENDMSG 5 释放【凝血离魂】成功,瞬间提升<$STR(M82)>点魔法力,持续<$HUMAN(技能时间3)>秒!
+SetOnTimer 4 1
+break
+}

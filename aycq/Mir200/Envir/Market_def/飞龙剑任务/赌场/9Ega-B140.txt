@@ -1,0 +1,71 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @race
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临.\
+这里是赌场里的最后一间房. \
+不管发生什么事情,你都要坚持下去. \
+这间房主要考验你的意志 \
+为了最后胜利,你一定要坚持到最后，成为最终生存者！\
+现在把你送入天堂房. \ \
+<下一步/@next>
+
+[@next]
+#IF
+checkitem 筹码 1
+#ACT
+take 筹码 1
+CALCVAR HUMAN Cache = 1
+TimeRecall 3
+map T140
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@race]
+#IF
+#act
+CALCVAR HUMAN Cache = 9
+set [398] 1
+give 超级祝福油 1
+give 金条 1
+CREDITPOINT + 10
+SENDMSG 5 提示：赌场闯关成功，你获得了10点声望，当前声望：<$CREDITPOINT>点...
+#SAY
+衷心祝福你, 你已经成为了这里的最终胜利者！ \ 
+现在发给你奖品. \
+祝你拥有快乐的一天 \ \
+<关闭/@Quit>
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011

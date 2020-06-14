@@ -1,0 +1,16 @@
+[@main]
+你想知道最近沙巴克的攻城战役吗?\ \
+
+<查看./@aboutwar>\                                                      
+
+[@aboutwar]
+<◆最近的攻城战役预告:>\
+战役开始时间： <$CASTLEWARDATE> , 20:00开始。\ \
+
+<◆详细攻城时间表：/@listwar>\
+<关闭./@exit>\
+
+
+[@listwar]
+<$LISTOFWAR>\
+<知道了./@exit>\

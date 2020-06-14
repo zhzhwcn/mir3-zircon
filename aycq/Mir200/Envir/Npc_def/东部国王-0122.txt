@@ -1,0 +1,453 @@
+[@main]
+我是东部王国皇宫管理人,掌管着许多事物。希望我能对你有帮助\ 
+ <请求创建行会./@@buildguildnow>\
+ <申请行会战争./@guildwar>\
+ <如何建立行会./@buildguildexp>\
+ <有关行会战争./@guildwarexp>\
+ <申请攻城战争./@requestcastlewar>\ 
+<取消/@exit>\
+;<天下第一申请./@txdy>\ 
+
+[@txdy]
+GM有令：为天下最强的勇士们在盟重土城树立雕像，彰显 \
+他们名号。天下群豪尽可以到我这里来登记在案，看看到底 \
+谁是群雄中的最强者。如果来登记的勇士中你是最强的一位 \
+你从此以后就可以名扬天下了。 \
+<我是天下第一/@天下第一> \
+<天下第一有谁/@查看第一> \
+<退出/@exit> \
+[@查看第一]
+<天下第一男战士/@男战> \
+<天下第一女战士/@女战> \
+<天下第一男道士/@男道> \
+<天下第一女道士/@女道> \
+<天下第一男法师/@男法> \
+<天下第一女法师/@女法> \
+[@天下第一]
+#IF
+CHECKLEVELEX < 49
+#act
+break
+#say
+看来你很有信心，不过你还没有达到资格，你需要50级来证明自己的实力\
+现在来申请天下第一恐怕还嫌早.\
+<退出/@exit>
+#IF
+gender man
+checkjob warrior
+#act
+break
+mov A0 <$LEVEL>
+goto @男战申请
+#IF
+gender man
+checkjob wizard
+#act
+break
+mov A1 <$LEVEL>
+goto @男法申请
+#IF
+gender man
+checkjob taoist
+#act
+break
+mov A2 <$LEVEL>
+goto @男道申请
+#IF
+checkjob warrior
+#act
+break
+mov A3 <$LEVEL>
+goto @女战申请
+#IF
+checkjob wizard
+#act
+break
+mov A4 <$LEVEL>
+goto @女法申请
+#IF
+checkjob taoist
+#act
+break
+mov A5 <$LEVEL>
+goto @女道申请
+[@男战申请]
+#IF
+large G24 <$STR(A0)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+EQUAL G24 <$STR(A0)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+HAVEGUILD
+#act
+break
+mov G24 <$STR(A0)>
+mov s1 ↘天下第一男战↙\
+inc S1 <$USERNAME>
+inc S1 \
+mov A6 <$USERNAME>
+mov A7 <$GUILDNAME>
+mov A8 <$LEVEL>
+mov A9 <$DATETIME>
+SETRANKLEVELNAME <$STR(S1)>
+CLEARNAMELIST ..\QuestDiary\天下第一\男战士名单.txt
+addnamelist ..\QuestDiary\天下第一\男战士名单.txt
+SENDMSG 4 %s成功申请了天下第一男战士！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一男战士！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一男战士是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+#IF
+#act
+mov G24 <$STR(A0)>
+mov s1 ↘天下第一男战↙\
+inc S1 <$USERNAME>
+inc S1 \
+mov A6 <$USERNAME>
+mov A7 暂无
+mov A8 <$LEVEL>
+mov A9 <$DATETIME>
+SETRANKLEVELNAME <$STR(S1)>
+CLEARNAMELIST ..\QuestDiary\天下第一\男战士名单.txt
+addnamelist ..\QuestDiary\天下第一\男战士名单.txt
+SENDMSG 4 %s成功申请了天下第一男战士！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一男战士！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一男战士是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+[@男法申请]
+#IF
+large G25 <$STR(A1)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+EQUAL G25 <$STR(A1)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+HAVEGUILD
+#act
+break
+mov G25 <$STR(A1)>
+mov s2 ↘天下第一男法↙\
+inc S2 <$USERNAME>
+inc S2 \
+mov A10 <$USERNAME>
+mov A11 <$GUILDNAME>
+mov A12 <$LEVEL>
+mov A13 <$DATETIME>
+SETRANKLEVELNAME <$STR(S2)>
+CLEARNAMELIST ..\QuestDiary\天下第一\男法师名单.txt
+addnamelist ..\QuestDiary\天下第一\男法师名单.txt
+SENDMSG 4 %s成功申请了天下第一男法师！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一男法师！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一男法师是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+#IF
+#act
+mov G25 <$STR(A1)>
+mov s2 ↘天下第一男法↙\
+inc S2 <$USERNAME>
+inc S2 \
+mov A10 <$USERNAME>
+mov A11 暂无
+mov A12 <$LEVEL>
+mov A13 <$DATETIME>
+SETRANKLEVELNAME <$STR(S2)>
+CLEARNAMELIST ..\QuestDiary\天下第一\男法师名单.txt
+addnamelist ..\QuestDiary\天下第一\男法师名单.txt
+SENDMSG 4 %s成功申请了天下第一男法师！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一男法师！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一男法师是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+[@男道申请]
+#IF
+large G26 <$STR(A2)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+EQUAL G26 <$STR(A2)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+HAVEGUILD
+#act
+break
+mov G26 <$STR(A2)>
+mov s3 ↘天下第一男道↙\
+inc S3 <$USERNAME>
+inc S3 \
+mov A14 <$USERNAME>
+mov A15 <$GUILDNAME>
+mov A16 <$LEVEL>
+mov A17 <$DATETIME>
+SETRANKLEVELNAME <$STR(S3)>
+CLEARNAMELIST ..\QuestDiary\天下第一\男道士名单.txt
+addnamelist ..\QuestDiary\天下第一\男道士名单.txt
+SENDMSG 4 %s成功申请了天下第一男道士！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一男道士！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一男道士是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+#IF
+#act
+mov G26 <$STR(A2)>
+mov s3 ↘天下第一男道↙\
+inc S3 <$USERNAME>
+inc S3 \
+mov A14 <$USERNAME>
+mov A15 暂无
+mov A16 <$LEVEL>
+mov A17 <$DATETIME>
+SETRANKLEVELNAME <$STR(S3)>
+CLEARNAMELIST ..\QuestDiary\天下第一\男道士名单.txt
+addnamelist ..\QuestDiary\天下第一\男道士名单.txt
+SENDMSG 4 %s成功申请了天下第一男道士！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一男道士！他在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一男道士是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+[@女战申请]
+#IF
+large G27 <$STR(A3)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+EQUAL G27 <$STR(A3)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+HAVEGUILD
+#act
+break
+mov G27 <$STR(A3)>
+mov s4 ↘天下第一女战↙\
+inc S4 <$USERNAME>
+inc S4 \
+mov A18 <$USERNAME>
+mov A19 <$GUILDNAME>
+mov A20 <$LEVEL>
+mov A21 <$DATETIME>
+SETRANKLEVELNAME <$STR(S4)>
+CLEARNAMELIST ..\QuestDiary\天下第一\女战士名单.txt
+addnamelist ..\QuestDiary\天下第一\女战士名单.txt
+SENDMSG 4 %s成功申请了天下第一女战士！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一女战士！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一女战士是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+#IF
+#act
+mov G27 <$STR(A3)>
+mov s4 ↘天下第一女战↙\
+inc S4 <$USERNAME>
+inc S4 \
+mov A18 <$USERNAME>
+mov A19 暂无
+mov A20 <$LEVEL>
+mov A21 <$DATETIME>
+SETRANKLEVELNAME <$STR(S4)>
+CLEARNAMELIST ..\QuestDiary\天下第一\女战士名单.txt
+addnamelist ..\QuestDiary\天下第一\女战士名单.txt
+SENDMSG 4 %s成功申请了天下第一女战士！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一女战士！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一女战士是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+[@女法申请]
+#IF
+large G28 <$STR(A4)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+EQUAL G28 <$STR(A4)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+HAVEGUILD
+#act
+break
+mov G28 <$STR(A4)>
+mov s5 ↘天下第一女法↙\
+inc S5 <$USERNAME>
+inc S5 \
+mov A22 <$USERNAME>
+mov A23 <$GUILDNAME>
+mov A24 <$LEVEL>
+mov A25 <$DATETIME>
+SETRANKLEVELNAME <$STR(S5)>
+CLEARNAMELIST ..\QuestDiary\天下第一\女法师名单.txt
+addnamelist ..\QuestDiary\天下第一\女法师名单.txt
+SENDMSG 4 %s成功申请了天下第一女法师！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一女法师！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一女法师是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+#IF
+#act
+mov G28 <$STR(A4)>
+mov s5 ↘天下第一女法↙\
+inc S5 <$USERNAME>
+inc S5 \
+mov A22 <$USERNAME>
+mov A23 暂无
+mov A24 <$LEVEL>
+mov A25 <$DATETIME>
+SETRANKLEVELNAME <$STR(S5)>
+CLEARNAMELIST ..\QuestDiary\天下第一\女法师名单.txt
+addnamelist ..\QuestDiary\天下第一\女法师名单.txt
+SENDMSG 4 %s成功申请了天下第一女法师！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一女法师！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一女法师是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+[@女道申请]
+#IF
+large G29 <$STR(A5)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+EQUAL G29 <$STR(A5)>
+#act
+break
+#say
+对不起！！你目前还不是最高等级！\\\
+#IF
+HAVEGUILD
+#act
+break
+mov G29 <$STR(A5)>
+mov s6 ↘天下第一女道↙\
+inc S6 <$USERNAME>
+inc S6 \
+mov A26 <$USERNAME>
+mov A27 <$GUILDNAME>
+mov A28 <$LEVEL>
+mov A29 <$DATETIME>
+SETRANKLEVELNAME <$STR(S6)>
+CLEARNAMELIST ..\QuestDiary\天下第一\女道士名单.txt
+addnamelist ..\QuestDiary\天下第一\女道士名单.txt
+SENDMSG 4 %s成功申请了天下第一女道士！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一女道士！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一女道士是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+#IF
+#act
+mov G29 <$STR(A5)>
+mov s6 ↘天下第一女道↙\
+inc S6 <$USERNAME>
+inc S6 \
+mov A26 <$USERNAME>
+mov A27 暂无
+mov A28 <$LEVEL>
+mov A29 <$DATETIME>
+SETRANKLEVELNAME <$STR(S6)>
+CLEARNAMELIST ..\QuestDiary\天下第一\女道士名单.txt
+addnamelist ..\QuestDiary\天下第一\女道士名单.txt
+SENDMSG 4 %s成功申请了天下第一女道士！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 0 %s成功申请了天下第一女道士！她在烽烟四起的<$SERVERNAME>中修炼成为天下第一，明天的天下第一会是谁？
+#say
+申请成功！目前今天的天下第一女道士是<$USERNAME>，\
+明天的天下第一会是谁？ \ \
+<退出/@exit>
+[@男战]
+#CALL [\\天下第一\男战士.txt] @天下第一战男
+[@男法]
+#CALL [\\天下第一\男法师.txt] @天下第一法男
+[@男道]
+#CALL [\\天下第一\男道士.txt] @天下第一道男
+[@女战]
+#CALL [\\天下第一\女战士.txt] @天下第一战女
+[@女法]
+#CALL [\\天下第一\女法师.txt] @天下第一法女
+[@女道]
+#CALL [\\天下第一\女道士.txt] @天下第一道女
+
+[@buildguildexp]
+建立行会你应该证明你有资格。必须支付100万金币作为基础\
+而且要取得位于远古寺庙底部深处的远古魔王所拥有的号角!\ \
+<返回/@main>
+
+[@guildwar]
+填写与你交战的敌对行会的名字，申请行会战争必须支付3万金币\ \
+ <立即申请行会战争/@@guildwar>\
+<返回/@main>\
+
+[@guildwarexp]
+<行会战/@guildwar2>是一种合法的战争，因为目前有许多行会和\
+玩家都同意，这是<合法的/@warrule>的行会间战争。\
+你是否<请求/@propose>行会战争?战争将\
+进行3小时,你必须支付<$GUILDWARFEE>所规定的申请费用.\ \
+<返回/@main>
+
+[@guildwar2]
+当你请求行会战争的时候,相同行会成员的名字将会出现在蓝色的。\
+ 在另一方面,敌人的行会成员名字将会变成橘色的.开战中的行会\
+成员在此期间登录,信息窗口会有[××在与你行会进行行会战]\
+的信息出现，在这个时候，如果你杀敌了人的行会某一个成员,\
+系统对你的行为将不会被视为 PK 。 \ \
+<返回/@guildwarexp>
+
+[@warrule]
+行会战争在城市中不能发生,它在城市某范围外或内部竞赛区\
+域(一些建筑物之内)被启动.否则你 PK 你的身份将会是红色\
+的!甚至在战争期间。\ \
+<返回/@guildwarexp>
+
+[@propose]
+行会战争的提议只能由行会首领提出。\ \
+<返回/@guildwarexp>
+
+[@requestcastlewar]
+请求对 沙巴克 作战你应该有祖玛教主的头像,你有它吗?战争将会在\ 
+申请日期的第 二 天内开始。\ \
+<给祖玛头像/@requestcastlewarnow>\
+<返回./@main>
+
+[~@request_ok]
+你的请求被许可, <$CASTLEWARDATE> 战争将会发生在这个值得回忆\
+的日子...剩下的时间不多了，祝你好运!\ \
+<关闭./@exit>\
+
+[@回去]
+#if
+#act
+mapmove DIERMU 76 422

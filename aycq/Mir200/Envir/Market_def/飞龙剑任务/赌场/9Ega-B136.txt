@@ -1,0 +1,60 @@
+[@main]  
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第36间房-扬花室   \
+暗黑房像宇宙的黑洞一样把所有的光都会吸收\
+在这里你只能靠你的其他感官来闯关, \
+限制时间是5分钟,5分钟之内必须通过. \ \ 
+<下一步/@next>\
+<不会走，用1个筹码包跳过/@跳过>
+
+[@跳过]
+#IF
+checkitem 筹码包 1
+#SAY
+你花钱我消灾，你已经通过了考验！\ \
+<下一步/@传送>\
+#ELSESAY
+你这个穷鬼，没筹码包还想跳过？\ \
+<返回/@main-1>\
+
+[@传送]
+#IF
+checkitem 筹码包 1
+#ACT
+take 筹码包 1
+map T1363
+#ELSESAY
+你这个穷鬼，没筹码包还想跳过？\ \
+<返回/@main-1>\
+
+[@next]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 9
+TimeRecall 5
+map T1361
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011

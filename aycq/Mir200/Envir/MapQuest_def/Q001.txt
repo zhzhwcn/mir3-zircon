@@ -1,0 +1,3 @@
+[@main]
+#act 
+SETWEATHEREFFECT diwumu2 3 300 

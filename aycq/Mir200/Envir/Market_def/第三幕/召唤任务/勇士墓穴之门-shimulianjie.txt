@@ -1,0 +1,63 @@
+[@main]
+一个传送门!\\
+<>\
+<进去看看/@renwu1>\
+<>\
+<我要出去/@chuqua>\
+<取消/@exit>
+
+[@chuqua]
+#if
+#act
+mapmove shimuboss
+
+[@renwu1]
+#if
+check [200] 1
+check [201] 0
+#act
+goto @renwu2
+break
+
+#if
+check [202] 1
+check [203] 0
+checkitem 黑暗圣器 1
+#act
+goto @renwu4
+break
+
+#if                                    
+check [212] 1
+check [213] 0
+checkitem 光明圣器 1
+#act
+goto @renwu3
+break
+
+#elsesay
+好奇害死猫!\
+想想看,还是到别处走走算了......\\
+<>\
+<确定/@exit>
+
+[@renwu2]
+#if
+#act
+mapmove yongshimuxue
+
+[@renwu3]
+#if
+#act
+mapmove yongshimuxue1
+
+[@renwu4]
+#if
+#act
+mapmove yongshimuxue
+
+
+
+
+
+

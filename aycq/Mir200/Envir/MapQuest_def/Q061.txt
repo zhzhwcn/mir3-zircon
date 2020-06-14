@@ -1,0 +1,13 @@
+[@main]
+#IF
+check [238] 1
+check [239] 0
+CHECKBAGSIZE  1
+CheckHumInRange disimu 37 427 500
+#ACT
+set [239] 1
+give 海法斯特铁锤 1
+#say 
+<"真是浪费, 不死生物的血肉。" /SCOLOR=253> \\
+<>\
+<确定/@exit>

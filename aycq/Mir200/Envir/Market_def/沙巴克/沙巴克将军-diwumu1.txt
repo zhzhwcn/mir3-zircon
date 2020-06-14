@@ -1,0 +1,19 @@
+[@main]
+您想要干什么？ \
+根据这个城堡的主人[<$LORD>]的命令，\
+我们只允许[<$OWNERGUILD>]的成员进入沙巴克皇宫。\ \
+<>\
+<移动到楼上/@chuansong>\
+<退出/@exit>
+
+[@chuansong]
+#IF
+ISCASTLEGUILD
+#ACT
+mapmove diwumu1 100 122
+#elsesay
+你不是沙城成员，我不能让你上来!\\
+<>\
+<>\
+<确定/@exit>
+

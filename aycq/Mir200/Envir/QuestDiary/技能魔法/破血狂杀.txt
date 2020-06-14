@@ -1,0 +1,24 @@
+[@破血狂杀1]
+{
+#IF
+CheckJob Warrior
+CHECKVAR HUMAN 技能状态1 = 禁止
+#ACT
+SENDMSG 5 暂时无法释放【破血狂杀】,冷却时间未到!
+break
+#IF
+CheckJob Warrior
+CHECKVAR HUMAN 技能状态1 = 允许
+#ACT
+;PlayEffectEx 26 41 1 1 39 -50
+movr M90 20 60
+MUL M91 <$MAXDC> <$STR(M90)>
+Div M92 <$STR(M91)> 100
+movr M93 10 20
+ChangeHumAbility 6 + <$STR(M92)>
+CALCVAR HUMAN 技能时间1 = <$STR(M93)>
+CALCVAR HUMAN 技能状态1 = 禁止
+SENDMSG 5 释放【破血狂杀】成功,瞬间提升<$STR(M92)>点攻击力,持续<$HUMAN(技能时间1)>秒!
+SetOnTimer 0 1
+break
+}

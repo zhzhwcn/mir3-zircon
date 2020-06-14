@@ -1,0 +1,34 @@
+[@main]
+啊?!你是怎么找到这里来的???\\
+<对话/@renwu1>\
+<退出/@exit>
+
+[@renwu1]
+#if
+check [152] 1
+check [153] 0
+checkitem 老牛的裤叉 1
+#act
+goto @renwu2
+#elsesay
+没错,芭蕉扇的确是在我手上,有本事你就来拿啊.\\
+<退出/@exit>
+
+[@renwu2]
+#if
+#act
+set [153] 1
+take 老牛的裤叉 1
+give 芭蕉扇 1
+#say
+可恶,没想到你居然还有两下子.\
+算我倒霉,扇子你拿去吧,我不想再见到你.\\
+<确定/@chuansong>
+
+[@chuansong]
+#if
+#act
+mapmove huan6
+
+
+

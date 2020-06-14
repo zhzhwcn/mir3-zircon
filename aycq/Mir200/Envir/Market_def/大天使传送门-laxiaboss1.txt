@@ -1,0 +1,48 @@
+[@main]
+#if                                    
+check [137] 1
+check [138] 0
+#act 
+goto @renwu1
+break
+
+#elseact
+goto @yourenwu
+
+[@yourenwu]
+一个神秘的传送门......\\
+<>\
+<出去/@chuqu>\
+<取消/@exit>
+
+[@chuqu]
+#if
+#act 
+mapmove huanggong
+
+[@renwu1]
+<从传送门的中心显现出一个插槽,这似乎是一个“钥匙孔”?/SCOLOR=253>\
+<>\
+<>\
+<把赫拉迪克之杖放进去/@renwu2>\
+<到处走走/@exit>
+
+[@renwu2]
+#if 
+checkitem 赫拉迪克之杖 1
+#act
+goto @renwu3
+#elsesay
+<缺少赫拉迪克之杖!!!/SCOLOR=253>\
+<确定/@exit>
+
+[@renwu3]
+#if 
+#act
+take 赫拉迪克之杖 1
+mapmove laxiaboss2 13 49
+
+
+
+
+

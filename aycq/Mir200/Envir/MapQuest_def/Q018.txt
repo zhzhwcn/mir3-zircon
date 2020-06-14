@@ -1,0 +1,3 @@
+[@main]
+#act 
+SETWEATHEREFFECT shanding 3 60 

@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [126] 1
+check [129] 0
+CHECKBAGSIZE  1
+CheckHumInRange mayiboss 31 28 500
+#act 
+set [129] 1
+give 王者之杖 1
+#say
+恭喜你获得了王者之杖!!!\\
+<>\
+<确定/@exit>

@@ -1,0 +1,15 @@
+[@main]
+#IF
+CheckHumInRange anying4 23 22 500
+#ACT
+addnamelist ..\QuestDiary\日常任务\暗影4.txt
+SENDMSG 7 恭喜你成功完成本层挑战，系统已为你记录奖励！
+#say
+恭喜你获得了挑战下一层的资格!!!\
+你现在可以前往神秘老人处继续挑战下一层禁地.\\
+<>\
+<确定/@exit>
+
+
+
+

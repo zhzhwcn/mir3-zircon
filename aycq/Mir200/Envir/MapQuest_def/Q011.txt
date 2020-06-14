@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [121] 1
+check [122] 0
+CHECKBAGSIZE  1
+CheckHumInRange xiashuidao3 72 67 500
+#act 
+set [122] 1
+give 赫拉迪克卷轴 1
+#say
+<"亚特玛的仇己经报了。" /SCOLOR=253> \\
+<>\
+<确定/@exit>

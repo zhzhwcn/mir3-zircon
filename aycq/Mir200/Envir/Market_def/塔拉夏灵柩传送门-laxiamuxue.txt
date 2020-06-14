@@ -1,0 +1,9 @@
+[@main]
+通往塔.拉夏灵柩之门......\\
+<进去/@move> \
+<到处走走/@exit>
+
+[@move]
+#if
+#act
+mapmove laxiaboss1

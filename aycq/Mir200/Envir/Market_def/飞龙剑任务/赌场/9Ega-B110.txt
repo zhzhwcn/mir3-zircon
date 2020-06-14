@@ -1,0 +1,62 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @next
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+checkitem 筹码 1
+#ACT
+CALCVAR HUMAN Cache = 0
+goto @next
+take 筹码 1
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@next]
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第10间房  \
+<$USERNAME>你获得了可以前进14的幸运 \ \
+<移动/@move>
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@move]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B111
+addbatch B112
+addbatch B113
+addbatch B114
+addbatch B115
+addbatch B116
+addbatch B117
+addbatch B118
+addbatch B119
+addbatch B120
+addbatch B121
+addbatch B122
+addbatch B123
+addbatch B124
+batchmove

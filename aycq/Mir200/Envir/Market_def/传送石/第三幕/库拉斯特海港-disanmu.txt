@@ -1,0 +1,187 @@
+[@main]
+库拉斯特海港\
+<>\\
+<>\
+<激活传送石/@jihuo>\
+<>\
+<传送/@chuansong>\
+<>\
+<退出/@exit>
+
+[@jihuo]
+#if
+check [011] 0
+#act
+goto @ok
+#elsesay
+你已经激活过该点.\\
+<确定/@exit>
+
+[@ok]
+#if
+#act
+set [011] 1
+#say
+库拉斯特海港传送点成功激活!\\
+<确定/@exit>
+
+[@chuansong]
+请选择你需要传送的地区:\
+<>\
+<>\
+<城镇/@城镇>\
+<>\
+<险恶地区/@险恶>\
+<>\
+<>\
+<退出/@exit>
+
+[@城镇]
+请选择你需要传送的地点:\
+<>\
+<萝格营地/@萝格营地>10000金币      <鲁.高因/@鲁.高因>5000金币\
+<>\
+<群魔堡垒/@群魔堡垒>5000金币    <东部王国/@东部王国>10000金币\
+<>\
+<哈洛加斯/@哈洛加斯>15000金币\
+<>\
+<返回/@chuansong>                   <退出/@exit>
+
+[@萝格营地]
+#IF
+check [001] 1
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove diyimu 76 51
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@鲁.高因]
+#IF
+check [006] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove diermu 168 465
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@群魔堡垒]
+#IF
+check [017] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove disimu 24 33
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@东部王国]
+#IF
+check [021] 1
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove diwumu1 295 486
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@哈洛加斯]
+#IF
+check [025] 1
+checkgold 15000
+#ACT
+take 金币 15000
+mapmove diwumu2 183 377
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@险恶]
+请选择你需要传送的地点:\
+<>\
+<剥皮森林/@bopi>2000金币\
+<蜘蛛森林/@zhizhu>3000金币\
+<库拉斯特遗址/@yizhi>4000金币\
+<崔凡克/@cuifanke>5000金币\
+<兽人山谷/@shouren>6000金币\
+<>\
+<取消/@exit>
+
+[@bopi]
+#IF
+check [011] 1
+check [012] 1
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove disanmu 699 485
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@zhizhu]
+#IF
+check [011] 1
+check [013] 1
+checkgold 3000
+#ACT
+take 金币 3000
+mapmove disanmu 528 710
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@yizhi]
+#IF
+check [011] 1
+check [014] 1
+checkgold 4000
+#ACT
+take 金币 4000
+mapmove disanmu 348 611
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@cuifanke]
+#IF
+check [011] 1
+check [015] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove disanmu 97 469
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@shouren]
+#IF
+check [011] 1
+check [016] 1
+checkgold 6000
+#ACT
+take 金币 6000
+mapmove disanmu 133 296
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+
+

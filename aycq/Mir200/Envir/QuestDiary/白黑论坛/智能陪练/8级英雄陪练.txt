@@ -1,0 +1,6 @@
+..\QuestDiary\白黑论坛\智能陪练\8级英雄陪练\八级男战.txt
+..\QuestDiary\白黑论坛\智能陪练\8级英雄陪练\八级男道.txt
+..\QuestDiary\白黑论坛\智能陪练\8级英雄陪练\八级男法.txt
+..\QuestDiary\白黑论坛\智能陪练\8级英雄陪练\八级女战.txt
+..\QuestDiary\白黑论坛\智能陪练\8级英雄陪练\八级女法.txt
+..\QuestDiary\白黑论坛\智能陪练\8级英雄陪练\八级女道.txt

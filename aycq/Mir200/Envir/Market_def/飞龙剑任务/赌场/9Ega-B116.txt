@@ -1,0 +1,238 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @pena
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第16间房,迷茫间.  \
+在这里你需要交一个筹码,然后随机传送到某个房间！\\
+<>\
+<下一步/@race>
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@race]
+#IF
+checkitem 筹码 1
+#ACT
+CALCVAR HUMAN Cache = 1
+take 筹码 1
+goto @race1
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@race1]
+#IF
+random 10
+#SAY
+你跟第8间房的人调换房间, \
+如果第8间房里没有人, \
+那么你只能等一会儿.\ \
+<下一步/@Pena>
+#ACT
+mov P1 1
+break
+
+#IF
+random 10
+#SAY
+你跟第13间房的人调换房间, \
+如果第13间房里没有人, \
+那么你只能等一会儿.\ \
+<下一步/@Pena>
+#ACT
+mov P1 2
+break
+
+#IF
+random 10
+#SAY
+你跟第14间房的人调换房间, \
+如果第14间房里没有人, \
+那么你只能等一会儿.\ \
+<下一步/@Pena>
+#ACT
+mov P1 3
+break
+
+#IF
+random 10
+#SAY
+你跟第15间房的人调换房间, \
+如果第15间房里没有人, \
+那么你只能等一会儿.\ \
+<下一步/@Pena>
+#ACT
+mov P1 4
+break
+
+#IF
+random 10
+#SAY
+你跟第18间房的人调换房间, \
+如果第18间房里没有人, \
+那么你只能等一会儿.\ \
+<下一步/@Pena>
+#ACT
+mov P1 5
+break
+
+#IF
+random 10
+#SAY
+你跟第19间房的人调换房间, \
+如果第19间房里没有人, \
+那么你只能等一会儿.\ \
+<下一步/@Pena>
+#ACT
+mov P1 6
+break
+
+#IF
+random 10
+#SAY
+你跟第20间房的人调换房间, \
+如果第20间房里没有人, \
+那么你只能等一会儿.\ \
+<下一步/@Pena>
+#ACT
+mov P1 7
+break
+
+#IF
+random 10
+#SAY
+你跟第21间房的人调换房间, \
+如果第21间房里没有人, \
+那么你只能等一会儿.\ \
+<下一步/@Pena>
+#ACT
+mov P1 8
+break
+
+#IF
+random 10
+#SAY
+你跟第22间房的人调换房间, \
+如果第22间房里没有人, \
+那么你只能等一会儿.\ \
+<下一步/@Pena>
+#ACT
+mov P1 9
+break
+
+#IF
+random 10
+#SAY
+你跟第23间房的人调换房间, \
+如果第23间房里没有人, \
+那么你只能等一会儿.\ \
+<下一步/@Pena>
+#ACT
+mov P1 10
+break
+
+#ELSEACT
+goto @Penalty
+
+[@Pena]
+#IF
+equal P1 1
+#ACT
+CALCVAR HUMAN Cache = 0
+ExchangeMap B108
+break
+
+#IF
+equal P1 2
+#ACT
+CALCVAR HUMAN Cache = 0
+ExchangeMap B113
+break
+
+#IF
+equal P1 3
+#ACT
+CALCVAR HUMAN Cache = 0
+ExchangeMap B114
+break
+
+#IF
+equal P1 4
+#ACT
+CALCVAR HUMAN Cache = 0
+ExchangeMap B115
+break
+
+#IF
+equal P1 5
+#ACT
+CALCVAR HUMAN Cache = 0
+ExchangeMap B118
+break
+
+#IF
+equal P1 6
+#ACT
+CALCVAR HUMAN Cache = 0
+ExchangeMap B119
+break
+
+#IF
+equal P1 7
+#ACT
+CALCVAR HUMAN Cache = 0
+ExchangeMap B120
+break
+
+#IF
+equal P1 8
+#ACT
+CALCVAR HUMAN Cache = 0
+ExchangeMap B121
+break
+
+#IF
+equal P1 9
+#ACT
+CALCVAR HUMAN Cache = 0
+ExchangeMap B122
+break
+
+#IF
+equal P1 10
+#ACT
+CALCVAR HUMAN Cache = 0
+ExchangeMap B123
+break

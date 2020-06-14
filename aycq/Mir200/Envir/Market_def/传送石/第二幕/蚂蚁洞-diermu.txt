@@ -1,0 +1,43 @@
+[@main]
+蚂蚁洞穴\
+<>\
+<>\
+<激活传送石/@jihuo>\
+<>\
+<传送/@chuansong>\
+<>\
+<退出/@exit>
+
+[@jihuo]
+#if
+check [008] 0
+#act
+goto @ok
+#elsesay
+你已经激活过该点.\\
+<确定/@exit>
+
+[@ok]
+#if
+#act
+set [008] 1
+#say
+蚂蚁洞穴传送点成功激活!\\
+<确定/@exit>
+
+[@chuansong]
+请选择你需要传送的地点:\
+<>\
+<鲁.高因/@luoge>\
+<>\
+<取消/@exit>
+
+[@luoge]
+#IF
+check [006] 1
+check [008] 1
+#ACT
+mapmove diermu 168 465
+#elsesay
+你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>

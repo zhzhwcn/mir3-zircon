@@ -1,0 +1,1978 @@
+[@main]
+#if
+CHECKITEMW  霹雷
+#act
+goto @pilei
+break
+
+#if
+CHECKITEMW  铁轮
+#act
+goto @tielun
+break
+
+#if
+CHECKITEMW  逍遥扇
+#act
+goto @xiaoyao
+break
+
+#elsesay
+啊?....哈,如果你有些修修补补的活儿的话,请直接找我旁边\
+的兄弟就可以了,我可是只干一些能拿得出手的绝活的哦!\\
+<>\
+<>\
+<查看武器升级说明./@shuoming>\
+<>\
+<炼制钢玉石/@shitou>\
+<>\
+<进行武器合成升级./@shengji>
+<>                                       <退出/@exit>
+
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+[@pilei]
+啊!我没有眼花吧,这不就是传说中的霹雷???!\
+来,来,来,兄弟,把武器借我看一看可以吗?如果你愿意的话,找一\
+些好一点的材料来,我来帮你把它升级成一把绝世宝剑?\\
+<>\
+<升级霹雷./@pilei1>\
+<查看武器升级说明./@shuoming>\
+<炼制钢玉石/@shitou>\
+<进行武器合成升级./@shengji>
+<>                                       <退出/@exit>
+
+[@pilei1]
+我从我的祖先那里学到了一种独特的武器炼制技术,为了把你这把武器\
+炼好,我愿意免费为你进行炼制,但是一些比较稀有的材料还是得你自己\
+准备好:\
+世界之石碎片20块,黑铁矿石10块以及钢玉石5块.\
+一旦你准备好了剩余的这些材料就来找我,我必将全力帮你把武器炼制好!\
+<>\
+<我准备好材料了./@pilei2>\
+<我需要对别的武器进行合成升级./@shengji>\
+<退出./@exit>
+
+[@pilei2]
+#if
+CHECKITEMW  霹雷 1
+checkitem 世界之石碎片 20
+checkitem 黑铁矿石 10
+checkitem 钢玉石 5
+#act
+TAKEW 霹雷 1
+take 世界之石碎片 20
+take 黑铁矿石 10
+take 钢玉石 5
+give 游龙 1
+AutoTakeOnItem 游龙 1
+#say
+看吧,丝毫不拖泥带水,这就是我的工作效率!快去试试你的新武器吧!\
+<>\
+<>\
+<>\
+<确定./@exit>
+#elseact
+MESSAGEBOX 〖失败〗材料不足!
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+[@xiaoyao]
+啊!我没有眼花吧,这不就是传说中的逍遥扇???!\
+来,来,来,兄弟,把武器借我看一看可以吗?如果你愿意的话,找一\
+些好一点的材料来,我来帮你把它升级成一件绝世兵器?\\
+<>\
+<升级逍遥扇./@xiaoyao1>\
+<查看武器升级说明./@shuoming>\
+<炼制钢玉石/@shitou>\
+<进行武器合成升级./@shengji>
+<>                                       <退出/@exit>
+
+[@xiaoyao1]
+我从我的祖先那里学到了一种独特的武器炼制技术,为了把你这把武器\
+炼好,我愿意免费为你进行炼制,但是一些比较稀有的材料还是得你自己\
+准备好:\
+世界之石碎片20块,黑铁矿石10块以及钢玉石5块.\
+一旦你准备好了剩余的这些材料就来找我,我必将全力帮你把兵器炼制好!\
+<>\
+<我准备好材料了./@xiaoyao2>\
+<我需要对别的武器进行合成升级./@shengji>\
+<退出./@exit>
+
+[@xiaoyao2]
+#if
+CHECKITEMW  逍遥扇 1
+checkitem 世界之石碎片 20
+checkitem 黑铁矿石 10
+checkitem 钢玉石 5
+#act
+TAKEW 逍遥扇 1
+take 世界之石碎片 20
+take 黑铁矿石 10
+take 钢玉石 5
+give 清风 1
+AutoTakeOnItem 清风 1
+#say
+看吧,丝毫不拖泥带水,这就是我的工作效率!快去试试你的新武器吧!\
+<>\
+<>\
+<>\
+<确定./@exit>
+#elseact
+MESSAGEBOX 〖失败〗材料不足!
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+[@tielun]
+啊!我没有眼花吧,这不就是传说中的铁轮???!\
+来,来,来,兄弟,把武器借我看一看可以吗?如果你愿意的话,找一\
+些好一点的材料来,我来帮你把它升级成一把绝世兵器?\\
+<>\
+<升级铁轮./@tielun1>\
+<查看武器升级说明./@shuoming>\
+<炼制钢玉石/@shitou>\
+<进行武器合成升级./@shengji>
+<>                                       <退出/@exit>
+
+[@tielun1]
+我从我的祖先那里学到了一种独特的武器炼制技术,为了把你这把兵器\
+炼好,我愿意免费为你进行炼制,但是一些比较稀有的材料还是得你自己\
+准备好:\
+世界之石碎片20块,黑铁矿石10块以及钢玉石5块.\
+一旦你准备好了剩余的这些材料就来找我,我必将全力帮你把武器炼制好!\
+<>\
+<我准备好材料了./@tielun2>\
+<我需要对别的武器进行合成升级./@shengji>\
+<退出./@exit>
+
+[@tielun2]
+#if
+CHECKITEMW  铁轮 1
+checkitem 世界之石碎片 20
+checkitem 黑铁矿石 10
+checkitem 钢玉石 5
+#act
+TAKEW 铁轮 1
+take 世界之石碎片 20
+take 黑铁矿石 10
+take 钢玉石 5
+give 血煞 1
+AutoTakeOnItem 血煞 1
+#say
+看吧,丝毫不拖泥带水,这就是我的工作效率!快去试试你的新兵器吧!\
+<>\
+<>\
+<>\
+<确定./@exit>
+#elseact
+MESSAGEBOX 〖失败〗材料不足!
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+[@shuoming]
+以下为目前开放的所有可以升级的武器:\
+<>\
+<初级武器:/SCOLOR=250>  <炼狱/@炼狱>      <魔杖/@魔杖>      <银蛇/@银蛇>\
+<中级武器:/SCOLOR=242>  <命运之刃/@命运之刃>  <元素之刃/@元素之刃>  <祈福之刃/@祈福之刃>\
+<高级武器:/SCOLOR=252>  <井中月/@井中月>    <骨玉权杖/@骨玉权杖>  <无极棍/@无极棍>\
+<稀有武器:/SCOLOR=253>  <裁决之杖/@裁决之杖>  <血饮/@血饮>      <龙纹剑/@龙纹剑>\
+<>\
+<>\
+<(点击武器名字可以查看该武器的详细升级资料)/SCOLOR=254>        <返回/@main>  <退出/@exit>
+
+[@炼狱]
+炼狱可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛炼狱=钢玉石X1.铜矿X10.金币10万;/SCOLOR=250>\
+<中级品质: 祖玛炼狱=钢玉石X1.铁矿X10.金币20万;/SCOLOR=242>\
+<高级品质: 诺玛炼狱=钢玉石X1.银矿X10.金币30万;/SCOLOR=254>\
+<稀有品质: 炸铜炼狱=钢玉石X1.金矿X10.金币50万;/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@魔杖]
+魔杖可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛魔杖=钢玉石X1.铜矿X10.金币10万;/SCOLOR=250>\
+<中级品质: 祖玛魔杖=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛魔杖=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 星光魔杖=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@银蛇]
+银蛇可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛银蛇=钢玉石X1.铜矿X10.金币10万；/SCOLOR=250>\
+<中级品质: 祖玛银蛇=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛银蛇=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 诅咒银蛇=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@命运之刃]
+命运之刃可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛命运之刃=钢玉石X1.铜矿X10.金币10万；/SCOLOR=250>\
+<中级品质: 祖玛命运之刃=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛命运之刃=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 守护命运之刃=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@元素之刃]
+元素之刃可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛元素之刃=钢玉石X1.铜矿X10.金币10万；/SCOLOR=250>\
+<中级品质: 祖玛元素之刃=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛元素之刃=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 自然元素之刃=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@祈福之刃]
+祈福之刃可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛祈福之刃=钢玉石X1.铜矿X10.金币10万；/SCOLOR=250>\
+<中级品质: 祖玛祈福之刃=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛祈福之刃=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 心灵祈福之刃=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@井中月]
+井中月可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛井中月=钢玉石X1.铜矿X10.金币10万；/SCOLOR=250>\
+<中级品质: 祖玛井中月=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛井中月=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 潘夜井中月=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@骨玉权杖]
+骨玉权杖可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛骨玉权杖=钢玉石X1.铜矿X10.金币10万；/SCOLOR=250>\
+<中级品质: 祖玛骨玉权杖=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛骨玉权杖=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 潘夜骨玉权杖=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@无极棍]
+无极棍可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛无极棍=钢玉石X1.铜矿X10.金币10万；/SCOLOR=250>\
+<中级品质: 祖玛无极棍=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛无极棍=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 潘夜无极棍=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@裁决之杖]
+裁决之杖可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛裁决之杖=钢玉石X1.铜矿X10.金币10万；/SCOLOR=250>\
+<中级品质: 祖玛裁决之杖=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛裁决之杖=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 潘夜裁决之杖=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@血饮]
+血饮可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛血饮=钢玉石X1.铜矿X10.金币10万；/SCOLOR=250>\
+<中级品质: 祖玛血饮=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛血饮=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 潘夜血饮=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+[@龙纹剑]
+龙纹剑可以升级的类型与材料如下:\
+<>\
+<初级品质: 沃玛龙纹剑=钢玉石X1.铜矿X10.金币10万；/SCOLOR=250>\
+<中级品质: 祖玛龙纹剑=钢玉石X1.铁矿X10.金币20万；/SCOLOR=242>\
+<高级品质: 诺玛龙纹剑=钢玉石X1.银矿X10.金币30万；/SCOLOR=254>\
+<稀有品质: 潘夜龙纹剑=钢玉石X1.金矿X10.金币50万；/SCOLOR=253>\
+ \
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\ 
+<进行武器升级./@shengji>                       <上一页/@shuoming>  <返回首页/@main>  <退出/@exit>   
+
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+[@shitou]
+钢玉石是用来升级武器的上等材料.\
+如果你想要炼制这种石头,必须要给我带来:\
+<>\
+<铜矿/SCOLOR=254>,<铁矿/SCOLOR=254>,<银矿/SCOLOR=254>,<金矿/SCOLOR=254>以及<黑铁矿石/SCOLOR=254>\
+<>\
+这几种<纯度15以上/SCOLOR=254>的矿石<各一块/SCOLOR=254>和<1万金币/SCOLOR=254>的手工费!\
+<>\
+<请求进行炼制./@shitou1>\
+<>                                                  <返回/@main>  <退出/@exit>
+
+[@shitou1]
+#if
+checkgold 10000
+checkitem 铜矿 1
+checkdura 铜矿 15
+checkitem 铁矿 1
+checkdura 铁矿 15
+checkitem 银矿 1
+checkdura 银矿 15
+checkitem 金矿 1
+checkdura 金矿 15
+checkitem 黑铁矿石 1
+checkdura 黑铁矿石 15
+#act
+take 金币 10000
+take 铜矿 1 15
+Take 铁矿 1 15
+Take 银矿 1 15
+Take 金矿 1 15
+Take 黑铁矿石 1 15
+give 钢玉石 1
+sendmsg 7 你获得了一块〖钢玉石〗!
+#elseact
+MESSAGEBOX 〖失败〗缺少炼制材料或者金币!
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+;...............................................................................................
+[@shengji]
+<升级/SCOLOR=254> <初级品质武器/@初级品质武器> 材料:<钢玉石X1.铜矿X10.金币10万./SCOLOR=254>\
+<>\
+<升级/SCOLOR=254> <中级品质武器/@中级品质武器> 材料:<钢玉石X1.铁矿X10.金币20万./SCOLOR=254>\
+<>\
+<升级/SCOLOR=254> <高级品质武器/@高级品质武器> 材料:<钢玉石X1.银矿X10.金币30万./SCOLOR=254>\
+<>\
+<升级/SCOLOR=254> <稀有品质武器/@稀有品质武器> 材料:<钢玉石X1.金矿X10.金币50万./SCOLOR=254>\
+<注意:请把需要升级的武器装备在手上!/SCOLOR=249>\
+<中，高，稀有武器失败退一级品质,同时会清除所附加的极品属性!/SCOLOR=249>\
+<返回/@main>                                                     <退出/@exit>\
+;...............................................................................................
+;...............................................................................................                     
+[@初级品质武器]
+#if
+checkitem 钢玉石 1
+checkitem 铜矿 10
+checkgold 100000
+#act
+goto @初级品质武器1
+break
+#elseact
+MESSAGEBOX 〖错误〗缺少炼制材料或者金币!
+
+[@初级品质武器1]
+#if
+CHECKITEMW  炼狱 1
+#act 
+goto @炼狱1
+break
+#if
+CHECKITEMW  魔杖 1
+#act 
+goto @魔杖1
+break
+#if
+CHECKITEMW  银蛇 1
+#act 
+goto @银蛇1
+break
+
+#if
+CHECKITEMW  命运之刃 1
+#act 
+goto @命运之刃1
+break
+#if
+CHECKITEMW  元素之刃 1
+#act 
+goto @元素之刃1
+break
+#if
+CHECKITEMW  祈福之刃 1
+#act 
+goto @祈福之刃1
+break
+
+#if
+CHECKITEMW  井中月 1
+#act 
+goto @井中月1
+break
+#if
+CHECKITEMW  骨玉权杖 1
+#act 
+goto @骨玉权杖1
+break
+#if
+CHECKITEMW  无极棍 1
+#act 
+goto @无极棍1
+break
+
+#if
+CHECKITEMW  裁决之杖 1
+#act 
+goto @裁决之杖1
+break
+#if
+CHECKITEMW  血饮 1
+#act 
+goto @血饮1
+break
+#if
+CHECKITEMW  龙纹剑 1
+#act 
+goto @龙纹剑1
+break
+
+#elseact
+MESSAGEBOX 〖错误〗请确认你身上装备了相应的武器!
+
+[@炼狱1]
+#if
+RANDOM 2
+#act
+TAKEW 炼狱 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛炼狱 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 沃玛炼狱 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+[@魔杖1]
+#if
+RANDOM 2
+#act
+TAKEW 魔杖 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛魔杖 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 沃玛魔杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+[@银蛇1]
+#if
+RANDOM 2
+#act
+TAKEW 银蛇 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛银蛇 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 沃玛银蛇 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+;...............................................................................................
+[@命运之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 命运之刃 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛命运之刃 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 沃玛命运之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+[@元素之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 元素之刃 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛元素之刃 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 沃玛元素之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+[@祈福之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 祈福之刃 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛祈福之刃 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 沃玛祈福之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+;...............................................................................................
+[@井中月1]
+#if
+RANDOM 2
+#act
+TAKEW 井中月 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛井中月 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 沃玛井中月 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+[@骨玉权杖1]
+#if
+RANDOM 2
+#act
+TAKEW 骨玉权杖 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛骨玉权杖 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 沃玛骨玉权杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+[@无极棍1]
+#if
+RANDOM 2
+#act
+TAKEW 无极棍 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛无极棍 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 沃玛无极棍 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+;...............................................................................................
+[@裁决之杖1]
+#if
+RANDOM 2
+#act
+TAKEW 裁决之杖 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛裁决之杖 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 沃玛裁决之杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+[@血饮1]
+#if
+RANDOM 2
+#act
+TAKEW 血饮 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛血饮 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 沃玛血饮 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+[@龙纹剑1]
+#if
+RANDOM 2
+#act
+TAKEW 龙纹剑 1
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 2
+give  沃玛龙纹剑 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 沃玛龙纹剑 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+take 钢玉石 1
+take 铜矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+SendMsg 5 武器升级失败了!
+close
+break
+
+;...............................................................................................
+;...............................................................................................
+[@中级品质武器]
+#if
+checkitem 钢玉石 1
+checkitem 铁矿 10
+checkgold 200000
+#act
+goto @中级品质武器1
+break
+#elseact
+MESSAGEBOX 〖错误〗缺少炼制材料或者金币!
+
+[@中级品质武器1]
+#if
+CHECKITEMW  沃玛炼狱 1
+#act 
+goto @沃玛炼狱1
+break
+#if
+CHECKITEMW  沃玛魔杖 1
+#act 
+goto @沃玛魔杖1
+break
+#if
+CHECKITEMW  沃玛银蛇 1
+#act 
+goto @沃玛银蛇1
+break
+
+#if
+CHECKITEMW  沃玛命运之刃 1
+#act 
+goto @沃玛命运之刃1
+break
+#if
+CHECKITEMW  沃玛元素之刃 1
+#act 
+goto @沃玛元素之刃1
+break
+#if
+CHECKITEMW  沃玛祈福之刃 1
+#act 
+goto @沃玛祈福之刃1
+break
+
+#if
+CHECKITEMW  沃玛井中月 1
+#act 
+goto @沃玛井中月1
+break
+#if
+CHECKITEMW  沃玛骨玉权杖 1
+#act 
+goto @沃玛骨玉权杖1
+break
+#if
+CHECKITEMW  沃玛无极棍 1
+#act 
+goto @沃玛无极棍1
+break
+
+#if
+CHECKITEMW  沃玛裁决之杖 1
+#act 
+goto @沃玛裁决之杖1
+break
+#if
+CHECKITEMW  沃玛血饮 1
+#act 
+goto @沃玛血饮1
+break
+#if
+CHECKITEMW  沃玛龙纹剑 1
+#act 
+goto @沃玛龙纹剑1
+break
+
+#elseact
+MESSAGEBOX 〖错误〗请确认你身上装备了相应的武器!
+
+;...............................................................................................
+[@沃玛炼狱1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛炼狱 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛炼狱 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 祖玛炼狱 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛炼狱 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 炼狱 1
+AutoTakeOnItem 炼狱 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@沃玛魔杖1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛魔杖 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛魔杖 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 祖玛魔杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛魔杖 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 魔杖 1
+AutoTakeOnItem 魔杖 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@沃玛银蛇1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛银蛇 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛银蛇 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 祖玛银蛇 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛银蛇 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 银蛇 1
+AutoTakeOnItem 银蛇 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+[@沃玛命运之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛命运之刃 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛命运之刃 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 祖玛命运之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛命运之刃 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 命运之刃 1
+AutoTakeOnItem 命运之刃 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@沃玛元素之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛元素之刃 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛元素之刃 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 祖玛元素之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛元素之刃 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 元素之刃 1
+AutoTakeOnItem 元素之刃 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@沃玛祈福之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛祈福之刃 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛祈福之刃 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 祖玛祈福之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛祈福之刃 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祈福之刃 1
+AutoTakeOnItem 祈福之刃 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+[@沃玛井中月1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛井中月 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛井中月 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 祖玛井中月 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛井中月 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 井中月 1
+AutoTakeOnItem 井中月 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@沃玛骨玉权杖1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛骨玉权杖 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛骨玉权杖 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 祖玛骨玉权杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛骨玉权杖 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 骨玉权杖 1
+AutoTakeOnItem 骨玉权杖 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@沃玛无极棍1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛无极棍 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛无极棍 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 祖玛无极棍 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛无极棍 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 无极棍 1
+AutoTakeOnItem 无极棍 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+[@沃玛裁决之杖1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛裁决之杖 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛裁决之杖 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 祖玛裁决之杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛裁决之杖 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 裁决之杖 1
+AutoTakeOnItem 裁决之杖 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@沃玛血饮1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛血饮 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛血饮 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 祖玛血饮 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛血饮 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 血饮 1
+AutoTakeOnItem 血饮 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@沃玛龙纹剑1]
+#if
+RANDOM 2
+#act
+TAKEW 沃玛龙纹剑 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 3
+give  祖玛龙纹剑 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 祖玛龙纹剑 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 沃玛龙纹剑 1
+take 钢玉石 1
+take 铁矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 龙纹剑 1
+AutoTakeOnItem 龙纹剑 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+;...............................................................................................
+[@高级品质武器]
+#if
+checkitem 钢玉石 1
+checkitem 银矿 10
+checkgold 300000
+#act
+goto @高级品质武器1
+break
+#elseact
+MESSAGEBOX 〖错误〗缺少炼制材料或者金币!
+
+[@高级品质武器1]
+#if
+CHECKITEMW  祖玛炼狱 1
+#act 
+goto @祖玛炼狱1
+break
+#if
+CHECKITEMW  祖玛魔杖 1
+#act 
+goto @祖玛魔杖1
+break
+#if
+CHECKITEMW  祖玛银蛇 1
+#act 
+goto @祖玛银蛇1
+break
+
+#if
+CHECKITEMW  祖玛命运之刃 1
+#act 
+goto @祖玛命运之刃1
+break
+#if
+CHECKITEMW  祖玛元素之刃 1
+#act 
+goto @祖玛元素之刃1
+break
+#if
+CHECKITEMW  祖玛元素之刃 1
+#act 
+goto @祖玛元素之刃1
+break
+
+#if
+CHECKITEMW  祖玛井中月 1
+#act 
+goto @祖玛井中月1
+break
+#if
+CHECKITEMW  祖玛骨玉权杖 1
+#act 
+goto @祖玛骨玉权杖1
+break
+#if
+CHECKITEMW  祖玛无极棍 1
+#act 
+goto @祖玛无极棍1
+break
+
+#if
+CHECKITEMW  祖玛裁决之杖 1
+#act 
+goto @祖玛裁决之杖1
+break
+#if
+CHECKITEMW  祖玛血饮 1
+#act 
+goto @祖玛血饮1
+break
+#if
+CHECKITEMW  祖玛龙纹剑 1
+#act 
+goto @祖玛龙纹剑1
+break
+
+#elseact
+MESSAGEBOX 〖错误〗请确认你身上装备了相应的武器!
+
+;...............................................................................................
+[@祖玛炼狱1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛炼狱 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛炼狱 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 诺玛炼狱 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛炼狱 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛炼狱 1
+AutoTakeOnItem 沃玛炼狱 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@祖玛魔杖1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛魔杖 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛魔杖 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 诺玛魔杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛魔杖 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛魔杖 1
+AutoTakeOnItem 沃玛魔杖 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@祖玛银蛇1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛银蛇 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛银蛇 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 诺玛银蛇 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛银蛇 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛银蛇 1
+AutoTakeOnItem 沃玛银蛇 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+[@祖玛命运之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛命运之刃 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛命运之刃 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 诺玛命运之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛命运之刃 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛命运之刃 1
+AutoTakeOnItem 沃玛命运之刃 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@祖玛元素之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛元素之刃 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛元素之刃 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 诺玛元素之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛元素之刃 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛元素之刃 1
+AutoTakeOnItem 沃玛元素之刃 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@祖玛祈福之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛祈福之刃 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛祈福之刃 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 诺玛祈福之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛祈福之刃 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛祈福之刃 1
+AutoTakeOnItem 沃玛祈福之刃 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+[@祖玛井中月1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛井中月 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛井中月 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 诺玛井中月 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛井中月 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛井中月 1
+AutoTakeOnItem 沃玛井中月 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@祖玛骨玉权杖1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛骨玉权杖 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛骨玉权杖 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 诺玛骨玉权杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛骨玉权杖 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛骨玉权杖 1
+AutoTakeOnItem 沃玛骨玉权杖 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@祖玛无极棍1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛无极棍 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛无极棍 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 诺玛无极棍 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛无极棍 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛无极棍 1
+AutoTakeOnItem 沃玛无极棍 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+[@祖玛裁决之杖1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛裁决之杖 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛裁决之杖 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 诺玛裁决之杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛裁决之杖 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛裁决之杖 1
+AutoTakeOnItem 沃玛裁决之杖 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@祖玛血饮1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛血饮 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛血饮 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 诺玛血饮 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛血饮 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛血饮 1
+AutoTakeOnItem 沃玛血饮 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@祖玛龙纹剑1]
+#if
+RANDOM 2
+#act
+TAKEW 祖玛龙纹剑 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 4
+give  诺玛龙纹剑 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 诺玛龙纹剑 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 祖玛龙纹剑 1
+take 钢玉石 1
+take 银矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 沃玛龙纹剑 1
+AutoTakeOnItem 沃玛龙纹剑 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+;...............................................................................................
+[@稀有品质武器]
+#if
+checkitem 钢玉石 1
+checkitem 金矿 10
+checkgold 500000
+#act
+goto @稀有品质武器1
+break
+#elseact
+MESSAGEBOX 〖错误〗缺少炼制材料或者金币!
+
+[@稀有品质武器1]
+#if
+CHECKITEMW  诺玛炼狱 1
+#act 
+goto @诺玛炼狱1
+break
+#if
+CHECKITEMW  诺玛魔杖 1
+#act 
+goto @诺玛魔杖1
+break
+#if
+CHECKITEMW  诺玛银蛇 1
+#act 
+goto @诺玛银蛇1
+break
+
+#if
+CHECKITEMW  诺玛命运之刃 1
+#act 
+goto @诺玛命运之刃1
+break
+#if
+CHECKITEMW  诺玛元素之刃 1
+#act 
+goto @诺玛元素之刃1
+break
+#if
+CHECKITEMW  诺玛祈福之刃 1
+#act 
+goto @诺玛祈福之刃1
+break
+
+#if
+CHECKITEMW  诺玛井中月 1
+#act 
+goto @诺玛井中月1
+break
+#if
+CHECKITEMW  诺玛骨玉权杖 1
+#act 
+goto @诺玛骨玉权杖1
+break
+#if
+CHECKITEMW  诺玛无极棍 1
+#act 
+goto @诺玛无极棍1
+break
+
+#if
+CHECKITEMW  诺玛裁决之杖 1
+#act 
+goto @诺玛裁决之杖1
+break
+#if
+CHECKITEMW  诺玛血饮 1
+#act 
+goto @诺玛血饮1
+break
+#if
+CHECKITEMW  诺玛龙纹剑 1
+#act 
+goto @诺玛龙纹剑1
+break
+
+#elseact
+MESSAGEBOX 〖错误〗请确认你身上装备了相应的武器!
+
+;...............................................................................................
+[@诺玛炼狱1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛炼狱 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  炸铜炼狱 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 炸铜炼狱 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛炼狱 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛炼狱 1
+AutoTakeOnItem 祖玛炼狱 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@诺玛魔杖1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛魔杖 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  星光魔杖 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 星光魔杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛魔杖 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛魔杖 1
+AutoTakeOnItem 祖玛魔杖 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@诺玛银蛇1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛银蛇 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  诅咒银蛇 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 诅咒银蛇 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛银蛇 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛银蛇 1
+AutoTakeOnItem 祖玛银蛇 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+[@诺玛命运之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛命运之刃 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  守护命运之刃 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 守护命运之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛命运之刃 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛命运之刃 1
+AutoTakeOnItem 祖玛命运之刃 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@诺玛元素之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛元素之刃 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  自然元素之刃 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 自然元素之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛元素之刃 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛元素之刃 1
+AutoTakeOnItem 祖玛元素之刃 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@诺玛祈福之刃1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛祈福之刃 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  心灵祈福之刃 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 心灵祈福之刃 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛祈福之刃 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛祈福之刃 1
+AutoTakeOnItem 祖玛祈福之刃 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+[@诺玛井中月1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛井中月 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  潘夜井中月 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 潘夜井中月 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛井中月 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛井中月 1
+AutoTakeOnItem 祖玛井中月 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@诺玛骨玉权杖1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛骨玉权杖 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  潘夜骨玉权杖 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 潘夜骨玉权杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛骨玉权杖 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛骨玉权杖 1
+AutoTakeOnItem 祖玛骨玉权杖 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@诺玛无极棍1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛无极棍 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  潘夜无极棍 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 潘夜无极棍 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛无极棍 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛无极棍 1
+AutoTakeOnItem 祖玛无极棍 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+;...............................................................................................
+[@诺玛裁决之杖1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛裁决之杖 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  潘夜裁决之杖 1 <$STR(P10)>|0|0|
+AutoTakeOnItem 潘夜裁决之杖 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛裁决之杖 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛裁决之杖 1
+AutoTakeOnItem 祖玛裁决之杖 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@诺玛血饮1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛血饮 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  潘夜血饮 1 0|<$STR(P10)>|0|
+AutoTakeOnItem 潘夜血饮 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛血饮 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛血饮 1
+AutoTakeOnItem 祖玛血饮 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+[@诺玛龙纹剑1]
+#if
+RANDOM 2
+#act
+TAKEW 诺玛龙纹剑 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2820 20 1 60 
+Movr P10 5
+give  潘夜龙纹剑 1 0|0|<$STR(P10)>|
+AutoTakeOnItem 潘夜龙纹剑 1
+SendMsg 5 你的武器品质提升了!
+close
+break
+#elseact
+TAKEW 诺玛龙纹剑 1
+take 钢玉石 1
+take 金矿 10
+take 金币 100000
+PLAYEFFECT 0 2840 14 1 60 
+give 祖玛龙纹剑 1
+AutoTakeOnItem 祖玛龙纹剑 1
+SendMsg 5 失败,武器品质降低!
+close
+break
+
+
+
+
+
+
+

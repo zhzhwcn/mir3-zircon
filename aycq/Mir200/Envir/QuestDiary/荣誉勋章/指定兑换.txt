@@ -1,0 +1,364 @@
+[@指定勋章]
+{
+这里你可以领取指定的荣誉勋章，\
+当然，你要付出更多的声望值。\
+【<查看指定领取各级勋章需要的声望值/@123>】\
+<勋章11号/@荣誉勋章11号>  <勋章12号/@荣誉勋章12号>  <勋章13号/@荣誉勋章13号>  <勋章14号/@荣誉勋章14号>  <勋章15号/@荣誉勋章15号>\
+<勋章21号/@荣誉勋章21号>  <勋章22号/@荣誉勋章22号>  <勋章23号/@勋章23号>  <勋章24号/@荣誉勋章24号>  <勋章25号/@荣誉勋章25号>\ 
+<勋章31号/@荣誉勋章31号>  <勋章32号/@荣誉勋章32号>  <勋章33号/@荣誉勋章33号>  <勋章34号/@荣誉勋章34号>  <勋章35号/@荣誉勋章35号>\
+<勋章41号/@勋章41号>  <勋章42号/@荣誉勋章42号>  <勋章43号/@荣誉勋章43号>  <勋章44号/@荣誉勋章44号>  <勋章45号/@荣誉勋章45号>\
+<返回/@荣誉值换取勋章>\
+;━━━━━━━━━━[荣誉勋章11号——至15号]━━━━━━━━━
+[@荣誉勋章11号]
+#IF
+CHECKCREDITPOINT > 19
+#act
+CREDITPOINT - 20
+give 荣誉勋章11号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章12号]
+#IF
+CHECKCREDITPOINT > 19
+#act
+CREDITPOINT - 20
+give 荣誉勋章12号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章13号]
+#IF
+CHECKCREDITPOINT > 19
+checkitem 幽灵手套
+#act
+CREDITPOINT - 20
+take 幽灵手套
+give 荣誉勋章13号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。
+
+[@荣誉勋章14号]
+#IF
+CHECKCREDITPOINT > 19
+checkitem 思贝儿手镯
+#act
+CREDITPOINT - 20
+take 思贝儿手镯
+give 荣誉勋章14号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。
+
+[@荣誉勋章15号]
+#IF
+CHECKCREDITPOINT > 19
+checkitem 心灵手镯
+#act
+CREDITPOINT - 20
+take 心灵手镯
+give 荣誉勋章15号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。
+;━━━━━━━━━━[荣誉勋章21号——至25号]━━━━━━━━━
+[@荣誉勋章21号]
+#IF
+CHECKCREDITPOINT > 39
+checkitem 荣誉勋章11号
+#act
+CREDITPOINT - 40
+take 荣誉勋章11号
+give 荣誉勋章21号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章22号]
+#IF
+CHECKCREDITPOINT > 39
+checkitem 荣誉勋章12号
+#act
+CREDITPOINT - 40
+take 荣誉勋章12号
+give 荣誉勋章22号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章23号]
+#IF
+CHECKCREDITPOINT > 39
+checkitem 荣誉勋章13号
+#act
+CREDITPOINT - 40
+take 荣誉勋章13号
+give 荣誉勋章23号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章24号]
+#IF
+CHECKCREDITPOINT > 39
+checkitem 荣誉勋章14号
+#act
+CREDITPOINT - 40
+take 荣誉勋章14号   
+give 荣誉勋章24号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章25号]
+#IF
+CHECKCREDITPOINT > 39
+checkitem 荣誉勋章15号
+#act
+CREDITPOINT - 40
+take 荣誉勋章15号
+give 荣誉勋章25号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+;━━━━━━━━━━[荣誉勋章31号——至35号]━━━━━━━━━
+[@荣誉勋章31号]
+#IF
+CHECKCREDITPOINT > 59
+checkitem 荣誉勋章21号
+#act
+CREDITPOINT - 60
+take 荣誉勋章21号
+give 荣誉勋章31号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章32号]
+#IF
+CHECKCREDITPOINT > 59
+checkitem 荣誉勋章22号
+#act
+CREDITPOINT - 60
+take 荣誉勋章22号
+give 荣誉勋章32号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章33号]
+#IF
+CHECKCREDITPOINT > 59
+checkitem 荣誉勋章23号
+#act
+CREDITPOINT - 60
+take 荣誉勋章23号
+give 荣誉勋章33号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章34号]
+#IF
+CHECKCREDITPOINT > 59
+checkitem 荣誉勋章24号
+#act
+CREDITPOINT - 60
+take 荣誉勋章24号
+give 荣誉勋章34号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章35号]
+#IF
+CHECKCREDITPOINT > 59
+checkitem 荣誉勋章25号
+#act
+CREDITPOINT - 60
+take 荣誉勋章25号
+give 荣誉勋章35号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+;━━━━━━━━━━[荣誉勋章41号——至45号]━━━━━━━━━
+[@荣誉勋章41号]
+#IF
+CHECKCREDITPOINT > 79
+checkitem 荣誉勋章31号
+#act
+CREDITPOINT - 80
+take 荣誉勋章31号
+give 荣誉勋章41号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章42号]
+#IF
+CHECKCREDITPOINT > 79
+checkitem 荣誉勋章32号
+#act
+CREDITPOINT - 80
+take 荣誉勋章32号
+give 荣誉勋章42号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章43号]
+#IF
+CHECKCREDITPOINT > 79
+checkitem 荣誉勋章33号
+#act
+CREDITPOINT - 80
+take 荣誉勋章33号
+give 荣誉勋章43号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章44号]
+#IF
+CHECKCREDITPOINT > 79
+checkitem 荣誉勋章34号
+#act
+CREDITPOINT - 80
+take 荣誉勋章34号
+give 荣誉勋章44号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值或材料不够无法换取。\ \
+<退出/@exit>
+
+[@荣誉勋章45号]
+#IF
+CHECKCREDITPOINT > 79
+checkitem 荣誉勋章35号
+#act
+CREDITPOINT - 80
+take 荣誉勋章35号
+give 荣誉勋章45号 1
+SENDMSG 6 您当前的声望值:<$CREDITPOINT>
+break
+#SAY
+兑换成功！拿好了，别掉了。\ \
+<确定/@exit>
+#ELSESAY
+声望值不够或物品不齐全无法换取。\
+[@123]
+职业勋章                 指定兑换条件\
+一级勋章（13－15号勋章） 需要声望值20点+相应职业相应<沃玛手镯/@沃玛手镯>\
+二级勋章（23－25号勋章） 需要声望值40点+相应职业相应一级勋章\
+三级勋章（33－35号勋章） 需要声望值60点+相应职业相应二级勋章\
+四级勋章（43－45号勋章） 需要声望值80点+相应职业相应三级勋章\ \
+<下一页/@1232>　　<返回/@指定勋章>
+
+[@1232]
+防御勋章                 指定兑换条件\
+一级勋章（11－12号勋章） 需要声望值20点\
+二级勋章（21－22号勋章） 需要声望值40点+相应职业相应一级勋章\
+三级勋章（31－32号勋章） 需要声望值60点+相应职业相应二级勋章\
+四级勋章（41－42号勋章） 需要声望值80点+相应职业相应三级勋章\ \
+<上一页/@123>　　<返回/@指定勋章>
+
+[@沃玛手镯]
+战士：幽灵手套.\
+法师：思贝儿手镯.\
+道士：心灵手镯.\
+<返回/@123>\
+}

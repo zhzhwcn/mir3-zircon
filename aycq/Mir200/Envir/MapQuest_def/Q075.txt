@@ -1,0 +1,17 @@
+[@main]
+#if
+#act
+;²¥·ÅÄ§·¨
+MAPEFFECT huimieboss 29 43 0 960 10 1 60 1 0 
+MAPEFFECT huimieboss 34 47 0 960 10 1 60 1 0 
+DELAYGOTO 1000 @shuaguai
+break
+
+[@shuaguai]
+#if
+#act
+MonGenEx huimieboss 29 43 °Í¶û2 0 1 0 253
+MonGenEx huimieboss 34 47 °Í¶û3 0 1 0 253
+
+
+

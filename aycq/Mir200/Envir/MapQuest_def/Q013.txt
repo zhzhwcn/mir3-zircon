@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [124] 1
+check [128] 0
+CHECKBAGSIZE  1
+CheckHumInRange dusheboss 37 41 500
+#act 
+set [128] 1
+give 腹蛇护符 1
+#say
+恭喜你获得了腹蛇护符!!!\\
+<>\
+<确定/@exit>

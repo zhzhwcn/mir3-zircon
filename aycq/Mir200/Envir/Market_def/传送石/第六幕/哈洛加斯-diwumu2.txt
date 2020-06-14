@@ -1,0 +1,164 @@
+[@main]
+哈洛加斯\
+<>\\
+<>\
+<激活传送石/@jihuo>\
+<>\
+<传送/@chuansong>\
+<>\
+<退出/@exit>
+
+[@jihuo]
+#if
+check [025] 0
+#act
+goto @ok
+#elsesay
+你已经激活过该点.\\
+<确定/@exit>
+
+[@ok]
+#if
+#act
+set [025] 1
+#say
+哈洛加斯传送点成功激活!\\
+<确定/@exit>
+
+[@chuansong]
+请选择你需要传送的地区:\
+<>\
+<>\
+<城镇/@城镇>\
+<>\
+<险恶地区/@险恶>\
+<>\
+<>\
+<退出/@exit>
+
+[@城镇]
+请选择你需要传送的地点:\
+<>\
+<萝格营地/@萝格营地>10000金币      <鲁.高因/@鲁.高因>10000金币\
+<>\
+<库拉斯特海港/@库拉斯特海港>15000金币    <群魔堡垒/@群魔堡垒>20000金币\
+<>\
+<东部王国/@东部王国>5000金币\
+<>\
+<返回/@chuansong>                   <退出/@exit>
+
+[@萝格营地]
+#IF
+check [001] 1
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove diyimu 76 51
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@鲁.高因]
+#IF
+check [006] 1
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove diermu 168 465
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@库拉斯特海港]
+#IF
+check [011] 1
+checkgold 15000
+#ACT
+take 金币 15000
+mapmove disanmu 422 320
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@群魔堡垒]
+#IF
+check [017] 1
+checkgold 20000
+#ACT
+take 金币 20000
+mapmove disimu 24 33
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@东部王国]
+#IF
+check [021] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove diwumu1 295 486
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@险恶]
+请选择你需要传送的地点:\
+<>\
+<西沙漠/@xisha>5000金币\
+<>\
+<冰冻高原/@bingleng>2000金币\
+<>\
+<神殿遗址/@shendian>4000金币\
+<>\
+<取消/@exit>
+
+[@xisha]
+#IF
+check [025] 1
+check [024] 1
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove xishamo 118 155
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@bingleng]
+#IF
+check [025] 1
+check [026] 1
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove diwumu2 86 178
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+[@shendian]
+#IF
+check [025] 1
+check [027] 1
+checkgold 4000
+#ACT
+take 金币 4000
+mapmove diwumu2 166 28
+#elsesay
+对不起,你的金币不够!!!\
+或者你所选择的传送点还没有激活,请先激活后再使用该功能!\\
+<确定/@exit>
+
+
+
+
+
+

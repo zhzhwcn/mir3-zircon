@@ -1,0 +1,329 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @race
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 2
+#ACT
+goto @total
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 3
+#ACT
+goto @total1
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 4
+#ACT
+goto @cube
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第27间房  \
+这间房有多种陷阱和幸运共存\
+你可以前进或着后退,也可以获得筹码或着丢失筹码...\
+祝<$USERNAME>好运. \ \
+<下一步/@penalty>
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@Penalty]
+#IF
+random 8
+#SAY
+你陷入了扣除2个筹码的陷阱. \ \
+<下一步/@race>
+#ACT
+CALCVAR HUMAN Cache = 1
+take 筹码 2
+break
+
+#IF
+random 8
+#SAY
+你选了获得2个筹码的幸运. \ \
+<下一步/@race>
+#ACT
+CALCVAR HUMAN Cache = 1
+give 筹码 2
+break
+
+#IF
+random 8
+#SAY
+你选了后退4间房的恶运. \ \
+<关闭/@back>
+#ACT
+CALCVAR HUMAN Cache = 2
+mov P8 1
+break
+
+#IF
+random 8
+#SAY
+你选了前进4间房的好运. \ \
+<关闭/@forward>
+#ACT
+CALCVAR HUMAN Cache = 2
+mov P8 2
+break
+
+#IF
+random 8
+#SAY
+你陷入了扣除3个筹码的陷阱. \ \
+<下一步/@race>
+#ACT
+CALCVAR HUMAN Cache = 1
+break
+
+#IF
+random 8
+#SAY
+你选了获得2000金币的好运. \ \
+<下一步/@race>
+#ACT
+take 金币 2000
+CALCVAR HUMAN Cache = 1
+break
+
+#IF
+random 8
+#SAY
+您遇到了陷阱, 没收您强效金创药, 强效魔法药各5个. \ \
+<下一步/@race>
+#ACT
+take 强效金创药 5
+take 强效魔法药 5
+CALCVAR HUMAN Cache = 1
+break
+
+#IF
+random 8
+#SAY
+您幸运的获得了强效金创药, 强效魔法药各5个.\ \
+<下一步/@race>
+#ACT
+give 强效金创药 5
+give 强效魔法药 5
+CALCVAR HUMAN Cache = 1
+break
+#ELSEACT
+goto @penalty
+
+[@race]
+给你提供投骰子的机会. \
+祝你好运.. \ \
+<下一步/@pre_Cube>
+
+[@pre_cube]
+#IF
+checkitem 筹码 1
+#ACT
+CALCVAR HUMAN Cache = 4
+take 筹码 1
+movr d0 6
+inc d0 1
+playdice 1 @cube
+#SAY
+正在投骰子.\ \
+<下一个/@cube>
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@cube]
+#SAY
+骰子的点数 <$STR(D0)>  \
+你可以前进 <$STR(D0)>  \ \
+<移动/@next_cube>
+
+[@next_cube]
+#IF
+equal d0 1 
+#ACT
+goto @posi1
+break
+
+#IF
+equal d0 2 
+#ACT
+goto @posi2
+break
+
+#IF
+equal d0 3 
+#ACT
+goto @posi3
+break
+
+#IF
+equal d0 4 
+#ACT
+goto @posi4
+break
+
+#IF
+equal d0 5
+#ACT
+goto @posi5
+break
+
+#IF
+equal d0 6 
+#ACT
+goto @posi6
+break
+
+[@total]
+#IF
+checkitem 筹码 1
+#ACT
+CALCVAR HUMAN Cache = 3
+take 筹码 1
+goto @total1
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@total1]
+#IF
+equal P8 1
+#SAY
+您需要后退4间房.\ \
+<移动/@back>
+#ACT
+break
+
+#IF
+equal P8 2
+#SAY
+您可以前进4间房.\ \
+<移动/@forward>
+#ACT
+break
+
+[@back]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B126
+addbatch B125
+addbatch B124
+addbatch B123
+batchmove
+
+[@forward]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B128
+addbatch B129
+addbatch B130
+addbatch B131
+batchmove
+
+[@Posi1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B128
+batchmove
+
+[@Posi2]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B128
+addbatch B129
+batchmove
+
+[@Posi3]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B128
+addbatch B129
+addbatch B130
+batchmove
+
+[@Posi4]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B128
+addbatch B129
+addbatch B130
+addbatch B131
+batchmove
+
+[@Posi5]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B128
+addbatch B129
+addbatch B130
+addbatch B131
+addbatch B132
+batchmove
+
+[@Posi6]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B128
+addbatch B129
+addbatch B130
+addbatch B131
+addbatch B132
+addbatch B133
+batchmove

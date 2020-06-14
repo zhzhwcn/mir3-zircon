@@ -1,0 +1,488 @@
+[@main]
+欢迎你来婚姻圣殿，你来这里一定有你想做的\
+我能帮你些什么呢？\ \
+┏━━━━━┳━━━━━┳━━━━━┓\
+┃<我想要结婚/@marry>┃<我想要离婚/@unmarry>┃<要离开这里/@shazi>┃\
+┗━━━━━┻━━━━━┻━━━━━┛\
+┏━━━━━┳━━━━━┳━━━━━┓\
+┃<婚礼火焰一/@LOVEYOU>┃<婚礼火焰二/@ILOVEYOU>┃<婚礼火焰三/@心>┃\
+┗━━━━━┻━━━━━┻━━━━━┛\
+
+[@LOVEYOU]
+#IF
+  large I31 0
+#ACT
+  messagebox 该火焰已经放过了...
+  break
+#IF
+  checkgold 500000
+#ACT
+  take 金币 500000
+  GMEXECUTE mobfireburn m101 14 38 5 120 0
+  GMEXECUTE mobfireburn m101 14 37 5 120 0
+  GMEXECUTE mobfireburn m101 14 36 5 120 0
+  GMEXECUTE mobfireburn m101 14 35 5 120 0
+  GMEXECUTE mobfireburn m101 14 34 5 120 0
+  GMEXECUTE mobfireburn m101 15 39 5 120 0
+  GMEXECUTE mobfireburn m101 15 38 5 120 0
+  GMEXECUTE mobfireburn m101 15 37 5 120 0
+  GMEXECUTE mobfireburn m101 15 36 5 120 0
+  GMEXECUTE mobfireburn m101 15 35 5 120 0
+  GMEXECUTE mobfireburn m101 15 33 5 120 0
+  GMEXECUTE mobfireburn m101 16 40 5 120 0
+  GMEXECUTE mobfireburn m101 17 41 5 120 0
+  GMEXECUTE mobfireburn m101 18 42 5 120 0
+  GMEXECUTE mobfireburn m101 19 43 5 120 0
+  GMEXECUTE mobfireburn m101 20 44 5 120 0
+  GMEXECUTE mobfireburn m101 20 43 5 120 0
+  GMEXECUTE mobfireburn m101 20 42 5 120 0
+  GMEXECUTE mobfireburn m101 19 42 5 120 0
+  GMEXECUTE mobfireburn m101 18 41 5 120 0
+  GMEXECUTE mobfireburn m101 17 40 5 120 0
+  GMEXECUTE mobfireburn m101 16 39 5 120 0
+  GMEXECUTE mobfireburn m101 21 43 5 120 0
+  GMEXECUTE mobfireburn m101 22 42 5 120 0
+  GMEXECUTE mobfireburn m101 23 41 5 120 0
+  GMEXECUTE mobfireburn m101 24 40 5 120 0
+  GMEXECUTE mobfireburn m101 25 39 5 120 0
+  GMEXECUTE mobfireburn m101 24 39 5 120 0
+  GMEXECUTE mobfireburn m101 23 40 5 120 0
+  GMEXECUTE mobfireburn m101 22 41 5 120 0
+  GMEXECUTE mobfireburn m101 21 42 5 120 0
+  GMEXECUTE mobfireburn m101 25 38 5 120 0
+  GMEXECUTE mobfireburn m101 25 37 5 120 0
+  GMEXECUTE mobfireburn m101 25 36 5 120 0
+  GMEXECUTE mobfireburn m101 25 35 5 120 0
+  GMEXECUTE mobfireburn m101 25 34 5 120 0
+  GMEXECUTE mobfireburn m101 25 33 5 120 0
+  GMEXECUTE mobfireburn m101 26 34 5 120 0
+  GMEXECUTE mobfireburn m101 26 35 5 120 0
+  GMEXECUTE mobfireburn m101 26 36 5 120 0
+  GMEXECUTE mobfireburn m101 26 37 5 120 0
+  GMEXECUTE mobfireburn m101 26 38 5 120 0
+  GMEXECUTE mobfireburn m101 24 33 5 120 0
+  GMEXECUTE mobfireburn m101 23 33 5 120 0
+  GMEXECUTE mobfireburn m101 22 33 5 120 0
+  GMEXECUTE mobfireburn m101 21 33 5 120 0
+  GMEXECUTE mobfireburn m101 20 33 5 120 0
+  GMEXECUTE mobfireburn m101 19 33 5 120 0
+  GMEXECUTE mobfireburn m101 18 33 5 120 0
+  GMEXECUTE mobfireburn m101 17 33 5 120 0
+  GMEXECUTE mobfireburn m101 16 33 5 120 0
+  GMEXECUTE mobfireburn m101 15 33 5 120 0
+  GMEXECUTE mobfireburn m101 16 32 5 120 0
+  GMEXECUTE mobfireburn m101 17 32 5 120 0
+  GMEXECUTE mobfireburn m101 18 32 5 120 0
+  GMEXECUTE mobfireburn m101 19 32 5 120 0
+  GMEXECUTE mobfireburn m101 20 32 5 120 0
+  GMEXECUTE mobfireburn m101 21 32 5 120 0
+  GMEXECUTE mobfireburn m101 22 32 5 120 0
+  GMEXECUTE mobfireburn m101 23 32 5 120 0
+  GMEXECUTE mobfireburn m101 24 32 5 120 0
+  GMEXECUTE mobfireburn m101 19 34 5 120 0
+  GMEXECUTE mobfireburn m101 18 35 5 120 0
+  GMEXECUTE mobfireburn m101 17 36 5 120 0
+  GMEXECUTE mobfireburn m101 17 37 5 120 0
+  GMEXECUTE mobfireburn m101 18 38 5 120 0
+  GMEXECUTE mobfireburn m101 19 39 5 120 0
+  GMEXECUTE mobfireburn m101 20 40 5 120 0
+  GMEXECUTE mobfireburn m101 21 39 5 120 0
+  GMEXECUTE mobfireburn m101 22 38 5 120 0
+  GMEXECUTE mobfireburn m101 23 37 5 120 0
+  GMEXECUTE mobfireburn m101 22 36 5 120 0
+  GMEXECUTE mobfireburn m101 22 35 5 120 0
+  GMEXECUTE mobfireburn m101 21 34 5 120 0
+  GMEXECUTE mobfireburn m101 20 34 5 120 0
+  GMEXECUTE mobfireburn m101 18 36 5 120 0
+  GMEXECUTE mobfireburn m101 19 36 5 120 0
+  GMEXECUTE mobfireburn m101 20 36 5 120 0
+  GMEXECUTE mobfireburn m101 21 36 5 120 0
+  GMEXECUTE mobfireburn m101 22 36 5 120 0
+  GMEXECUTE mobfireburn m101 20 37 5 120 0
+  GMEXECUTE mobfireburn m101 19 38 5 120 0
+  GMEXECUTE mobfireburn m101 20 38 5 120 0
+  GMEXECUTE mobfireburn m101 21 38 5 120 0
+  mov I31 1
+  close
+  break
+#IF
+#ACT
+  messagebox 放婚礼火焰需要50W金币....
+[@ILOVEYOU]
+#IF
+  large I32 0
+#ACT
+  messagebox 该火焰已经放过了...
+  break
+#IF
+  checkgold 500000
+#ACT
+  take 金币 500000
+  mov I32 1
+  GMEXECUTE mobfireburn m101 10 31 5 120 0
+  GMEXECUTE mobfireburn m101 14 39 5 120 0
+  GMEXECUTE mobfireburn m101 11 31 5 120 0
+  GMEXECUTE mobfireburn m101 12 31 5 120 0
+  GMEXECUTE mobfireburn m101 11 32 5 120 0
+  GMEXECUTE mobfireburn m101 11 33 5 120 0
+  GMEXECUTE mobfireburn m101 11 34 5 120 0
+  GMEXECUTE mobfireburn m101 11 35 5 120 0
+  GMEXECUTE mobfireburn m101 10 35 5 120 0
+  GMEXECUTE mobfireburn m101 12 35 5 120 0
+  GMEXECUTE mobfireburn m101 14 31 5 120 0
+  GMEXECUTE mobfireburn m101 14 32 5 120 0
+  GMEXECUTE mobfireburn m101 14 33 5 120 0
+  GMEXECUTE mobfireburn m101 14 34 5 120 0
+  GMEXECUTE mobfireburn m101 14 35 5 120 0
+  GMEXECUTE mobfireburn m101 15 35 5 120 0
+  GMEXECUTE mobfireburn m101 16 35 5 120 0
+  GMEXECUTE mobfireburn m101 16 34 5 120 0
+  GMEXECUTE mobfireburn m101 16 33 5 120 0
+  GMEXECUTE mobfireburn m101 16 32 5 120 0
+  GMEXECUTE mobfireburn m101 16 31 5 120 0
+  GMEXECUTE mobfireburn m101 17 31 5 120 0
+  GMEXECUTE mobfireburn m101 18 31 5 120 0
+  GMEXECUTE mobfireburn m101 18 32 5 120 0
+  GMEXECUTE mobfireburn m101 18 33 5 120 0
+  GMEXECUTE mobfireburn m101 18 34 5 120 0
+  GMEXECUTE mobfireburn m101 18 35 5 120 0
+  GMEXECUTE mobfireburn m101 17 35 5 120 0
+  GMEXECUTE mobfireburn m101 19 31 5 120 0
+  GMEXECUTE mobfireburn m101 19 32 5 120 0
+  GMEXECUTE mobfireburn m101 19 33 5 120 0
+  GMEXECUTE mobfireburn m101 19 34 5 120 0
+  GMEXECUTE mobfireburn m101 20 35 5 120 0
+  GMEXECUTE mobfireburn m101 21 31 5 120 0
+  GMEXECUTE mobfireburn m101 21 32 5 120 0
+  GMEXECUTE mobfireburn m101 21 33 5 120 0
+  GMEXECUTE mobfireburn m101 21 34 5 120 0
+  GMEXECUTE mobfireburn m101 22 31 5 120 0
+  GMEXECUTE mobfireburn m101 22 34 5 120 0
+  GMEXECUTE mobfireburn m101 22 35 5 120 0
+  GMEXECUTE mobfireburn m101 14 40 5 120 0
+  GMEXECUTE mobfireburn m101 23 33 5 120 0
+  GMEXECUTE mobfireburn m101 23 31 5 120 0
+  GMEXECUTE mobfireburn m101 22 32 5 120 0
+  GMEXECUTE mobfireburn m101 24 31 5 120 0
+  GMEXECUTE mobfireburn m101 22 33 5 120 0
+  GMEXECUTE mobfireburn m101 24 33 5 120 0
+  GMEXECUTE mobfireburn m101 23 35 5 120 0
+  GMEXECUTE mobfireburn m101 24 35 5 120 0
+  GMEXECUTE mobfireburn m101 13 37 5 120 0
+  GMEXECUTE mobfireburn m101 15 37 5 120 0
+  GMEXECUTE mobfireburn m101 14 38 5 120 0
+  GMEXECUTE mobfireburn m101 14 41 5 120 0
+  GMEXECUTE mobfireburn m101 16 38 5 120 0
+  GMEXECUTE mobfireburn m101 16 39 5 120 0
+  GMEXECUTE mobfireburn m101 17 40 5 120 0
+  GMEXECUTE mobfireburn m101 18 41 5 120 0
+  GMEXECUTE mobfireburn m101 19 40 5 120 0
+  GMEXECUTE mobfireburn m101 20 39 5 120 0
+  GMEXECUTE mobfireburn m101 20 38 5 120 0
+  GMEXECUTE mobfireburn m101 19 37 5 120 0
+  GMEXECUTE mobfireburn m101 18 38 5 120 0
+  GMEXECUTE mobfireburn m101 17 37 5 120 0
+  GMEXECUTE mobfireburn m101 21 37 5 120 0
+  GMEXECUTE mobfireburn m101 21 38 5 120 0
+  GMEXECUTE mobfireburn m101 21 39 5 120 0
+  GMEXECUTE mobfireburn m101 21 40 5 120 0
+  GMEXECUTE mobfireburn m101 21 41 5 120 0
+  GMEXECUTE mobfireburn m101 23 37 5 120 0
+  GMEXECUTE mobfireburn m101 23 38 5 120 0
+  GMEXECUTE mobfireburn m101 23 39 5 120 0
+  GMEXECUTE mobfireburn m101 23 40 5 120 0
+  GMEXECUTE mobfireburn m101 23 41 5 120 0
+  GMEXECUTE mobfireburn m101 22 41 5 120 0
+  break
+  close
+#IF
+#ACT
+  messagebox 放婚礼火焰需要50W金币....
+[@心]
+#IF
+  large I33 0
+#ACT
+  messagebox 该火焰已经放过了...
+  break
+#IF
+  checkgold 500000
+#ACT
+  take 金币 500000
+  mov I33 1
+  GMEXECUTE mobfireburn m101 19 42 5 120 0
+  GMEXECUTE mobfireburn m101 20 41 5 120 0
+  GMEXECUTE mobfireburn m101 21 40 5 120 0
+  GMEXECUTE mobfireburn m101 22 39 5 120 0
+  GMEXECUTE mobfireburn m101 23 38 5 120 0
+  GMEXECUTE mobfireburn m101 24 37 5 120 0
+;=========================================
+  GMEXECUTE mobfireburn m101 24 36 5 120 0
+  GMEXECUTE mobfireburn m101 24 35 5 120 0
+;==========================================
+  GMEXECUTE mobfireburn m101 23 34 5 120 0
+  GMEXECUTE mobfireburn m101 22 34 5 120 0
+  GMEXECUTE mobfireburn m101 21 34 5 120 0
+;====================
+  GMEXECUTE mobfireburn m101 20 35 5 120 0
+  GMEXECUTE mobfireburn m101 19 36 5 120 0
+  GMEXECUTE mobfireburn m101 18 35 5 120 0
+  GMEXECUTE mobfireburn m101 17 34 5 120 0
+  GMEXECUTE mobfireburn m101 16 34 5 120 0
+  GMEXECUTE mobfireburn m101 15 34 5 120 0
+  GMEXECUTE mobfireburn m101 14 35 5 120 0
+  GMEXECUTE mobfireburn m101 14 36 5 120 0
+  GMEXECUTE mobfireburn m101 14 37 5 120 0
+  GMEXECUTE mobfireburn m101 15 38 5 120 0
+  GMEXECUTE mobfireburn m101 16 39 5 120 0
+  GMEXECUTE mobfireburn m101 17 40 5 120 0
+  GMEXECUTE mobfireburn m101 18 41 5 120 0
+  break
+ close
+#IF
+#ACT
+  messagebox 放婚礼火焰需要50W金币....
+[@shazi]
+#ACT 
+mapmove 3 335 338
+
+[@marry]
+求婚者必须是男性且拥有搞基的套套，\
+你准备好求婚了吗？\ \
+<准备好了/@agree>\
+<下次再来/@exit>\ \ \
+<返回/@main>
+[@agree]
+#if
+checkmarry
+#act 
+break
+#say
+你都结过婚了，还来注册结婚，想犯重婚罪呀！！！ \ \
+<返回/@main>
+#if
+checkposemarry
+#say
+对方已经结过婚了，是不是想犯重婚罪呀！！！\ \
+<返回/@main>
+#act
+break
+#if
+gender man
+#elsesay
+只有男的向女的求婚，还没见过大姑娘向小伙子求婚的。\ \
+<返回/@main>
+#elseact
+break
+#if
+checkposegender 男
+#say
+你变态呀！！！想搞同性恋！！！ \ \
+<返回/@main>
+#act
+break
+#if
+checkposedir 2
+#elsesay
+你们二个面对面站好呀，不要乱动。\ \
+<返回/@main>
+#elseact
+break
+#if
+checklevel 0
+#elsesay
+<返回/@main>
+#elseact
+break
+#if
+checkposelevel > 0
+#elsesay
+你的对象还没成年，等她长大点再来吧！小伙子不要心急嘛！\ \
+<返回/@main>
+#elseact
+break
+#if 
+checkitem 搞基的套套 1
+#elsesay
+你没搞基的套套，弄到搞基的套套再来找我吧！！！\ \
+<返回/@main>
+#elseact
+break
+#if
+#act
+take 搞基的套套 1
+marry
+[@StartMarry]
+#if
+checkmarry
+#say
+你都结过婚了，还来注册结婚，想犯重婚罪呀！！！ \ \
+<返回/@main>
+#act
+break
+#if
+gender man
+#act
+break
+#say
+婚礼现在正式开始。\ \
+你愿意娶对方为妻，并照顾她一生一世吗？\ \
+<我愿意/@RequestMarry>
+#if
+gender
+#act
+break
+#say
+婚礼现在正式开始。\ \
+请耐心等待你心爱的人向你求婚\ \
+[@RequestMarry]
+#if
+checkmarry
+#act
+break
+#say
+你都结过婚了，还来注册结婚，想犯重婚罪呀！！！ \ \
+<返回/@main>
+#if
+#act
+marry requestmarry
+[@WateMarry]
+你已向对方求婚，请耐心等待对方的答复。
+[@RevMarry]
+#if
+checkmarry
+#act
+break
+#say
+你都结过婚了，还来注册结婚，想犯重婚罪呀！！！ \ \
+<返回/@main>
+#if
+#say
+对方向你求婚，你是否答应嫁给他？ \ \
+<我愿意/@ResposeMarry> \
+<我不愿意/@ResposeMarryFail>
+[@ResposeMarry]
+#if
+checkmarry
+#act
+break
+#say
+你都结过婚了，还来注册结婚，想犯重婚罪呀！！！ \ \
+<返回/@main>
+#if
+#act
+marry responsemarry ok
+[@ResposeMarryFail]
+#if
+checkmarry
+#act
+break
+#say
+你都结过婚了，还来注册结婚，想犯重婚罪呀！！！ \ \
+<返回/@main>
+#if
+#act
+marry responsemarry fail
+[@EndMarry]
+你们二个已经成为了一对全法夫妻了。\ \
+<退出/@exit>
+[@EndMarryFail]
+结婚失败！\ \
+<退出/@exit>
+[@MarryDirErr]
+对方没站好位置
+[@MarryCheckDir]
+请站好位置\ \
+[@HumanTypeErr]
+你变态呀，既然选择一个非人类作为结婚对象。
+[@MarrySexErr]
+你变态呀，既然同性恋。
+;==========================================
+离婚开始
+[@unmarry]
+#if
+checkmarry
+#act
+unmarry
+#elsesay
+你都没结婚离什么婚？？\ \
+<返回/@main>
+;=======================================================
+;双方离婚时没面对面站好显示的信息
+[@UnMarryCheckDir]
+要离婚是吧？离婚是二个人的事，必须二个人对面对站好位置，\
+如果人来不了你只能选择强行离婚姻了。\ \
+<我要强行离婚/@fUnMarry>\
+<返回/@main>
+;=======================================================
+;对面位置不是人物时显示的信息
+[@UnMarryTypeErr]
+你对面站了个什么东西，怎么不太象人来的。\ \
+<返回/@main>
+;=======================================================
+;开始离婚程序后，双方显示的信息
+[@StartUnMarry]
+#if
+gender man
+#act
+BREAK
+#say
+是否确定真的要与你共事多年的妻子离婚吗？\ \
+<确定/@RequestUnMarry>
+#if
+gender
+#say
+你的老公现在向我请求离婚，是不是愿意协议离婚？ \ \
+<确定/@RequestUnMarry>
+#act
+break
+;=======================================================
+;发出离婚请求
+[@RequestUnMarry]
+#if
+checkmarry
+#act
+unmarry requestunmarry
+;=======================================================
+;回应离婚请求
+[@ResposeUnMarry]
+#if
+checkmarry
+#act
+unmarry responseunmarry
+;===============================================
+;请求离婚后显示的信息
+[@WateUnMarry]
+你已向对方发出离婚请求，请耐心等待对方的答复。
+;===============================================
+;请求离婚后对方显示的信息
+[@RevUnMarry]
+对方向你离婚请求，你是否答应离婚？ \ \
+<我愿意/@RequestUnMarry>
+<返回/@main>
+;===============================================
+;没结过婚的人点离婚后出的提示信息
+[@ExeMarryFail]
+你都没结过婚，跑来做什么？ \ \
+[返回/@main]
+;==============================================
+;强行离婚
+[@fUnMarry]
+#if
+checkitem 金条 1
+checkmarry
+#act
+take 金条 1
+unmarry requestunmarry force
+#elsesay
+要收一根金条的手续费，你没有金条，\
+我不能让你离婚。\
+<确定/@exit>
+;==============================================
+;离婚完成后的提示信息
+[@UnMarryEnd]
+呵呵，你已经脱离苦海了！！！ \ \
+<退出/@exit>
+[@asktime]
+你调查结婚时间的请求已发出，\
+请稍后。\
+<确定/@exit>

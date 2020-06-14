@@ -1,0 +1,14 @@
+[@main]
+#if
+#act
+DelNpc 深渊之门
+DelNpc 世界之石
+DelNpc 迪卡·凯恩
+GOTOLABEL 2 @siwang
+break
+[@siwang]
+<毁灭之王-巴尔:/SCOLOR=253>                                <Img:294:0>\
+我看到了无尽的苦难，我看到无穷的折磨，我看见了\
+滔天的愤怒——我，看到了一切…… \\
+<>\
+<确定/@exit>

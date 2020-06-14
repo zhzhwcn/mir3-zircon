@@ -1,0 +1,39 @@
+[@main]
+#if                                    
+check [441] 1  
+check [442] 0 
+#act
+set [442] 1
+PLAYEFFECT 8 880 10 20 300 
+DELAYGOTO 2000 @diaoxue
+break
+
+#if
+check [451] 1  
+check [452] 0 
+#act
+goto @renwu
+break
+
+[@diaoxue]
+糟糕!这里的刺骨寒气实在太恐怖了,如果继续在这里呆下去的\
+话,说不定就直接报销在这里了!\
+是不是应该先撤出去,找龙魄将军想想看有什么应对办法.\
+<>\
+<>\
+<退出./@exit>
+
+[@renwu]
+#if
+CHECKITEMW 寒冰护符
+#act
+PLAYEFFECT 0 830 9 1 70 
+SENDMSG 7 寒冰护符的能量从你身体内散发出来,你不再受到刺骨寒风的伤害了!
+DELAYGOTO 1000 @chuansong
+break
+
+[@chuansong]
+#act
+mapmove yuangubing1 19 72
+break
+

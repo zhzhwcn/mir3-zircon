@@ -1,0 +1,4 @@
+[@main]
+#IF
+#ACT
+mapmove huimieboss4 6 42

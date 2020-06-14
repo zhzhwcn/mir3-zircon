@@ -1,0 +1,83 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第35间房-旅行阁  \
+你要回到25间房-蓝空间 \
+路途遥远,送你5瓶回复活力药剂来备用..\ \
+<下一步/@main-2>
+
+[@main-2]
+#IF
+checkitem 筹码 1
+#ACT
+give 回复活力药剂 5
+goto @posi30
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@posi30]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B136
+addbatch B137
+addbatch B138
+addbatch B139
+addbatch B140
+addbatch B101
+addbatch B102
+addbatch B103
+addbatch B104
+addbatch B105
+addbatch B106
+addbatch B107
+addbatch B108
+addbatch B109
+addbatch B110
+addbatch B111
+addbatch B112
+addbatch B113
+addbatch B114
+addbatch B115
+addbatch B116
+addbatch B117
+addbatch B118
+addbatch B119
+addbatch B120
+addbatch B121
+addbatch B122
+addbatch B123
+addbatch B124
+addbatch B125
+addbatch T125
+batchmove

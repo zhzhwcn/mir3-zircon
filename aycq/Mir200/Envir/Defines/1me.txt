@@ -1,0 +1,4 @@
+#DEFINE	MAINMSG		这地方是做药品买卖的，你需要点什么？\当然，如果你要的是可卡因或其他之类\精神药品的话，我们可不卖。\
+#DEFINE	BUYITEMMSG	购买药品
+#DEFINE	HELPMSG		打听
+#DEFINE	MAINBUYMSG	请选择你要购买的药品。

@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [134] 1
+check [135] 0
+CHECKBAGSIZE  1
+CheckHumInRange binansuo 132 319 500
+#act 
+set [135] 1
+give 赫拉森的日记 1
+#say
+<"我痛恨有不洁的巫师之血弄脏我的双手。" /SCOLOR=253> \\
+<>\
+<确定/@exit>

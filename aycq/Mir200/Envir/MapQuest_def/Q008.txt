@@ -1,0 +1,11 @@
+[@main]
+#if                                    
+check [112] 1
+check [113] 0
+CheckHumInRange gaotaboss 42 35 500
+#act
+set [113] 1
+#say
+<"宝藏猎人...哼！... 寻宝者...还好。" /SCOLOR=253> \\
+<>\
+<确定/@exit>

@@ -1,0 +1,121 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @cube1
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第13间房 <$USERNAME> 在选择房. \
+<$USERNAME>可以选择前面6个房间中的任意一间进入 \
+请你选择前进的房间数字 \ \
+<下一步/@cube>
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@cube]
+#IF
+checkitem 筹码 1
+#ACT
+take 筹码 1
+CALCVAR HUMAN Cache = 1
+goto @cube1
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@cube1]
+请选择前进的房间数字. \ \
+<1 间/@Posi1> , <2 间/@Posi2> , <3 间/@Posi3> \
+<4 间/@Posi4> , <5 间/@Posi5> , <6 间/@Posi6>
+
+[@Posi1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B114
+batchmove
+
+[@Posi2]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B114
+addbatch B115
+batchmove
+
+[@Posi3]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B114
+addbatch B115
+addbatch B116
+batchmove
+
+[@Posi4]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B114
+addbatch B115
+addbatch B116
+addbatch B117
+batchmove
+
+[@Posi5]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B114
+addbatch B115
+addbatch B116
+addbatch B117
+addbatch B118
+batchmove
+
+[@Posi6]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B114
+addbatch B115
+addbatch B116
+addbatch B117
+addbatch B118
+addbatch B119
+batchmove

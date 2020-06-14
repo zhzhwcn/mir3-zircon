@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [114] 1
+check [115] 0
+CHECKBAGSIZE  1
+CheckHumInRange tiejiang 27 27 500
+#act 
+set [115] 1
+give 马勒斯铁锤 1
+#say
+<"我应该把这个拿给恰西。"/SCOLOR=253> \\
+<>\
+<确定/@exit>

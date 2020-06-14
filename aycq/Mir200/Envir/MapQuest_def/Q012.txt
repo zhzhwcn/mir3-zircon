@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [124] 1
+check [127] 0
+CHECKBAGSIZE  1
+CheckHumInRange diermu 374 186 300
+#act 
+set [127] 1
+give 赫拉迪克方块 1
+#say
+恭喜你获得了赫拉迪克方块!!!\\
+<>\
+<确定/@exit>

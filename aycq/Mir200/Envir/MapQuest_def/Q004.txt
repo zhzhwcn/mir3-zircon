@@ -1,0 +1,10 @@
+[@main]
+#if                                    
+check [100] 1
+check [101] 0
+#act 
+set [101] 1
+#say
+<"或许现在修女们会相信我了。"/SCOLOR=253> \\
+<>\
+<确定/@exit>

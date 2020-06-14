@@ -1,0 +1,193 @@
+[@回收]
+{
+沃玛类装备回收：
+<幽灵项链、生命项链、天珠项链、勇士项链/SCOLOR=222>\
+<银镜项链、魔令项链、追风项链、追魂项链/SCOLOR=116>\
+<愤怒之钟、破坏项链、红宝石手镯、魔令手镯/SCOLOR=132>\
+<心灵手镯、思贝儿手镯、幽灵手套、金刚魔法指/SCOLOR=253>\
+<金刚精神戒指、雷神戒指、龙之戒指、/SCOLOR=191>\
+<红宝石戒指、铂金戒指/SCOLOR=241>\
+<一键回收/@晓域一键回收>\
+
+[@晓域一键回收]
+#if
+checkitem 幽灵项链 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 幽灵项链 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收幽灵项链
+
+#if
+checkitem 生命项链 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 生命项链 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收生命项链
+
+#if
+checkitem 天珠项链 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 天珠项链 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收天珠项链
+
+#if
+checkitem 勇士项链 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 勇士项链 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收勇士项链
+
+#if
+checkitem 银镜项链 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 银镜项链 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收银镜项链
+
+#if
+checkitem 魔令项链 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 魔令项链 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收魔令项链
+
+#if
+checkitem 追风项链 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 追风项链 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收追风项链
+
+#if
+checkitem 追魂项链 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 追魂项链 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收追魂项链
+
+#if
+checkitem 愤怒之钟 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 愤怒之钟 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收愤怒之钟
+
+#if
+checkitem 破坏项链 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 破坏项链 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收破坏项链
+
+#if
+checkitem 红宝石手镯 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 红宝石手镯 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收红宝石手镯
+
+#if
+checkitem 魔令手镯 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 魔令手镯 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收魔令手镯
+
+#if
+checkitem 心灵手镯 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 心灵手镯 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收心灵手镯
+
+#if
+checkitem 思贝儿手镯 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 思贝儿手镯 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收思贝儿手镯
+
+#if
+checkitem 幽灵手套 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 幽灵手套 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收幽灵手套
+
+#if
+checkitem 金刚魔法指环 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 金刚魔法指环 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收金刚魔法指环
+
+#if
+checkitem 金刚精神戒指 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 金刚精神戒指 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收金刚精神戒指
+
+#if
+checkitem 雷神戒指 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 雷神戒指 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收雷神戒指
+
+#if
+checkitem 龙之戒指 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 龙之戒指 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收龙之戒指
+
+#if
+checkitem 红宝石戒指 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 红宝石戒指 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收红宝石戒指
+
+#if
+checkitem 铂金戒指 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 铂金戒指 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收铂金戒指
+
+#if
+checkitem 震天项链 1
+#act
+CHANGEEXP + 50000
+give 金币 30000
+take 震天项链 1
+SENDMSG 7 〖提示〗玩家[%s]成功回收铂金戒指
+
+SENDMSG 6 〖提示〗回收成功
+GOTO @晓域一键回收
+#elseact
+SENDMSG 6 〖失败〗对不起！你没有可回收的装备！
+}

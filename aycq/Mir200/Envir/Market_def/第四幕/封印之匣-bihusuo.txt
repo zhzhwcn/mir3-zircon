@@ -1,0 +1,86 @@
+[@main]
+<>\
+<邪恶的符文在黑匣子的身上来回地流转....../SCOLOR=254>\
+<>\
+<>\
+<开启封印/@zhaohuan><消耗50块世界之石碎片./SCOLOR=250>\
+<>\
+<>\
+<退出/@exit>
+
+[@zhaohuan]
+#if
+checkitem 世界之石碎片 50
+#act
+goto @zhaohuan1
+#elsesay
+举行召唤仪式需要消耗<50/SCOLOR=254>块<世界之石碎片/SCOLOR=254>!\\
+<>\
+<>\
+<>\
+<确定/@exit>
+
+[@zhaohuan1]
+#IF
+#ACT
+take 世界之石碎片 50
+DelNpc 混沌之门
+CreateNPC 混沌之门 bihusuo 145 113  95 混沌之门-bihusuo
+SENDMSG 1 一位勇士开启了通往混沌庇护所的传送门......
+SENDMSG 7 你开启了通往混沌庇护所的传送门......
+close
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[@zhaohuan1111]
+#if
+checkitem 灵魂石碎片 5
+#act
+goto @zhaohuan1111
+#elsesay
+举行召唤仪式需要消耗<5/SCOLOR=254>块<灵魂石碎片/SCOLOR=254>.\\
+<>\
+<确定/@exit>
+
+[@zhaohuan3333]
+#if
+CheckRangeMonCountEx bihusuo 暗黑破坏神 145 113 500 < 1
+#act
+take 灵魂石碎片 5
+Param1 bihusuo
+Param2 145
+Param3 113
+MonGen 暗黑破坏神 1 3
+SENDMSG 1 一位勇士开启了通往混沌庇护所的传送门......
+SENDMSG 7 你开启了通往混沌庇护所的传送门......
+close
+#elsesay
+暗黑破坏神已经被其他玩家召唤出来了!\
+请消灭后再进行召唤!\
+<>\
+<确定/@exit>
+
+
+
+
+
+
+
+

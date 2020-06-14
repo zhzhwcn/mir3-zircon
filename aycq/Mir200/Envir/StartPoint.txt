@@ -1,0 +1,11 @@
+;安全区/复活点
+diyimu 52 52  0 10 0 0 0 
+diyimu 53 52  0 0 0 0 0 
+diyimu 53 52 0 0 0 0 0 
+diermu 165 452 0 10 0 0 0 
+disanmu 433 315 0 10 0 0 0 
+hongming 137 142 0 10 0 0 0 
+disimu  45 45 0 10 0 0 0 
+diwumu1  300 489 0 10 0 0 0 
+diwumu2  190 380 0 10 0 0 0
+xishamo  130 162 0 10 0 0 0

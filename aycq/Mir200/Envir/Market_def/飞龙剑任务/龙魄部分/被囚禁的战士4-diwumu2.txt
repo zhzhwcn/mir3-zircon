@@ -1,0 +1,31 @@
+[@main]
+#if
+check [434] 1
+check [439] 0
+#act
+goto @renwu1
+break
+
+#if
+check [439] 1
+#act
+goto @renwu2
+break
+
+[@renwu1]
+#if
+#act
+set [439] 1
+#say
+感谢你的救命之恩,你是我们的再生父母!\\
+<>\
+<>\
+<>\
+<确定./@exit>
+
+[@renwu2]
+你快去救别的战士吧!\
+他们就分布于山崖脚下四周的栅栏内.\\
+<>\
+<>\
+<确定./@exit>

@@ -1,0 +1,75 @@
+[@main]
+还好跑得快.......\
+<>\
+<>\
+<>\
+<>\
+<对话/@duihua>
+
+[@duihua]
+#if
+check [156] 1
+check [157] 0
+#act
+goto @renwu1
+break
+
+#elsesay
+我觉得单凭我们的力量已经无法对抗火龙神的威力了.\
+也许我们得寻求更多的帮助.\
+把这里的事传达给睿智长者,我去找那只大脑商量\
+下一步对策.\
+现在就去,<一切准备妥当后我们在炼狱大厅集合./SCOLOR=253>\\
+<确定/@exit>
+
+[@renwu1]
+我觉得单凭我们的力量已经无法对抗火龙神的威力了.\
+也许我们得寻求更多的帮助.\
+把这里的事传达给睿智长者,我去找那只大脑商量\
+下一步对策.\
+现在就去,一切准备妥当后我们在炼狱大厅集合.\
+另外我这里还有几个箱子，你拿去吧。\\
+<领取奖励./@chufa>
+
+[@chufa]
+#IF
+checkjob Warr 
+#ACT
+set [157] 1
+give 骑士手镯 1
+give 炼狱碎片 2
+CHANGEEXP + 1000000
+CREDITPOINT + 2
+SENDMSG 5 提示：任务已完成，你获得了2点声望，当前声望：<$CREDITPOINT>点...
+#say
+给你两片炼狱碎片，弄丢了就自己再打去!\
+另外这个戒指你先拿去用吧.\\
+<确定/@exit>
+
+#IF
+checkjob Wizard 
+#ACT
+set [157] 1
+give 龙之手镯 1
+give 炼狱碎片 2
+CHANGEEXP + 1000000
+CREDITPOINT + 2
+SENDMSG 5 提示：任务已完成，你获得了2点声望，当前声望：<$CREDITPOINT>点...
+#say
+给你两片炼狱碎片，弄丢了就自己再打去!\
+另外这个戒指你先拿去用吧.\\
+<确定/@exit>
+
+#IF
+checkjob Taos 
+#ACT
+set [157] 1
+give 三眼手镯 1
+give 炼狱碎片 2
+CHANGEEXP + 1000000
+CREDITPOINT + 2
+SENDMSG 5 提示：任务已完成，你获得了2点声望，当前声望：<$CREDITPOINT>点...
+#say
+给你两片炼狱碎片，弄丢了就自己再打去!\
+另外这个戒指你先拿去用吧.\\
+<确定/@exit>

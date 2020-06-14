@@ -1,0 +1,31 @@
+[@main]
+#if                                    
+RANDOM 20
+#act
+#say
+异界的大门为你敞开了...\
+你获得了一次进入暗殿的机会!\\
+<>\
+<进入暗殿/@jinru>\
+<取消/@exit>
+
+[@jinru]
+#if 
+RANDOM 4                                   
+#act
+mapmove andian33 38 38
+BREAK
+#if 
+RANDOM 3                                   
+#act
+mapmove andian33 38 163
+BREAK
+#if 
+RANDOM 2                                   
+#act
+mapmove andian33 163 163
+BREAK
+#if                                 
+#act
+mapmove andian33 162 39
+BREAK

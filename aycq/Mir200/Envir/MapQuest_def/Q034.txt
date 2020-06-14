@@ -1,0 +1,12 @@
+[@main]
+#if                                    
+check [191] 1  
+check [192] 0 
+CHECKBAGSIZE  1
+#act 
+set [192] 1
+give 克林姆的连枷 1
+#say
+<"史卡辛的信仰已经全面改观了！" /SCOLOR=253> \\
+<>\
+<确定/@exit>

@@ -1,0 +1,156 @@
+[@MAIN]
+你好，欢迎光临飞天美发厅。\
+请问有什么需要服务的？\
+<>\
+『<换 发 型/@ChangHair>』<2000金币一次/SCOLOR=254>\ 
+<>\
+<退出/@exit>
+
+[@ChangHair]
+#IF
+gender man
+#ACT
+goto @ChangHairMan
+#ELSEACT
+goto @ChangHairWoman
+
+[@ChangHair]
+#IF
+gender man
+#ACT
+goto @ChangHairMan
+#ELSEACT
+goto @ChangHairWoman
+
+[@ChangHairMan]
+想不想来个光头呀，酷呆了！！！\ 
+『<光头/@hairman0>』\
+<>\
+『<短头发/@hairman2>』\
+<>\
+『<扎马尾/@hairman18>』\
+<>\
+〖<返回/@MemberFace>〗 〖<关闭/@exit>〗
+
+[@hairman0]
+#if
+checkgold 2000
+#ACT
+take 金币 2000
+  HAIRSTYLE 0
+set [484] 1
+set [483] 0
+set [479] 0
+#SAY
+呵呵，光头是不是很酷呀！！！ \ \
+〖<返回/@ChangHairMan>〗 〖<关闭/@exit>〗
+#elseact
+MESSAGEBOX 你的钱不够哦，小帅哥！
+
+[@hairman2]
+#if
+checkgold 2000
+#ACT
+take 金币 2000
+  HAIRSTYLE 2
+set [483] 1
+set [484] 0
+set [479] 0
+#SAY
+呵呵，短头发是不是清爽多了... \ \
+〖<返回/@ChangHairMan>〗 〖<关闭/@exit>〗
+#elseact
+MESSAGEBOX 你的钱不够哦，小帅哥！
+
+[@hairman18]
+#if
+checkgold 2000
+#ACT
+take 金币 2000
+  HAIRSTYLE 18
+set [479] 1
+set [484] 0
+set [483] 0
+#SAY
+呵呵，短头发是不是清爽多了... \ \
+〖<返回/@ChangHairMan>〗 〖<关闭/@exit>〗
+#elseact
+MESSAGEBOX 你的钱不够哦，小帅哥！
+
+
+[@ChangHairWoman]
+『<短头发/@hairWoman0>』\ 
+<>\
+『<马尾辫/@hairWoman1>』\
+<>\
+『<长辫子/@hairWoman18>』\
+<>\
+『<长头发/@hairWoman3>』\
+<>\
+〖<返回/@MemberFace>〗 〖<关闭/@exit>〗
+
+[@hairWoman0]
+#if
+checkgold 2000
+#ACT
+take 金币 2000
+  HAIRSTYLE 0
+set [482] 1
+set [481] 0
+set [480] 0
+set [478] 0
+#SAY
+呵呵，短头发是不是很清爽... \ \
+〖<返回/@ChangHairWoman>〗 〖<关闭/@Exit>〗 
+#elseact
+MESSAGEBOX 你的钱不够哦，小美女！
+
+[@hairWoman1]
+#if
+checkgold 2000
+#ACT
+take 金币 2000
+  HAIRSTYLE 1
+set [481] 1
+set [482] 0
+set [480] 0
+set [478] 0
+#SAY
+呵呵，马尾辫是不是很飘逸... \ \
+〖<返回/@ChangHairWoman>〗 〖<关闭/@Exit>〗 
+#elseact
+MESSAGEBOX 你的钱不够哦，小美女！
+
+[@hairWoman3]
+#if
+checkgold 2000
+#ACT
+take 金币 2000
+  HAIRSTYLE 3
+set [480] 1
+set [481] 0
+set [482] 0
+set [478] 0
+#SAY
+呵呵，长头发是不是很飘逸... \ \
+〖<返回/@ChangHairWoman>〗 〖<关闭/@Exit>〗
+#elseact
+MESSAGEBOX 你的钱不够哦，小美女！
+
+[@hairWoman18]
+#if
+checkgold 2000
+#ACT
+take 金币 2000
+  HAIRSTYLE 18
+set [478] 1
+set [480] 0
+set [481] 0
+set [482] 0
+#SAY
+呵呵，长头发是不是很飘逸... \ \
+〖<返回/@ChangHairWoman>〗 〖<关闭/@Exit>〗
+#elseact
+MESSAGEBOX 你的钱不够哦，小美女！
+
+   

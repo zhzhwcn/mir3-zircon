@@ -1,0 +1,160 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @pena1
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 2
+#ACT
+goto @pena2
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 3
+#ACT
+goto @pena3
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 4
+#ACT
+goto @pena4
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第30间房  \
+在这间房你可以得到4种不同的组合好运和恶运. \ \
+<下一步/@main-2>
+
+[@main-2]
+#IF
+checkitem 筹码 1
+#ACT
+take 筹码 1
+goto @penalty
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@Penalty]
+#IF
+random 4
+#ACT
+CALCVAR HUMAN Cache = 1
+goto @pena1
+give 筹码 1
+break
+
+#IF
+random 4
+#ACT
+CALCVAR HUMAN Cache = 2
+goto @pena2
+take 筹码 2
+break
+
+#IF
+random 4
+#ACT
+CALCVAR HUMAN Cache = 3
+goto @pena3
+take 筹码 2
+break
+
+#IF
+random 4
+#ACT
+CALCVAR HUMAN Cache = 4
+goto @pena4
+give 筹码 2
+break
+
+#ELSEACT
+goto @Penalty
+
+[@pena1]
+你选了倒退1间房,但同时获得了一个筹码的补偿. \ \
+<下一步/@Posi1>
+
+[@pena2]
+你选了倒退2间房,同时还被扣除了2个筹码. \
+过分,今天你的运气就这么差..没办法 \ \
+<下一步/@Posi2>
+
+[@pena3]
+你选了前进1间房,但同时被扣除了2个筹码. \ \
+<关闭/@Posi3>
+
+[@pena4]
+你选了前进2间房,并同时又得到了2个筹码. \
+你的运气真旺啊! \ \
+<关闭/@Posi4>
+
+[@Posi1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B129
+batchmove
+
+[@Posi2]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B129
+addbatch B128
+batchmove
+
+[@Posi3]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B131
+batchmove
+
+[@Posi4]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B131
+addbatch B132
+batchmove

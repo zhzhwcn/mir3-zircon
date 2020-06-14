@@ -1,0 +1,16 @@
+[@¹ú¼Ò·âºÅ]
+{
+#if
+CheckNational 1
+#act
+SETICON 1 13 14 1 -20
+break
+
+
+#if
+CheckNational 2
+#act
+SETICON 1 13 13 1 -20
+break
+
+}

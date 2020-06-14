@@ -1,0 +1,54 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第26号房  \
+你获得了到第16号房的机会 \ \
+<下一步/@move>
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@move]
+#IF
+checkitem 筹码 1
+#ACT
+batchDelay 1
+addbatch B125
+addbatch B124
+addbatch B123
+addbatch B122
+addbatch B121
+addbatch B120
+addbatch B119
+addbatch B118
+addbatch B117
+addbatch B116
+batchmove
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9

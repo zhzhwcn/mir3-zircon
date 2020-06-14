@@ -1,0 +1,839 @@
+[@MAIN]
+<每日日常任务/SCOLOR=253>\
+嘿!我这里提供一些特殊的娱乐项目,如果你想挑战一下自己的心魔\
+的话,可以随时到我这里来找我!大于22级才可以接\
+<>\
+<特别注意:一旦选择挑战后,不管你有没有进入地图,本日内都不能/SCOLOR=253>\
+<再次进行挑战了!!!/SCOLOR=253>\\
+<挑战说明/@SHUOMING>\
+<挑战/@TIAOZHAN>心魔\
+<取消/@EXIT>
+
+
+[@SHUOMING]
+当玩家选择挑战后,系统将会随机为你抽取一个心魔.\
+每个心魔被击杀后都会必掉<一张双倍经验卷/SCOLOR=253>!\
+<>\
+我准备好<挑战心魔/@TIAOZHAN>了!\
+<想想还是放弃吧!/@EXIT>
+
+[@tiaozhan]
+#if
+checkhum xinmo 1
+#say
+现在有人正在里面受着心魔的煎熬,你等一下吧!\ \
+<退出/@EXIT>
+#elseact
+goto @tz
+
+[@tz]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\心魔日常任务.txt
+#say
+对不起,你今天已经挑战过心魔了!\
+请明天再来尝试吧!!!\\
+#ELSEACT
+GOTO @richang
+
+[@richang]
+#if
+CHECKLEVELEX > 22
+#act
+ChangeModeEx 10 7
+PLAYEFFECT 0 25 100 1
+SendCenterMsg 180 251 正在为你随机抽取本日心魔...... 0 7 
+DelayCall 7000 @xinmo
+close
+
+
+[@xinmo]
+#if
+RANDOM 27
+#ACT
+goto @鸡
+break
+#if
+RANDOM 27
+#ACT
+goto @半兽勇士
+break
+#if
+RANDOM 27
+#ACT
+goto @骨灰
+break
+#if
+RANDOM 27
+#ACT
+goto @骷髅精灵
+break
+#if
+RANDOM 27
+#ACT
+goto @沃玛护卫
+break
+#if
+RANDOM 27
+#ACT
+goto @沃玛教主
+break
+#if
+RANDOM 27
+#ACT
+goto @尸王
+break
+#if
+RANDOM 27
+#ACT
+goto @巨型多角虫
+break
+#if
+RANDOM 27
+#ACT
+goto @触龙神
+break
+#if
+RANDOM 27
+#ACT
+goto @邪恶钳虫
+break
+#if
+RANDOM 27
+#ACT
+goto @白野猪
+break
+#if
+RANDOM 27
+#ACT
+goto @邪恶毒蛇
+break
+#if
+RANDOM 27
+#ACT
+goto @祖玛教主
+break
+#if
+RANDOM 27
+#ACT
+goto @神兽
+break
+#if
+RANDOM 27
+#ACT
+goto @赤月恶魔
+break
+#if
+RANDOM 27
+#ACT
+goto @双头金刚
+break
+#if
+RANDOM 27
+#ACT
+goto @双头血魔
+break
+#if
+RANDOM 27
+#ACT
+goto @牛魔王
+break
+#if
+RANDOM 27
+#ACT
+goto @骷髅教主
+break
+#if
+RANDOM 27
+#ACT
+goto @震天守将
+break
+#if
+RANDOM 27
+#ACT
+goto @变异黑野猪
+break
+#if
+RANDOM 27
+#ACT
+goto @女伯爵
+break
+#if
+RANDOM 27
+#ACT
+goto @安达利尔
+break
+#if
+RANDOM 27
+#ACT
+goto @格瑞斯瓦尔德
+break
+#if
+RANDOM 27
+#ACT
+goto @远古魔王
+break
+#if
+RANDOM 27
+#ACT
+goto @触角神魔
+break
+#if
+RANDOM 27
+#ACT
+goto @灵魂收割者
+break
+
+[@鸡]
+<Img:134:6><鸡/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo11>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo11]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 81
+Param3 17
+MonGen 心魔1 1 0
+mapmove xinmo 91 27
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@半兽勇士]
+<Img:138:6><半兽勇士/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo22>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo22]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 132
+Param3 15
+MonGen 心魔2 1 0
+mapmove xinmo 147 27
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@骨灰]
+<Img:168:6><骨灰/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo33>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo33]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 193
+Param3 285
+MonGen 心魔3 1 0
+mapmove xinmo 187 291
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@骷髅精灵]
+<Img:149:6><骷髅精灵/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo44>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo44]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 15
+Param3 92
+MonGen 心魔4 1 0
+mapmove xinmo 29 115
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@沃玛护卫]
+<Img:157:6><沃玛护卫/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo55>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo55]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 136
+Param3 93
+MonGen 心魔5 1 0
+mapmove xinmo 153 105
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@沃玛教主]
+<Img:158:6><沃玛教主/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo66>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo66]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 136 
+Param3 93
+MonGen 心魔6 1 0
+mapmove xinmo 153 105
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@尸王]
+<Img:166:6><尸王/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo77>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo77]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 319
+Param3 31
+MonGen 心魔7 1 0
+mapmove xinmo 301 29
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@巨型多角虫]
+<Img:176:6><巨型多角虫/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo88>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo88]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 22
+Param3 23
+MonGen 心魔8 1 0
+mapmove xinmo 24 38
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@触龙神]
+<Img:178:6><触龙神/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo99>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo99]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 217
+Param3 188
+MonGen 心魔9 1 0
+mapmove xinmo 217 174
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@邪恶钳虫]
+<Img:180:6><邪恶钳虫/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo100>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo100]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 150
+Param3 187
+MonGen 心魔10 1 0
+mapmove xinmo 134 195
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@白野猪]
+<Img:189:6><白野猪/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo101>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo101]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 219
+Param3 195
+MonGen 心魔11 1 0
+mapmove xinmo 218 173
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@邪恶毒蛇]
+<Img:191:6><邪恶毒蛇/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo102>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo102]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 329
+Param3 212
+MonGen 心魔12 1 0
+mapmove xinmo 324 195
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@祖玛教主]
+<Img:196:6><铁匠/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo103>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo103]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 193
+Param3 103
+MonGen 心魔13 1 0
+mapmove xinmo 189 93
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@神兽]
+<Img:198:6><神兽/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo104>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo104]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 122
+Param3 291
+MonGen 心魔14 1 0
+mapmove xinmo 134 281
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@赤月恶魔]
+<Img:211:6><赤月恶魔/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo105>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo105]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 321
+Param3 96
+MonGen 心魔15 1 0
+mapmove xinmo 309 104
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@双头金刚]
+<Img:215:6><双头金刚/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo106>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo106]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 230
+Param3 291
+MonGen 心魔16 1 0
+mapmove xinmo 236 280
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@双头血魔]
+<Img:216:6><双头血魔/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo107>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo107]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 303
+Param3 307
+MonGen 心魔17 1 0
+mapmove xinmo 291 295
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@牛魔王]
+<Img:236:6><牛魔王/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo108>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo108]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 32
+Param3 287
+MonGen 心魔18 1 0
+mapmove xinmo 14 277
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@骷髅教主]
+<Img:238:6><骷髅教主/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo109>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo109]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 69
+Param3 102
+MonGen 心魔19 1 0
+mapmove xinmo 71 76
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@震天守将]
+<Img:257:6><远古神庙护卫/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo110>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo110]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 299
+Param3 289
+MonGen 心魔20 1 0
+mapmove xinmo 305 310
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@变异黑野猪]
+<Img:276:6><变异黑野猪/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo111>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo111]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 236
+Param3 281
+MonGen 心魔21 1 0
+mapmove xinmo 230 292
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@女伯爵]
+<Img:117:6><女伯爵/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo112>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo112]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 32
+Param3 287
+MonGen 心魔22 1 0
+mapmove xinmo 29 268
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@安达利尔]
+<Img:255:6><安达利尔/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo113>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo113]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 281
+Param3 197
+MonGen 心魔23 1 0
+mapmove xinmo 273 185
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@格瑞斯瓦尔德]
+<Img:163:6><格瑞斯瓦尔德/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo114>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo114]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 320
+Param3 31
+MonGen 心魔24 1 0
+mapmove xinmo 319 47
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@远古魔王]
+<Img:270:6><远古魔王/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo115>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo115]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 93
+Param3 202
+MonGen 心魔25 1 0
+mapmove xinmo 91 177
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@触角神魔]
+<Img:123:6><触角神魔/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo116>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo116]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 190
+Param3 23
+MonGen 心魔26 1 0
+mapmove xinmo 177 10
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+[@灵魂收割者]
+<Img:270:6><灵魂收割者/SCOLOR=253>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<>\
+<进行挑战/@xinmo117>\
+<放弃挑战/@exit>(一旦放弃,今日内不能再次挑战)
+
+[@xinmo117]
+#if
+#act
+Monclear xinmo
+Param1 xinmo
+Param2 326
+Param3 97
+MonGen 心魔27 1 
+mapmove xinmo 309 103
+addnamelist ..\QuestDiary\日常任务\心魔日常任务.txt
+give 回城卷 1
+SENDMSG 1 一位勇士『%s』进入幻境并向心魔发起了挑战!!!
+
+
+
+
+
+
+

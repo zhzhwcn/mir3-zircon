@@ -1,0 +1,223 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @complete
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 2
+#ACT
+goto @race
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 3
+#ACT
+goto @cube
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第15间房  \
+在10分钟之内你需要采到纯度10以上的银矿石和 \
+纯度10以上的铁矿石\
+如果你在规定的时间内不能完成任务\
+将从头开始\ \
+<下一步/@Pena1>
+
+[@Pena1]
+#IF
+#ACT
+give 鹤嘴锄 1
+CALCVAR HUMAN Cache = 1
+TimeRecall 10
+map T115
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@complete]
+#IF
+checkitem 银矿 1
+checkitem 铁矿 1
+checkdura 银矿 10
+checkdura 铁矿 10
+#ACT
+takew 鹤嘴锄 1
+take 鹤嘴锄 1
+take 铁矿 40
+take 银矿 40
+take 金矿 40
+take 铜矿 40
+take 黑铁矿石 40
+CALCVAR HUMAN Cache = 2
+goto @race
+#ELSESAY
+因为你没有完成任务,只能从头开始. \ \
+
+<关闭/@Quit>
+#ELSEACT
+takew 鹤嘴锄 1
+take 鹤嘴锄 1
+take 铁矿 40
+take 银矿 40
+take 金矿 40
+take 铜矿 40
+take 黑铁矿石 40
+CALCVAR HUMAN Cache = 9
+
+[@race]
+您采到了矿石了,祝贺您!\
+给您一次投骰子的机会! \ \ 
+<下一步/@pre_cube>
+
+[@pre_cube]
+#IF
+checkitem 筹码 1
+#ACT
+take 筹码 1
+CALCVAR HUMAN Cache = 3
+movr d0 6
+inc d0 1
+playdice 1 @cube
+#SAY
+正在投骰子.\\
+<下一个/@cube>
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@cube]
+#SAY
+骰子的点数是 <$STR(D0)>  \
+你可以前进 <$STR(D0)>  \ \
+<移动/@next_cube>
+
+[@next_cube]
+#IF
+equal d0 1 
+#ACT
+goto @posi1
+break
+
+#IF
+equal d0 2 
+#ACT
+goto @posi2
+break
+
+#IF
+equal d0 3 
+#ACT
+goto @posi3
+break
+
+#IF
+equal d0 4 
+#ACT
+goto @posi4
+break
+
+#IF
+equal d0 5
+#ACT
+goto @posi5
+break
+
+#IF
+equal d0 6 
+#ACT
+goto @posi6
+break
+
+[@Posi1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B116
+batchmove
+
+[@Posi2]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B116
+addbatch B117
+batchmove
+
+[@Posi3]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B116
+addbatch B117
+addbatch B118
+batchmove
+
+[@Posi4]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B116
+addbatch B117
+addbatch B118
+addbatch B119
+batchmove
+
+[@Posi5]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B116
+addbatch B117
+addbatch B118
+addbatch B119
+addbatch B120
+batchmove
+
+[@Posi6]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B116
+addbatch B117
+addbatch B118
+addbatch B119
+addbatch B120
+addbatch B121
+batchmove

@@ -1,0 +1,16 @@
+[@main]
+#if
+check [196] 1
+check [197] 0
+CHECKBAGSIZE  1
+CheckHumInRange qiulaoboss 45 63 500
+#act 
+set [197] 1
+give 灵魂之石 1
+#say
+<"憎恨之王再也无法把世界变成一片黑暗了。" /SCOLOR=253>\
+<"看起来这真是一趟好旅程啊.../SCOLOR=253>\
+<>\
+<现在,墨菲斯托,给我前往地狱的许可。" /SCOLOR=253>\\
+<>\
+<确定/@exit>

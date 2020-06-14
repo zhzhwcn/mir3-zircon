@@ -1,0 +1,14 @@
+[@main]
+#if
+check [445] 1
+check [446] 0
+#act
+DELAYGOTO 2000 @feilong1
+break
+
+[@feilong1]
+<杀死这里的怪物,直至尼拉塞克出现为止!/SCOLOR=254>\\
+<>\
+<>\
+<>\
+<确定./@exit>

@@ -1,0 +1,11 @@
+[@main]
+#if                                    
+check [485] 1
+check [486] 0
+CheckHumInRange shimuboss 66 61 100
+#act
+set [486] 1
+#say
+<恭喜你杀死了邪恶蜈蚣，并强化了你的刺杀剑术！/SCOLOR=253>\\
+<>\
+<确定/@exit>

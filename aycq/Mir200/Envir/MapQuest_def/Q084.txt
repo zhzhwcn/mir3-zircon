@@ -1,0 +1,6 @@
+[@main]
+#if
+#act
+DelNpc 混沌之门
+SENDMSG 1 暗黑破坏神被击败了,世界获得了暂时的宁静......
+break

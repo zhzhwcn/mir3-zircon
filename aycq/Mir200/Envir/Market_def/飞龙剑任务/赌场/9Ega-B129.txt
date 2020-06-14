@@ -1,0 +1,277 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @main-3
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 2
+#ACT
+goto @next2
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 3
+#ACT
+goto @cube
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第29间房 . \
+你可以先后投两个骰子\
+第1个点数和第2点数一致时,你才可以继续前进. \
+给你5次投骰子的机会,好好珍惜吧\
+超过5次,你可以那一个筹码换5次投骰子的机会. \ \
+<下一步/@main-2>
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@main-2]
+#IF
+checkitem 筹码 1
+#ACT
+goto @main-3
+take 筹码 1
+mov P2 0
+CALCVAR HUMAN Cache = 1
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@main-3]
+你已经交了筹码, 给你5次机会,加油... \ \
+<下一步/@dicestart>
+
+[@dicestart]
+#IF
+small P2 5
+#ACT
+CALCVAR HUMAN Cache = 2
+movr d0 6
+movr d1 6
+inc P2 1
+inc d0 1
+inc d1 1
+playdice 2 @next
+#SAY
+正在投骰子.\ \
+<下一个/@next>
+#ELSEACT
+goto @main-2
+
+[@next]
+#IF
+equal d0 1
+equal d1 1
+#ACT
+goto @next1
+break
+
+#IF
+equal d0 2
+equal d1 2
+#ACT
+goto @next1
+break
+
+#IF
+equal d0 3
+equal d1 3
+#ACT
+goto @next1
+break
+
+#IF
+equal d0 4
+equal d1 4
+#ACT
+goto @next1
+break
+
+#IF
+equal d0 5
+equal d1 5
+#ACT
+goto @next1
+break
+
+#IF
+equal d0 6
+equal d1 6
+
+#ACT
+goto @next1
+break
+
+#ELSESAY
+你投了第<$STR(P2)>次骰子 . \
+骰子点数是<$STR(D0)> , <$STR(D1)>. \ \
+两个点数不一致. \
+再投一次吧. \ \
+<下一步/@dicestart>
+
+[@next1]
+#IF
+#SAY
+你投了第<$STR(P2)>次骰子 . \
+骰子点数是<$STR(D0)> , <$STR(D1)> . \
+两个点数正好一致. \ 
+给你提供可以前进的投骰子机会. \ \
+<下一步/@pre_cube>
+
+[@pre_cube]
+#IF
+checkitem 筹码 1
+#ACT
+CALCVAR HUMAN Cache = 3
+take 筹码 1
+movr d0 6
+inc d0 1
+playdice 1 @cube
+#SAY
+正在投骰子.\ \
+<下一个/@cube>
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@cube]
+#SAY
+骰子的点数 <$STR(D0)>  \
+你可以前进 <$STR(D0)>  \ \
+<移动/@next_cube>
+
+[@next_cube]
+#IF
+equal d0 1 
+#ACT
+goto @posi1
+break
+
+#IF
+equal d0 2 
+#ACT
+goto @posi2
+break
+
+#IF
+equal d0 3 
+#ACT
+goto @posi3
+break
+
+#IF
+equal d0 4 
+#ACT
+goto @posi4
+break
+
+#IF
+equal d0 5
+#ACT
+goto @posi5
+break
+
+#IF
+equal d0 6 
+#ACT
+goto @posi6
+break
+
+[@Posi1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B130
+batchmove
+
+[@Posi2]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B130
+addbatch B131
+batchmove
+
+[@Posi3]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B130
+addbatch B131
+addbatch B132
+batchmove
+
+[@Posi4]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B130
+addbatch B131
+addbatch B132
+addbatch B133
+batchmove
+
+[@Posi5]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B130
+addbatch B131
+addbatch B132
+addbatch B133
+addbatch B134
+batchmove
+
+[@Posi6]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B130
+addbatch B131
+addbatch B132
+addbatch B133
+addbatch B134
+addbatch B135
+batchmove

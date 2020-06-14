@@ -1,0 +1,2320 @@
+(@@sendmsg @storage @getback @@offlinemsg @PlayOffline @getback @buy @sell @repair @s_repair @@offlinemsg @storage @getback @getnextpage @getPreviouspage @@InPutString)
+[@Member]
+╝\
+
+[@OpenSndaItemBox]
+开启首饰盒需要100W金币！！\ \ \
+<确定/@ssh>       <取消/@exit>
+
+[@ssh]
+#IF
+checkgold 1000000
+#act
+take 金币 1000000
+SetSndaItemBox 1 2 8888 4 5 6 7 8 6666 9 10
+MESSAGEBOX  首饰盒开启成功！
+#elseact
+MESSAGEBOX  金币不足！
+break
+
+[@UserCmd33]
+#CALL [\白黑论坛\后台管理.txt] @白黑管理
+
+[@StartAutoPlayGame]
+#IF
+#ACT
+StartAutoPlayGame 100 60 1
+SENDMSG 6 开始挂机，使用快捷键“CTRL+ALT+X”停止挂机
+
+[@StopAutoPlayGame]
+#ACT
+SENDMSG 6 挂机结束，使用快捷键“CTRL+ALT+X”开始挂机
+
+[@UserCmd7]
+#IF
+#ACT
+MOV S1 <$PARAM(1)>
+GuildNoticeMsg 255 237 <$USERNAME>:<$STR(S1)> 
+
+[@StdModeFunc78]
+#IF
+CheckMagicName 心灵召唤
+#act
+give 心灵召唤
+SENDMSG 6 你已经学过心灵召唤！
+#ELSEACT
+goto @xlzh
+
+
+[@xlzh]
+#IF
+checkjob Taos
+#act
+ADDSKILL 心灵召唤
+
+#IF
+checkjob Wizard
+#act
+ADDSKILL 心灵召唤
+
+#IF
+checkjob Warr
+#act
+give 心灵召唤
+SENDMSG 6 职业不符！
+
+[@言]
+#act
+Gmexecute 恢复禁言 Self
+SENDMSG 5 凡是挂机宣传SF或家族，辱骂GM，卖装备的一律封IP或永久禁言!
+SENDMSG 5 为营造一个良好的游戏环境，请到不要使用外挂!
+
+[@PlayDie]
+#IF
+KillByHum
+#ACT
+SendMsg 5 玩家 <$KILLER> 在%m 把你干死了!
+SENDMSG 1 新闻联播:在:%m(%x:%y)发生恶性斗殴事件，玩家<$KILLER>把玩家<$USERNAME>打成重伤！！！请密切关注本台后续报道.
+#ELSEACT
+SendMsg 5 怪物 <$MONKILLER> 在%m 把你干死了!
+SENDMSG 1 提示:凶悍的怪物<$MONKILLER>在:%m(%x:%y)把玩家<$USERNAME>给分尸了！
+
+[@GetCastle0]
+SENDMSG 1 沙巴克已经被占领!
+
+[@UsePlugin]
+#ACT
+ChangeModeEx 10 10
+SENDMSG 6 使用外挂，锁定10秒!
+break
+
+;显示头盔命令触发
+[@UserCmd1]
+#if
+CHECKITEMW  青铜头盔
+#act
+HAIRSTYLE 6
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  魔法头盔
+#act
+HAIRSTYLE 6
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  骷髅头盔
+#act
+HAIRSTYLE 8
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  道士头盔
+#act
+HAIRSTYLE 7
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  天藤头盔
+#act
+HAIRSTYLE 9
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  斗笠
+#act
+HAIRSTYLE 10
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  黑铁头盔
+#act
+HAIRSTYLE 11
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  战神头盔
+#act
+HAIRSTYLE 12
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  行者帽
+#act
+HAIRSTYLE 13
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  霸龙头盔
+#act
+HAIRSTYLE 14
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  虎面头盔
+#act
+HAIRSTYLE 15
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  记忆头盔
+#act
+HAIRSTYLE 16
+SendMsg 6 显示头盔!
+break
+#if
+CHECKITEMW  祈祷头盔
+#act
+HAIRSTYLE 17
+SendMsg 6 显示头盔!
+break
+
+
+;脱头盔触发
+[@TakeOff10]
+#IF
+gender man
+#act
+goto @nantoufa1
+#ELSEACT
+goto @nvtoufa1
+[@nantoufa1]
+#if
+check [484] 1
+#act
+HAIRSTYLE 0
+break
+#if
+check [483] 1
+#act
+HAIRSTYLE 2
+break
+#if
+check [479] 1
+#act
+HAIRSTYLE 18
+break
+#ELSEACT
+HAIRSTYLE 2
+break
+[@nvtoufa1]
+#if
+check [482] 1
+#act
+HAIRSTYLE 0
+break
+#if
+check [481] 1
+#act
+HAIRSTYLE 1
+break
+#if
+check [480] 1
+#act
+HAIRSTYLE 3
+break
+#if
+check [478] 1
+#act
+HAIRSTYLE 18
+break
+#ELSEACT
+HAIRSTYLE 3
+break
+
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;魔法攻击触发
+[@MagicAttack]
+#IF
+gender man
+#act
+goto @nanwuqi
+#ELSEACT
+goto @nvwuqi
+
+;物理攻击触发
+[@Attack]
+#IF
+gender man
+#act
+goto @nanwuqi
+#ELSEACT
+goto @nvwuqi
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+[@nanwuqi]
+#if
+CHECKITEMW  万里碧海
+RANDOM 5
+#act
+DIV M10 <$MAXHP> 10
+DIV M11 <$MAXMP> 15
+HUMANHP + M10
+HUMANMP + M11
+
+#if
+CHECKITEMW  炸铜炼狱
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 110 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  星光魔杖
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 110 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  诅咒银蛇
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 110 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  守护命运之刃
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 120 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  心灵祈福之刃
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 120 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  自然元素之刃
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 120 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜井中月
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 130 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜骨玉权杖
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 130 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜无极棍
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 130 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜裁决之杖
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 140 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜血饮
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 140 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜龙纹剑
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 1
+POWERRATE 140 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  屠夫
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 3
+POWERRATE 150 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  龙爪法杖
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 3
+POWERRATE 150 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  无名刀
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 3
+POWERRATE 150 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  旋风流星刀
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 3
+POWERRATE 160 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  飞魂魔刃
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 3
+POWERRATE 160 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  封魔剑
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 3
+POWERRATE 160 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  霹雷
+RANDOM 25
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 3
+POWERRATE 170 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  铁轮
+RANDOM 25
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 3
+POWERRATE 170 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  逍遥扇
+RANDOM 25
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 3
+POWERRATE 170 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  游龙
+RANDOM 22
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 5
+POWERRATE 180 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  血煞
+RANDOM 22
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 5
+POWERRATE 180 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  清风
+RANDOM 22
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 5
+POWERRATE 180 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  屠龙
+RANDOM 20
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 7
+POWERRATE 190 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  嗜魂法杖
+RANDOM 20
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 7
+POWERRATE 190 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  碎梦
+RANDOM 20
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 7
+POWERRATE 190 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  破山剑
+RANDOM 15
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 7
+POWERRATE 200 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  天神法杖
+RANDOM 15
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 7
+POWERRATE 200 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  恐惧之刃
+RANDOM 15
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 7
+POWERRATE 200 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  飞龙剑(力量)
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 11
+POWERRATE 220 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  飞龙剑(自然)
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 11
+POWERRATE 220 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  飞龙剑(灵魂)
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 11
+POWERRATE 220 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  影魅之刃
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 9
+POWERRATE 280 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  邪恶力量巨剑
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 9
+POWERRATE 240 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  咒逐法杖
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 9
+POWERRATE 240 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  恶魔剑
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 9
+POWERRATE 240 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  轮回
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 9
+POWERRATE 240 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+[@nvwuqi]
+#if
+CHECKITEMW  万里碧海
+RANDOM 5
+#act
+DIV M10 <$MAXHP> 10
+DIV M11 <$MAXMP> 15
+HUMANHP + M10
+HUMANMP + M11
+
+#if
+CHECKITEMW  炸铜炼狱
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 110 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  星光魔杖
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 110 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  诅咒银蛇
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 110 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  守护命运之刃
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 120 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  心灵祈福之刃
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 120 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  自然元素之刃
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 120 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜井中月
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 130 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜骨玉权杖
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 130 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜无极棍
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 130 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜裁决之杖
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 140 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜血饮
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 140 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  潘夜龙纹剑
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 2
+POWERRATE 140 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  屠夫
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 4
+POWERRATE 150 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  龙爪法杖
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 4
+POWERRATE 150 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  无名刀
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 4
+POWERRATE 150 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  旋风流星刀
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 4
+POWERRATE 160 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  飞魂魔刃
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 4
+POWERRATE 160 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  封魔剑
+RANDOM 30
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 4
+POWERRATE 160 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  霹雷
+RANDOM 25
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 4
+POWERRATE 170 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  铁轮
+RANDOM 25
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 4
+POWERRATE 170 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  逍遥扇
+RANDOM 25
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 4
+POWERRATE 170 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  游龙
+RANDOM 22
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 6
+POWERRATE 180 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  血煞
+RANDOM 22
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 6
+POWERRATE 180 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  清风
+RANDOM 22
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 6
+POWERRATE 180 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  屠龙
+RANDOM 20
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 8
+POWERRATE 190 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  嗜魂法杖
+RANDOM 20
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 8
+POWERRATE 190 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  碎梦
+RANDOM 20
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 8
+POWERRATE 190 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  破山剑
+RANDOM 15
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 8
+POWERRATE 200 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  天神法杖
+RANDOM 15
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 8
+POWERRATE 200 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  恐惧之刃
+RANDOM 15
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 8
+POWERRATE 200 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  飞龙剑(力量)
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 12
+POWERRATE 220 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  飞龙剑(自然)
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 12
+POWERRATE 220 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  飞龙剑(灵魂)
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 12
+POWERRATE 220 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  影魅之刃
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 10
+POWERRATE 280 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  邪恶力量巨剑
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 10
+POWERRATE 240 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  咒逐法杖
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 10
+POWERRATE 240 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  恶魔剑
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 10
+POWERRATE 240 10 
+DELAYGOTO 10000 @关闭祝福
+break
+
+#if
+CHECKITEMW  轮回
+RANDOM 10
+#act
+PLAYEFFECT 0 2940 16 1 40 
+ChangeDressEffect 10
+POWERRATE 240 10 
+DELAYGOTO 10000 @关闭祝福
+break
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+[@关闭祝福]
+#if
+#act
+ChangeDressEffect 0
+break
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+[@QueryMyShopFail]
+#ACT
+MESSAGEBOX 你还没有个人商店，是否创建你的个人商店？\点击确定创建个人商店。 @创建个人商店 @取消
+
+[@创建个人商店]
+亲爱的玩家你好。这里可以申请开店。\
+你可以把你的物品放到你的店铺里出售，\
+游戏中的玩家可以查询到你要出售的物品。\
+也可以把不用的物品放到店铺的仓库里。\
+点击客户端中“店”就可以进入到你的店铺中,\
+也可以查询其他用户的店铺和物品，\
+可以很方便的把仓库物品和出售的物品相互转移。\
+还可以进行摆摊操作。\ 
+
+<我要开店(点击输入你喜欢的店铺名称)/@@InputString1>\
+
+[@InputString1]
+#IF
+CHECKMYSHOP
+#ACT
+MESSAGEBOX 你已经有店铺了
+BREAK
+
+#IF
+CHECKSHOPNAME <$STR(S1)>
+#ACT
+MESSAGEBOX <$STR(S1)>店铺名称已经存在，请重新选择一个
+BREAK
+
+#IF
+#ACT
+CREATEMYSHOP <$STR(S1)>
+
+[@CreateMyShopOK]
+#SAY
+你的店铺创建成功
+
+[@CreateMyShopFail]
+#SAY
+你的店铺创建失败
+
+[@ItemUpgrade]
+#IF
+CheckGold 10000
+#ACT
+Take 金币 10000
+#ELSESAY 
+升级装备需要10000金币.
+#ELSEACT
+SetUpgradeFail
+Break
+
+[@UsePlugin]
+#ACT
+ChangeModeEx 10 10
+SENDMSG 6 使用外挂，锁定10秒
+
+[@PlayLevelUP]
+#IF
+CHECKLEVELEX = 2
+checkjob Warr 
+#ACT
+Give 基本剑术 1
+#say
+恭喜你顺利提升到了2级,系统赠送基本剑术!\
+现在,你可以前往萝格营地的阿卡拉处接受任务开启你的\
+暗黑之旅!\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+#IF
+CHECKLEVELEX = 2
+checkjob Wizard 
+#ACT
+GIVE 火球术 1
+#say
+恭喜你顺利提升到了2级,系统赠送大火球!\
+现在,你可以前往萝格营地的阿卡拉处接受任务开启你的\
+暗黑之旅!\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+#IF
+CHECKLEVELEX = 2
+checkjob Taos 
+#ACT
+Give 治愈术 1
+GIVE 精神力战法 1
+#say
+恭喜你顺利提升到了2级,系统赠送精神力战法!\
+现在,你可以前往萝格营地的阿卡拉处接受任务开启你的\
+暗黑之旅!\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+#IF
+CHECKLEVELEX = 7
+checkjob Warr 
+#ACT
+Give 金币 10000
+#say
+恭喜你顺利提升到了7级,系统赠送1W起步资金!\
+现在,你可以前往萝格营地的阿卡拉处接受任务开启你的\
+暗黑之旅!\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+#IF
+CHECKLEVELEX = 7
+checkjob Wizard 
+#ACT
+Give 金币 10000
+#say
+恭喜你顺利提升到了7级,系统赠送1W起步资金!\
+现在,你可以前往萝格营地的阿卡拉处接受任务开启你的\
+暗黑之旅!\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+#IF
+CHECKLEVELEX = 7
+checkjob Taos 
+#ACT
+Give 金币 10000
+#say
+恭喜你顺利提升到了2级,系统赠送1W起步资金!\
+现在,你可以前往萝格营地的阿卡拉处接受任务开启你的\
+暗黑之旅!\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+#IF
+CHECKLEVELEX = 22
+#ACT
+Give 金币 50000
+#say
+恭喜你顺利地提升到了22级!系统赠送5W金币作为奖励!\
+现在你有足够的实力挑战每日一次的心魔了,你可以通过各\
+大城镇中的神秘老人处进入,获取双倍经验卷轴.\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 30
+#ACT
+Give 金币 100000
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+#say
+恭喜你顺利地提升到了30级!系统赠送10W金币作为奖励!\
+祝你游戏愉快!\
+<>\
+<现在你可以返回第一幕的营地内接取职业任务了!/SCOLOR=253>\
+<>\
+<确定/@exit>
+
+
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 30
+#ACT
+Give 金币 100000
+#say
+恭喜你顺利地提升到了30级!系统赠送10W金币作为奖励!\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 30
+#ACT
+Give 金币 100000
+#say
+恭喜你顺利地提升到了30级!系统赠送10W金币作为奖励!\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 35
+#ACT
+Give 金币 200000
+#say
+恭喜你顺利地提升到了35级!系统赠送20W金币作为奖励!\
+祝你游戏愉快!\
+<>\
+<现在你可以前往罗格营地找龙大叔接受职业任务了!/SCOLOR=253>\
+<>\
+<确定/@exit>
+
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 35
+#ACT
+Give 金币 200000
+#say
+恭喜你顺利地提升到了35级!系统赠送20W金币作为奖励!\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+
+
+
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 35
+#ACT
+Give 金币 200000
+#say
+恭喜你顺利地提升到了35级!系统赠送20W金币作为奖励!\
+祝你游戏愉快!\
+<>\
+<>\
+<确定/@exit>
+
+
+#IF
+CHECKLEVELEX = 45
+#ACT
+#say
+<位于【库拉斯特海港】的【娜塔亚】似乎正在寻找你的下落!/SCOLOR=253>\\
+<>\
+<>\
+<确定/@exit>
+
+
+;升级加准确
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 3
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 6
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 9
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 12
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 15
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 18
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 21
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 24
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 27
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 33
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 36
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 39
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 42
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 45
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 48
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 51
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 54
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 57
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Warr
+CHECKLEVELEX = 60
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 6
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 12
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 18
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 24
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 30
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 36
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 42
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 48
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 54
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Wizard
+CHECKLEVELEX = 60
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 6
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 12
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 18
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 24
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 30
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 36
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 42
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 48
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 54
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+#IF
+CHECKJOB Taos
+CHECKLEVELEX = 60
+#ACT
+USEBONUSPOINT 8 + 1
+SENDMSG 7 你的准确增加了1点.
+break
+
+
+[@StdModeFunc10]
+#act
+give 金币 10000
+SENDMSG 6 提示:金币增加1万.
+
+[@StdModeFunc11]
+#act
+give 金币 30000
+SENDMSG 6 提示:金币增加3万.
+
+[@StdModeFunc12]
+#act
+give 金币 50000
+SENDMSG 6 提示:金币增加5万.
+
+[@StdModeFunc13]
+#act
+give 金币 100000
+SENDMSG 6 提示:金币增加10万.
+
+[@StdModeFunc14]
+#if
+#act
+CHANGEEXP  + 50000
+sendmsg 7 你获得了50000经验!!!
+
+[@StdModeFunc15]
+#if
+#act
+CHANGEEXP  + 100000
+sendmsg 7 你获得了100000经验!!!
+
+[@StdModeFunc16]
+#if
+#act
+CHANGEEXP  + 200000
+sendmsg 7 你获得了200000经验!!!
+
+[@StdModeFunc17]
+#if
+#act
+CHANGEEXP  + 300000
+sendmsg 7 你获得了300000经验!!!
+
+[@StdModeFunc18]
+#if
+#act
+CHANGEEXP  + 500000
+sendmsg 7 你获得了500000经验!!!
+
+[@StdModeFunc19]
+#IF
+#ACT
+Gmexecute showeffect 76
+KILLMONEXPRATE 200 10800
+SENDMSG 7 你获得了3个小时双倍经验,期间死亡或下线不减少时间,重复使用无效!
+
+;..............................................................................................
+;..............................................................................................
+;......................................升级武器................................................
+;..............................................................................................
+;..............................................................................................
+
+[@StdModeFunc20] 
+#If 
+CheckItemAddValue 1 3 > 6 
+#Act 
+GIVE 超级祝福油 1 
+SendMsg 5 [提示]:你的武器已经幸运值+7点了。系统无法给你增加了. 
+BREAK 
+#IF 
+CHECKUSEITEM 1 
+#ACT 
+UPGRADEITEMEX 1 3 0 1 0 
+SendMsg 5 [提示]:恭喜您你的武器幸运值增加了1点。 
+break 
+#ELSEACT 
+GIVE 超级祝福油 1 
+messagebox [失败]:你当前手上没有任何武器。 
+break
+
+[@StdModeFunc21]
+#If 
+CheckItemAddValue 1 1 > 6 
+#Act 
+GIVE 魔法石 1 
+SendMsg 5 [提示]:你的武器已经魔法+7点了。系统无法给你增加了. 
+BREAK 
+#IF 
+CHECKUSEITEM 1 
+#ACT 
+UPGRADEITEMEX 1 1 0 1 0 
+SendMsg 5 [提示]:恭喜您你的武器魔法增加了1点。 
+break 
+#ELSEACT 
+GIVE 魔法石 1 
+messagebox [失败]:你当前手上没有任何武器。 
+break
+
+[@StdModeFunc22]
+#If 
+CheckItemAddValue 1 2 > 6 
+#Act 
+GIVE 道术石 1 
+SendMsg 5 [提示]:你的武器已经道术+7点了。系统无法给你增加了. 
+BREAK 
+#IF 
+CHECKUSEITEM 1 
+#ACT 
+UPGRADEITEMEX 1 2 0 1 0 
+SendMsg 5 [提示]:恭喜您你的武器道术增加了1点。 
+break 
+#ELSEACT 
+GIVE 道术石 1 
+messagebox [失败]:你当前手上没有任何武器。 
+break
+
+[@StdModeFunc23] 
+#If 
+CheckItemAddValue 1 0 > 6 
+#Act 
+GIVE 攻击石 1 
+SendMsg 5 [提示]:你的武器已经攻击+7点了。系统无法给你增加了. 
+BREAK 
+#IF 
+CHECKUSEITEM 1 
+#ACT 
+UPGRADEITEMEX 1 0 0 1 0 
+SendMsg 5 [提示]:恭喜您你的武器攻击增加了1点。 
+break 
+#ELSEACT 
+GIVE 攻击石 1 
+messagebox [失败]:你当前手上没有任何武器。 
+break
+
+;..............................................................................................
+;..............................................................................................
+;......................................任务触发................................................
+;..............................................................................................
+;..............................................................................................
+;生命药剂
+[@StdModeFunc24]
+#IF
+#ACT
+USEBONUSPOINT 6 + 20
+SENDMSG 7 你领悟了生命的奥秘，生命值上限永久增加20点.
+break
+
+[@StdModeFunc25]
+#if
+check [188] 1  
+check [189] 1  
+checkitem 黑皮书上卷 1
+checkitem 黑皮书下卷 1
+#act 
+set [190] 1
+take 黑皮书上卷 1
+take 黑皮书下卷 1
+give 蓝.依森的古书 1
+#say
+恭喜你获得了<蓝.依森的古书/SCOLOR=253>!!!\\
+<确定/@exit>
+#elseact
+give 黑皮书上卷 1
+SENDMSG 7 :你需要同时拥有【上卷】和【下卷】才可以合成【蓝.依森的古书】!
+
+[@StdModeFunc26]
+#if
+check [188] 1  
+check [189] 1  
+checkitem 黑皮书上卷 1
+checkitem 黑皮书下卷 1
+#act 
+set [190] 1
+take 黑皮书上卷 1
+take 黑皮书下卷 1
+give 蓝.依森的古书 1
+#say
+恭喜你获得了<蓝.依森的古书/SCOLOR=253>!!!\\
+<确定/@exit>
+#elseact
+give 黑皮书下卷 1
+SENDMSG 7 你需要同时拥有【上卷】和【下卷】才可以合成【蓝.依森的古书】!
+
+
+[@StdModeFunc27]
+#if
+checkitem 灌魔之能 3
+#act 
+set [208] 1
+take 灌魔之能 3
+give 极魔之能 1
+#say
+恭喜你获得了<极魔之能/SCOLOR=253>!!!\\
+<确定/@exit>
+#elseact
+give 灌魔之能 1
+SENDMSG 7 需要3个灌魔之能才能合成1个极魔之能!
+
+[@StdModeFunc28]
+#if
+CheckRangeMonCountEx disanmu 87 158 邪恶蠕虫 = 0
+#act
+goto @chongzi1
+#elseact
+give 兽人肉块 1
+SENDMSG 7 邪恶蠕虫已经被其他玩家召唤出来了!
+SENDMSG 7 请击杀后再进行召唤!
+
+[@chongzi1]
+#if
+CheckHumInRange disanmu 85 160 3
+#act
+goto @chongzi2
+#elseact
+give 兽人肉块 1
+SENDMSG 7 你必须位于兽人山谷中央的蠕虫巢穴附近才能使用该物品!
+
+[@chongzi2]
+#act
+take 兽人肉块 1
+set [209] 0
+Param1 disanmu
+Param2 87
+Param3 158
+MonGen 邪恶蠕虫 1 0
+SENDMSG 1 邪恶蠕虫被【%s】身上携带的兽人肉块吸引出现在兽人山谷中!!!
+SENDMSG 7 兽人肉块的气味把邪恶蠕虫吸引出来了!!!
+SENDMSG 7 兽人肉块的气味把邪恶蠕虫吸引出来了!!!
+SENDMSG 7 兽人肉块的气味把邪恶蠕虫吸引出来了!!!
+
+
+[@StdModeFunc29]
+#if
+CheckHumInRange disimu 36 427 3
+checkitem 海法斯特铁锤 1
+checkitem 灵魂之石 1
+#act
+goto @chuizi
+#elseact
+give 海法斯特铁锤 1
+SENDMSG 7 你必须位于火焰之河的地狱熔炉中央才能使用该物品!
+SENDMSG 7 你必须同时拥有【海法斯特铁锤】和【灵魂之石】才能使用该物品!
+
+[@chuizi]
+#if
+#act
+take 海法斯特铁锤 1
+take 灵魂之石 1
+set [240] 1
+#say
+恭喜你已经摧毁了【灵魂之石】!!!\\
+<>\
+<>\
+<确定/@exit>
+
+[@StdModeFunc30]
+#if
+#act
+CHANGEPKPOINT - 5
+SENDMSG 6 提示:你的罪恶值减少了5点。
+BREAK
+
+[@StdModeFunc57]
+#IF
+#ACT
+KILLMONEXPRATE 200 3600
+SENDMSG 7 你获得了1个小时双倍经验,期间死亡或下线不减少时间,重复使用无效!
+
+[@StdModeFunc58]
+#IF
+#ACT
+KILLMONEXPRATE 200 7200
+SENDMSG 7 你获得了2个小时双倍经验,期间死亡或下线不减少时间,重复使用无效!
+
+[@StdModeFunc59]
+#IF
+#ACT
+KILLMONEXPRATE 200 10800
+SENDMSG 7 你获得了3个小时双倍经验,期间死亡或下线不减少时间,重复使用无效!
+
+[@StdModeFunc60]
+#IF
+#ACT
+KILLMONEXPRATE 200 14400
+SENDMSG 7 你获得了4个小时双倍经验,期间死亡或下线不减少时间,重复使用无效!
+
+[@StdModeFunc61]
+#IF
+#ACT
+KILLMONEXPRATE 300 3600
+SENDMSG 7 你获得了1个小时3倍经验,期间死亡或下线不减少时间,重复使用无效!
+
+[@StdModeFunc62]
+#IF
+#ACT
+KILLMONEXPRATE 300 7200
+SENDMSG 7 你获得了2个小时3倍经验,期间死亡或下线不减少时间,重复使用无效!
+
+[@StdModeFunc63]
+#IF
+#ACT
+KILLMONEXPRATE 300 10800
+SENDMSG 7 你获得了3个小时3倍经验,期间死亡或下线不减少时间,重复使用无效!
+
+[@StdModeFunc64]
+#IF
+#ACT
+KILLMONEXPRATE 300 14400
+SENDMSG 7 你获得了4个小时3倍经验,期间死亡或下线不减少时间,重复使用无效!
+
+[@StdModeFunc65]
+#act
+give 金币 1000000
+SENDMSG 6 提示:金币增加100万.
+
+[@StdModeFunc66]
+#act
+give 金币 5000000
+SENDMSG 6 提示:金币增加500万.
+
+[@StdModeFunc67]
+#act
+give 金币 10000000
+SENDMSG 6 提示:金币增加1000万.
+
+
+;..............................................................................................
+;..............................................................................................
+[@StdModeFunc77]
+#IF 
+CHECKLEVELEX > 54
+#ACT 
+timerecall 60
+map andian11
+give 回城卷 1 
+MonGenEx andian11 39 39 稻草人33 20 1 0 255
+MonGenEx andian11 39 39 鹿33 20 1 0 255
+MonGenEx andian11 39 39 鸡33 20 1 0 255
+MonGenEx andian11 39 39 树木拳头 20 1 0 255
+MonGenEx andian11 39 39 古难记录者 20 1 0 255
+MonGenEx andian11 39 39 不洁的凡塔 20 1 0 255
+MonGenEx andian11 39 39 邪恶之主 20 1 0 255
+SENDMSG 0 [%s]打破空间壁垒，进入了恐怖暗殿！！
+SENDMSG 5 神秘力量袭来，一小时后将会被排斥出此空间！！
+#elseact
+SENDMSG 5 力量未达到要求（55级），无法打破空间壁垒！！
+give 暗殿门票 1
+
+;..............................................................................................
+;..............................................................................................
+;魔法技能......................................................................................
+;..............................................................................................
+;..............................................................................................
+;铁布衫
+[@MagSelfFunc300]
+#IF
+equal M99 0
+#ACT
+mov M99 60
+DIV M50 <$MAXDC> 3
+ChangeHumAbility 2 + <$MAXAC> 20
+ChangeHumAbility 4 + <$MAXMAC> 20
+ChangeHumAbility 6 - M50 20
+SetOnTimer 0 1
+PLAYEFFECT 0 740 10 1 100
+SETBODYCOLOR 146 20
+SENDMSG 7 铁布衫技能释放,防御力和魔御大幅度提升,攻击力降低!
+DELAYGOTO 20000 @铁布衫结束
+#ELSEACT
+SendMsg 6 铁布衫技能在:<$STR(M99)>秒后冷却!
+break
+[@铁布衫结束]
+#act
+SendMsg 6 铁布衫效果消失，你的防/魔御力恢复正常!
+SendMsg 6 你的攻击力恢复正常!
+break
+
+;破血狂杀
+[@MagSelfFunc301]
+#IF
+equal M98 0
+#ACT
+mov M98 60
+DIV M51 <$MAXDC> 3
+DIV M52 <$MAXAC> 2
+DIV M53 <$MAXMAC> 2
+ChangeHumAbility 6 + M51 20
+ChangeHumAbility 2 - M52 20
+ChangeHumAbility 4 - M53 20
+SetOnTimer 1 1
+PLAYEFFECT 0 750 10 1 100
+CHANGESPEED 2 1 20
+SETBODYCOLOR 253 20
+SENDMSG 7 破血狂杀技能释放，攻击力与攻击速度大幅度提升!
+DELAYGOTO 20000 @破血狂杀结束
+#ELSEACT
+SendMsg 6 破血狂杀技能在:<$STR(M98)>秒后冷却!
+break
+[@破血狂杀结束]
+#act
+SendMsg 6 破血狂杀效果消失，你的防/魔御力恢复正常!
+SendMsg 6 你的攻击速度恢复正常!
+break
+
+;凝血离魂
+[@MagSelfFunc302]
+#IF
+equal M97 0
+#ACT
+mov M97 60
+DIV M54 <$HP> 3
+DIV M55 <$MAXMC> 2
+ChangeHumAbility 11 - M54 20
+ChangeHumAbility 8 + M55 20
+SetOnTimer 2 1
+PLAYEFFECT 0 720 11 1 100 
+SETBODYCOLOR 253 20
+SENDMSG 7 凝血离魂技能释放,魔法力与魔法速度大幅度提升!
+SENDMSG 7 你的生命值降低了!
+CHANGESPEED 3 3 20
+DELAYGOTO 20000 @凝血离魂结束
+#ELSEACT
+SendMsg 6 凝血离魂技能在:<$STR(M97)>秒后冷却!
+break
+[@凝血离魂结束]
+#act
+SendMsg 6 凝血离魂效果消失，你的生命值与魔法速度恢复正常!
+SendMsg 6 你的魔法力恢复正常!
+break
+
+;妙影无踪
+[@MagSelfFunc303]
+#IF
+CHECKLEVELEX > 49
+equal M96 0
+#ACT
+mov M96 60
+SetOnTimer 3 1
+PLAYEFFECT 0 760 12 1 50 
+PLAYEFFECT 0 780 10 5 200
+ChangeModeEx 2 5
+SENDMSG 7 妙影无踪技能释放，你获得5秒隐匿效果!
+break
+#IF
+CHECKLEVELEX > 39
+equal M96 0
+#ACT
+mov M96 60
+SetOnTimer 3 1
+PLAYEFFECT 0 760 12 1 50 
+PLAYEFFECT 0 780 10 2 200
+ChangeModeEx 2 3
+SENDMSG 7 妙影无踪技能释放，你获得3秒隐匿效果!
+break
+#ELSEACT
+SendMsg 6 妙影无踪技能在:<$STR(M96)>秒后冷却!
+break
+
+;强魔战法
+[@MagSelfFunc304]
+#if
+CHECKLEVELEX > 0
+#act
+PLAYEFFECT 0 830 9 1 60 
+SENDMSG 7 强魔战法技能释放!
+break
+[@MagTagFuncEx304]
+#if
+equal M95 0
+#act
+DIV M56 <$MAXMC> 10
+DIV M57 <$MAXDC> 10
+PLAYEFFECT 0 840 10 1 100 
+PLAYEFFECT 0 930 14 10 200
+mov M95 60
+SetOnTimer 4 1
+ChangeHumAbility 8 + M56 30
+ChangeHumAbility 6 + M57 30
+SENDMSG 7 感应到强魔战法的气息，攻击与魔法提升30秒!
+DELAYGOTO 30000 @强魔战法结束
+break
+[@强魔战法结束]
+#act
+SendMsg 6 强魔战法效果消失，你的攻击与魔法值恢复正常!
+break
+
+;阴阳法环
+[@MagSelfFunc305]
+#IF
+equal M94 0
+CHECKLEVELEX > 59
+#ACT
+mov M94 60
+SetOnTimer 5 1
+PLAYEFFECT 0 850 11 1 100 
+PLAYEFFECT 0 860 4 5 250
+SENDMSG 7 阴阳法环技能释放,无敌5秒!
+ChangeModeEx 1 5
+break
+#IF
+equal M94 0
+CHECKLEVELEX > 54
+#ACT
+mov M94 60
+SetOnTimer 5 1
+PLAYEFFECT 0 850 11 1 100 
+PLAYEFFECT 0 860 4 4 250
+SENDMSG 7 阴阳法环技能释放,无敌4秒!
+ChangeModeEx 1 4 
+break
+#IF
+equal M94 0
+CHECKLEVELEX > 49
+#ACT
+mov M94 60
+SetOnTimer 4 1
+PLAYEFFECT 0 850 11 1 100 
+PLAYEFFECT 0 860 4 3 250
+SENDMSG 7 阴阳法环技能释放,无敌3秒!
+ChangeModeEx 1 3
+break
+#ELSEACT
+SendMsg 6 阴阳法环技能在:<$STR(M94)>秒后冷却!
+break
+
+;无极真气
+[@MagSelfFunc306]
+#IF
+equal M93 0
+#ACT
+DIV M57 <$MAXSC> 3
+DIV M58 <$MAXAC> 3
+DIV M59 <$MAXMAC> 3
+mov M93 60
+ChangeHumAbility 10 + M57 20
+ChangeHumAbility 2 - M58 20
+ChangeHumAbility 4 - M59 20
+PLAYEFFECT 0 870 20 1 100 
+ChangeSpeed 1 1 20
+SETBODYCOLOR 253 20
+SetOnTimer 6 1
+SENDMSG 7 无极真气技能释放,道术与移动速度大幅度提升!
+SENDMSG 7 你的防御,魔御暂时性降低了!
+DELAYGOTO 20000 @无极真气结束
+#ELSEACT
+SendMsg 6 无极真气技能在:<$STR(M93)>秒后冷却!
+break
+[@无极真气结束]
+#act
+SendMsg 6 无极真气效果消失，你的道术与移动速度恢复正常!
+SendMsg 6 你的防/魔御力恢复正常!
+break
+
+;-------------------------------------------------------
+
+
+;召唤神兽
+[@MagSelfFunc307]
+#IF
+CHECKSLAVECOUNT > 0
+#ACT
+GOTO @召唤神兽_有宝宝
+#IF
+CHECKSLAVECOUNT < 1
+#ACT
+GOTO @召唤神兽_无宝宝
+
+[@召唤神兽_有宝宝]
+#IF
+CHECKSLAVENAME 神兽
+#ELSEACT
+GOTO @sb
+
+[@sb]
+#IF
+CHECKSLAVENAME 神兽1
+#ELSEACT
+GOTO @sb1
+
+[@sb1]
+#IF
+CHECKSLAVENAME 神兽2
+#ELSEACT
+GOTO @sb2
+
+[@sb2]
+#IF
+CHECKSLAVENAME 神兽3
+#ELSEACT
+GOTO @sb3
+
+[@sb3]
+#IF
+CHECKSLAVENAME 神兽4
+#ELSEACT
+GOTO @sb4
+
+[@sb4]
+#IF
+CHECKSLAVENAME 圣兽
+#ELSEACT
+GOTO @召唤神兽_1
+
+
+[@召唤神兽_1]
+#if
+CHECKSLAVECOUNT < 3
+CHECKLEVELEX > 54
+LARGE <$MAXSC> 69
+#act
+RECALLMOB 圣兽 5 9999 0 
+break
+#if
+CHECKSLAVECOUNT < 3
+LARGE <$MAXSC> 69
+#act
+RECALLMOB 神兽4 5 9999 0 
+break
+#if
+CHECKSLAVECOUNT < 3
+LARGE <$MAXSC> 49
+#act
+RECALLMOB 神兽3 4 9999 0
+break
+#if
+CHECKSLAVECOUNT < 3
+LARGE <$MAXSC> 39
+#act
+RECALLMOB 神兽2 3 9999 0
+break
+#if
+CHECKSLAVECOUNT < 3
+LARGE <$MAXSC> 29
+#act
+RECALLMOB 神兽1 2 9999 0
+break
+#if
+CHECKSLAVECOUNT < 3
+#act
+RECALLMOB 神兽 1 9999 0
+break
+[@召唤神兽_无宝宝]
+#if
+CHECKSLAVECOUNT < 1
+CHECKLEVELEX > 54
+LARGE <$MAXSC> 69
+#act
+RECALLMOB 圣兽 5 9999 0 
+break
+#if
+CHECKSLAVECOUNT < 1
+LARGE <$MAXSC> 69
+#act
+RECALLMOB 神兽4 5 9999 0 
+break
+#if
+CHECKSLAVECOUNT < 1
+LARGE <$MAXSC> 49
+#act
+RECALLMOB 神兽3 4 9999 0
+break
+#if
+CHECKSLAVECOUNT < 1
+LARGE <$MAXSC> 39
+#act
+RECALLMOB 神兽2 3 9999 0
+break
+#if
+CHECKSLAVECOUNT < 1
+LARGE <$MAXSC> 29
+#act
+RECALLMOB 神兽1 2 9999 0
+break
+#if
+CHECKSLAVECOUNT < 1
+#act
+RECALLMOB 神兽 1 9999 0
+break
+;------------------------------------------------------
+[@Resurrection]
+#ACT
+TAKE 灵魂护身符 1
+break
+;------------------------------------------------------
+
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■飞龙剑任务■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+[@StdModeFunc69]
+#if
+check [428] 1
+check [429] 0
+CheckHumInRange tulongmimi 15 15 100
+#act
+MAPEFFECT tulongmimi 15 15 8 1660 10 5 60 1 0 
+MAPEFFECT tulongmimi 17 10 8 1660 10 5 60 1 0 
+MAPEFFECT tulongmimi 9 17 8 1660 10 5 60 1 0 
+MAPEFFECT tulongmimi 18 20 8 1660 10 5 60 1 0 
+MAPEFFECT tulongmimi 11 10 8 1660 10 5 60 1 0 
+MAPEFFECT tulongmimi 15 15 11 660 20 1 60 1 0 
+SCENEVIBRATION 3 1 1 
+DELAYGOTO 4000 @传送大地神殿
+#ELSEACT
+MESSAGEBOX 炸药已损毁,引暴失败!
+
+[@传送大地神殿]
+#act
+PLAYEFFECT 0 10 6 3 70 
+mapmove tulong 17 61
+break
+
+[@StdModeFunc70]
+#IF
+#ACT
+USEBONUSPOINT 6 + 50
+USEBONUSPOINT 7 + 100 
+SENDMSG 7 生命值永久增加50点,魔法值永久增加100点!你获得了短暂的通灵能力!
+break
+
+[@土龙神殿前]
+#if
+check [428] 1
+check [429] 0
+#act
+#say
+<你的脑子突然一阵眩晕,虚灵精华再次发生了短暂的作用.>\
+<龙吟之魂:/SCOLOR=251>\
+<我们似乎离大地神殿不远了,继续前进./SCOLOR=254>\
+<小心!一旦你找到并进入大地神殿,里面盘踞的土龙很有可能被激怒./SCOLOR=254>\
+<这将是一场激烈的战斗,或许你会战死,但是请谨记我们的使命,我们/SCOLOR=254>\
+<不能让恐惧所毁灭!/SCOLOR=254>\\
+<>\
+<确定./@exit>
+
+[@进入寒冰之颠]
+#if
+CHECKITEMW 寒冰护符
+#act
+#say
+你突然感觉到一阵头晕目眩,似乎被一种巨大的无形的力量往\
+一个空间里拽......\\
+<>\
+<>\
+<>\
+<确定./@传送寒冰之颠>
+
+[@传送寒冰之颠]
+#if
+#act
+mapmove hanbing52 31 28
+close
+break
+
+
+
+
+
+
+
+
+
+

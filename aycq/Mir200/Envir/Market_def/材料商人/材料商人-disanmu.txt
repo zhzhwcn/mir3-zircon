@@ -1,0 +1,1755 @@
+[@main]
+你也知道,在漫长的修炼途中,我们总能收集到各种各样的材料.\
+如果你身上恰好带来了这些材料的话,我愿意付给你足够的金币作交换.\
+同时根据我的客人要求,每天我也会对一些特殊的材料作回收:\
+<>\
+<>\
+<查看今天回收的材料/@renwu> <←每日日常任务/SCOLOR=253>\
+<>\
+<出售材料/@cailiao>\
+<>                                                          <退出/@exit>
+
+[@renwu]
+根据今天客人的要求,今天我将对下面的材料作特殊回收:\
+<>\
+<材料任务一/@renwu1>\
+<材料任务二/@renwu2>\
+<材料任务三/@renwu3>\
+<材料任务四/@renwu4>\
+<材料任务五/@renwu5>\
+<>\
+<>                                                   <返回/@main>  <退出/@exit>
+
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+[@renwu1]
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\材料一完成.txt
+#act
+MESSAGEBOX 你今天已经完成过此任务!
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\骸骨.txt
+#act
+goto @骸骨1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\僵尸骨头.txt
+#act
+goto @僵尸骨头1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\号角.txt
+#act
+goto @号角1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\牙齿.txt
+#act
+goto @牙齿1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\皇家徽章.txt
+#act
+goto @皇家徽章1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\血色印记.txt
+#act
+goto @血色印记1
+break
+#ELSEACT
+GOTO @renwu1-1
+
+[@renwu1-1]
+#if
+RANDOM 6
+#act
+goto @骸骨1
+break
+#if
+RANDOM 5
+#act
+goto @僵尸骨头1
+break
+#if
+RANDOM 4
+#act
+goto @号角1
+break
+#if
+RANDOM 3
+#act
+goto @牙齿1
+break
+#if
+RANDOM 2
+#act
+goto @皇家徽章1
+break
+#if
+#act
+goto @血色印记1
+break
+
+[@骸骨1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\骸骨.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<骸骨/SCOLOR=254>.\
+<>\
+我听说<邪恶洞穴/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@骸骨2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@骸骨2]
+#if
+checkitem 骸骨 5
+#act
+take 骸骨 5
+give 世界之石碎片 1
+CHANGEEXP + 50000
+addnamelist ..\QuestDiary\日常材料任务\材料一完成.txt
+sendmsg 7 恭喜你完成今天的材料任务一并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@僵尸骨头1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\僵尸骨头.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<僵尸骨头/SCOLOR=254>.\
+<>\
+<>\
+我听说<埋骨荒野/SCOLOR=254>地区和<部分丧尸/SCOLOR=254>就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@僵尸骨头2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@僵尸骨头2]
+#if
+checkitem 僵尸骨头 5
+#act
+take 僵尸骨头 5
+give 世界之石碎片 1
+CHANGEEXP + 50000
+addnamelist ..\QuestDiary\日常材料任务\材料一完成.txt
+sendmsg 7 恭喜你完成今天的材料任务一并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@号角1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\号角.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<号角/SCOLOR=254>.\
+<>\
+<>\
+我听说<沃玛神殿/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@号角2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@号角2]
+#if
+checkitem 号角 5
+#act
+take 号角 5
+give 世界之石碎片 1
+CHANGEEXP + 50000
+addnamelist ..\QuestDiary\日常材料任务\材料一完成.txt
+sendmsg 7 恭喜你完成今天的材料任务一并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@牙齿1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\牙齿.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<牙齿/SCOLOR=254>.\
+<>\
+<>\
+我听说<大陵墓/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@牙齿2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@牙齿2]
+#if
+checkitem 牙齿 5
+#act
+take 牙齿 5
+give 世界之石碎片 1
+CHANGEEXP + 50000
+addnamelist ..\QuestDiary\日常材料任务\材料一完成.txt
+sendmsg 7 恭喜你完成今天的材料任务一并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@皇家徽章1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\皇家徽章.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<皇家徽章/SCOLOR=254>.\
+<>\
+<>\
+我听说<遗忘高塔/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@皇家徽章2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@皇家徽章2]
+#if
+checkitem 皇家徽章 5
+#act
+take 皇家徽章 5
+give 世界之石碎片 1
+CHANGEEXP + 50000
+addnamelist ..\QuestDiary\日常材料任务\材料一完成.txt
+sendmsg 7 恭喜你完成今天的材料任务一并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@血色印记1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\血色印记.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<血色印记/SCOLOR=254>.\
+<>\
+<>\
+我听说<血色修道院/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@血色印记2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@血色印记2]
+#if
+checkitem 血色印记 5
+#act
+take 血色印记 5
+give 世界之石碎片 1
+CHANGEEXP + 50000
+addnamelist ..\QuestDiary\日常材料任务\材料一完成.txt
+sendmsg 7 恭喜你完成今天的材料任务一并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+[@renwu2]
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\材料二完成.txt
+#act
+MESSAGEBOX 你今天已经完成过此任务!
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\粗布.txt
+#act
+goto @粗布1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\虫卵.txt
+#act
+goto @虫卵1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\毒蛇胆汁.txt
+#act
+goto @毒蛇胆汁1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\遗物.txt
+#act
+goto @遗物1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\宝玉.txt
+#act
+goto @宝玉1
+break
+#ELSEACT
+GOTO @renwu2-1
+
+[@renwu2-1]
+#if
+RANDOM 5
+#act
+goto @粗布1
+break
+#if
+RANDOM 4
+#act
+goto @虫卵1
+break
+#if
+RANDOM 3
+#act
+goto @毒蛇胆汁1
+break
+#if
+RANDOM 2
+#act
+goto @遗物1
+break
+#if
+#act
+goto @宝玉1
+break
+
+[@粗布1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\粗布.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<粗布/SCOLOR=254>.\
+<>\
+我听说<皇宫/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@粗布2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@粗布2]
+#if
+checkitem 粗布 5
+#act
+take 粗布 5
+give 世界之石碎片 2
+CHANGEEXP + 100000
+addnamelist ..\QuestDiary\日常材料任务\材料二完成.txt
+sendmsg 7 恭喜你完成今天的材料任务二并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@虫卵1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\虫卵.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<虫卵/SCOLOR=254>.\
+<>\
+我听说<群虫巢穴/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@虫卵2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@虫卵2]
+#if
+checkitem 虫卵 5
+#act
+take 虫卵 5
+give 世界之石碎片 2
+CHANGEEXP + 100000
+addnamelist ..\QuestDiary\日常材料任务\材料二完成.txt
+sendmsg 7 恭喜你完成今天的材料任务二并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@毒蛇胆汁1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\毒蛇胆汁.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<毒蛇胆汁/SCOLOR=254>.\
+<>\
+我听说<利爪腹蛇神殿/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@毒蛇胆汁2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@毒蛇胆汁2]
+#if
+checkitem 毒蛇胆汁 5
+#act
+take 毒蛇胆汁 5
+give 世界之石碎片 2
+CHANGEEXP + 100000
+addnamelist ..\QuestDiary\日常材料任务\材料二完成.txt
+sendmsg 7 恭喜你完成今天的材料任务二并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@遗物1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\遗物.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<遗物/SCOLOR=254>.\
+<>\
+我听说<塔.拉夏的墓穴/SCOLOR=254>和<罪孽洞穴/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@遗物2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@遗物2]
+#if
+checkitem 遗物 5
+#act
+take 遗物 5
+give 世界之石碎片 2
+CHANGEEXP + 100000
+addnamelist ..\QuestDiary\日常材料任务\材料二完成.txt
+sendmsg 7 恭喜你完成今天的材料任务二并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@宝玉1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\宝玉.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<宝玉/SCOLOR=254>.\
+<>\
+我听说<沙漠中/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@宝玉2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@宝玉2]
+#if
+checkitem 宝玉 5
+#act
+take 宝玉 5
+give 世界之石碎片 2
+CHANGEEXP + 100000
+addnamelist ..\QuestDiary\日常材料任务\材料二完成.txt
+sendmsg 7 恭喜你完成今天的材料任务二并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+[@renwu3]
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\材料三完成.txt
+#act
+MESSAGEBOX 你今天已经完成过此任务!
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\思念珍珠.txt
+#act
+goto @思念珍珠1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\跳蚤皮.txt
+#act
+goto @跳蚤皮1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\蜘蛛线.txt
+#act
+goto @蜘蛛线1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\神灵雕像.txt
+#act
+goto @神灵雕像1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\献祭石像.txt
+#act
+goto @献祭石像1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\旧缆绳.txt
+#act
+goto @旧缆绳1
+break
+#ELSEACT
+GOTO @renwu3-1
+
+[@renwu3-1]
+#if
+RANDOM 6
+#act
+goto @思念珍珠1
+break
+#if
+RANDOM 5
+#act
+goto @跳蚤皮1
+break
+#if
+RANDOM 4
+#act
+goto @蜘蛛线1
+break
+#if
+RANDOM 3
+#act
+goto @神灵雕像1
+break
+#if
+RANDOM 2
+#act
+goto @献祭石像1
+break
+#if
+#act
+goto @旧缆绳1
+break
+
+[@思念珍珠1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\思念珍珠.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<思念珍珠/SCOLOR=254>.\
+<>\
+我听说<库拉斯特野外/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@思念珍珠2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@思念珍珠2]
+#if
+checkitem 思念珍珠 5
+#act
+take 思念珍珠 5
+give 世界之石碎片 3
+CHANGEEXP + 200000
+addnamelist ..\QuestDiary\日常材料任务\材料三完成.txt
+sendmsg 7 恭喜你完成今天的材料任务三并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@跳蚤皮1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\跳蚤皮.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<跳蚤皮/SCOLOR=254>.\
+<>\
+我听说<剥皮洞穴/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@跳蚤皮2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@跳蚤皮2]
+#if
+checkitem 跳蚤皮 5
+#act
+take 跳蚤皮 5
+give 世界之石碎片 3
+CHANGEEXP + 200000
+addnamelist ..\QuestDiary\日常材料任务\材料三完成.txt
+sendmsg 7 恭喜你完成今天的材料任务三并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@蜘蛛线1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\蜘蛛线.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<蜘蛛线/SCOLOR=254>.\
+<>\
+我听说<蜘蛛丛林/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@蜘蛛线2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@蜘蛛线2]
+#if
+checkitem 蜘蛛线 5
+#act
+take 蜘蛛线 5
+give 世界之石碎片 3
+CHANGEEXP + 200000
+addnamelist ..\QuestDiary\日常材料任务\材料三完成.txt
+sendmsg 7 恭喜你完成今天的材料任务三并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@神灵雕像1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\神灵雕像.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<神灵雕像/SCOLOR=254>.\
+<>\
+我听说<残破神殿/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@神灵雕像2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@神灵雕像2]
+#if
+checkitem 神灵雕像 5
+#act
+take 神灵雕像 5
+give 世界之石碎片 3
+CHANGEEXP + 200000
+addnamelist ..\QuestDiary\日常材料任务\材料三完成.txt
+sendmsg 7 恭喜你完成今天的材料任务三并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@献祭石像1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\献祭石像.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<献祭石像/SCOLOR=254>.\
+<>\
+我听说<兽人/SCOLOR=254>和<憎恨囚牢/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@献祭石像2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@献祭石像2]
+#if
+checkitem 献祭石像 5
+#act
+take 献祭石像 5
+give 世界之石碎片 3
+CHANGEEXP + 200000
+addnamelist ..\QuestDiary\日常材料任务\材料三完成.txt
+sendmsg 7 恭喜你完成今天的材料任务三并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@旧缆绳1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\旧缆绳.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<旧缆绳/SCOLOR=254>.\
+<>\
+我听说<幽灵船/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@旧缆绳2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@旧缆绳2]
+#if
+checkitem 旧缆绳 5
+#act
+take 旧缆绳 5
+give 世界之石碎片 3
+CHANGEEXP + 200000
+addnamelist ..\QuestDiary\日常材料任务\材料三完成.txt
+sendmsg 7 恭喜你完成今天的材料任务三并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+[@renwu4]
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\材料四完成.txt
+#act
+MESSAGEBOX 你今天已经完成过此任务!
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\灼热之核.txt
+#act
+goto @灼热之核1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\粗皮革.txt
+#act
+goto @粗皮革1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\魔石碎片.txt
+#act
+goto @魔石碎片1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\血石碎片.txt
+#act
+goto @血石碎片1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\灵魂碎片.txt
+#act
+goto @灵魂碎片1
+break
+#ELSEACT
+GOTO @renwu4-1
+
+[@renwu4-1]
+#if
+RANDOM 5
+#act
+goto @灼热之核1
+break
+#if
+RANDOM 4
+#act
+goto @粗皮革1
+break
+#if
+RANDOM 3
+#act
+goto @魔石碎片1
+break
+#if
+RANDOM 2
+#act
+goto @血石碎片1
+break
+#if
+#act
+goto @灵魂碎片1
+break
+
+[@灼热之核1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\灼热之核.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<灼热之核/SCOLOR=254>.\
+<>\
+我听说<火焰之河/SCOLOR=254>和<神罚之城/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@灼热之核2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@灼热之核2]
+#if
+checkitem 灼热之核 5
+#act
+take 灼热之核 5
+give 世界之石碎片 4
+CHANGEEXP + 300000
+addnamelist ..\QuestDiary\日常材料任务\材料四完成.txt
+sendmsg 7 恭喜你完成今天的材料任务四并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@粗皮革1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\粗皮革.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<粗皮革/SCOLOR=254>.\
+<>\
+我听说<郊外大草原/SCOLOR=254>和<绝望平原/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@粗皮革2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@粗皮革2]
+#if
+checkitem 粗皮革 5
+#act
+take 粗皮革 5
+give 世界之石碎片 4
+CHANGEEXP + 300000
+addnamelist ..\QuestDiary\日常材料任务\材料四完成.txt
+sendmsg 7 恭喜你完成今天的材料任务四并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@魔石碎片1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\魔石碎片.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<魔石碎片/SCOLOR=254>.\
+<>\
+我听说<邪魔迷窟/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@魔石碎片2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@魔石碎片2]
+#if
+checkitem 魔石碎片 5
+#act
+take 魔石碎片 5
+give 世界之石碎片 4
+CHANGEEXP + 300000
+addnamelist ..\QuestDiary\日常材料任务\材料四完成.txt
+sendmsg 7 恭喜你完成今天的材料任务四并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@血石碎片1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\血石碎片.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<血石碎片/SCOLOR=254>.\
+<>\
+我听说<炼狱/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@血石碎片2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@血石碎片2]
+#if
+checkitem 血石碎片 5
+#act
+take 血石碎片 5
+give 世界之石碎片 4
+CHANGEEXP + 300000
+addnamelist ..\QuestDiary\日常材料任务\材料四完成.txt
+sendmsg 7 恭喜你完成今天的材料任务四并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@灵魂碎片1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\灵魂碎片.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<灵魂碎片/SCOLOR=254>.\
+<>\
+我听说<混沌避难所/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@灵魂碎片2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@灵魂碎片2]
+#if
+checkitem 灵魂碎片 5
+#act
+take 灵魂碎片 5
+give 世界之石碎片 4
+CHANGEEXP + 300000
+addnamelist ..\QuestDiary\日常材料任务\材料四完成.txt
+sendmsg 7 恭喜你完成今天的材料任务四并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+[@renwu5]
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\材料五完成.txt
+#act
+MESSAGEBOX 你今天已经完成过此任务!
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\厚皮.txt
+#act
+goto @厚皮1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\震天魔印.txt
+#act
+goto @震天魔印1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\魔晶石.txt
+#act
+goto @魔晶石1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\潘夜珠.txt
+#act
+goto @潘夜珠1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\水晶球.txt
+#act
+goto @水晶球1
+break
+#if
+CHECKNAMELIST ..\QuestDiary\日常材料任务\恶魔连枷.txt
+#act
+goto @恶魔连枷1
+break
+#ELSEACT
+GOTO @renwu5-1
+
+[@renwu5-1]
+#if
+RANDOM 6
+#act
+goto @厚皮1
+break
+#if
+RANDOM 5
+#act
+goto @震天魔印1
+break
+#if
+RANDOM 4
+#act
+goto @潘夜珠1
+break
+#if
+RANDOM 3
+#act
+goto @魔晶石1
+break
+#if
+#if
+RANDOM 2
+#act
+goto @水晶球1
+break
+#if
+#act
+goto @恶魔连枷1
+break
+
+[@厚皮1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\厚皮.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<厚皮/SCOLOR=254>.\
+<>\
+我听说<丛林/SCOLOR=254>和<哈洛加斯野外/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@厚皮2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@厚皮2]
+#if
+checkitem 厚皮 5
+#act
+take 厚皮 5
+give 世界之石碎片 5
+CHANGEEXP + 400000
+addnamelist ..\QuestDiary\日常材料任务\材料五完成.txt
+sendmsg 7 恭喜你完成今天的材料任务五并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@震天魔印1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\震天魔印.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<震天魔印/SCOLOR=254>.\
+<>\
+我听说<真天宫/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@震天魔印2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@震天魔印2]
+#if
+checkitem 震天魔印 5
+#act
+take 震天魔印 5
+give 世界之石碎片 5
+CHANGEEXP + 400000
+addnamelist ..\QuestDiary\日常材料任务\材料五完成.txt
+sendmsg 7 恭喜你完成今天的材料任务五并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@潘夜珠1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\潘夜珠.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<潘夜珠/SCOLOR=254>.\
+<>\
+我听说<潘夜神殿/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@潘夜珠2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@潘夜珠2]
+#if
+checkitem 潘夜珠 5
+#act
+take 潘夜珠 5
+give 世界之石碎片 5
+CHANGEEXP + 400000
+addnamelist ..\QuestDiary\日常材料任务\材料五完成.txt
+sendmsg 7 恭喜你完成今天的材料任务五并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@魔晶石1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\魔晶石.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<魔晶石/SCOLOR=254>.\
+<>\
+我听说<西沙漠地下洞穴/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@魔晶石2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@魔晶石2]
+#if
+checkitem 魔晶石 5
+#act
+take 魔晶石 5
+give 世界之石碎片 5
+CHANGEEXP + 400000
+addnamelist ..\QuestDiary\日常材料任务\材料五完成.txt
+sendmsg 7 恭喜你完成今天的材料任务五并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@水晶球1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\水晶球.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<水晶球/SCOLOR=254>.\
+<>\
+我听说<寒冰地牢/SCOLOR=254>和<水晶通道/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@水晶球2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@水晶球2]
+#if
+checkitem 水晶球 5
+#act
+take 水晶球 5
+give 世界之石碎片 5
+CHANGEEXP + 400000
+addnamelist ..\QuestDiary\日常材料任务\材料五完成.txt
+sendmsg 7 恭喜你完成今天的材料任务五并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@恶魔连枷1]
+#act
+addnamelist ..\QuestDiary\日常材料任务\恶魔连枷.txt
+#say
+<>\
+根据客人的要求,我们现在急需要<5/SCOLOR=254>个<恶魔连枷/SCOLOR=254>.\
+<>\
+我听说<毁灭王座/SCOLOR=254>的怪物就掉落这种材料.\
+那么请一定于<24点前/SCOLOR=254>带来!\
+<>\
+<我带来了材料/@恶魔连枷2>\  
+<>\                         
+<我这就去弄/@exit>
+
+[@恶魔连枷球2]
+#if
+checkitem 恶魔连枷 5
+#act
+take 恶魔连枷 5
+give 世界之石碎片 5
+CHANGEEXP + 400000
+addnamelist ..\QuestDiary\日常材料任务\材料五完成.txt
+sendmsg 7 恭喜你完成今天的材料任务五并获得了奖励!
+close
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+;■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+[@cailiao]
+<不同的材料,它们的价值也是不一样的/SCOLOR=254><(以下价格以5个材料计算)/SCOLOR=249>\
+    <↓/SCOLOR=250><1000金币/SCOLOR=253>   <↓/SCOLOR=250><2000金币/SCOLOR=253>   <↓/SCOLOR=250><3000金币/SCOLOR=253>   <↓/SCOLOR=250><4000金币/SCOLOR=253>  <↓/SCOLOR=250><5000金币/SCOLOR=253>\
+【<骸骨/@骸骨>】     【<粗布/@粗布>】    【<思念珍珠/@思念珍珠>】 【<粗皮革/@粗皮革>】  【<震天魔印/@震天魔印>】\
+【<僵尸骨头/@僵尸骨头>】 【<虫卵/@虫卵>】    【<跳蚤皮/@跳蚤皮>】   【<灼热之核/@灼热之核>】【<魔晶石/@魔晶石>】\
+【<号角/@号角>】     【<毒蛇胆汁/@毒蛇胆汁>】【<蜘蛛线/@蜘蛛线>】   【<血石碎片/@血石碎片>】【<厚皮/@厚皮>】\
+【<牙齿/@牙齿>】     【<遗物/@遗物>】    【<神灵雕像/@神灵雕像>】 【<魔石碎片/@魔石碎片>】【<水晶球/@水晶球>】\
+【<皇家徽章/@皇家徽章>】 【<宝玉/@宝玉>】    【<献祭石像/@献祭石像>】 【<灵魂碎片/@灵魂碎片>】【<潘夜珠/@潘夜珠>】\
+【<血色印记/@血色印记>】             【<旧缆绳/@旧缆绳>】               【<恶魔连枷/@恶魔连枷>】\
+<>\
+<>                                                   <返回/@main>  <退出/@exit>
+
+[@骸骨]
+#if
+checkitem 骸骨 5
+#act
+take 骸骨 5
+give 金币 1000
+sendmsg 7 出售5个骸骨,获得1000金币!
+break
+#if
+checkitem 骸骨 1
+#act
+take 骸骨 1
+give 金币 200
+sendmsg 7 出售1个骸骨,获得200金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@僵尸骨头]
+#if
+checkitem 僵尸骨头 5
+#act
+take 僵尸骨头 5
+give 金币 1000
+sendmsg 7 出售5个僵尸骨头,获得1000金币!
+break
+#if
+checkitem 僵尸骨头 1
+#act
+take 僵尸骨头 1
+give 金币 200
+sendmsg 7 出售1个僵尸骨头,获得200金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@号角]
+#if
+checkitem 号角 5
+#act
+take 号角 5
+give 金币 1000
+sendmsg 7 出售5个号角,获得1000金币!
+break
+#if
+checkitem 号角 1
+#act
+take 号角 1
+give 金币 200
+sendmsg 7 出售1个号角,获得200金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@牙齿]
+#if
+checkitem 牙齿 5
+#act
+take 牙齿 5
+give 金币 1000
+sendmsg 7 出售5个牙齿,获得1000金币!
+break
+#if
+checkitem 牙齿 1
+#act
+take 牙齿 1
+give 金币 200
+sendmsg 7 出售1个牙齿,获得200金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@皇家徽章]
+#if
+checkitem 皇家徽章 5
+#act
+take 皇家徽章 5
+give 金币 1000
+sendmsg 7 出售5个皇家徽章,获得1000金币!
+break
+#if
+checkitem 皇家徽章 1
+#act
+take 皇家徽章 1
+give 金币 200
+sendmsg 7 出售1个皇家徽章,获得200金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@血色印记]
+#if
+checkitem 血色印记 5
+#act
+take 血色印记 5
+give 金币 1000
+sendmsg 7 出售5个血色印记,获得1000金币!
+break
+#if
+checkitem 血色印记 1
+#act
+take 血色印记 1
+give 金币 200
+sendmsg 7 出售1个血色印记,获得200金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+
+[@粗布]
+#if
+checkitem 粗布 5
+#act
+take 粗布 5
+give 金币 2000
+sendmsg 7 出售5个粗布,获得2000金币!
+break
+#if
+checkitem 粗布 1
+#act
+take 粗布 1
+give 金币 400
+sendmsg 7 出售1个粗布,获得400金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@虫卵]
+#if
+checkitem 虫卵 5
+#act
+take 虫卵 5
+give 金币 2000
+sendmsg 7 出售5个虫卵,获得2000金币!
+break
+#if
+checkitem 虫卵 1
+#act
+take 虫卵 1
+give 金币 400
+sendmsg 7 出售1个虫卵,获得400金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@毒蛇胆汁]
+#if
+checkitem 毒蛇胆汁 5
+#act
+take 毒蛇胆汁 5
+give 金币 2000
+sendmsg 7 出售5个毒蛇胆汁,获得2000金币!
+break
+#if
+checkitem 毒蛇胆汁 1
+#act
+take 毒蛇胆汁 1
+give 金币 400
+sendmsg 7 出售1个毒蛇胆汁,获得400金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@遗物]
+#if
+checkitem 遗物 5
+#act
+take 遗物 5
+give 金币 2000
+sendmsg 7 出售5个遗物,获得2000金币!
+break
+#if
+checkitem 遗物 1
+#act
+take 遗物 1
+give 金币 400
+sendmsg 7 出售1个遗物,获得400金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@宝玉]
+#if
+checkitem 宝玉 5
+#act
+take 宝玉 5
+give 金币 2000
+sendmsg 7 出售5个宝玉,获得2000金币!
+break
+#if
+checkitem 宝玉 1
+#act
+take 宝玉 1
+give 金币 400
+sendmsg 7 出售1个宝玉,获得400金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+
+[@思念珍珠]
+#if
+checkitem 思念珍珠 5
+#act
+take 思念珍珠 5
+give 金币 3000
+sendmsg 7 出售5个思念珍珠,获得3000金币!
+break
+#if
+checkitem 思念珍珠 1
+#act
+take 思念珍珠 1
+give 金币 600
+sendmsg 7 出售1个思念珍珠,获得600金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@跳蚤皮]
+#if
+checkitem 跳蚤皮 5
+#act
+take 跳蚤皮 5
+give 金币 3000
+sendmsg 7 出售5个跳蚤皮,获得3000金币!
+break
+#if
+checkitem 跳蚤皮 1
+#act
+take 跳蚤皮 1
+give 金币 600
+sendmsg 7 出售1个跳蚤皮,获得600金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@蜘蛛线]
+#if
+checkitem 蜘蛛线 5
+#act
+take 蜘蛛线 5
+give 金币 3000
+sendmsg 7 出售5个蜘蛛线,获得3000金币!
+break
+#if
+checkitem 蜘蛛线 1
+#act
+take 蜘蛛线 1
+give 金币 600
+sendmsg 7 出售1个蜘蛛线,获得600金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@神灵雕像]
+#if
+checkitem 神灵雕像 5
+#act
+take 神灵雕像 5
+give 金币 3000
+sendmsg 7 出售5个神灵雕像,获得3000金币!
+break
+#if
+checkitem 神灵雕像 1
+#act
+take 神灵雕像 1
+give 金币 600
+sendmsg 7 出售1个神灵雕像,获得600金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@献祭石像]
+#if
+checkitem 献祭石像 5
+#act
+take 献祭石像 5
+give 金币 3000
+sendmsg 7 出售5个献祭石像,获得3000金币!
+break
+#if
+checkitem 献祭石像 1
+#act
+take 献祭石像 1
+give 金币 600
+sendmsg 7 出售1个献祭石像,获得600金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@旧缆绳]
+#if
+checkitem 旧缆绳 5
+#act
+take 旧缆绳 5
+give 金币 3000
+sendmsg 7 出售5个旧缆绳,获得3000金币!
+break
+#if
+checkitem 旧缆绳 1
+#act
+take 旧缆绳 1
+give 金币 600
+sendmsg 7 出售1个旧缆绳,获得600金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+
+[@粗皮革]
+#if
+checkitem 粗皮革 5
+#act
+take 粗皮革 5
+give 金币 4000
+sendmsg 7 出售5个粗皮革,获得4000金币!
+break
+#if
+checkitem 粗皮革 1
+#act
+take 粗皮革 1
+give 金币 800
+sendmsg 7 出售1个粗皮革,获得800金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@灼热之核]
+#if
+checkitem 灼热之核 5
+#act
+take 灼热之核 5
+give 金币 4000
+sendmsg 7 出售5个灼热之核,获得4000金币!
+break
+#if
+checkitem 灼热之核 1
+#act
+take 灼热之核 1
+give 金币 800
+sendmsg 7 出售1个灼热之核,获得800金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@血石碎片]
+#if
+checkitem 血石碎片 5
+#act
+take 血石碎片 5
+give 金币 4000
+sendmsg 7 出售5个血石碎片,获得4000金币!
+break
+#if
+checkitem 血石碎片 1
+#act
+take 血石碎片 1
+give 金币 800
+sendmsg 7 出售1个血石碎片,获得800金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@魔石碎片]
+#if
+checkitem 魔石碎片 5
+#act
+take 魔石碎片 5
+give 金币 4000
+sendmsg 7 出售5个魔石碎片,获得4000金币!
+break
+#if
+checkitem 魔石碎片 1
+#act
+take 魔石碎片 1
+give 金币 800
+sendmsg 7 出售1个魔石碎片,获得800金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@灵魂碎片]
+#if
+checkitem 灵魂碎片 5
+#act
+take 灵魂碎片 5
+give 金币 4000
+sendmsg 7 出售5个灵魂碎片,获得4000金币!
+break
+#if
+checkitem 灵魂碎片 1
+#act
+take 灵魂碎片 1
+give 金币 800
+sendmsg 7 出售1个灵魂碎片,获得800金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+
+[@震天魔印]
+#if
+checkitem 震天魔印 5
+#act
+take 震天魔印 5
+give 金币 5000
+sendmsg 7 出售5个震天魔印,获得5000金币!
+break
+#if
+checkitem 震天魔印 1
+#act
+take 震天魔印 1
+give 金币 1000
+sendmsg 7 出售1个震天魔印,获得1000金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@魔晶石]
+#if
+checkitem 魔晶石 5
+#act
+take 魔晶石 5
+give 金币 5000
+sendmsg 7 出售5个魔晶石,获得5000金币!
+break
+#if
+checkitem 魔晶石 1
+#act
+take 魔晶石 1
+give 金币 1000
+sendmsg 7 出售1个魔晶石,获得1000金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@厚皮]
+#if
+checkitem 厚皮 5
+#act
+take 厚皮 5
+give 金币 5000
+sendmsg 7 出售5个厚皮,获得5000金币!
+break
+#if
+checkitem 厚皮 1
+#act
+take 厚皮 1
+give 金币 1000
+sendmsg 7 出售1个厚皮,获得1000金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@水晶球]
+#if
+checkitem 水晶球 5
+#act
+take 水晶球 5
+give 金币 5000
+sendmsg 7 出售5个水晶球,获得5000金币!
+break
+#if
+checkitem 水晶球 1
+#act
+take 水晶球 1
+give 金币 1000
+sendmsg 7 出售1个水晶球,获得1000金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@潘夜珠]
+#if
+checkitem 潘夜珠 5
+#act
+take 潘夜珠 5
+give 金币 5000
+sendmsg 7 出售5个潘夜珠,获得5000金币!
+break
+#if
+checkitem 潘夜珠 1
+#act
+take 潘夜珠 1
+give 金币 1000
+sendmsg 7 出售1个潘夜珠,获得1000金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+[@恶魔连枷]
+#if
+checkitem 恶魔连枷 5
+#act
+take 恶魔连枷 5
+give 金币 5000
+sendmsg 7 出售5个恶魔连枷,获得5000金币!
+break
+#if
+checkitem 恶魔连枷 1
+#act
+take 恶魔连枷 1
+give 金币 1000
+sendmsg 7 出售1个恶魔连枷,获得1000金币!
+break
+#elseact
+MESSAGEBOX 〖失败〗缺少材料!
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

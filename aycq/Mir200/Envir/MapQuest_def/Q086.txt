@@ -1,0 +1,12 @@
+[@main]
+#if                                    
+check [402] 1  
+check [403] 0 
+CHECKBAGSIZE  1
+#act 
+set [403] 1
+give 千年毒蛇胆 1
+#say
+<"其大无比,异常恶心......" /SCOLOR=253> \\
+<>\
+<确定/@exit>

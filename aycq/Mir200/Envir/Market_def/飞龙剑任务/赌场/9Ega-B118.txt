@@ -1,0 +1,49 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第18间房  \
+<$USERNAME>正移动的是亡灵间,当心,活着出来的概率很少啊 \
+这间房里有很多邪恶教主,你需要杀光里面的所有教主,\
+如果你能活着从亡灵间走出来,那你已经是神仙了\
+如果没有信心,那我还是劝你退出吧.... \ \
+<移动/@main-2> \   
+<退出/@quit>
+
+[@main-2]
+#IF
+checkitem 筹码 1
+#ACT
+take 筹码 1
+map T118A
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011

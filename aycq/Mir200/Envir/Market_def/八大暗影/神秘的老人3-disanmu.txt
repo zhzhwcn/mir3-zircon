@@ -1,0 +1,235 @@
+[@main]
+<每日日常任务/SCOLOR=253>\
+阿哈?又是一位来挑战<八大暗影禁地/SCOLOR=254>的勇士!\
+每天,你都有一次机会从我这里进入禁地,杀死盘踞在里面的恶魔,\
+将获得<经验卷轴及大量金币/SCOLOR=254>的奖励!
+那么,你准备好了要挑战了吗?\\
+<>\
+<我要挑战/@tiaozhan>每日一次                <兑换奖励/@jiangli>\
+<>\
+<查看禁地说明/@shuoming>\
+                                                <退出/@exit>
+
+[@shuoming]
+<本地图为每日任务,每天可以挑战一次.(可以组队完成)/SCOLOR=253>\
+<八大暗影禁地/SCOLOR=255>顾名思义是一张由8张地图组成的挑战地图.\
+从1到8层,每层地图均相应地刷出实力越来越高的BOSS,玩家通过杀死\
+每层的BOSS获得进入下一层的资格,杀死BOSS后,系统将根据你的挑战\
+成绩记录你的成绩.\
+一旦你死亡或者退出地图后,你便可以从NPC处领取与你成绩相应的<双/SCOLOR=254>\
+<倍经验卷轴/SCOLOR=254>奖励.\
+<查看各层的BOSS资料/@bossa>\
+<我知道了/@exit>         <(注意：奖励将于每日0点清除，请及早领取)/SCOLOR=254>\\            
+
+[@bossa]
+暗影禁地一层:<尸王/SCOLOR=255>.\
+暗影禁地二层:<沃玛教主/SCOLOR=255>.\
+暗影禁地三层:<触龙神/SCOLOR=255>.\
+暗影禁地四层:<祖玛教主/SCOLOR=255>.\
+暗影禁地五层:<虹魔教主/SCOLOR=255>.\
+暗影禁地六层:<黄泉教主/SCOLOR=255>.\
+暗影禁地七层:<牛魔王/SCOLOR=255>.\
+暗影禁地八层:<赤月恶魔/SCOLOR=255>.\
+<我要挑战/@tiaozhan>           <退出/@exit>
+
+[@tiaozhan]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\八大暗影.txt
+#say
+对不起,你今天已经挑战过八大暗影了!\
+请明天再来尝试吧!!!\\
+<>\
+<确定/@exit>
+#ELSEACT
+GOTO @tiaozhan1
+
+[@tiaozhan1]
+#if
+#act
+addnamelist ..\QuestDiary\日常任务\八大暗影.txt
+give 回城卷 1
+map anying1
+SENDMSG 1 一位勇士『%s』向〖八大暗影禁地〗发起了挑战!!!
+
+[@jiangli]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\暗影奖励.txt
+#act
+goto @meiyou
+#elseact
+goto @jiangli1
+break
+
+[@meiyou]
+对不起，你今天已经领取过奖励了!!!\\
+<>\
+<确定/@exit>
+
+[@jiangli1]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\暗影8.txt
+#act
+addnamelist ..\QuestDiary\日常任务\暗影奖励.txt
+give 四小时3倍卷轴 1
+give 金币 100000
+sendmsg 7 你获得了100000金币!!!
+CHANGEEXP  + 400000
+sendmsg 7 你获得了400000经验!!!
+#say
+恭喜你完成了今天<全部/SCOLOR=254>的暗影禁地挑战,请收好你今天的奖励.\
+希望明天再接再励!!!\\
+<>\
+<确定/@exit>
+
+#elseact
+goto @next1
+break
+
+[@next1]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\暗影7.txt
+#act
+addnamelist ..\QuestDiary\日常任务\暗影奖励.txt
+give 三小时3倍卷轴 1
+give 金币 100000
+sendmsg 7 你获得了100000金币!!!
+CHANGEEXP  + 350000
+sendmsg 7 你获得了350000经验!!!
+#say
+由于你今天只挑战到了第<7/SCOLOR=254>层,请收好你今天的奖励.\
+希望明天再接再励!!!\\
+<>\
+<确定/@exit>
+
+#elseact
+goto @next2
+break
+
+[@next2]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\暗影6.txt
+#act
+addnamelist ..\QuestDiary\日常任务\暗影奖励.txt
+give 二小时3倍卷轴 1
+give 金币 100000
+sendmsg 7 你获得了100000金币!!!
+CHANGEEXP  + 300000
+sendmsg 7 你获得了300000经验!!!
+#say
+由于你今天只挑战到了第<6/SCOLOR=254>层,请收好你今天的奖励.\
+希望明天再接再励!!!\\
+<>\
+<确定/@exit>
+
+#elseact
+goto @next3
+break
+
+[@next3]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\暗影5.txt
+#act
+addnamelist ..\QuestDiary\日常任务\暗影奖励.txt
+give 一小时3倍卷轴 1
+give 金币 100000
+sendmsg 7 你获得了100000金币!!!
+CHANGEEXP  + 250000
+sendmsg 7 你获得了250000经验!!!
+#say
+由于你今天只挑战到了第<5/SCOLOR=254>层,请收好你今天的奖励.\
+希望明天再接再励!!!\\
+<>\
+<确定/@exit>
+
+#elseact
+goto @next4
+break
+
+[@next4]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\暗影4.txt
+#act
+addnamelist ..\QuestDiary\日常任务\暗影奖励.txt
+give 四小时2倍卷轴 1
+give 金币 100000
+sendmsg 7 你获得了100000金币!!!
+CHANGEEXP  + 200000
+sendmsg 7 你获得了200000经验!!!
+#say
+由于你今天只挑战到了第<4/SCOLOR=254>层,请收好你今天的奖励.\
+希望明天再接再励!!!\\
+<>\
+<确定/@exit>
+
+#elseact
+goto @next5
+break
+
+[@next5]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\暗影3.txt
+#act
+addnamelist ..\QuestDiary\日常任务\暗影奖励.txt
+give 三小时2倍卷轴 1
+give 金币 100000
+sendmsg 7 你获得了100000金币!!!
+CHANGEEXP  + 150000
+sendmsg 7 你获得了150000经验!!!
+#say
+由于你今天只挑战到了第<3/SCOLOR=254>层,请收好你今天的奖励.\
+希望明天再接再励!!!\\
+<>\
+<确定/@exit>
+
+#elseact
+goto @next6
+break
+
+[@next6]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\暗影2.txt
+#act
+addnamelist ..\QuestDiary\日常任务\暗影奖励.txt
+give 二小时2倍卷轴 1
+give 金币 100000
+sendmsg 7 你获得了100000金币!!!
+CHANGEEXP  + 100000
+sendmsg 7 你获得了100000经验!!!
+#say
+由于你今天只挑战到了第<2/SCOLOR=254>层,请收好你今天的奖励.\
+希望明天再接再励!!!\\
+<>\
+<确定/@exit>
+
+#elseact
+goto @next7
+break
+
+[@next7]
+#if
+CHECKNAMELIST ..\QuestDiary\日常任务\暗影1.txt
+#act
+addnamelist ..\QuestDiary\日常任务\暗影奖励.txt
+give 一小时2倍卷轴 1
+give 金币 100000
+sendmsg 7 你获得了100000金币!!!
+CHANGEEXP  + 50000
+sendmsg 7 你获得了50000经验!!!
+#say
+由于你今天只挑战到了第<1/SCOLOR=254>层,请收好你今天的奖励.\
+希望明天再接再励!!!\\
+<>\
+<确定/@exit>
+
+#elsesay
+对不起，你并未获得任何领奖资格!\\
+<>\
+<确定/@exit>
+
+
+
+
+
+
+
+

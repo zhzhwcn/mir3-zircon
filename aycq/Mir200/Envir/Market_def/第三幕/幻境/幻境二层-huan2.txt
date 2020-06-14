@@ -1,0 +1,11 @@
+[@main]
+由幻境之脑生成的传送门，通往未知空间......\\
+<>\
+<进入/@jinru>\
+<>\
+<取消/@exit>
+
+[@jinru]
+#if
+#act
+mapmove huan3

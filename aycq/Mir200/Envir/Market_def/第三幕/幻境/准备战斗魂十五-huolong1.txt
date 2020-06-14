@@ -1,0 +1,41 @@
+[@main]
+最后一战!\
+拔出你的武器,让我们创造神话吧!!!\\
+<对话/@duihua>\
+<退出/exit>
+
+[@duihua]
+#if
+checkitem 火龙神之心 1                                    
+check [166] 0
+#act
+goto @renwu1
+break
+
+#elseact
+goto @meisha
+
+
+[@meisha]
+让我们一起战斗到最后!!!\\
+<确定/@exit>
+
+[@renwu1]
+#if
+#act
+take 火龙神之心 1
+set [166] 1
+#say
+漂亮!!!\
+我们终于击败了火龙神,黎明的曙光即将重新降临库拉斯特.\
+虽然只是短暂的......\
+<继续/@renwu2>
+
+[@renwu2]
+#if
+#act
+mapmove huolong2 65 63
+#say
+(胜利的号角声传遍了整个幻境以及库拉斯特......)\\
+
+

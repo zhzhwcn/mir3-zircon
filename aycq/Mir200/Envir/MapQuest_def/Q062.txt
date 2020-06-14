@@ -1,0 +1,13 @@
+[@main]
+#IF
+check [242] 1
+check [243] 0
+CheckHumInRange bihusuoboss 145 113 500
+#ACT
+set [243] 1
+SENDMSG 1  暗黑破坏神死亡了，战胜他的是英雄【%s】!大家为他欢呼吧!!!
+#say 
+<"成了.../SCOLOR=253> \
+<"也许现在全世界可以重享和平...但还是有些事情不对劲。"/SCOLOR=253> \\
+<>\
+<确定/@exit>

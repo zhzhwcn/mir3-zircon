@@ -1,0 +1,8 @@
+[@¿ªÊ¼¸´»î]
+{
+#IF
+CHECKDUMMYCOUNT < <$STR(G56)>
+#ACT
+DUMMYLOGON <$STR(A50)> <$STR(G50)> <$STR(G51)> 1
+BREAK
+}

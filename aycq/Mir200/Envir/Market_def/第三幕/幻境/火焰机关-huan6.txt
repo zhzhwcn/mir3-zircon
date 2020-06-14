@@ -1,0 +1,19 @@
+[@main]
+这团火焰乎有点异常的样子.\
+<用手推一下/@renwu1>\
+<取消/@exit>
+
+[@renwu1]
+#if
+check [152] 1
+check [153] 0
+#act
+goto @renwu2
+#elsesay
+什么事都没有发生.\\
+<退出/@exit>
+
+[@renwu2]
+#if
+#act
+mapmove 0138 8 10

@@ -1,0 +1,4 @@
+[@main]
+#if
+#act
+mapmove binansuo 66 263

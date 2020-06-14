@@ -1,0 +1,29 @@
+[@main]
+#if
+CheckRangeMonCountEx huimieboss4 毁灭的仆从1 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从2 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从3 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从4 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从5 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从6 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从7 25 25 100 < 1
+CheckRangeMonCountEx huimieboss4 毁灭的仆从8 25 25 100 < 1
+#act
+MAPEFFECT huimieboss4 32 16 0 760 12 1 60 1 0 
+MAPEFFECT huimieboss4 37 21 0 760 12 1 60 1 0 
+MAPEFFECT huimieboss4 34 22 0 760 12 1 60 1 0 
+MAPEFFECT huimieboss4 31 19 0 760 12 1 60 1 0 
+MonGenEx huimieboss4 32 16 毁灭的仆从5 0 1 0 253
+MonGenEx huimieboss4 37 21 毁灭的仆从6 0 1 0 253
+MonGenEx huimieboss4 34 22 毁灭的仆从7 0 1 0 253
+MonGenEx huimieboss4 31 19 毁灭的仆从8 0 1 0 253
+GOTOLABEL 2 @shuaguai1
+
+[@shuaguai1]
+<毁灭之王-巴尔:/SCOLOR=253>                                <Img:294:0>\
+啊，英雄们，你们都会坚持不懈的，是不是？\
+你们这群凡人想要与我的力量相抗衡，那么你们就要\
+付出代价。\
+现在醒来吧，毁灭的仆从，毁灭他们!!!\
+<>\
+<退出/@exit>

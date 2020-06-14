@@ -1,0 +1,164 @@
+ ;第一幕
+cuisi         [109]     0      格瑞斯瓦尔德     *               Q002           GROUP
+xiee1         [101]     0      骷髅精灵         *               Q003           GROUP
+xiee2         [101]     0      骷髅精灵         *               Q004           GROUP
+xieelianjie   [101]     0      骷髅精灵         *               Q005           GROUP
+xiee3         [101]     0      骷髅精灵         *               Q006           GROUP
+diyimu        [104]     0      血鸟             *               Q007           GROUP
+gaotaboss     [113]     0      女伯爵           *               Q008           GROUP
+tiejiang      [115]     0      铁匠             *               Q009           GROUP
+muxueboss     [118]     0      安达利尔         *               Q010           GROUP
+
+;第二幕
+xiashuidao3   [122]     0     罗达门特          *               Q011           GROUP
+diermu        [127]     0     诺玛将军          *               Q012           GROUP
+dusheboss     [128]     0     赤红腹蛇王        *               Q013           GROUP
+mayiboss      [129]     0     蚂蚁将军          *               Q014           GROUP
+binansuo      [135]     0     召唤者赫拉森      *               Q015           GROUP
+laxiamuxue    [500]     0     墓穴之王          *               Q016
+laxiaboss1    [500]     0     都瑞尔            *               Q017
+
+;第三幕
+disanmu        [170]     0     猿猴战士          *               Q023           GROUP
+disanmu        [170]     0     猿猴战将          *               Q024           GROUP
+disanmu        [170]     0     巨象兽            *               Q025           GROUP
+bopibuluoboss [176]     0     剥皮统帅           *              Q019           GROUP
+bopiboss      [180]     0     剥皮之脑           *              Q020           GROUP
+zhizhuboss    [181]     0     韦布               *              Q021           GROUP
+canpoboss     [182]     0     破碎魔王           *              Q022           GROUP
+feiqishendian  [188]     0     撒卡兰姆男议员    *              Q026           GROUP
+feiqishendian  [189]     0     撒卡兰姆女议员    *              Q027           GROUP
+feiqishendian2 [188]     0     撒卡兰姆男议员    *              Q028           GROUP
+feiqishendian2 [189]     0     撒卡兰姆女议员    *              Q029           GROUP
+feiqishendian3 [188]     0     撒卡兰姆男议员    *              Q030           GROUP
+feiqishendian3 [189]     0     撒卡兰姆女议员    *              Q031           GROUP
+disanmu        [192]     0     邪恶手伊斯梅尔    *              Q032           GROUP
+disanmu        [192]     0     火焰之指吉列布    *              Q033           GROUP
+disanmu        [192]     0     冰拳托克          *              Q034           GROUP
+qiulaoboss     [197]     0     墨菲斯托          *              Q035           GROUP
+
+;暗殿
+feikuang11     [500]     0     丧尸4         *               Q036           GROUP
+feikuang11     [500]     0     血尸5         *               Q037           GROUP
+feikuang11     [500]     0     血尸王        *               Q053           GROUP
+yuangulianjie  [500]     0     丧尸4         *               Q054           GROUP
+yuangulianjie  [500]     0     血尸5         *               Q055           GROUP
+yuangulianjie  [500]     0     血尸王        *               Q056           GROUP
+
+;召唤
+hgjianlao2     [202]     0     黑暗主宰         *               Q038           GROUP
+disanmu        [205]     0     丛林树妖1        *               Q041           GROUP
+disanmu        [206]     0     丛林树妖2        *               Q042           GROUP
+disanmu        [207]     0     丛林树妖3        *               Q043           GROUP
+bopishuidao1   [205]     0     水域看管蛟蛇     *               Q044           GROUP  
+bopishuidao2   [206]     0     河流潜行蛟蛇     *               Q045           GROUP  
+bopishuidao3   [207]     0     冥河看管蛟蛇     *               Q046           GROUP  
+disanmu        [210]     0     邪恶蠕虫         *               Q047           GROUP
+shoudixue      [209]     0     兽人飞刀手       *               Q057           GROUP 
+shoudixue      [209]     0     兽人苦工         *               Q058           GROUP 
+shoudixue      [209]     0     兽人妇女         *               Q059           GROUP    
+
+;兽人酋长
+;shouren2       [500]     0     战神洛泰         *               Q048 
+
+;幽灵船
+youlingrenwu   [224]     0     迷失的幽灵       *               Q049           GROUP  
+SJ01           [228]     0     霸王守卫         *               Q050           GROUP 
+SJ04           [231]     0     霸王教主        *                Q051           GROUP 
+
+;第四幕
+disimu         [236]     0     衣卒尔           *               Q060           GROUP 
+disimu         [239]     0     盔甲制造者       *               Q061           GROUP 
+bihusuoboss    [243]     0     暗黑破坏神       *               Q062           GROUP
+lianyu33       [500]     0     深渊之子         *               Q071 
+lianyuboss     [500]     0     地狱之母         *               Q072        
+
+;八大暗影禁地
+anying1        [500]     0     尸王8            *               Q063           GROUP
+anying2        [500]     0     沃玛教主8        *               Q064           GROUP
+anying3        [500]     0     触龙神8          *               Q065           GROUP
+anying4        [500]     0     祖玛教主8        *               Q066           GROUP
+anying5        [500]     0     虹魔教主8        *               Q067           GROUP
+anying6        [500]     0     黄泉教主8        *               Q068           GROUP
+anying7        [500]     0     牛魔王8          *               Q069           GROUP
+anying8        [500]     0     赤月恶魔8        *               Q070           GROUP
+
+;战士职业任务
+zhanshi1     [496]     0     狂暴黑野猪        *               Q052 
+shimuboss    [486]     0     邪恶蜈蚣          *               Q073            GROUP 
+
+;邪恶手伊斯梅尔
+;火焰之指吉列布
+;冰拳托克
+disanmu          [500]     0     丧尸2                   *               Q074
+disanmu          [500]     0     丧尸3                   *               Q074
+disanmu          [500]     0     食尸鬼2                 *               Q074
+disanmu          [500]     0     瘟疫散布者2             *               Q074
+disanmu          [500]     0     小恶魔3                 *               Q074
+disanmu          [500]     0     长钉恶魔2               *               Q074
+
+huimieboss       [500]     0     巴尔1                   *               Q075
+huimieboss       [500]     0     巴尔2                   *               Q076
+huimieboss       [500]     0     巴尔3                   *               Q077
+
+
+huimieboss4      [500]     0     毁灭的仆从1             *               Q078
+huimieboss4      [500]     0     毁灭的仆从2             *               Q079
+huimieboss4      [500]     0     毁灭的仆从3             *               Q080
+huimieboss4      [500]     0     毁灭的仆从4             *               Q081
+
+huimieboss       [500]     0     巴尔                    *               Q083
+
+bihusuoboss      [500]     0     暗黑破坏神              *               Q084
+
+huimie4          [500]     0     血之王                  *               Q085
+
+;飞龙剑任务
+beishangboss     [403]     0     蟒螈之母                *               Q086           GROUP
+andian33         [406]     0     鹿33                    *               Q087           GROUP
+andian33         [407]     0     鸡33                    *               Q088           GROUP
+
+diyu1            [414]     0     黑暗领主                *               Q089           GROUP
+diyu2            [414]     0     黑暗领主                *               Q090           GROUP
+diyu3            [414]     0     黑暗领主                *               Q091           GROUP
+diyu4            [414]     0     黑暗领主                *               Q092           GROUP
+diyu5            [414]     0     黑暗领主                *               Q093           GROUP
+diyu6            [414]     0     黑暗领主                *               Q094           GROUP
+
+diyuboss         [416]     0     邪魔之王                *               Q095           GROUP
+huolong          [419]     0     火龙神                  *               Q096           GROUP
+xishamo          [424]     0     沙漠树魔                *               Q097           GROUP
+xishakuang       [429]     0     死去的雇佣兵            *               Q099
+xishakuang       [429]     0     死去的雇佣兵1           *               Q100
+xishakuang       [429]     0     死去的雇佣兵2           *               Q101
+xishakuang       [429]     0     死去的雇佣兵3           *               Q102
+xishakuang       [429]     0     死去的雇佣兵4           *               Q103
+tulongmimi       [429]     0     死去的工头              *               Q104
+tulongmimi       [429]     0     死去的工头1             *               Q105
+tulongboss       [429]     0     伏地魔                  *               Q107           GROUP
+huimieboss3      [430]     0     地天灭王                *               Q109           GROUP
+
+diwumu2          [435]     0     督军山克                *               Q110           GROUP
+panyemimi        [446]     0     潘夜战士                *               Q113
+panyemimi        [446]     0     潘夜风魔                *               Q114
+panyemimi        [446]     0     潘夜云魔                *               Q115
+panyemimi        [446]     0     潘夜火魔                *               Q116
+panyemimi        [446]     0     潘夜冰魔                *               Q117
+panyemimi        [446]     0     尼拉塞克                *               Q118           GROUP
+
+hanbing52        [452]     0     上古纳迦护卫1           *               Q120           GROUP           
+hanbing52        [452]     0     上古纳迦护卫2           *               Q121           GROUP 
+binglongboss     [452]     0     寒冰巨龙                *               Q122           GROUP 
+
+
+
+
+
+
+
+
+
+
+
+
+

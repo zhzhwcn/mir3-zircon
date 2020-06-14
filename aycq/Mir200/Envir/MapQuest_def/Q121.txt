@@ -1,0 +1,22 @@
+[@main]
+#if
+CheckRangeMonCountEx hanbing52 上古纳迦护卫1 31 28 100 < 1
+CheckRangeMonCountEx hanbing52 上古纳迦护卫2 31 28 100 < 1
+#act
+#say
+这不......可......能......\\
+<>\
+<>\
+<>\
+<进入寒冰圣殿./@chuansong>
+
+[@chuansong]
+#if
+check [451] 1
+check [452] 0
+#act
+mapmove binglongboss 8 18
+close
+break
+
+

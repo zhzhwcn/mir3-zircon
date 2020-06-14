@@ -1,0 +1,12 @@
+[@main]
+#if                                    
+check [405] 1  
+check [407] 0 
+CHECKBAGSIZE  1
+#act 
+set [407] 1
+give æ¢»Õº¶»‚ 1
+#say
+<ƒ„ªÒµ√¡Àæ¢»Õº¶»‚!/SCOLOR=253> \\
+<>\
+<»∑∂®/@exit>

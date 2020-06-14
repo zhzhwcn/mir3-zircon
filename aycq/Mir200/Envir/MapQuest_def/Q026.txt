@@ -1,0 +1,11 @@
+[@main]
+#if 
+check [187] 1 
+check [188] 0  
+CHECKBAGSIZE  1                                
+#act 
+give 黑皮书上卷 1
+set [188] 1
+#say
+你获得黑皮书上卷!\\
+<确定/@exit>

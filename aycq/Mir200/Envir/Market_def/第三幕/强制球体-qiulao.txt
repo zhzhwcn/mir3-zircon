@@ -1,0 +1,74 @@
+[@main]
+#if
+check [195] 1
+check [196] 0
+checkitem 克林姆的意志 1
+#act
+goto @renwu1
+break
+
+#if
+check [196] 1
+check [197] 0
+#act
+goto @renwu3
+break
+
+#if
+check [198] 1
+check [199] 0
+#act
+goto @renwu4
+break
+
+#elsesay
+一个控制撒卡兰姆的牧师及其追随者的邪恶球体.\
+<>\
+<退出/@exit>
+
+[@renwu1]
+一个控制撒卡兰姆的牧师及其追随者的邪恶球体.\\
+<>\
+<使用克林姆的意志摧毁强制球体/@renwu2>\
+<取消/@exit>
+
+[@renwu2]
+#if
+checkitem 克林姆的意志 1
+#act
+take 克林姆的意志 1
+set [196] 1
+#say
+<你已经成功摧毁了控制撒卡兰姆的牧师及其追随者的邪恶球体!/SCOLOR=253>\
+<>\
+<现在你的任务是赶在暗黑破坏神和巴尔之前,/SCOLOR=253>\
+<找到并杀死囚禁于此的墨菲斯托/SCOLOR=253>\
+<>\
+<向囚牢深处前进/@qianjin>\
+<取消/@exit>
+
+[@renwu3]
+<你已经成功摧毁了控制撒卡兰姆的牧师及其追随者的邪恶球体!/SCOLOR=253>\
+<>\
+<现在你的任务是赶在暗黑破坏神和巴尔之前,/SCOLOR=253>\
+<找到并杀死囚禁于此的墨菲斯托/SCOLOR=253>\
+<>\
+<向囚牢深处前进/@qianjin>\
+<取消/@exit>
+
+[@qianjin]
+#IF
+#ACT
+mapmove qiulao2 73 33
+
+[@renwu4]
+你可以利用被毁坏的强制球体为你进行一些服务......\\
+<>\
+<向囚牢深处前进/@qianjin>\
+<>\
+<取消/@exit>
+
+
+
+
+

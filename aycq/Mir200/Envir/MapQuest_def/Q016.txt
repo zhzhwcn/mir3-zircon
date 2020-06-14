@@ -1,0 +1,9 @@
+[@main]
+#IF
+#ACT
+DelNpc 神秘的传送门
+CreateNPC 灵柩传送门 laxiamuxue 305 94  96 塔拉夏灵柩传送门-laxiamuxue
+SENDMSG 1 塔.拉夏的仆从石墓之王被击杀!通往灵柩的大门被打开了......
+
+
+

@@ -1,0 +1,12 @@
+[@main]
+#if                                    
+check [405] 1  
+check [406] 0 
+CHECKBAGSIZE  1
+#act 
+set [406] 1
+give 劲韧鹿肉 1
+#say
+<你获得了劲韧鹿肉!/SCOLOR=253> \\
+<>\
+<确定/@exit>

@@ -1,0 +1,14 @@
+[@main]
+#if                                    
+check [230] 1
+check [231] 0
+CHECKBAGSIZE  1
+CheckHumInRange SJ04 63 63 500
+#act
+set [231] 1
+give 霸王教主雕像 1
+#say
+恭喜你获得了霸王教主雕像!\\
+<>\
+<>\
+<确定/@exit>

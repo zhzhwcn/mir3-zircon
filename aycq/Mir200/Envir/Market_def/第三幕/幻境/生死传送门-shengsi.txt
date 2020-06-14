@@ -1,0 +1,9 @@
+[@main]
+神秘的传送门.\\
+<我要离开这里/@likai>\
+<取消/@exit>
+
+[@likai]
+#IF
+#ACT
+mapmove xiaowu

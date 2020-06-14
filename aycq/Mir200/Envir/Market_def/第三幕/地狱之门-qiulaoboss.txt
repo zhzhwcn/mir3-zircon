@@ -1,0 +1,11 @@
+[@main]
+<地狱之门....../SCOLOR=253>\
+<>\
+<>\
+<进入地狱之门/@disimu>(第四幕)\
+<退出/@exit>
+
+[@disimu]
+#if
+#act
+mapmove disimu 24 33

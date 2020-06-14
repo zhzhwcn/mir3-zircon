@@ -1,0 +1,23 @@
+[@main]
+（这里什么时候有了这样一扇"门"？）\ \
+<>\
+<走入这扇门/@renwu1>\
+<>\
+<到别处去看看/@exit>
+
+[@renwu1]
+#if
+check [220] 0
+check [221] 0
+CHECKLEVELEX > 44
+#act
+goto @renwu2
+#elseact
+mapmove B353 11 17
+
+[@renwu2]
+#if
+#act
+set [221] 1
+mapmove B353 11 17
+

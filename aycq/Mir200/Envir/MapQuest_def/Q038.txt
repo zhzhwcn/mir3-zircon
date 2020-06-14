@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [201] 1
+check [202] 0
+CHECKBAGSIZE  1
+CheckHumInRange hgjianlao2 49 41 500
+#act
+set [202] 1
+give 黑暗圣器 1
+#say
+你获得了黑暗圣器!\\
+<>\
+<确定/@exit>

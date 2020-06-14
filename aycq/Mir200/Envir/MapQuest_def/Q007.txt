@@ -1,0 +1,10 @@
+[@main]
+#if                                    
+check [103] 1
+check [104] 0
+#act 
+set [104] 1
+#say
+<"血鸟...好好休息吧。" /SCOLOR=253> \\
+<>\
+<确定/@exit>

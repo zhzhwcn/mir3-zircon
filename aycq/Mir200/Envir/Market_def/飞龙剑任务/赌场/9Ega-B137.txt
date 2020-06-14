@@ -1,0 +1,220 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @race
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 2
+#ACT
+goto @cube
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第37间房  \
+在这里你可能获得筹码或者丢失筹码 \ \
+<下一步/@penalty>
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@penalty]
+#IF
+random 4
+#SAY
+你被扣除了2个筹码. \ 
+我好同情你.. \ \
+<下一步/@race>
+#ACT
+take 筹码 2
+CALCVAR HUMAN Cache = 1
+break
+
+#IF
+random 4
+#SAY
+幸运之神给你赠送了2个筹码. \ \
+<下一步/@race>
+#ACT
+give 筹码 2
+CALCVAR HUMAN Cache = 1
+break
+
+#IF
+random 4
+#SAY
+你被扣除了3个筹码. \ 
+我好同情你.. \ \
+<下一步/@race>
+#ACT
+take 筹码 3
+CALCVAR HUMAN Cache = 1
+break
+
+#IF
+random 4
+#SAY
+幸运之神给你赠送了2000金币 \ \
+<下一步/@race>
+#ACT
+give 金币 2000
+CALCVAR HUMAN Cache = 1
+break
+#ELSEACT
+goto @penalty
+
+[@race]
+给你提供投骰子的机会. \
+祝你好运.\ \ 
+<下一步/@pre_Cube>
+
+[@pre_cube]
+#IF
+checkitem 筹码 1
+#ACT
+take 筹码 1
+CALCVAR HUMAN Cache = 2
+movr d0 6
+inc d0 1
+playdice 1 @cube
+#SAY
+正在投骰子.\ \
+<下一个/@cube>
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@cube]
+#SAY
+骰子的点数 <$STR(D0)>  \
+你可以前进 <$STR(D0)>  \ \
+<移动/@next_cube>
+
+[@next_cube]
+#IF
+equal d0 1 
+#ACT
+goto @posi1
+break
+
+#IF
+equal d0 2 
+#ACT
+goto @posi2
+break
+
+#IF
+equal d0 3 
+#ACT
+goto @posi3
+break
+
+#IF
+equal d0 4 
+#ACT
+goto @posi4
+break
+
+#IF
+equal d0 5
+#ACT
+goto @posi5
+break
+
+#IF
+equal d0 6 
+#ACT
+goto @posi6
+break
+
+[@Posi1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B138
+batchmove
+
+[@Posi2]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B138
+addbatch B139
+batchmove
+
+[@Posi3]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B138
+addbatch B139
+addbatch B140
+batchmove
+
+[@Posi4]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B138
+addbatch B139
+addbatch B140
+addbatch B101
+batchmove
+
+[@Posi5]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B138
+addbatch B139
+addbatch B140
+addbatch B101
+addbatch B102
+batchmove
+
+[@Posi6]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B138
+addbatch B139
+addbatch B140
+addbatch B101
+addbatch B102
+addbatch B103
+batchmove

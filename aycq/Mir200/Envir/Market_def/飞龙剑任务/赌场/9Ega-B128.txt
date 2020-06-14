@@ -1,0 +1,217 @@
+[@main]
+#IF
+CHECKVAR HUMAN Cache = 1
+#ACT
+goto @race
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 2
+#ACT
+goto @cube
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+#IF
+CHECKVAR HUMAN Cache = 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+#SAY
+欢迎<$USERNAME>光临赌场. \
+这里是赌场第28间房  \
+这间房有很久以前我们的祖先移民到其他地方的迷宫  \
+虽然路途遥远,困难重重.. \
+但深信你可以克服困难,勇敢的挑战吧 \ \
+<下一步/@Pena1>(如果不会走，回不了头的，只能小退!)\
+<不会走，用1个筹码包跳过/@跳过>
+
+[@跳过]
+#IF
+checkitem 筹码包 1
+#ACT
+take 筹码包 1
+CALCVAR HUMAN Cache = 1
+#SAY
+你花钱我消灾，你已经通过了考验！\ \
+<下一步/@race>\
+#ELSESAY
+你这个穷鬼，没筹码包还想跳过？\ \
+<返回/@main-1>\
+
+
+[@Pena1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 1
+mapmove T1281 13 39
+break
+
+#IF
+random 3
+#ACT
+CALCVAR HUMAN Cache = 1
+mapmove T1282 13 39
+break
+
+#IF
+random 3
+#ACT
+CALCVAR HUMAN Cache = 1
+mapmove T1283 13 39
+break
+
+#ELSEACT
+goto @pena1
+
+[@Quit]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+map B011
+
+[@race]
+你通过了这间房，真够厉害啊。\
+给你投骰子的机会. \
+祝你好运. \ \
+<下一步/@pre_Cube>
+
+[@pre_cube]
+#IF
+checkitem 筹码 1
+#ACT
+CALCVAR HUMAN Cache = 2
+take 筹码 1
+movr d0 6
+inc d0 1
+playdice 1 @cube
+#SAY
+正在投骰子.\ \
+<下一个/@cube>
+#ELSESAY
+<$USERNAME>没有筹码了. \
+你无法继续赌博. \ 
+想继续进行,那准备好筹码后再来\ \
+<退出/@Quit>
+#ELSEACT
+CALCVAR HUMAN Cache = 9
+
+[@cube]
+#SAY
+骰子的点数 <$STR(D0)>  \
+你可以前进 <$STR(D0)>  \ \
+<移动/@next_cube>
+
+[@next_cube]
+#IF
+equal d0 1 
+#ACT
+goto @posi1
+break
+
+#IF
+equal d0 2 
+#ACT
+goto @posi2
+break
+
+#IF
+equal d0 3 
+#ACT
+goto @posi3
+break
+
+#IF
+equal d0 4 
+#ACT
+goto @posi4
+break
+
+#IF
+equal d0 5
+#ACT
+goto @posi5
+break
+
+#IF
+equal d0 6 
+#ACT
+goto @posi6
+break
+
+[@Posi1]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B129
+batchmove
+
+[@Posi2]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B129
+addbatch B130
+batchmove
+
+[@Posi3]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B129
+addbatch B130
+addbatch B131
+batchmove
+
+[@Posi4]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B129
+addbatch B130
+addbatch B131
+addbatch B132
+batchmove
+
+[@Posi5]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B129
+addbatch B130
+addbatch B131
+addbatch B132
+addbatch B133
+batchmove
+
+[@Posi6]
+#IF
+#ACT
+CALCVAR HUMAN Cache = 0
+batchDelay 1
+addbatch B129
+addbatch B130
+addbatch B131
+addbatch B132
+addbatch B133
+addbatch B134
+batchmove

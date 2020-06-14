@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [175] 1
+check [176] 0
+CHECKBAGSIZE  1
+CheckHumInRange bopibuluoboss 10 10 100
+#act 
+set [176] 1
+give 吉得宾 1
+#say
+<"这是个威力强大的武器，也许奥玛斯可以告诉我更多有关的知识。" /SCOLOR=253> \\
+<>\
+<确定/@exit>

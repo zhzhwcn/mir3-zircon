@@ -1,0 +1,15 @@
+[@main]
+#if                                    
+check [204] 1
+check [207] 0
+#act
+#say
+在树脚底下,你发现了一条通道......\\
+<>\
+<进入通道/@jina>\
+<取消/@exit>
+
+[@jina]
+#if
+#act
+mapmove bopishuidao3

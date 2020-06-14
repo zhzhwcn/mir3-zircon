@@ -1,0 +1,54 @@
+[@main]
+#if                                    
+check [212] 1
+check [213] 0
+checkitem 光明圣器 1
+#act
+goto @renwu1
+break
+
+#elsesay
+我奉命守护着这些长存于此的勇士.\
+不要惊讶,这是我的职责...\\
+<>\
+<确定/@exit>
+
+[@renwu1]
+#if
+#act
+take 光明圣器 1
+set [213] 1
+map yongshimuxue2
+#say
+你是一名真正的勇士!\
+看看你为我们带来了什么?哈,一个光明圣器!\
+现在让我们为这些勇士之魂进行超度吧,愿他们得到救赎并重新\
+得到安息!\\
+<>\
+<下一步/@renwu2>\
+
+[@renwu2]
+#if
+#act
+map yongshimuxue2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

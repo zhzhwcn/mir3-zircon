@@ -1,0 +1,9 @@
+[@main]
+一堵通向思维的神秘之门......\\
+<进去看看/@huan3>\
+<离开/@exit>
+
+[@huan3]
+#if
+#act
+mapmove shengsi

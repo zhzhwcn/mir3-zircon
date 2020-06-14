@@ -1,0 +1,30 @@
+[@main]
+你想要问我一些什么东西？\ \
+ 
+
+<想问攻城的时间？/@aboutwar>\
+
+
+[@aboutwar]
+下一次战役记录在:\
+<$CASTLEWARDATE> , 20:00开始。\ \
+
+<详细情况./@listwar>\
+
+<关闭./@exit>\
+
+
+
+[@listwar]
+<$LISTOFWAR>\ \
+<返回/@aboutwar>\
+
+[@WarStatus]
+占领行会:<$OWNERGUILD>\ \ 
+占领日期:<$CASTLECHANGEDATE>\ \ 
+占领天数:<$CASTLEGETDAYS>\ \
+行会掌门:<$LORD>\ \
+当前时间:<$DATETIME>\
+
+
+

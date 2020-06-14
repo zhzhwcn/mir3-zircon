@@ -1,0 +1,17 @@
+[@main]
+#if                                    
+check [227] 1
+check [228] 0
+CHECKBAGSIZE  1
+CheckHumInRange SJ01 100 100 500
+#act
+set [228] 1
+give 遗骸 1
+#say
+<霸王守卫:/SCOLOR=253>                                <Img:162:0>\
+“现在我可以回到我的肉身，好好休息了...\
+那<遗骸/SCOLOR=253>是我的,请转交给我的朋友吧。\
+顺便帮我谢一下至今没有忘记我的朋友吧.”\ \
+<>\
+<这次冒险能以这个结束吗？/@exit>\
+<确定/@exit>

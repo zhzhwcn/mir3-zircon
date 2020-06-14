@@ -1,0 +1,9 @@
+[@main]
+#IF
+#ACT
+DelNpc 深渊之门
+CreateNPC 深渊之门 lianyu33 233 79  96 深渊之门-lianyu33
+SENDMSG 1 深渊之子的被击杀!通往炼狱深渊的大门被打开了......
+
+
+

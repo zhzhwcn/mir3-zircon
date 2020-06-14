@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [428] 1  
+check [429] 0 
+CHECKBAGSIZE  1
+RANDOM 2
+#act 
+give 炸药包 1
+#say
+<哇噻!你从工头的身上获得了一捆炸药包,引暴它会怎么样?!/SCOLOR=254>\\
+<>\
+<>\
+<确定./@exit>

@@ -1,0 +1,3029 @@
+[@MAIN]
+#if 
+check [130] 0
+#act
+goto @xiayibu111
+break
+#elsesay
+我有没有告诉过你赫拉迪姆的事? \
+那边曾经有个法师一族的同盟, 试图找出永久囚禁三个罪恶之源的方\
+法.现在赫拉迪姆几乎没有人记得了... \
+而且这个地方挥舞的东西到现在没有人知道! \
+身为赫拉迪姆最后一人, 我祈祷我能够帮助你补正他们的失败. \\
+<>\
+<>                                               <Img:393:0:0:0/@fuwen>\
+<对话/@duihua>\
+;<装备回收/@huishoua>\
+<>                                   符文系统 →\
+<退出/@exit>
+
+[@xiayibu111]
+我有没有告诉过你赫拉迪姆的事? \
+那边曾经有个法师一族的同盟, 试图找出永久囚禁三个罪恶之源的方\
+法.现在赫拉迪姆几乎没有人记得了... \
+而且这个地方挥舞的东西到现在没有人知道! \
+身为赫拉迪姆最后一人, 我祈祷我能够帮助你补正他们的失败. \\
+<>\
+<对话/@duihua>\
+;<装备回收/@huishoua>\
+<>\
+<退出/@exit>
+
+[@duihua]
+#if                                    
+check [123] 1
+check [124] 0
+checkitem 赫拉迪克卷轴 1
+#act 
+goto @renwu1
+break
+
+#if                                    
+check [124] 1
+check [125] 1
+check [126] 1
+check [127] 0
+check [128] 0
+check [129] 0
+#act 
+goto @renwu3
+break
+
+#if                                    
+check [127] 1
+check [130] 0
+checkitem 赫拉迪克方块 1
+#act 
+goto @renwu4
+break
+
+#if                                    
+check [128] 1
+check [131] 0
+checkitem 腹蛇护符 1
+#act 
+goto @renwu5
+break
+
+#if                                    
+check [129] 1
+check [132] 0
+checkitem 王者之杖 1
+#act 
+goto @renwu6
+break
+
+#if                                    
+check [130] 1
+check [131] 1
+check [132] 1
+check [133] 0
+#act 
+goto @renwu7
+break
+
+#if                                    
+check [133] 1
+check [134] 0
+#act 
+goto @renwu8
+break
+
+#if                                    
+check [134] 1
+check [135] 0
+#act 
+goto @renwu10
+break
+
+#if                                    
+check [135] 1
+check [136] 0
+#act 
+goto @renwu11
+break
+
+#if                                    
+check [136] 1
+check [137] 0
+#act 
+goto @renwu12
+break
+
+#if                                    
+check [137] 1
+check [138] 0
+#act 
+goto @renwu13
+break
+
+#if                                    
+check [138] 1
+check [139] 0
+#act 
+goto @renwu14
+break
+
+#elseact
+goto @yourenwu
+
+[@yourenwu]
+我刚刚看完一些与不死生物有关的有趣资料。\
+很显然某些赫拉迪克的葬体祭师，在死亡法师的身体实行一些魔法和\
+手术-通常是利用动物的肢体来取代死人的身躯。他们都认为这个方式\
+可以增强它们的力量，而且在死后的生活中可以提升他们的处境。\\
+<确定/@exit>
+
+[@renwu1]
+#if
+#act
+take 赫拉迪克卷轴 1
+set [124] 1
+set [125] 1
+set [126] 1
+#say
+啊…遗失的赫拉迪克卷轴！能够翻动事件的记录真是幸运…\
+身为最后一个赫拉迪姆的子民，我的确具有了解它内容的知识。\
+现在，来看看这些赫拉迪克符号的含意…嗯…\\
+<继续/@jixu1>
+
+[@jixu1] 
+赫拉迪克的法师在成功的把巴尔束缚在塔．拉夏的体内之后，以魔法\
+性的封印将这个埋藏的墓地从人类的世界中隔开。这些同时期的法师\
+也制作了令人畏惧的「赫拉迪克之杖」，在里面注入了特殊的力量，以\
+打开这个墓地隐藏的大门。有一次一个恶棍般的法师几乎把木杖偷走之\
+后，他们就把这项物品拆成二个部份-木制的手柄和金属的花纹-把这二\
+个东西分散之后藏起来，并加以严密的看管。\\
+<继续/@jixu2>
+
+[@jixu2] 
+赫拉迪姆预见了我们的处境，并将这些埋藏地点自动显现在像你这样的\
+英雄眼前。收集这二个赫拉迪克的物品，并利用赫拉迪克的方块将它们\
+组合在一块。\
+接下来，你才能进入塔．拉夏的墓地之中。\\
+<下一步/@renwu3>\
+<确定/@exit>
+
+[@renwu3]
+<任务小提示: /SCOLOR=253>\
+<1:在诺玛遗址外寻找赫拉迪克方块(诺玛将军暴);/SCOLOR=253>\
+<2:在蚂蚁巢穴寻找国王之杖(只有蚂蚁之巢的蚂蚁将军暴);/SCOLOR=253>\
+<3:在利爪腹蛇神殿寻找赫拉迪克杖头(利爪腹蛇神殿底层的赤红腹蛇王暴). /SCOLOR=253>\
+<以上物品不分先后,每找到一样都可以回来找迪卡.凯恩寻求帮助!!!/SCOLOR=253>\\
+<确定/@exit>
+
+[@renwu4]
+#if
+#act
+take 赫拉迪克方块 1
+set [130] 1
+give 金币 100000
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 5 提示：任务已完成，你获得了2点声望，当前声望：<$CREDITPOINT>点...
+#say
+你身上的赫拉迪克方块是一个不折不扣的宝物。\
+根据赫拉迪克的知识，这个方块可以把相关物品合成赫拉迪克之杖。\
+那这个东西现在先由我来保管吧.\\
+<退出/@exit>
+
+[@renwu5]
+#if
+#act
+take 腹蛇护符 1
+set [131] 1
+give 金币 100000
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 5 提示：任务已完成，你获得了2点声望，当前声望：<$CREDITPOINT>点...
+#say
+你身上的腹蛇护符事实上就是赫拉迪克之杖的金属花纹！\
+是的… 你拥有一种怪异的技巧，帮助你找寻少见而极富价值的古物。\
+当然了，你必须使用赫拉迪克方块才能把手柄和花纹结合在一块。\
+现在,让我看看你的其它部件.\\
+<确定/@exit>
+
+[@renwu6]
+#if
+#act
+take 王者之杖 1
+set [132] 1
+give 金币 100000
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 5 提示：任务已完成，你获得了2点声望，当前声望：<$CREDITPOINT>点...
+#say
+王者之杖！你吓坏我了，朋友…你找到了赫拉迪克之杖的木制手柄。\
+现在,让我看看你的其它部件.\\
+<确定/@exit>
+
+[@renwu7]
+嘿,你已经收集完这三样东西了!\
+根据赫拉迪克的知识，这个方块可以把相关物品合成赫拉迪克之杖。\
+请稍等一下......\\
+<确定/@xiayibu>
+
+[@xiayibu]
+#if
+#act
+give 赫拉迪克之杖 1
+give 赫拉迪克方块 1
+set [133] 1
+#say
+太棒了！你现在拥有赫拉迪克之杖了。\
+带着它前往塔．拉夏的墓地,使用赫拉迪克之杖的能量,在里面找到通\
+往塔．拉夏的埋骨之处。但是，你得准备迎接一场战斗-你很可能要\
+杀死塔．拉夏，才能够摧毁巴尔。\\
+<继续/@renwu8>\
+<确定/@exit>
+
+[@renwu8]
+我一直在搜寻旧日的记录，试着找出塔．拉夏的古墓。\
+虽然我没能找出这个墓地的位置，但是我帮你找到了一条不错的线索。\
+伟大的费斯杰利召唤者-赫拉森，附近的某处建立了他的神圣庇难所。\
+他曾经是个威力强大的施法者，而且在庇难所之中以恶魔们当做奴隶\
+来使唤。他也不断的注意四处的巨大事件-像是把巴尔困在塔．拉夏的\
+古墓之中。如果你能找到赫拉森的庇难所，我可以肯定里面可以找到\
+一些古墓地点的提示。虽然我很怀疑赫拉森是不是还活着，但是你们\
+在里面必须十分小心。没有人知道里面究竟有什么在等着你们。\\
+<继续/@renwu9>
+
+[@renwu9] 
+当我和杰海因君王谈到这个事情时，他请我带你们过去见他。\
+也许他知道秘密入口或是这一类的事情。\\
+<确定/@exit>
+
+[@renwu10]
+大约在一千年以前，赫拉森兴起并成为费斯杰利魔法师一族的首席。\
+赫拉森利用费斯杰利的知识，从地狱中召唤恶魔并控制它们。\
+虽然他是个威力强大的召唤师，赫拉森害怕地狱之王会因为奴役其伙\
+伴而惩罚他。所以这个召唤师为他自己创造了神秘庇难所。他相信他\
+的庇难所不只可以保护他免于地狱的复仇，而且可以让他继续他的研\
+究，不受到时间和疾病的蹂躏。\
+<>\
+<继续/@jixu3>
+
+[@jixu3]
+赫拉森制作了许多神奇而占卜性的设备，可以让他看到外面世界所发\
+现的各种大事。几乎可以肯定的是他一定会小心的研究塔．拉夏的禁\
+锢方式，并记录下他被人遗忘的古墓位置。\
+这个神秘庇难所相信就是建立在这个鲁．高因，不只是因为这是个年\
+代久远的建筑，而且这个地方曾经是费斯杰利的堡垒。所以，在皇宫\
+之中可能可以找到一个隐藏的入口。\\
+<>\
+<确定/@exit>
+
+[@renwu11]
+#if
+#act
+take 赫拉森的日记 1
+set [136] 1
+give 优秀宝箱 1
+CHANGEEXP + 300000
+CREDITPOINT + 5
+SENDMSG 5 提示：任务已完成，你获得了5点声望，当前声望：<$CREDITPOINT>点...
+#say
+你找到赫拉森的日记？太棒了。\\
+<>\
+<继续/@renwu12>
+
+[@renwu12]
+那么，赫拉森已经死了一段时间了。\
+我觉得是时候把一些事情告诉你了-之前杰海因一直无法说出口的\
+事情…最近通过这个地方的黑暗流浪者，就是暗黑破坏神！\
+杰海因相信暗黑破坏神正在沙漠中搜寻古墓-伟大的赫拉迪克法师\
+塔．拉夏的安息之处-也就是巴尔被囚禁的地方。\
+你必须找到暗黑破坏神，并打破他让这个城市沈沦的邪恶力量。\
+卓格南的智能一定可以提供一些有用的建议，让你能够找到塔．拉\
+夏的墓地。\
+你可能得花不少时间才能找到古墓。希望你准备万全之后再出发。\
+现在,去找卓格南谈谈吧.<确定/@exit>
+
+[@renwu13]
+传说中指出塔．拉夏被困在他的古墓之中，永远的和毁灭之王奋战，\
+并把他囚禁在体内。他的行为大公无私，不过可能有点愚笨。\\
+<任务小提示:穿过神秘避难所的召唤阵到达术士峡谷，找到并进入塔．拉夏/SCOLOR=253>\
+<的墓穴,通过赫拉迪克之杖的能量进入灵柩内部的墓穴中找寻暗黑破坏神的/SCOLOR=253>\
+<踪迹./SCOLOR=253>\\
+<确定/@exit>
+
+[@renwu14]
+大天使泰瑞尔在二百六十年前把灵魂之石送给赫拉迪姆。这种现象\
+极度的不寻常，天堂的力量很少这样直接干预人类的命运，但是泰\
+瑞尔说这是靠他自己的意志决定的。我们一直无法了解为什麼，也\
+许他是在对抗天堂一致的意见，认为我们无法保护我们自己；或者\
+是他看到了其他伙伴看不到的威胁。此时地狱的行动看来直接倾向\
+全面的毁灭，而天堂的动机仍然深不可测。\ 
+现在快一点...暗黑破坏神和巴尔必须在加入他的兄长-墨菲斯托之\
+前阻止他们。如果三个罪恶之源再度汇集，我们所知的这个世界就\
+无法存在了！\\
+<确定/@exit>
+
+;...............................................................................................
+;...............................................................................................
+[@fuwen]
+<请选择你需要灌注能量的符文：/SCOLOR=254>\
+<>\
+<艾尔/@El>   <艾德/@Eld>    <特尔/@Tir>   <那夫/@Nef>    <爱斯/@Eth>    <伊司/@Ith>\
+<塔尔/@Tal>   <拉尔/@Ral>    <欧特/@Ort>   <书尔/@Thul>    <安姆/@Amn>    <索尔/@Sol>\
+<夏/@Shael>     <多尔/@Dol>    <海尔/@Hel>   <破/@Io>      <卢姆/@Lum>    <科/@Ko>\
+<法尔/@Fal>   <蓝姆/@Lem>    <普尔/@Pul>   <乌姆/@Um>    <马尔/@Mal>    <伊司特/@Ist>\
+<古尔/@Gul>   <伐克斯/@Vex>  <欧姆/@Ohm>   <罗/@Lo>      <瑟/@Sur>      <贝/@Ber>\
+<乔/@Jah>     <查姆/@Cham>    <萨德/@Zod>\
+<>                                               <返回/@mina>  <取消/@exit>
+
+;...............................................................................................
+;...............................................................................................
+[@El]
+#if
+checkitem 艾尔(El) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:15:254#放入头盔>\
+<>       <↓/SCOLOR=254>               <Img:361:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <人物魔力增加+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw1>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw1]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw111
+#elseact
+SetUpgradeItem 0
+goto @fw222
+break
+
+[@fw222]
+#if
+CHECKNEWITEMVALUE -1 8 < 5
+#act
+take 艾尔(El) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw44
+break
+
+[@fw44]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物魔力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw111]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 8 < 5
+#act
+take 艾尔(El) 1
+SetUpgradeItem 0
+SetNewItemValue -1 8 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw333
+break
+
+[@fw333]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物魔力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Eld]
+#if
+checkitem 艾德(Eld) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:10,11:254#放入衣服>\
+<>       <↓/SCOLOR=254>               <Img:362:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <人物魔力增加+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw2>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw2]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw003
+#elseact
+SetUpgradeItem 0
+goto @fw001
+break
+
+[@fw001]
+#if
+CHECKNEWITEMVALUE -1 8 < 5
+#act
+take 艾德(Eld) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw002
+break
+
+[@fw002]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物魔力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw003]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 8 < 5
+#act
+take 艾德(Eld) 1
+SetUpgradeItem 0
+SetNewItemValue -1 8 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw004
+break
+
+[@fw004]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物魔力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Tir]
+#if
+checkitem 特尔(Tir) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:64:254#放入腰带>\
+<>       <↓/SCOLOR=254>               <Img:386:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <人物魔力增加+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw3>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw3]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw007
+#elseact
+SetUpgradeItem 0
+goto @fw005
+break
+
+[@fw005]
+#if
+CHECKNEWITEMVALUE -1 8 < 5
+#act
+take 特尔(Tir) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw006
+break
+
+[@fw006]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物魔力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw007]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 8 < 5
+#act
+take 特尔(Tir) 1
+SetUpgradeItem 0
+SetNewItemValue -1 8 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw008
+break
+
+[@fw008]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物魔力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Nef]
+#if
+checkitem 那夫(Nef) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:62:254#放入鞋子>\
+<>       <↓/SCOLOR=254>               <Img:376:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <人物魔力增加+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw4>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw4]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw011
+#elseact
+SetUpgradeItem 0
+goto @fw009
+break
+
+[@fw009]
+#if
+CHECKNEWITEMVALUE -1 8 < 5
+#act
+take 那夫(Nef) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw010
+break
+
+[@fw010]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物魔力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw011]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 8 < 5
+#act
+take 那夫(Nef) 1
+SetUpgradeItem 0
+SetNewItemValue -1 8 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw012
+break
+
+[@fw012]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物魔力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Eth]
+#if
+checkitem 爱斯(Eth) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:15:254#放入头盔>\
+<>       <↓/SCOLOR=254>               <Img:363:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <人物体力增加+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw5>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw5]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw015
+#elseact
+SetUpgradeItem 0
+goto @fw013
+break
+
+[@fw013]
+#if
+CHECKNEWITEMVALUE -1 7 < 5
+#act
+take 爱斯(Eth) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw014
+break
+
+[@fw014]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物体力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw015]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 7 < 5
+#act
+take 爱斯(Eth) 1
+SetUpgradeItem 0
+SetNewItemValue -1 7 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw016
+break
+
+[@fw016]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物体力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Ith]
+#if
+checkitem 伊司(Ith) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:10,11:254#放入衣服>\
+<>       <↓/SCOLOR=254>               <Img:369:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <人物体力增加+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw6>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw6]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw019
+#elseact
+SetUpgradeItem 0
+goto @fw017
+break
+
+[@fw017]
+#if
+CHECKNEWITEMVALUE -1 7 < 5
+#act
+take 伊司(Ith) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw018
+break
+
+[@fw018]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物体力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw019]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 7 < 5
+#act
+take 伊司(Ith) 1
+SetUpgradeItem 0
+SetNewItemValue -1 7 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw020
+break
+
+[@fw020]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物体力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Tal]
+#if
+checkitem 塔尔(Tal) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:64:254#放入腰带>\
+<>       <↓/SCOLOR=254>               <Img:384:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <人物体力增加+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw6>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw6]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw019
+#elseact
+SetUpgradeItem 0
+goto @fw017
+break
+
+[@fw017]
+#if
+CHECKNEWITEMVALUE -1 7 < 5
+#act
+take 塔尔(Tal) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw018
+break
+
+[@fw018]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物体力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw019]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 7 < 5
+#act
+take 塔尔(Tal) 1
+SetUpgradeItem 0
+SetNewItemValue -1 7 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw020
+break
+
+[@fw020]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物体力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Ral]
+#if
+checkitem 拉尔(Ral) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:62:254#放入鞋子>\
+<>       <↓/SCOLOR=254>               <Img:384:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <人物体力增加+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw7>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw7]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw023
+#elseact
+SetUpgradeItem 0
+goto @fw021
+break
+
+[@fw021]
+#if
+CHECKNEWITEMVALUE -1 7 < 5
+#act
+take 拉尔(Ral) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw022
+break
+
+[@fw022]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物体力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw023]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 7 < 5
+#act
+take 拉尔(Ral) 1
+SetUpgradeItem 0
+SetNewItemValue -1 7 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw024
+break
+
+[@fw024]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加人物体力5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Ort]
+#if
+checkitem 欧特(Ort) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:15:254#放入头盔>\
+<>       <↓/SCOLOR=254>               <Img:384:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <物理伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw8>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw8]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw027
+#elseact
+SetUpgradeItem 0
+goto @fw025
+break
+
+[@fw025]
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 欧特(Ort) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw026
+break
+
+[@fw026]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw027]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 欧特(Ort) 1
+SetUpgradeItem 0
+SetNewItemValue -1 2 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw028
+break
+
+[@fw028]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Thul]
+#if
+checkitem 书尔(Thul) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:10,11:254#放入衣服>\
+<>       <↓/SCOLOR=254>               <Img:385:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <物理伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw9>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw9]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw031
+#elseact
+SetUpgradeItem 0
+goto @fw029
+break
+
+[@fw029]
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 书尔(Thul) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw030
+break
+
+[@fw030]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw031]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 书尔(Thul) 1
+SetUpgradeItem 0
+SetNewItemValue -1 2 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw032
+break
+
+[@fw032]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Amn]
+#if
+checkitem 安姆(Amn) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:64:254#放入腰带>\
+<>       <↓/SCOLOR=254>               <Img:357:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <物理伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw10>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw10]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw035
+#elseact
+SetUpgradeItem 0
+goto @fw033
+break
+
+[@fw033]
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 安姆(Amn) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw034
+break
+
+[@fw034]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw035]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 安姆(Amn) 1
+SetUpgradeItem 0
+SetNewItemValue -1 2 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw036
+break
+
+[@fw036]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Sol]
+#if
+checkitem 索尔(Sol) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:62:254#放入鞋子>\
+<>       <↓/SCOLOR=254>               <Img:382:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <物理伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw11>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw11]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw039
+#elseact
+SetUpgradeItem 0
+goto @fw037
+break
+
+[@fw037]
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 索尔(Sol) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw038
+break
+
+[@fw038]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw039]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 索尔(Sol) 1
+SetUpgradeItem 0
+SetNewItemValue -1 2 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw040
+break
+
+[@fw040]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Shael]
+#if
+checkitem 夏(Shael) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:19,20,21:254#放入项链>\
+<>       <↓/SCOLOR=254>               <Img:381:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <物理伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw12>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw12]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw043
+#elseact
+SetUpgradeItem 0
+goto @fw041
+break
+
+[@fw041]
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 夏(Shael) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw042
+break
+
+[@fw042]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw043]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 夏(Shael) 1
+SetUpgradeItem 0
+SetNewItemValue -1 2 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw044
+break
+
+[@fw044]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Dol]
+#if
+checkitem 多尔(Dol) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:24,26:254#放入手腕>\
+<>       <↓/SCOLOR=254>               <Img:360:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <物理伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw13>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw13]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw047
+#elseact
+SetUpgradeItem 0
+goto @fw045
+break
+
+[@fw045]
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 多尔(Dol) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw046
+break
+
+[@fw046]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw047]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 多尔(Dol) 1
+SetUpgradeItem 0
+SetNewItemValue -1 2 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw048
+break
+
+[@fw048]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Hel]
+#if
+checkitem 海尔(Hel) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:22,23:254#放入戒指>\
+<>       <↓/SCOLOR=254>               <Img:360:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <物理伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw14>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw14]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw051
+#elseact
+SetUpgradeItem 0
+goto @fw049
+break
+
+[@fw049]
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 海尔(Hel) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw050
+break
+
+[@fw050]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw051]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 2 < 3
+#act
+take 海尔(Hel) 1
+SetUpgradeItem 0
+SetNewItemValue -1 2 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw052
+break
+
+[@fw052]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加物理伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Io]
+#if
+checkitem 破(Io) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:15:254#放入头盔>\
+<>       <↓/SCOLOR=254>               <Img:367:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <魔法伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw15>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw15]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw055
+#elseact
+SetUpgradeItem 0
+goto @fw053
+break
+
+[@fw053]
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 破(Io) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw054
+break
+
+[@fw054]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw055]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 破(Io) 1
+SetUpgradeItem 0
+SetNewItemValue -1 3 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw056
+break
+
+[@fw056]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Lum]
+#if
+checkitem 卢姆(Lum) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:10,11:254#放入衣服>\
+<>       <↓/SCOLOR=254>               <Img:374:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <魔法伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw16>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw16]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw059
+#elseact
+SetUpgradeItem 0
+goto @fw057
+break
+
+[@fw057]
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 卢姆(Lum) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw058
+break
+
+[@fw058]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw059]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 卢姆(Lum) 1
+SetUpgradeItem 0
+SetNewItemValue -1 3 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw060
+break
+
+[@fw060]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Ko]
+#if
+checkitem 科(Ko) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:64:254#放入腰带>\
+<>       <↓/SCOLOR=254>               <Img:371:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <魔法伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw17>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw17]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw063
+#elseact
+SetUpgradeItem 0
+goto @fw061
+break
+
+[@fw061]
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 科(Ko) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw062
+break
+
+[@fw062]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw063]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 科(Ko) 1
+SetUpgradeItem 0
+SetNewItemValue -1 3 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw064
+break
+
+[@fw064]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Fal]
+#if
+checkitem 法尔(Fal) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:62:254#放入鞋子>\
+<>       <↓/SCOLOR=254>               <Img:364:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <魔法伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw18>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw18]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw067
+#elseact
+SetUpgradeItem 0
+goto @fw065
+break
+
+[@fw065]
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 法尔(Fal) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw066
+break
+
+[@fw066]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw067]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 法尔(Fal) 1
+SetUpgradeItem 0
+SetNewItemValue -1 3 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw068
+break
+
+[@fw068]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Lem]
+#if
+checkitem 蓝姆(Lem) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:19,20,21:254#放入项链>\
+<>       <↓/SCOLOR=254>               <Img:372:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <魔法伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw19>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw19]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw071
+#elseact
+SetUpgradeItem 0
+goto @fw069
+break
+
+[@fw069]
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 蓝姆(Lem) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw070
+break
+
+[@fw070]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw071]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 蓝姆(Lem) 1
+SetUpgradeItem 0
+SetNewItemValue -1 3 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw072
+break
+
+[@fw072]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Pul]
+#if
+checkitem 普尔(Pul) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:24,26:254#放入手腕>\
+<>       <↓/SCOLOR=254>               <Img:379:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <魔法伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw20>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw20]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw075
+#elseact
+SetUpgradeItem 0
+goto @fw073
+break
+
+[@fw073]
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 普尔(Pul) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw074
+break
+
+[@fw074]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw075]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 普尔(Pul) 1
+SetUpgradeItem 0
+SetNewItemValue -1 3 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw076
+break
+
+[@fw076]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Um]
+#if
+checkitem 乌姆(Um) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:22,23:254#放入戒指>\
+<>       <↓/SCOLOR=254>               <Img:387:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <魔法伤害减少+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw21>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw21]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw079
+#elseact
+SetUpgradeItem 0
+goto @fw077
+break
+
+[@fw077]
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 乌姆(Um) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw078
+break
+
+[@fw078]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw079]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 3 < 3
+#act
+take 乌姆(Um) 1
+SetUpgradeItem 0
+SetNewItemValue -1 3 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw080
+break
+
+[@fw080]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加魔法伤害减少3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Mal]
+#if
+checkitem 马尔(Mal) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:19,20,21:254#放入项链>\
+<>       <↓/SCOLOR=254>               <Img:375:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <忽视目标防御+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw22>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率高/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw22]
+#if
+RANDOM 5
+#act
+SetUpgradeItem 0
+goto @fw083
+#elseact
+SetUpgradeItem 0
+goto @fw081
+break
+
+[@fw081]
+#if
+CHECKNEWITEMVALUE -1 4 < 5
+#act
+take 马尔(Mal) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw082
+break
+
+[@fw082]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加忽视目标防御5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw083]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 4 < 5
+#act
+take 马尔(Mal) 1
+SetUpgradeItem 0
+SetNewItemValue -1 4 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw084
+break
+
+[@fw084]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加忽视目标防御5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Ist]
+#if
+checkitem 伊司特(Ist) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:24,26:254#放入手腕>\
+<>       <↓/SCOLOR=254>               <Img:368:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <忽视目标防御+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw23>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率高/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw23]
+#if
+RANDOM 5
+#act
+SetUpgradeItem 0
+goto @fw087
+#elseact
+SetUpgradeItem 0
+goto @fw085
+break
+
+[@fw085]
+#if
+CHECKNEWITEMVALUE -1 4 < 5
+#act
+take 伊司特(Ist) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw086
+break
+
+[@fw086]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加忽视目标防御5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw087]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 4 < 5
+#act
+take 伊司特(Ist) 1
+SetUpgradeItem 0
+SetNewItemValue -1 4 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw088
+break
+
+[@fw088]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加忽视目标防御5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Gul]
+#if
+checkitem 古尔(Gul) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:22,23:254#放入戒指>\
+<>       <↓/SCOLOR=254>               <Img:365:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <忽视目标防御+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw24>\
+<>                <→/SCOLOR=254> <最高+5/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率高/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw24]
+#if
+RANDOM 5
+#act
+SetUpgradeItem 0
+goto @fw091
+#elseact
+SetUpgradeItem 0
+goto @fw089
+break
+
+[@fw089]
+#if
+CHECKNEWITEMVALUE -1 4 < 5
+#act
+take 古尔(Gul) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw090
+break
+
+[@fw090]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加忽视目标防御5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw091]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 4 < 5
+#act
+take 古尔(Gul) 1
+SetUpgradeItem 0
+SetNewItemValue -1 4 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw092
+break
+
+[@fw092]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加忽视目标防御5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Vex]
+#if
+checkitem 伐克斯(Vex) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:5,6:254#放入武器>\
+<>       <↓/SCOLOR=254>               <Img:388:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <忽视目标防御+2%/SCOLOR=229>                    <Img:392:0:0:5/@fw250>\
+<>                <→/SCOLOR=254> <最高+10/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率高/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw250]
+#if
+RANDOM 5
+#act
+SetUpgradeItem 0
+goto @fw253
+#elseact
+SetUpgradeItem 0
+goto @fw251
+break
+
+[@fw251]
+#if
+CHECKNEWITEMVALUE -1 4 < 10
+#act
+take 伐克斯(Vex) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw252
+break
+
+[@fw252]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加忽视目标防御5%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw253]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 4 < 10
+#act
+take 伐克斯(Vex) 1
+SetUpgradeItem 0
+SetNewItemValue -1 4 + 2
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw254
+break
+
+[@fw254]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加忽视目标防御10%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Ohm]
+#if
+checkitem 欧姆(Ohm) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:19,20,21:254#放入项链>\
+<>       <↓/SCOLOR=254>               <Img:377:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <增加攻击伤害+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw25>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw25]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw095
+#elseact
+SetUpgradeItem 0
+goto @fw093
+break
+
+[@fw093]
+#if
+CHECKNEWITEMVALUE -1 1 < 3
+#act
+take 欧姆(Ohm) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw094
+break
+
+[@fw094]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加攻击伤害3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw095]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 1 < 3
+#act
+take 欧姆(Ohm) 1
+SetUpgradeItem 0
+SetNewItemValue -1 1 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw096
+break
+
+[@fw096]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加攻击伤害3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Lo]
+#if
+checkitem 罗(Lo) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:24,26:254#放入手腕>\
+<>       <↓/SCOLOR=254>               <Img:373:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <增加攻击伤害+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw26>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw26]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw099
+#elseact
+SetUpgradeItem 0
+goto @fw097
+break
+
+[@fw097]
+#if
+CHECKNEWITEMVALUE -1 1 < 3
+#act
+take 罗(Lo) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw098
+break
+
+[@fw098]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加攻击伤害3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw099]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 1 < 3
+#act
+take 罗(Lo) 1
+SetUpgradeItem 0
+SetNewItemValue -1 1 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw100
+break
+
+[@fw100]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加攻击伤害3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Sur]
+#if
+checkitem 瑟(Sur) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:22,23:254#放入戒指>\
+<>       <↓/SCOLOR=254>               <Img:383:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <增加攻击伤害+1%/SCOLOR=229>                    <Img:392:0:0:5/@fw27>\
+<>                <→/SCOLOR=254> <最高+3/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw27]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw103
+#elseact
+SetUpgradeItem 0
+goto @fw101
+break
+
+[@fw101]
+#if
+CHECKNEWITEMVALUE -1 1 < 3
+#act
+take 瑟(Sur) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw102
+break
+
+[@fw102]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加攻击伤害3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw103]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 1 < 3
+#act
+take 瑟(Sur) 1
+SetUpgradeItem 0
+SetNewItemValue -1 1 + 1
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw104
+break
+
+[@fw104]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加攻击伤害3%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Ber]
+#if
+checkitem 贝(Ber) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:5,6:254#放入武器>\
+<>       <↓/SCOLOR=254>               <Img:358:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <增加攻击伤害+2%/SCOLOR=229>                    <Img:392:0:0:5/@fw28>\
+<>                <→/SCOLOR=254> <最高+10/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率底/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw28]
+#if
+RANDOM 10
+#act
+SetUpgradeItem 0
+goto @fw107
+#elseact
+SetUpgradeItem 0
+goto @fw105
+break
+
+[@fw105]
+#if
+CHECKNEWITEMVALUE -1 1 < 10
+#act
+take 贝(Ber) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw106
+break
+
+[@fw106]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加攻击伤害10%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw107]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 1 < 10
+#act
+take 贝(Ber) 1
+SetUpgradeItem 0
+SetNewItemValue -1 1 + 2
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw108
+break
+
+[@fw108]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备增加攻击伤害10%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+;...............................................................................................
+;...............................................................................................
+[@Jah]
+#if
+checkitem 乔(Jah) 1
+#act
+ReturnBoxItem 0
+#say
+<请放入你需要强化的装备:/SCOLOR=254>\
+<><ITEMBOX:0:0:394:25:45:50:50:5,6:254#放入武器>\
+<>       <↓/SCOLOR=254>               <Img:370:6:0:0>\
+<>                                      <Img:393:0:0:0>\ 
+<>                   <暴击几率增加+2%/SCOLOR=229>                    <Img:392:0:0:5/@fw29>\
+<>                <→/SCOLOR=254> <最高+10/SCOLOR=229>          <→/SCOLOR=254>             <→/SCOLOR=254>\
+<>                   <成功率极高/SCOLOR=19>\
+
+#elsesay
+<你没有该符文，无法进行相关的符文灌注!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+
+[@fw29]
+#if
+RANDOM 3
+#act
+SetUpgradeItem 0
+goto @fw111
+#elseact
+SetUpgradeItem 0
+goto @fw109
+break
+
+[@fw109]
+#if
+CHECKNEWITEMVALUE -1 0 < 10
+#act
+take 乔(Jah) 1
+ReturnBoxItem 0
+#say
+<符文灌注......失败!!!/SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+#elseact
+goto @fw110
+break
+
+[@fw110]
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备暴击几率增加10%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+[@fw111]
+#IF
+EQUAL <$BOXITEM[0].NAME> 
+#ACT
+MESSAGEBOX 请放入需要进行符文灌注的装备。
+break
+
+#if
+CHECKNEWITEMVALUE -1 0 < 10
+#act
+take 乔(Jah) 1
+SetUpgradeItem 0
+SetNewItemValue -1 0 + 2
+UpDateBoxItem 0
+ReturnBoxItem 0
+#say
+<恭喜你......符文灌注成功!!!/SCOLOR=254>\
+<>\
+<返回继续/@fuwen>          <退出/@exit>
+#elseact
+goto @fw112
+break
+
+[@fw112]
+#if
+#act
+ReturnBoxItem 0
+#say
+<该符文最高只能为装备暴击几率增加10%./SCOLOR=19>\
+<>\
+<返回/@fuwen>          <退出/@exit>
+
+;...............................................................................................
+[@Cham]
+该符文暂时未开放！\\
+<>\
+<确定/@exit>
+
+;...............................................................................................
+[@Zod]
+该符文暂时未开放！\\
+<>\
+<确定/@exit>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

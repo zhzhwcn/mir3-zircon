@@ -1,0 +1,13 @@
+[@main]
+#if                                    
+check [108] 1
+check [109] 0
+CHECKBAGSIZE  1
+CheckHumInRange cuisi 57 69 500
+#act 
+give 封印之书 1
+set [109] 1 
+#say
+<"看来我己经取得这份埋葬物品的合法所有权。"/SCOLOR=253> \\
+<>\
+<确定/@exit>

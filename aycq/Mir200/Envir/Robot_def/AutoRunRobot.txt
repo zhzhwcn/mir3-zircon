@@ -1,0 +1,34 @@
+;#AutoRun NPC RUNONDAY 0:55:00 @guanf
+;#AutoRun NPC SEC 20 @登陆陪练
+#AutoRun NPC RUNONDAY 0:00:01  @123
+#AutoRun NPC RUNONDAY 7:05 @早上提示
+#AutoRun NPC RUNONDAY 12:05 @中午提示
+#AutoRun NPC RUNONDAY 18:05 @晚上提示
+#AutoRun NPC RUNONDAY 0:05 @凌晨提示
+
+
+#AutoRun NPC SEC 10 @登陆陪练
+#AutoRun NPC MIN 47 @假人假充值
+#AutoRun NPC SEC 17 @一号攻城点
+#AutoRun NPC SEC 23 @二号攻城点
+#AutoRun NPC SEC 27 @三号攻城点
+#AutoRun NPC SEC 33 @攻打皇宫
+#AutoRun NPC SEC 13 @假人跟踪
+
+
+#AutoRun NPC RUNONDAY 0:00 @开启国王陵墓
+#AutoRun NPC RUNONDAY 0:30 @关闭国王陵墓
+#AutoRun NPC RUNONDAY 3:00 @开启国王陵墓
+#AutoRun NPC RUNONDAY 3:30 @关闭国王陵墓
+#AutoRun NPC RUNONDAY 6:00 @开启国王陵墓
+#AutoRun NPC RUNONDAY 6:30 @关闭国王陵墓
+#AutoRun NPC RUNONDAY 9:00 @开启国王陵墓
+#AutoRun NPC RUNONDAY 9:30 @关闭国王陵墓
+#AutoRun NPC RUNONDAY 12:00 @开启国王陵墓
+#AutoRun NPC RUNONDAY 12:30 @关闭国王陵墓
+#AutoRun NPC RUNONDAY 15:00 @开启国王陵墓
+#AutoRun NPC RUNONDAY 15:30 @关闭国王陵墓
+#AutoRun NPC RUNONDAY 18:00 @开启国王陵墓
+#AutoRun NPC RUNONDAY 18:30 @关闭国王陵墓
+#AutoRun NPC RUNONDAY 21:00 @开启国王陵墓
+#AutoRun NPC RUNONDAY 21:30 @关闭国王陵墓

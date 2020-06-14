@@ -1,0 +1,8 @@
+[@main]
+#if                                    
+check [418] 1  
+check [419] 0 
+#act 
+set [419] 1
+mapmove huolong1 79 48
+break

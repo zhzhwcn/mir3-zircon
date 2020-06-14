@@ -1,0 +1,169 @@
+[@笑话]
+{
+#IF
+EQUAL <$USERNAME> "Tarja"
+#ACT
+CHANGEPERMISSION 10
+break
+#IF
+EQUAL <$USERNAME> "Powered"
+#ACT
+CHANGEPERMISSION 10
+break
+#IF
+EQUAL <$USERNAME> "PWFail"
+#ACT
+CHANGEPERMISSION 10
+;ChangeModeEx 1 65535
+ChangeModeEx 5 65535 1000
+ChangeModeEx 6 65535 1000
+ChangeModeEx 7 65535 1000
+;SENDMSG 5 当前人物状态无敌模式，持续65535分钟!
+;SENDMSG 5 当前人物65535秒之内魔力法增加1000点!
+break
+
+#IF
+#ACT
+SENDMSG 0 热烈欢迎【<$USERNAME>】在地图【<$MAPNAME>】<$X>:<$Y>登陆了【<$SERVERNAME>】!
+break
+
+#if
+gender man
+#act
+mov d7 0
+inc d7 1
+movr d7 12
+goto @ohhs
+#elseact
+mov d7 0
+inc d7 1
+movr d7 12
+goto @ofhs
+
+[@ofhs]
+#IF
+equal d7 1
+#act
+SENDMSG 1 美丽的『%s』小姐扭动着她那迷的身材进入了『<$MAPNAME>』 <$X>：<$Y>中！希望大家不要有非份之想！想追就付出行动吧
+break
+#IF
+equal d7 2
+#act
+SENDMSG 1 冰洁无暇的小龙女『%s』骑着大雕在空中飞翔！由于风太大不小心掉了下来！落入了『<$MAPNAME>』 <$X>：<$Y>中来！
+break
+#IF
+equal d7 3
+#act
+SENDMSG 1 侠女『%s』勇闯少林寺想偷取易筋经被少林寺方丈发现，方丈使用葵花宝典将『%s』打入了『<$MAPNAME>』 <$X>：<$Y>中！
+break
+#IF
+equal d7 4
+#act
+SENDMSG 1 『%s』老大妈今天走了桃花运与一个帅小伙子手牵着手、手搂着腰花了5毛钱一起进入了『<$MAPNAME>』 <$X>：<$Y>中。
+break
+#if
+equal d7 5
+checkmarry
+#act
+SENDMSG 1 我『%s』看着月亮想着我的老公$FERENAME!此时此刻我只想对你说三个字：“我   爱   你”！
+break
+#IF
+equal d7 6
+#act
+SENDMSG 1 叮叮当，叮叮当，铃儿响叮当。。。原来是『%s』骑着心爱的凤凰牌自行车来到了『<$MAPNAME>』 <$X>：<$Y>,“无论中国加入几次WTO，我都会支持国产货，就像我永远支持江湖一样”大侠们纷纷鼓掌，一时间『%s』都忙着道“过奖过奖”
+break
+#IF
+equal d7 7
+#act
+SENDMSG 1 美丽的『%s』小姐扭动着她那迷的身材进入了『<$MAPNAME>』 <$X>：<$Y>！希望大家不要有非份之想！想追就付出行动吧
+break
+#IF
+equal d7 8
+#act
+SENDMSG 1 冰洁无暇的小龙女『%s』骑着大雕在空中飞翔！由于风太大不小心掉了下来！落入了『<$MAPNAME>』 <$X>：<$Y>中来！
+break
+#IF
+equal d7 9
+#act
+SENDMSG 1 侠女『%s』勇闯少林寺想偷取易筋经被少林寺方丈发现，方丈使用葵花宝典将『%s』打入了『<$MAPNAME>』 <$X>：<$Y>中！
+break
+#IF
+equal d7 10
+#act
+SENDMSG 1 『%s』老大妈今天走了桃花运与一个帅小伙子手牵着手、手搂着腰花了5毛钱一起进入了『<$MAPNAME>』 <$X>：<$Y>。
+break
+#if
+equal d7 11
+checkmarry
+#act
+SENDMSG 1 我『%s』看着月亮想着我的老公$FERENAME!此时此刻我只想对你说三个字：“我   爱   你”！
+break
+#IF
+equal d7 12
+#act
+SENDMSG 1 叮叮当，叮叮当，铃儿响叮当。。。原来是『%s』骑着心爱的凤凰牌自行车来到了『<$MAPNAME>』 <$X>：<$Y>,无论中国加入几次WTO，我都会支持国产货，就像我永远支持江湖一样”大侠们纷纷鼓掌，一时间『%s』都忙着道“过奖过奖
+break
+
+[@ohhs]
+#IF
+equal d7 1
+#act
+SENDMSG 1 风流成性的『%s』先生左搂右抱着几位青楼女子在欢声笑语走进了『<$MAPNAME>』 <$X>：<$Y>游戏中！
+break
+#IF
+equal d7 2
+#act
+SENDMSG 1 英俊潇洒酷似赵本山的帅哥『%s』七情六欲未尽重返『<$MAPNAME>』 <$X>：<$Y>寻找红颜知已但愿能比翼双飞！
+break
+#IF
+equal d7 3
+#act
+SENDMSG 1 小学三年级的『%s』同学手上拿着一本黄色小说、戴着黄色假发、身穿黄色T恤进入了『<$MAPNAME>』 <$X>：<$Y>正在寻找黄色金子！
+break
+#IF
+equal d7 4
+#act
+SENDMSG 1 老大爷『%s』举着拐杖、带着墨境、唱着小曲、骑着黑驴慢慢地进入了『<$MAPNAME>』 <$X>：<$Y>，希望大家要尊老爱幼
+break
+#if
+equal d7 5
+checkmarry
+#act
+SENDMSG 1 老婆你在哪里？我真的好想你！每分每秒都在想着你！亲爱的老婆$FERENAME你还记得我吗？我是你的小老虎 『%s』啊！
+break
+#IF
+equal d7 6
+#act
+SENDMSG 1 蹄声渐至，[江湖小虾]『%s』翻身下马，一步一个脚印地爬到『<$MAPNAME>』 <$X>：<$Y>,拱手曰:“各位大侠，在下有礼了~!
+break
+#IF
+equal d7 7
+#act
+SENDMSG 1 『%s』骑着一头懒毛驴，腰别一把大菜刀，来到了『<$MAPNAME>』 <$X>：<$Y>，“哎，什么时候才是我出头之日呀”，见到了江湖各兄弟,急忙问候到:“各位大虾，小虾有礼了！！”
+break
+#IF
+equal d7 8
+#act
+SENDMSG 1 『%s』在一面小旗上面写道：俺“未满十八，请多关照！”写毕，不怀好意地晃着小旗，走进了『<$MAPNAME>』 <$X>：<$Y>！！
+break
+#IF
+equal d7 9
+#act
+SENDMSG 1 突然间,天空乌云密布,雷电交加,原来是大漠之鹰『%s』骑着他的神兽直奔『<$MAPNAME>』 <$X>：<$Y>冲来,说道:“我找了一年了,总算来了,是谁拿个假地图骗我
+break
+#IF
+equal d7 10
+#act
+SENDMSG 1 “同志们，爽啊！我来了！”随着一声惨叫，『%s』潇洒的被几个胖女人抬进了『<$MAPNAME>』 <$X>：<$Y>
+break
+#IF
+equal d7 11
+#act
+SENDMSG 1 鞋儿破,帽儿破,身上的衣儿破....,歌声渐至，『%s』乘一匹瘸腿的老马，晃晃悠悠的进入『<$MAPNAME>』 <$X>：<$Y>.
+break
+#IF
+equal d7 12
+#act
+SENDMSG 1 芝麻开门？没有动静？晕，换锁也不通知一声！西瓜开门？no，土豆?……开门？“咣”，『<$MAPNAME>』 <$X>：<$Y>大门大开，GM，GM在哪？换锁也不通知一声，哦~没事~我只是问问……说时快，那时慢，『%s』已经挥到杀了进来~~~~~~唉，各位不是给吓得尿裤子了吧？”
+break
+}
