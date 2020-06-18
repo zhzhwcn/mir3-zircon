@@ -53,22 +53,45 @@ namespace Server.Models
 
             byte[] fileBytes = File.ReadAllBytes(fileName);
 
-            Width = fileBytes[23] << 8 | fileBytes[22];
-            Height = fileBytes[25] << 8 | fileBytes[24];
-
+            int offSet = 0;
+            Width = BitConverter.ToInt16(fileBytes, offSet);
+            offSet += 2;
+            Height = BitConverter.ToInt16(fileBytes, offSet);
             Cells = new Cell[Width, Height];
+            //DoorIndex = new Door[Width, Height];
 
-            int offSet = 28 + Width * Height / 4 * 3;
+            offSet = 52;
 
             for (int x = 0; x < Width; x++)
-                for (int y = 0; y < Height; y++)
-                {
-                    byte flag = fileBytes[offSet + (x * Height + y) * 14];
+            for (int y = 0; y < Height; y++)
+            {//total 12
+                if ((BitConverter.ToInt16(fileBytes, offSet) & 0x8000) != 0)
+                    continue;//Cells[x, y] = Cell.HighWall; //Can Fire Over.
 
-                    if ((flag & 0x02) != 2 || (flag & 0x01) != 1) continue;
 
-                    ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
-                }
+                offSet += 2;
+                if ((BitConverter.ToInt16(fileBytes, offSet) & 0x8000) != 0)
+                    continue;//Cells[x, y] = Cell.LowWall; //Can't Fire Over.
+
+                offSet += 2;
+
+                if ((BitConverter.ToInt16(fileBytes, offSet) & 0x8000) != 0)
+                    continue;//Cells[x, y] = Cell.HighWall; //No Floor Tile.
+
+                ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
+
+                    offSet += 4;
+
+                //if (fileBytes[offSet] > 0)
+                //    DoorIndex[x, y] = AddDoor(fileBytes[offSet], new Point(x, y));
+
+                offSet += 3;
+
+                byte light = fileBytes[offSet++];
+
+                //if (light >= 100 && light <= 119)
+                //    Cells[x, y].FishingAttribute = (sbyte)(light - 100);
+            }
 
             OrderedObjects = new HashSet<MapObject>[Width];
             for (int i = 0; i < OrderedObjects.Length; i++)
