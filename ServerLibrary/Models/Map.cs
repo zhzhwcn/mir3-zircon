@@ -66,17 +66,17 @@ namespace Server.Models
             for (int y = 0; y < Height; y++)
             {//total 12
                 if ((BitConverter.ToInt16(fileBytes, offSet) & 0x8000) != 0)
-                    continue;//Cells[x, y] = Cell.HighWall; //Can Fire Over.
+                    ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
 
 
                 offSet += 2;
                 if ((BitConverter.ToInt16(fileBytes, offSet) & 0x8000) != 0)
-                    continue;//Cells[x, y] = Cell.LowWall; //Can't Fire Over.
+                    ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
 
                 offSet += 2;
 
                 if ((BitConverter.ToInt16(fileBytes, offSet) & 0x8000) != 0)
-                    continue;//Cells[x, y] = Cell.HighWall; //No Floor Tile.
+                    ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
 
                 ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
 

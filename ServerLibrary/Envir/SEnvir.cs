@@ -388,6 +388,10 @@ namespace Server.Envir
 
             MapInfoList = Session.GetCollection<MapInfo>();
             SafeZoneInfoList = Session.GetCollection<SafeZoneInfo>();
+            SafeZoneInfoList.Binding.Add(new SafeZoneInfo()
+            {
+
+            });
             ItemInfoList = Session.GetCollection<ItemInfo>();
             MonsterInfoList = Session.GetCollection<MonsterInfo>();
             RespawnInfoList = Session.GetCollection<RespawnInfo>();

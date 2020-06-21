@@ -1772,13 +1772,13 @@ namespace Server.Views.DirectX
                     MirLibrary library;
                     LibraryFile file;
 
-                    if (!Libraries.KROrder.TryGetValue(tile.BackFile, out file)) continue;
+                    if (!Libraries.Mir2Order.TryGetValue(tile.BackFile, out file)) continue;
 
                     if (!Manager.LibraryList.TryGetValue(file, out library)) continue;
 
                     Manager.Sprite.Transform = Matrix.Multiply(Matrix.Translation(drawX, drawY, 0), scale);
-
-                    library.Draw(tile.BackImage, 0, 0, Color.White, false, 1F, ImageType.Image);
+                    var index = (tile.BackImage & 0x1FFFFFFF) - 1;
+                    library.Draw(index, 0, 0, Color.White, false, 1F, ImageType.Image);
                 }
             }
 
@@ -1795,7 +1795,7 @@ namespace Server.Views.DirectX
                     MirLibrary library;
                     LibraryFile file;
 
-                    if (Libraries.KROrder.TryGetValue(cell.MiddleFile, out file) && file != LibraryFile.Tilesc && Manager.LibraryList.TryGetValue(file, out library))
+                    if (Libraries.Mir2Order.TryGetValue(cell.MiddleFile, out file) && file != LibraryFile.Tilesc && Manager.LibraryList.TryGetValue(file, out library))
                     {
                         int index = cell.MiddleImage - 1;
 
@@ -1813,7 +1813,7 @@ namespace Server.Views.DirectX
                     }
 
 
-                    if (Libraries.KROrder.TryGetValue(cell.FrontFile, out file) && file != LibraryFile.Tilesc && Manager.LibraryList.TryGetValue(file, out library))
+                    if (Libraries.Mir2Order.TryGetValue(cell.FrontFile, out file) && file != LibraryFile.Tilesc && Manager.LibraryList.TryGetValue(file, out library))
                     {
                         int index = cell.FrontImage - 1;
 
@@ -1846,15 +1846,24 @@ namespace Server.Views.DirectX
                     MirLibrary library;
                     LibraryFile file;
 
-                    if (Libraries.KROrder.TryGetValue(cell.MiddleFile, out file) && file != LibraryFile.Tilesc && Manager.LibraryList.TryGetValue(file, out library))
+                    if (Libraries.Mir2Order.TryGetValue(cell.MiddleFile, out file) && file != LibraryFile.Tilesc && Manager.LibraryList.TryGetValue(file, out library))
                     {
                         int index = cell.MiddleImage - 1;
 
                         bool blend = false;
-                        if (cell.MiddleAnimationFrame > 1 && cell.MiddleAnimationFrame < 255)
+                        var animation = cell.MiddleAnimationFrame;
+                        if (cell.MiddleAnimationFrame > 0 && cell.MiddleAnimationFrame < 255)
                         {
-                            index += Animation%(cell.MiddleAnimationFrame & 0x4F);
-                            blend = (cell.MiddleAnimationFrame & 0x50) > 0;
+                            if ((animation & 0x0f) > 0)
+                            {
+                                blend = true;
+                                animation &= 0x0f;
+                            }
+                            if (animation > 0)
+                            {
+                                var animationTick = cell.MiddleAnimationTick;
+                                index += Animation % (animation + animation * animationTick) / (1 + animationTick);
+                            }
                         }
 
                         Size s = library.GetSize(index);
@@ -1871,15 +1880,24 @@ namespace Server.Views.DirectX
                     }
 
 
-                    if (Libraries.KROrder.TryGetValue(cell.FrontFile, out file) && file != LibraryFile.Tilesc && Manager.LibraryList.TryGetValue(file, out library))
+                    if (Libraries.Mir2Order.TryGetValue(cell.FrontFile, out file) && file != LibraryFile.Tilesc && Manager.LibraryList.TryGetValue(file, out library))
                     {
-                        int index = cell.FrontImage - 1;
+                        int index = (cell.FrontImage & 0x7FFF) -1;
 
                         bool blend = false;
-                        if (cell.FrontAnimationFrame > 1 && cell.FrontAnimationFrame < 255)
+                        var animation = cell.FrontAnimationFrame;
+                        if (cell.FrontAnimationFrame > 0 && cell.FrontAnimationFrame < 255)
                         {
-                            index += Animation%(cell.FrontAnimationFrame & 0x4F);
-                            blend = (cell.MiddleAnimationFrame & 0x50) > 0;
+                            if ((animation & 0x0f) > 0)
+                            {
+                                blend = true;
+                                animation &= 0x0f;
+                            }
+                            if (animation > 0)
+                            {
+                                var animationTick = cell.MiddleAnimationTick;
+                                index += Animation % (animation + animation * animationTick) / (1 + animationTick);
+                            }
                         }
 
                         Size s = library.GetSize(index);
@@ -1981,48 +1999,30 @@ namespace Server.Views.DirectX
                 using (MemoryStream mStream = new MemoryStream(File.ReadAllBytes(Config.MapPath + fileName + ".map")))
                 using (BinaryReader reader = new BinaryReader(mStream))
                 {
-                    mStream.Seek(22, SeekOrigin.Begin);
                     Width = reader.ReadInt16();
                     Height = reader.ReadInt16();
-
-                    mStream.Seek(28, SeekOrigin.Begin);
-
                     Cells = new Cell[Width, Height];
+                    mStream.Seek(52, SeekOrigin.Begin);
                     for (int x = 0; x < Width; x++)
-                        for (int y = 0; y < Height; y++)
-                            Cells[x, y] = new Cell();
+                    for (int y = 0; y < Height; y++)
+                    {
+                        //12
+                        Cells[x, y] = new Cell();
+                        Cells[x, y].BackFile = 0;
+                        Cells[x, y].MiddleFile = 1;
+                        Cells[x, y].BackImage = reader.ReadInt16();
 
-                    for (int x = 0; x < Width / 2; x++)
-                        for (int y = 0; y < Height / 2; y++)
-                        {
-                            Cells[(x * 2), (y * 2)].BackFile = reader.ReadByte();
-                            Cells[(x * 2), (y * 2)].BackImage = reader.ReadUInt16();
-                        }
-
-                    for (int x = 0; x < Width; x++)
-                        for (int y = 0; y < Height; y++)
-                        {
-                            byte flag = reader.ReadByte();
-                            Cells[x, y].MiddleAnimationFrame = reader.ReadByte();
-
-                            byte value = reader.ReadByte();
-                            Cells[x, y].FrontAnimationFrame = value == 255 ? 0 : value;
-                            Cells[x, y].FrontAnimationFrame &= 0x8F; //Probably a Blend Flag
-
-                            Cells[x, y].FrontFile = reader.ReadByte();
-                            Cells[x, y].MiddleFile = reader.ReadByte();
-
-                            Cells[x, y].MiddleImage = reader.ReadUInt16() + 1;
-                            Cells[x, y].FrontImage = reader.ReadUInt16() + 1;
-
-                            mStream.Seek(3, SeekOrigin.Current);
-
-                            Cells[x, y].Light = (byte)(reader.ReadByte() & 0x0F) * 2;
-
-                            mStream.Seek(1, SeekOrigin.Current);
-
-                            Cells[x, y].Flag = ((flag & 0x01) != 1) || ((flag & 0x02) != 2);
-                        }
+                        Cells[x, y].MiddleImage = reader.ReadInt16();
+                        Cells[x, y].FrontImage = reader.ReadInt16();
+                        Cells[x, y].DoorFile = reader.ReadByte();
+                        Cells[x, y].DoorOffset = reader.ReadByte();
+                        Cells[x, y].FrontAnimationFrame = reader.ReadByte();
+                        Cells[x, y].FrontAnimationTick = reader.ReadByte();
+                        Cells[x, y].FrontFile = (short) (reader.ReadByte() + 2);
+                        Cells[x, y].Light = reader.ReadByte();
+                        if ((Cells[x, y].BackImage & 0x8000) != 0)
+                            Cells[x, y].BackImage = (Cells[x, y].BackImage & 0x7FFF) | 0x20000000;
+                    }
                 }
             }
             catch (Exception ex)
@@ -2225,6 +2225,9 @@ namespace Server.Views.DirectX
 
             public int FrontFile;
             public int FrontImage;
+
+            public int DoorFile;
+            public int DoorOffset;
 
             public int FrontAnimationFrame;
             public int FrontAnimationTick;
