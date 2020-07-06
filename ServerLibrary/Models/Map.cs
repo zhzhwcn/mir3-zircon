@@ -65,22 +65,20 @@ namespace Server.Models
             for (int x = 0; x < Width; x++)
             for (int y = 0; y < Height; y++)
             {//total 12
-                if ((BitConverter.ToInt16(fileBytes, offSet) & 0x8000) != 0)
-                    ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
-
+                bool isWall = (BitConverter.ToInt16(fileBytes, offSet) & 0x8000) != 0;
 
                 offSet += 2;
                 if ((BitConverter.ToInt16(fileBytes, offSet) & 0x8000) != 0)
-                    ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
+                    isWall = true;
 
                 offSet += 2;
 
                 if ((BitConverter.ToInt16(fileBytes, offSet) & 0x8000) != 0)
-                    ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
+                    isWall = true;
 
-                ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
+                if(!isWall) ValidCells.Add(Cells[x, y] = new Cell(new Point(x, y)) { Map = this });
 
-                    offSet += 4;
+                offSet += 4;
 
                 //if (fileBytes[offSet] > 0)
                 //    DoorIndex[x, y] = AddDoor(fileBytes[offSet], new Point(x, y));
