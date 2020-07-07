@@ -445,6 +445,9 @@ namespace Server.Envir
             ItemPartInfo = ItemInfoList.Binding.First(x => x.Effect == ItemEffect.ItemPart);
             FortuneCheckerInfo = ItemInfoList.Binding.First(x => x.Effect == ItemEffect.FortuneChecker);
 
+            File.AppendAllLines("items.txt", ItemInfoList.Binding.Select(i => i.ItemName));
+            File.AppendAllLines("magic.txt", MagicInfoList.Binding.Select(m => m.Name));
+            File.AppendAllLines("monster.txt", MonsterInfoList.Binding.Select(m => m.MonsterName));
 
             MysteryShipMapRegion = MapRegionList.Binding.FirstOrDefault(x => x.Index == Config.MysteryShipRegionIndex);
             LairMapRegion = MapRegionList.Binding.FirstOrDefault(x => x.Index == Config.LairRegionIndex);
