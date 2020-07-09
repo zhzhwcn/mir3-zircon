@@ -84,6 +84,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.Import = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ItemStatsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatImageComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemInfoGridControl)).BeginInit();
@@ -103,6 +104,7 @@
             this.ItemStatsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colStat,
             this.colAmount});
+            this.ItemStatsGridView.DetailHeight = 377;
             this.ItemStatsGridView.GridControl = this.ItemInfoGridControl;
             this.ItemStatsGridView.Name = "ItemStatsGridView";
             this.ItemStatsGridView.OptionsView.EnableAppearanceEvenRow = true;
@@ -115,9 +117,11 @@
             // 
             this.colStat.ColumnEdit = this.StatImageComboBox;
             this.colStat.FieldName = "Stat";
+            this.colStat.MinWidth = 23;
             this.colStat.Name = "colStat";
             this.colStat.Visible = true;
             this.colStat.VisibleIndex = 0;
+            this.colStat.Width = 87;
             // 
             // StatImageComboBox
             // 
@@ -129,9 +133,11 @@
             // colAmount
             // 
             this.colAmount.FieldName = "Amount";
+            this.colAmount.MinWidth = 23;
             this.colAmount.Name = "colAmount";
             this.colAmount.Visible = true;
             this.colAmount.VisibleIndex = 1;
+            this.colAmount.Width = 87;
             // 
             // ItemInfoGridControl
             // 
@@ -144,7 +150,7 @@
             this.ItemInfoGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1,
             gridLevelNode2});
-            this.ItemInfoGridControl.Location = new System.Drawing.Point(0, 144);
+            this.ItemInfoGridControl.Location = new System.Drawing.Point(0, 147);
             this.ItemInfoGridControl.MainView = this.ItemInfoGridView;
             this.ItemInfoGridControl.MenuManager = this.ribbon;
             this.ItemInfoGridControl.Name = "ItemInfoGridControl";
@@ -157,7 +163,7 @@
             this.MonsterLookUpEdit,
             this.SetLookUpEdit});
             this.ItemInfoGridControl.ShowOnlyPredefinedDetails = true;
-            this.ItemInfoGridControl.Size = new System.Drawing.Size(803, 397);
+            this.ItemInfoGridControl.Size = new System.Drawing.Size(937, 436);
             this.ItemInfoGridControl.TabIndex = 2;
             this.ItemInfoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.DropsGridView,
@@ -172,6 +178,7 @@
             this.colDAmount,
             this.gridColumn3,
             this.gridColumn8});
+            this.DropsGridView.DetailHeight = 377;
             this.DropsGridView.GridControl = this.ItemInfoGridControl;
             this.DropsGridView.Name = "DropsGridView";
             this.DropsGridView.OptionsView.EnableAppearanceEvenRow = true;
@@ -184,9 +191,11 @@
             // 
             this.colMonster.ColumnEdit = this.MonsterLookUpEdit;
             this.colMonster.FieldName = "Monster";
+            this.colMonster.MinWidth = 23;
             this.colMonster.Name = "colMonster";
             this.colMonster.Visible = true;
             this.colMonster.VisibleIndex = 0;
+            this.colMonster.Width = 87;
             // 
             // MonsterLookUpEdit
             // 
@@ -208,30 +217,38 @@
             // colChance
             // 
             this.colChance.FieldName = "Chance";
+            this.colChance.MinWidth = 23;
             this.colChance.Name = "colChance";
             this.colChance.Visible = true;
             this.colChance.VisibleIndex = 1;
+            this.colChance.Width = 87;
             // 
             // colDAmount
             // 
             this.colDAmount.FieldName = "Amount";
+            this.colDAmount.MinWidth = 23;
             this.colDAmount.Name = "colDAmount";
             this.colDAmount.Visible = true;
             this.colDAmount.VisibleIndex = 2;
+            this.colDAmount.Width = 87;
             // 
             // gridColumn3
             // 
             this.gridColumn3.FieldName = "DropSet";
+            this.gridColumn3.MinWidth = 23;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 87;
             // 
             // gridColumn8
             // 
             this.gridColumn8.FieldName = "PartOnly";
+            this.gridColumn8.MinWidth = 23;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 4;
+            this.gridColumn8.Width = 87;
             // 
             // ItemInfoGridView
             // 
@@ -264,6 +281,7 @@
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7});
+            this.ItemInfoGridView.DetailHeight = 377;
             this.ItemInfoGridView.GridControl = this.ItemInfoGridControl;
             this.ItemInfoGridView.Name = "ItemInfoGridView";
             this.ItemInfoGridView.OptionsDetail.AllowExpandEmptyDetails = true;
@@ -276,25 +294,28 @@
             // colIndex
             // 
             this.colIndex.FieldName = "Index";
+            this.colIndex.MinWidth = 23;
             this.colIndex.Name = "colIndex";
-            this.colIndex.Width = 48;
+            this.colIndex.Width = 56;
             // 
             // colItemName
             // 
             this.colItemName.FieldName = "ItemName";
+            this.colItemName.MinWidth = 23;
             this.colItemName.Name = "colItemName";
             this.colItemName.Visible = true;
             this.colItemName.VisibleIndex = 0;
-            this.colItemName.Width = 56;
+            this.colItemName.Width = 65;
             // 
             // colItemType
             // 
             this.colItemType.ColumnEdit = this.ItemTypeImageComboBox;
             this.colItemType.FieldName = "ItemType";
+            this.colItemType.MinWidth = 23;
             this.colItemType.Name = "colItemType";
             this.colItemType.Visible = true;
             this.colItemType.VisibleIndex = 1;
-            this.colItemType.Width = 24;
+            this.colItemType.Width = 28;
             // 
             // ItemTypeImageComboBox
             // 
@@ -307,10 +328,11 @@
             // 
             this.colRequiredClass.ColumnEdit = this.RequiredClassImageComboBox;
             this.colRequiredClass.FieldName = "RequiredClass";
+            this.colRequiredClass.MinWidth = 23;
             this.colRequiredClass.Name = "colRequiredClass";
             this.colRequiredClass.Visible = true;
             this.colRequiredClass.VisibleIndex = 2;
-            this.colRequiredClass.Width = 24;
+            this.colRequiredClass.Width = 28;
             // 
             // RequiredClassImageComboBox
             // 
@@ -323,10 +345,11 @@
             // 
             this.colRequiredGender.ColumnEdit = this.RequiredGenderImageComboBox;
             this.colRequiredGender.FieldName = "RequiredGender";
+            this.colRequiredGender.MinWidth = 23;
             this.colRequiredGender.Name = "colRequiredGender";
             this.colRequiredGender.Visible = true;
             this.colRequiredGender.VisibleIndex = 3;
-            this.colRequiredGender.Width = 24;
+            this.colRequiredGender.Width = 28;
             // 
             // RequiredGenderImageComboBox
             // 
@@ -339,10 +362,11 @@
             // 
             this.gridColumn1.ColumnEdit = this.RequiredTypeImageComboBox;
             this.gridColumn1.FieldName = "RequiredType";
+            this.gridColumn1.MinWidth = 23;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 4;
-            this.gridColumn1.Width = 24;
+            this.gridColumn1.Width = 28;
             // 
             // RequiredTypeImageComboBox
             // 
@@ -354,163 +378,183 @@
             // gridColumn2
             // 
             this.gridColumn2.FieldName = "RequiredAmount";
+            this.gridColumn2.MinWidth = 23;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 5;
-            this.gridColumn2.Width = 24;
+            this.gridColumn2.Width = 28;
             // 
             // colShape
             // 
             this.colShape.FieldName = "Shape";
+            this.colShape.MinWidth = 23;
             this.colShape.Name = "colShape";
             this.colShape.Visible = true;
             this.colShape.VisibleIndex = 6;
-            this.colShape.Width = 24;
+            this.colShape.Width = 28;
             // 
             // colEffect
             // 
             this.colEffect.FieldName = "Effect";
+            this.colEffect.MinWidth = 23;
             this.colEffect.Name = "colEffect";
             this.colEffect.Visible = true;
             this.colEffect.VisibleIndex = 7;
-            this.colEffect.Width = 24;
+            this.colEffect.Width = 28;
             // 
             // colImage
             // 
             this.colImage.FieldName = "Image";
+            this.colImage.MinWidth = 23;
             this.colImage.Name = "colImage";
             this.colImage.Visible = true;
             this.colImage.VisibleIndex = 8;
-            this.colImage.Width = 24;
+            this.colImage.Width = 28;
             // 
             // colWeight
             // 
             this.colWeight.FieldName = "Weight";
+            this.colWeight.MinWidth = 23;
             this.colWeight.Name = "colWeight";
             this.colWeight.Visible = true;
             this.colWeight.VisibleIndex = 9;
-            this.colWeight.Width = 24;
+            this.colWeight.Width = 28;
             // 
             // colDurability
             // 
             this.colDurability.FieldName = "Durability";
+            this.colDurability.MinWidth = 23;
             this.colDurability.Name = "colDurability";
             this.colDurability.Visible = true;
             this.colDurability.VisibleIndex = 10;
-            this.colDurability.Width = 24;
+            this.colDurability.Width = 28;
             // 
             // colPrice
             // 
             this.colPrice.FieldName = "Price";
+            this.colPrice.MinWidth = 23;
             this.colPrice.Name = "colPrice";
             this.colPrice.Visible = true;
             this.colPrice.VisibleIndex = 11;
-            this.colPrice.Width = 24;
+            this.colPrice.Width = 28;
             // 
             // colStackSize
             // 
             this.colStackSize.FieldName = "StackSize";
+            this.colStackSize.MinWidth = 23;
             this.colStackSize.Name = "colStackSize";
             this.colStackSize.Visible = true;
             this.colStackSize.VisibleIndex = 12;
-            this.colStackSize.Width = 24;
+            this.colStackSize.Width = 28;
             // 
             // colSellRate
             // 
             this.colSellRate.FieldName = "SellRate";
+            this.colSellRate.MinWidth = 23;
             this.colSellRate.Name = "colSellRate";
             this.colSellRate.Visible = true;
             this.colSellRate.VisibleIndex = 13;
-            this.colSellRate.Width = 24;
+            this.colSellRate.Width = 28;
             // 
             // colStartItem
             // 
             this.colStartItem.FieldName = "StartItem";
+            this.colStartItem.MinWidth = 23;
             this.colStartItem.Name = "colStartItem";
             this.colStartItem.Visible = true;
             this.colStartItem.VisibleIndex = 14;
-            this.colStartItem.Width = 24;
+            this.colStartItem.Width = 28;
             // 
             // colCanRepair
             // 
             this.colCanRepair.FieldName = "CanRepair";
+            this.colCanRepair.MinWidth = 23;
             this.colCanRepair.Name = "colCanRepair";
             this.colCanRepair.Visible = true;
             this.colCanRepair.VisibleIndex = 15;
-            this.colCanRepair.Width = 24;
+            this.colCanRepair.Width = 28;
             // 
             // colCanSell
             // 
             this.colCanSell.FieldName = "CanSell";
+            this.colCanSell.MinWidth = 23;
             this.colCanSell.Name = "colCanSell";
             this.colCanSell.Visible = true;
             this.colCanSell.VisibleIndex = 16;
-            this.colCanSell.Width = 24;
+            this.colCanSell.Width = 28;
             // 
             // colCanStore
             // 
             this.colCanStore.FieldName = "CanStore";
+            this.colCanStore.MinWidth = 23;
             this.colCanStore.Name = "colCanStore";
             this.colCanStore.Visible = true;
             this.colCanStore.VisibleIndex = 17;
-            this.colCanStore.Width = 24;
+            this.colCanStore.Width = 28;
             // 
             // colCanTrade
             // 
             this.colCanTrade.FieldName = "CanTrade";
+            this.colCanTrade.MinWidth = 23;
             this.colCanTrade.Name = "colCanTrade";
             this.colCanTrade.Visible = true;
             this.colCanTrade.VisibleIndex = 18;
-            this.colCanTrade.Width = 24;
+            this.colCanTrade.Width = 28;
             // 
             // colCanDrop
             // 
             this.colCanDrop.FieldName = "CanDrop";
+            this.colCanDrop.MinWidth = 23;
             this.colCanDrop.Name = "colCanDrop";
             this.colCanDrop.Visible = true;
             this.colCanDrop.VisibleIndex = 19;
-            this.colCanDrop.Width = 24;
+            this.colCanDrop.Width = 28;
             // 
             // ColCanDeathDrop
             // 
             this.ColCanDeathDrop.FieldName = "CanDeathDrop";
+            this.ColCanDeathDrop.MinWidth = 23;
             this.ColCanDeathDrop.Name = "ColCanDeathDrop";
             this.ColCanDeathDrop.Visible = true;
             this.ColCanDeathDrop.VisibleIndex = 20;
-            this.ColCanDeathDrop.Width = 24;
+            this.ColCanDeathDrop.Width = 28;
             // 
             // gridColumn4
             // 
             this.gridColumn4.FieldName = "CanAutoPot";
+            this.gridColumn4.MinWidth = 23;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 21;
-            this.gridColumn4.Width = 24;
+            this.gridColumn4.Width = 28;
             // 
             // colRarity
             // 
             this.colRarity.FieldName = "Rarity";
+            this.colRarity.MinWidth = 23;
             this.colRarity.Name = "colRarity";
             this.colRarity.Visible = true;
             this.colRarity.VisibleIndex = 22;
-            this.colRarity.Width = 24;
+            this.colRarity.Width = 28;
             // 
             // colDescription
             // 
             this.colDescription.FieldName = "Description";
+            this.colDescription.MinWidth = 23;
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 23;
-            this.colDescription.Width = 24;
+            this.colDescription.Width = 28;
             // 
             // gridColumn5
             // 
             this.gridColumn5.ColumnEdit = this.SetLookUpEdit;
             this.gridColumn5.FieldName = "Set";
+            this.gridColumn5.MinWidth = 23;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 24;
-            this.gridColumn5.Width = 24;
+            this.gridColumn5.Width = 28;
             // 
             // SetLookUpEdit
             // 
@@ -528,18 +572,20 @@
             // 
             this.gridColumn6.Caption = "Buff Icon";
             this.gridColumn6.FieldName = "BuffIcon";
+            this.gridColumn6.MinWidth = 23;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 25;
-            this.gridColumn6.Width = 24;
+            this.gridColumn6.Width = 28;
             // 
             // gridColumn7
             // 
             this.gridColumn7.FieldName = "PartCount";
+            this.gridColumn7.MinWidth = 23;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 26;
-            this.gridColumn7.Width = 87;
+            this.gridColumn7.Width = 101;
             // 
             // ribbon
             // 
@@ -547,14 +593,15 @@
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.SaveButton,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.Import});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 3;
+            this.ribbon.MaxItemId = 4;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbon.Size = new System.Drawing.Size(803, 144);
+            this.ribbon.Size = new System.Drawing.Size(937, 147);
             // 
             // SaveButton
             // 
@@ -602,15 +649,23 @@
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.Import);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "Export";
             // 
+            // Import
+            // 
+            this.Import.Caption = "Import";
+            this.Import.Id = 3;
+            this.Import.Name = "Import";
+            this.Import.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Import_ItemClick);
+            // 
             // ItemInfoView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 541);
+            this.ClientSize = new System.Drawing.Size(937, 583);
             this.Controls.Add(this.ItemInfoGridControl);
             this.Controls.Add(this.ribbon);
             this.Name = "ItemInfoView";
@@ -688,5 +743,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn colIndex;
+        private DevExpress.XtraBars.BarButtonItem Import;
     }
 }

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using Library;
 using Library.SystemModels;
 using Server.Envir;
@@ -123,5 +125,25 @@ namespace Server.Views
             return builder.ToString();
         }
 
+        private void Import_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var source = File.ReadAllLines("AmzData/StdItems.txt");
+            var items = SMain.Session.GetCollection<ItemInfo>().Binding;
+            var count = 0;
+            foreach (var line in source)
+            {
+                var data = line.Split(new []{ ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                if (data.Length > 2)
+                {
+                    var name = data[1];
+                    if (items.All(i => i.ItemName != name) && data[2] != "4")
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            XtraMessageBox.Show($"{count}个物品需要导入");
+        }
     }
 }
