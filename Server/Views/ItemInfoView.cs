@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using CsvHelper;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using Library;
@@ -127,23 +129,72 @@ namespace Server.Views
 
         private void Import_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var source = File.ReadAllLines("AmzData/StdItems.txt");
             var items = SMain.Session.GetCollection<ItemInfo>().Binding;
-            var count = 0;
-            foreach (var line in source)
+            using (var reader = new StreamReader("AmzData/StdItems.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                var data = line.Split(new []{ ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                if (data.Length > 2)
+                csv.Read();
+                csv.ReadHeader();
+                while (csv.Read())
                 {
-                    var name = data[1];
-                    if (items.All(i => i.ItemName != name) && data[2] != "4")
-                    {
-                        count++;
-                    }
+                    var name = csv.GetField("Name");
+                    SEnvir.Log(name);
                 }
             }
+        }
 
-            XtraMessageBox.Show($"{count}个物品需要导入");
+        private ItemType GetItemType(int type)
+        {
+            switch (type)
+            {
+                case 0:
+                case 2:
+                    return ItemType.Consumable;
+                case 3:
+                    return ItemType.Scroll;
+                case 4:
+                    return ItemType.Book;
+                case 5:
+                case 6:
+                    return ItemType.Weapon;
+                case 7:
+                    return ItemType.Nothing;
+                case 10:
+                case 11:
+                    return ItemType.Armour;
+                case 19:
+                case 20:
+                case 21:
+                    return ItemType.Necklace;
+                case 22:
+                case 23:
+                    return ItemType.Ring;
+                case 24:
+                case 26:
+                    return ItemType.Bracelet;
+                case 25:
+                    return ItemType.Poison;
+                case 31:
+                    return ItemType.Consumable;
+                case 30:
+                case 40:
+                case 41:
+                case 42:
+                case 44:
+                case 46:
+                case 57:
+                case 59:
+                case 62:
+                    return ItemType.Nothing;
+                case 43:
+                    return ItemType.Ore;
+                case 63:
+                    return ItemType.Shoes;
+                case 64:
+                    return ItemType.Amulet;
+
+            }
+            throw new ArgumentException();
         }
     }
 }
