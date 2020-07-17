@@ -129,7 +129,8 @@ namespace Server.Views
 
         private void Import_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var items = SMain.Session.GetCollection<ItemInfo>().Binding;
+            var collection = SMain.Session.GetCollection<ItemInfo>();
+            //var items = SMain.Session.GetCollection<ItemInfo>().Binding;
             using (var reader = new StreamReader("AmzData/StdItems.csv"))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
@@ -138,7 +139,89 @@ namespace Server.Views
                 while (csv.Read())
                 {
                     var name = csv.GetField("Name");
-                    SEnvir.Log(name);
+                    if (collection.Binding.Any(i => i.ItemName == name))
+                    {
+                        continue;
+                    }
+
+                    if (name.StartsWith("╔") || name.StartsWith("║") || name.StartsWith("╚"))
+                    {
+                        continue;
+                    }
+
+                    var mode = csv.GetField<int>("StdMode");
+                    var need = csv.GetField<int>("Need");
+                    var newItem = collection.CreateNewObject();
+                    
+                    newItem.ItemName = name;
+                    newItem.ItemType = GetItemType(mode);
+                    switch (need)
+                    {
+                        case 1:
+                            newItem.RequiredClass = RequiredClass.Warrior;
+                            break;
+                        case 2:
+                            newItem.RequiredClass = RequiredClass.Wizard;
+                            break;
+                        case 3:
+                            newItem.RequiredClass = RequiredClass.Taoist;
+                            break;
+                        default:
+                            newItem.RequiredClass = RequiredClass.All;
+                            break;
+                    }
+
+                    switch (mode)
+                    {
+                        case 10:
+                            newItem.RequiredGender = RequiredGender.Male;
+                            break;
+                        case 11:
+                            newItem.RequiredGender = RequiredGender.Female;
+                            break;
+                        default:
+                            newItem.RequiredGender = RequiredGender.None;
+                            break;
+                    }
+
+                    newItem.RequiredType = RequiredType.Level;
+                    newItem.RequiredAmount = csv.GetField<int>("NeedLevel");
+                    newItem.Shape = csv.GetField<int>("Shape");
+                    newItem.Effect = ItemEffect.None;
+                    newItem.Image = 1042;
+                    newItem.Durability = csv.GetField<int>("DuraMax");
+                    newItem.Price = csv.GetField<int>("Price");
+                    newItem.Weight = csv.GetField<int>("Weight");
+                    var overlap = csv.GetField<int>("OverLap");
+                    if (overlap > 0)
+                    {
+                        newItem.StackSize = csv.GetField<int>("Weight");
+                    }
+
+                    newItem.StartItem = false;
+                    newItem.SellRate = 0.5M;
+                    if (
+                        newItem.ItemType == ItemType.Weapon ||
+                        newItem.ItemType == ItemType.Armour ||
+                        newItem.ItemType == ItemType.Necklace ||
+                        newItem.ItemType == ItemType.Ring ||
+                        newItem.ItemType == ItemType.Bracelet ||
+                        newItem.ItemType == ItemType.Shoes
+                    )
+                    {
+                        newItem.CanRepair = true;
+                    }
+
+                    newItem.CanSell = true;
+                    newItem.CanStore = true;
+                    newItem.CanTrade = true;
+                    newItem.CanDrop = true;
+                    newItem.CanDeathDrop = true;
+                    newItem.Description = "";
+                    newItem.Rarity = Rarity.Common;
+                    newItem.CanAutoPot = false;
+                    newItem.BuffIcon = 0;
+                    newItem.PartCount = 0;
                 }
             }
         }
