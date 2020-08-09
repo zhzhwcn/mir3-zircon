@@ -1994,6 +1994,10 @@ namespace Server.Views.DirectX
         {
             try
             {
+                if (fileName.Contains("|"))
+                {
+                    fileName = fileName.Split('|')[1];
+                }
                 if (!File.Exists(Config.MapPath + fileName + ".map")) return;
 
                 using (MemoryStream mStream = new MemoryStream(File.ReadAllBytes(Config.MapPath + fileName + ".map")))

@@ -410,9 +410,14 @@ namespace Client.Scenes.Views
         {
             try
             {
-                if (!File.Exists(Config.MapPath + MapInfo.FileName + ".map")) return;
+                var fileName = MapInfo.FileName;
+                if (fileName.Contains("|"))
+                {
+                    fileName = fileName.Split('|')[1];
+                }
+                if (!File.Exists(Config.MapPath + fileName + ".map")) return;
 
-                using (MemoryStream mStream = new MemoryStream(File.ReadAllBytes(Config.MapPath + MapInfo.FileName + ".map")))
+                using (MemoryStream mStream = new MemoryStream(File.ReadAllBytes(Config.MapPath + fileName + ".map")))
                 using (BinaryReader reader = new BinaryReader(mStream))
                 {
                     Width = reader.ReadInt16();

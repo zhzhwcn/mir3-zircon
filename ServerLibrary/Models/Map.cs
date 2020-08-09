@@ -42,8 +42,13 @@ namespace Server.Models
 
         public void Load()
         {
-            string fileName = $"{Config.MapPath}{Info.FileName}.map";
+            string fileName = Info.FileName;
+            if (fileName.Contains("|"))
+            {
+                fileName = fileName.Split('|')[1];
+            }
 
+            fileName = $"{Config.MapPath}{fileName}.map";
             if (!File.Exists(fileName))
             {
                 SEnvir.Log($"Map: {fileName} not found.");

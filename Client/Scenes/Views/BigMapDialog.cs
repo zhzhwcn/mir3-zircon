@@ -70,6 +70,10 @@ namespace Client.Scenes.Views
         }
         private Size GetMapSize(string fileName)
         {
+            if (fileName.Contains("|"))
+            {
+                fileName = fileName.Split('|')[1];
+            }
             if (!File.Exists(Config.MapPath + fileName + ".map")) return Size.Empty;
 
             using (FileStream stream = File.OpenRead(Config.MapPath + fileName + ".map"))
