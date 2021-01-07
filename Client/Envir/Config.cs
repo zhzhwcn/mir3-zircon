@@ -13,11 +13,11 @@ namespace Client.Envir
     {
         public static readonly Size IntroSceneSize = new Size(1024, 768);
 
-        public const string DefaultIPAddress = "145.239.204.13";
-        public const int DefaultPort = 7100;
+        public const string DefaultIPAddress = "127.0.0.1";
+        public const int DefaultPort = 7000;
 
         [ConfigSection("Network")]
-        public static bool UseNetworkConfig { get; set; } = false;
+        public static bool UseNetworkConfig { get; set; } = true;
         public static string IPAddress { get; set; } = DefaultIPAddress;
         public static int Port { get; set; } = DefaultPort;
         public static TimeSpan TimeOutDuration { get; set; } = TimeSpan.FromSeconds(15);
@@ -38,7 +38,7 @@ namespace Client.Envir
         public static bool ClipMouse { get; set; } = false;
         public static bool DebugLabel { get; set; } = false;
         public static float FontSizeMod { get; set; } = 0.0F;
-        public static string Language { get; set; } = "English";
+        public static string Language { get; set; } = "Chinese";
         public static bool Borderless { get; set; } = false;
 
 
