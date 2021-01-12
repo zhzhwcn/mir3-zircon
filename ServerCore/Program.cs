@@ -1,33 +1,29 @@
 ﻿using Autofac;
 using Library;
+using Microsoft.Extensions.Hosting;
 using Server.Envir;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
+using System.Threading;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Server
 {
     class Program
     {
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+
         static void Main(string[] args)
         {
-            var assembly = Assembly.GetAssembly(typeof(Config));
-            ConfigReader.Load(assembly);
-            Config.LoadVersion();
-
-            SEnvir.UseLogConsole = true;
-            SEnvir.StartServer();
-
-            Console.CancelKeyPress += Console_CancelKeyPress;
-
-            // We check EnvirThread why when SEnvir is full stoped, set this to null...
-            while (SEnvir.EnvirThread != null)
-            {
-                var command = Console.ReadLine();
-
-            }
-
-            ConfigReader.Save(typeof(Config).Assembly);
+            CreateHostBuilder(args).Build().Run();
         }
+
 
         private static void Console_CancelKeyPress(object sender, ConsoleCancelEventArgs e)
         {

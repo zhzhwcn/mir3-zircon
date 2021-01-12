@@ -1691,7 +1691,7 @@ namespace Server.Models
                     case "CLEARIPBLOCKS":
                         if (!Character.Account.TempAdmin) return;
 
-                        SEnvir.IPBlocks.Clear();
+                        SEnvir.IpBlocks.Clear();
                         break;
                     case "REBOOT":
                         if (!Character.Account.TempAdmin) return;

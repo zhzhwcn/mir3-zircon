@@ -101,7 +101,7 @@ namespace Server.Models
 
         protected MapObject()
         {
-            ObjectID = SEnvir.ObjectID;
+            ObjectID = SEnvir.ObjectId;
 
             NameColour = Color.White;
             Visible = true;

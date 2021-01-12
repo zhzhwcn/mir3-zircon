@@ -76,7 +76,7 @@ namespace Server.Envir
                 throw new InvalidOperationException("Connection was not found in list");
 
             SEnvir.Connections.Remove(this);
-            SEnvir.IPCount[IPAddress]--;
+            SEnvir.IpCount[IPAddress]--;
             SEnvir.DBytesSent += TotalBytesSent;
             SEnvir.DBytesReceived += TotalBytesReceived;
         }
@@ -180,7 +180,7 @@ namespace Server.Envir
             if (ReceiveList.Count > Config.MaxPacket)
             {
                 TryDisconnect();
-                SEnvir.IPBlocks[IPAddress] = SEnvir.Now.Add(Config.PacketBanTime);
+                SEnvir.IpBlocks[IPAddress] = SEnvir.Now.Add(Config.PacketBanTime);
 
                 for (int i = SEnvir.Connections.Count - 1; i >= 0; i--)
                     if (SEnvir.Connections[i].IPAddress == IPAddress)

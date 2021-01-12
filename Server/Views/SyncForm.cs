@@ -27,22 +27,6 @@ namespace Server.Views
 
         private void btnSync_Click(object sender, EventArgs e)
         {
-            using (var wc = new WebClient())
-            {
-                SMain.Session.Save(true);
-                try
-                {
-                    var content = File.ReadAllBytes(SMain.Session.SystemPath);
-
-                    wc.UploadData(txtRemoteIP.Text + $"?Type={WebServer.SystemDBSyncCommand}&Key={HttpUtility.UrlEncode(txtKey.Text)}", content);
-
-                    MessageBox.Show("Syncronization completed", "Sync", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
 
         }
     }

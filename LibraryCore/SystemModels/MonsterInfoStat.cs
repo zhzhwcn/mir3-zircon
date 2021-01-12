@@ -14,11 +14,14 @@ namespace Library.SystemModels
 
                 var oldValue = _Monster;
                 _Monster = value;
+                MonsterIndex = Monster.Index;
 
                 OnChanged(oldValue, value, "Monster");
             }
         }
         private MonsterInfo _Monster;
+
+        public int MonsterIndex { get; set; }
 
         public Stat Stat
         {

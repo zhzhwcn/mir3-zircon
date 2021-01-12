@@ -2,27 +2,27 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Mail;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
+using FreeSql;
 using Library;
 using Library.Network;
 using Library.SystemModels;
 using MirDB;
 using Server.DBModels;
+using Server.Helpers;
 using Server.Models;
 using G = Library.Network.GeneralPackets;
 using S = Library.Network.ServerPackets;
 using C = Library.Network.ClientPackets;
-using System.Reflection;
-using System.Globalization;
 
 namespace Server.Envir
 {
@@ -50,7 +50,13 @@ namespace Server.Envir
 
         public static void Log(string log, bool hardLog = true)
         {
-            log = string.Format("[{0:F}]: {1}", Time.Now, log);
+            log = $"[{Time.Now:yyyy-MM-dd HH:mm:ss}]: {log}";
+
+            if (LogAction != null)
+            {
+                LogAction(log);
+                return;
+            }
 
             if (UseLogConsole)
             {
@@ -66,11 +72,13 @@ namespace Server.Envir
             }
         }
 
+        public static Action<string> LogAction = null;
+
         public static ConcurrentQueue<string> DisplayChatLogs = new ConcurrentQueue<string>();
         public static ConcurrentQueue<string> ChatLogs = new ConcurrentQueue<string>();
         public static void LogChat(string log)
         {
-            log = string.Format("[{0:F}]: {1}", Time.Now, log);
+            log = $"[{Time.Now:yyyy-MM-dd HH:mm:ss}]: {log}";
 
             if (DisplayChatLogs.Count < 500)
                 DisplayChatLogs.Enqueue(log);
@@ -82,8 +90,8 @@ namespace Server.Envir
 
         #region Network
 
-        public static Dictionary<string, DateTime> IPBlocks = new Dictionary<string, DateTime>();
-        public static Dictionary<string, int> IPCount = new Dictionary<string, int>();
+        public static Dictionary<string, DateTime> IpBlocks = new Dictionary<string, DateTime>();
+        public static Dictionary<string, int> IpCount = new Dictionary<string, int>();
 
         public static List<SConnection> Connections = new List<SConnection>();
         public static ConcurrentQueue<SConnection> NewConnections;
@@ -154,12 +162,12 @@ namespace Server.Envir
 
                 string ipAddress = client.Client.RemoteEndPoint.ToString().Split(':')[0];
 
-                if (!IPBlocks.TryGetValue(ipAddress, out DateTime banDate) || banDate < Now)
+                if (!IpBlocks.TryGetValue(ipAddress, out DateTime banDate) || banDate < Now)
                 {
-                    SConnection Connection = new SConnection(client);
+                    SConnection connection = new SConnection(client);
 
-                    if (Connection.Connected)
-                        NewConnections?.Enqueue(Connection);
+                    if (connection.Connected)
+                        NewConnections?.Enqueue(connection);
                 }
             }
             catch (Exception ex)
@@ -184,11 +192,14 @@ namespace Server.Envir
 
                 TcpClient client = _userCountListener.EndAcceptTcpClient(result);
 
-                byte[] data = Encoding.ASCII.GetBytes(string.Format("c;/Zircon/{0}/;", Connections.Count));
+                byte[] data = Encoding.ASCII.GetBytes($"c;/Zircon/{Connections.Count}/;");
 
                 client.Client.BeginSend(data, 0, data.Length, SocketFlags.None, CountConnectionEnd, client);
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
             finally
             {
                 if (_userCountListener != null && _userCountListener.Server.IsBound)
@@ -207,7 +218,10 @@ namespace Server.Envir
 
                 client.Client.Dispose();
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         #endregion
@@ -287,6 +301,11 @@ namespace Server.Envir
 
         public static List<MonsterInfo> BossList = new List<MonsterInfo>();
 
+        public static IFreeSql FreeSql = new FreeSqlBuilder()
+            .UseConnectionString(DataType.Sqlite,
+                "Data Source=Server.db; Pooling=true;Min Pool Size=1")
+            .Build();
+
         #endregion
 
         #region Game Variables
@@ -295,8 +314,8 @@ namespace Server.Envir
 
         public static Dictionary<MapInfo, Map> Maps = new Dictionary<MapInfo, Map>();
 
-        private static long _ObjectID;
-        public static uint ObjectID => (uint)Interlocked.Increment(ref _ObjectID);
+        private static long _objectId;
+        public static uint ObjectId => (uint)Interlocked.Increment(ref _objectId);
 
         public static LinkedList<MapObject> Objects = new LinkedList<MapObject>();
         public static List<MapObject> ActiveObjects = new List<MapObject>();
@@ -306,15 +325,15 @@ namespace Server.Envir
 
         public static List<SpawnInfo> Spawns = new List<SpawnInfo>();
 
-        private static float _DayTime;
+        private static float _dayTime;
         public static float DayTime
         {
-            get { return _DayTime; }
+            get => _dayTime;
             set
             {
-                if (_DayTime == value) return;
+                if (_dayTime == value) return;
 
-                _DayTime = value;
+                _dayTime = value;
 
                 Broadcast(new S.DayChanged { DayTime = DayTime });
             }
@@ -330,7 +349,7 @@ namespace Server.Envir
         {
             if (Started || EnvirThread != null) return;
 
-            EnvirThread = new Thread(() => EnvirLoop()) { IsBackground = true };
+            EnvirThread = new Thread(EnvirLoop) { IsBackground = true };
             EnvirThread.Start();
         }
 
@@ -363,9 +382,9 @@ namespace Server.Envir
                         else
                             Globals.ExperienceList[i] = exp;
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
-                        Log(string.Format("ExperienceList: Error parsing line {0} - {1}", i, lines[i]));
+                        Log($"ExperienceList: Error parsing line {i} - {lines[i]}");
                     }
                 }
             }
@@ -388,10 +407,7 @@ namespace Server.Envir
 
             MapInfoList = Session.GetCollection<MapInfo>();
             SafeZoneInfoList = Session.GetCollection<SafeZoneInfo>();
-            SafeZoneInfoList.Binding.Add(new SafeZoneInfo()
-            {
-
-            });
+            SafeZoneInfoList.Binding.Add(new SafeZoneInfo());
             ItemInfoList = Session.GetCollection<ItemInfo>();
             MonsterInfoList = Session.GetCollection<MonsterInfo>();
             RespawnInfoList = Session.GetCollection<RespawnInfo>();
@@ -444,10 +460,6 @@ namespace Server.Envir
 
             ItemPartInfo = ItemInfoList.Binding.First(x => x.Effect == ItemEffect.ItemPart);
             FortuneCheckerInfo = ItemInfoList.Binding.First(x => x.Effect == ItemEffect.FortuneChecker);
-
-            File.AppendAllLines("items.txt", ItemInfoList.Binding.Select(i => i.ItemName));
-            File.AppendAllLines("magic.txt", MagicInfoList.Binding.Select(m => m.Name));
-            File.AppendAllLines("monster.txt", MonsterInfoList.Binding.Select(m => m.MonsterName));
 
             MysteryShipMapRegion = MapRegionList.Binding.FirstOrDefault(x => x.Index == Config.MysteryShipRegionIndex);
             LairMapRegion = MapRegionList.Binding.FirstOrDefault(x => x.Index == Config.LairRegionIndex);
@@ -616,14 +628,14 @@ namespace Server.Envir
 
                 if (movement.DestinationRegion == null)
                 {
-                    Log($"[Movement] No Destinaton Region, Source: {movement.SourceRegion.ServerDescription}");
+                    Log($"[Movement] No Destination Region, Source: {movement.SourceRegion.ServerDescription}");
                     continue;
                 }
 
                 Map destMap = GetMap(movement.DestinationRegion.Map);
                 if (destMap == null)
                 {
-                    Log($"[Movement] Bad Destinatoin Map, Destination: {movement.DestinationRegion.ServerDescription}");
+                    Log($"[Movement] Bad Destination Map, Destination: {movement.DestinationRegion.ServerDescription}");
                     continue;
                 }
 
@@ -656,7 +668,7 @@ namespace Server.Envir
 
                 if (map == null)
                 {
-                    Log(string.Format("[NPC] Bad Map, NPC: {0}, Map: {1}", info.NPCName, info.Region.ServerDescription));
+                    Log($"[NPC] Bad Map, NPC: {info.NPCName}, Map: {info.Region.ServerDescription}");
                     continue;
                 }
 
@@ -764,7 +776,7 @@ namespace Server.Envir
 
                 if (map == null)
                 {
-                    Log(string.Format("[Respawn] Bad Map, Map: {0}", info.Region.ServerDescription));
+                    Log($"[Respawn] Bad Map, Map: {info.Region.ServerDescription}");
                     continue;
                 }
 
@@ -813,7 +825,7 @@ namespace Server.Envir
 
             Spawns.Clear();
 
-            _ObjectID = 0;
+            _objectId = 0;
 
 
             EnvirThread = null;
@@ -827,8 +839,6 @@ namespace Server.Envir
 
             StartEnvir();
             StartNetwork();
-
-            WebServer.StartWebServer();
 
             Started = NetworkStarted;
 
@@ -856,8 +866,8 @@ namespace Server.Envir
                     {
                         if (!NewConnections.TryDequeue(out connection)) break;
 
-                        IPCount.TryGetValue(connection.IPAddress, out var ipCount);
-                        IPCount[connection.IPAddress] = ipCount + 1;
+                        IpCount.TryGetValue(connection.IPAddress, out var ipCount);
+                        IpCount[connection.IPAddress] = ipCount + 1;
 
                         Connections.Add(connection);
                     }
@@ -986,8 +996,6 @@ namespace Server.Envir
                         for (int i = ConquestWars.Count - 1; i >= 0; i--)
                             ConquestWars[i].Process();
 
-                        WebServer.Process();
-
                         if (Config.ProcessGameGold)
                             ProcessGameGold();
 
@@ -1038,7 +1046,6 @@ namespace Server.Envir
                 }
             }
 
-            WebServer.StopWebServer();
             StopNetwork();
 
             while (Saving) Thread.Sleep(1);
@@ -1052,153 +1059,7 @@ namespace Server.Envir
 
         public static void ProcessGameGold()
         {
-            while (!WebServer.Messages.IsEmpty)
-            {
-                IPNMessage message;
-
-                if (!WebServer.Messages.TryDequeue(out message) || message == null) return;
-
-                WebServer.PaymentList.Add(message);
-
-                if (!message.Verified)
-                {
-                    SEnvir.Log("INVALID PAYPAL TRANSACTION " + message.Message);
-                    continue;
-                }
-
-                //Add message to another list for file moving
-
-                string[] data = message.Message.Split('&');
-
-                Dictionary<string, string> values = new Dictionary<string, string>();
-
-                for (int i = 0; i < data.Length; i++)
-                {
-                    string[] keypair = data[i].Split('=');
-
-                    values[keypair[0]] = keypair.Length > 1 ? keypair[1] : null;
-                }
-
-                bool error = false;
-                string tempString, paymentStatus, transactionID;
-                decimal tempDecimal;
-                int tempInt;
-
-                if (!values.TryGetValue("payment_status", out paymentStatus))
-                    error = true;
-
-                if (!values.TryGetValue("txn_id", out transactionID))
-                    error = true;
-
-
-                //Check that Txn_id has not been used
-                for (int i = 0; i < SEnvir.GameGoldPaymentList.Count; i++)
-                {
-                    if (SEnvir.GameGoldPaymentList[i].TransactionID != transactionID) continue;
-                    if (SEnvir.GameGoldPaymentList[i].Status != paymentStatus) continue;
-
-
-                    SEnvir.Log(string.Format("[Duplicated Transaction] ID:{0} Status:{1}.", transactionID, paymentStatus));
-                    message.Duplicate = true;
-                    return;
-                }
-
-                GameGoldPayment payment = SEnvir.GameGoldPaymentList.CreateNewObject();
-                payment.RawMessage = message.Message;
-                payment.Error = error;
-
-                if (values.TryGetValue("payment_date", out tempString))
-                    payment.PaymentDate = HttpUtility.UrlDecode(tempString);
-
-                if (values.TryGetValue("receiver_email", out tempString))
-                    payment.Receiver_EMail = HttpUtility.UrlDecode(tempString);
-                else
-                    payment.Error = true;
-
-                if (values.TryGetValue("mc_fee", out tempString) && decimal.TryParse(tempString, out tempDecimal))
-                    payment.Fee = tempDecimal;
-                else
-                    payment.Error = true;
-
-                if (values.TryGetValue("mc_gross", out tempString) && decimal.TryParse(tempString, out tempDecimal))
-                    payment.Price = tempDecimal;
-                else
-                    payment.Error = true;
-
-                if (values.TryGetValue("custom", out tempString))
-                    payment.CharacterName = tempString;
-                else
-                    payment.Error = true;
-
-                if (values.TryGetValue("mc_currency", out tempString))
-                    payment.Currency = tempString;
-                else
-                    payment.Error = true;
-
-                if (values.TryGetValue("txn_type", out tempString))
-                    payment.TransactionType = tempString;
-                else
-                    payment.Error = true;
-
-                if (values.TryGetValue("payer_email", out tempString))
-                    payment.Payer_EMail = HttpUtility.UrlDecode(tempString);
-
-                if (values.TryGetValue("payer_id", out tempString))
-                    payment.Payer_ID = tempString;
-
-                payment.Status = paymentStatus;
-                payment.TransactionID = transactionID;
-                //Check if Paymentstats == completed
-                switch (payment.Status)
-                {
-                    case "Completed":
-                        break;
-                }
-                if (payment.Status != WebServer.Completed) continue;
-
-                //check that receiver_email is my primary paypal email
-                if (string.Compare(payment.Receiver_EMail, Config.ReceiverEMail, StringComparison.OrdinalIgnoreCase) != 0)
-                    payment.Error = true;
-
-                //check that paymentamount/current are correct
-                if (payment.Currency != WebServer.Currency)
-                    payment.Error = true;
-
-                if (WebServer.GoldTable.TryGetValue(payment.Price, out tempInt))
-                    payment.GameGoldAmount = tempInt;
-                else
-                    payment.Error = true;
-
-                CharacterInfo character = SEnvir.GetCharacter(payment.CharacterName);
-
-                if (character == null || payment.Error)
-                {
-                    SEnvir.Log($"[Transaction Error] ID:{transactionID} Status:{paymentStatus}, Amount{payment.Price}.");
-                    continue;
-                }
-
-                payment.Account = character.Account;
-                payment.Account.GameGold += payment.GameGoldAmount;
-                character.Account.Connection?.ReceiveChat(string.Format(character.Account.Connection.Language.PaymentComplete, payment.GameGoldAmount), MessageType.System);
-                character.Player?.Enqueue(new S.GameGoldChanged { GameGold = payment.Account.GameGold });
-
-                AccountInfo referral = payment.Account.Referral;
-
-                if (referral != null)
-                {
-                    referral.HuntGold += payment.GameGoldAmount / 10;
-
-                    if (referral.Connection != null)
-                    {
-                        referral.Connection.ReceiveChat(string.Format(referral.Connection.Language.ReferralPaymentComplete, payment.GameGoldAmount / 10), MessageType.System);
-
-                        if (referral.Connection.Stage == GameStage.Game)
-                            referral.Connection.Player.Enqueue(new S.HuntGoldChanged { HuntGold = referral.GameGold });
-                    }
-                }
-
-                SEnvir.Log($"[Game Gold Purchase] Character: {character.CharacterName}, Amount: {payment.GameGoldAmount}.");
-            }
+            
         }
 
         private static void Save()
@@ -1208,17 +1069,32 @@ namespace Server.Envir
             Saving = true;
             Session.Save(false);
 
-            WebServer.Save();
-            
             Thread saveThread = new Thread(CommitChanges) { IsBackground = true };
             saveThread.Start(Session);
         }
+
+        public static void SaveToSqlite()
+        {
+            if (!Started) return;
+            FreeSqlHelper.ConfigType(typeof(ItemInfo));
+            FreeSqlHelper.ConfigType(typeof(MagicInfo));
+            FreeSqlHelper.ConfigType(typeof(MonsterInfo));
+            FreeSqlHelper.ConfigType(typeof(MonsterInfoStat));
+            FreeSql.CodeFirst.SyncStructure<ItemInfo>();
+            FreeSql.CodeFirst.SyncStructure<MagicInfo>();
+            FreeSql.CodeFirst.SyncStructure<MonsterInfo>();
+            FreeSql.CodeFirst.SyncStructure<MonsterInfoStat>();
+
+            FreeSql.InsertOrUpdate<ItemInfo>().SetSource(ItemInfoList.Binding).ExecuteAffrows();
+            FreeSql.InsertOrUpdate<MagicInfo>().SetSource(MagicInfoList.Binding).ExecuteAffrows();
+            FreeSql.InsertOrUpdate<MonsterInfo>().SetSource(MonsterInfoList.Binding).ExecuteAffrows();
+            FreeSql.InsertOrUpdate<MonsterInfoStat>().SetSource(MonsterInfoList.Binding.SelectMany(m => m.MonsterInfoStats)).ExecuteAffrows();
+        }
+
         private static void CommitChanges(object data)
         {
             Session session = (Session)data;
             session?.Commit();
-
-            WebServer.CommitChanges(data);
 
             Saving = false;
         }
@@ -1343,7 +1219,7 @@ namespace Server.Envir
         public static void StartConquest(CastleInfo info, List<GuildInfo> participants)
         {
 
-            ConquestWar War = new ConquestWar
+            ConquestWar war = new ConquestWar
             {
                 Castle = info,
                 Participants = participants,
@@ -1351,7 +1227,7 @@ namespace Server.Envir
                 StartTime = Now.Date + info.StartTime,
             };
 
-            War.StartWar();
+            war.StartWar();
         }
 
 
@@ -2173,7 +2049,7 @@ namespace Server.Envir
             }
 
 
-            List<Stat> Elements = new List<Stat>
+            List<Stat> elements = new List<Stat>
             {
                 Stat.FireResistance, Stat.IceResistance, Stat.LightningResistance, Stat.WindResistance,
                 Stat.HolyResistance, Stat.DarkResistance,
@@ -2182,51 +2058,51 @@ namespace Server.Envir
 
             if (Random.Next(10) == 0)
             {
-                Stat element = Elements[Random.Next(Elements.Count)];
+                Stat element = elements[Random.Next(elements.Count)];
 
-                Elements.Remove(element);
+                elements.Remove(element);
 
                 item.AddStat(element, 1, StatSource.Added);
 
                 if (Random.Next(2) == 0)
                 {
-                    element = Elements[Random.Next(Elements.Count)];
+                    element = elements[Random.Next(elements.Count)];
 
-                    Elements.Remove(element);
+                    elements.Remove(element);
 
                     item.AddStat(element, -1, StatSource.Added);
                 }
 
                 if (Random.Next(30) == 0)
                 {
-                    element = Elements[Random.Next(Elements.Count)];
+                    element = elements[Random.Next(elements.Count)];
 
-                    Elements.Remove(element);
+                    elements.Remove(element);
 
                     item.AddStat(element, 1, StatSource.Added);
 
                     if (Random.Next(2) == 0)
                     {
-                        element = Elements[Random.Next(Elements.Count)];
+                        element = elements[Random.Next(elements.Count)];
 
-                        Elements.Remove(element);
+                        elements.Remove(element);
 
                         item.AddStat(element, -1, StatSource.Added);
                     }
 
                     if (Random.Next(40) == 0)
                     {
-                        element = Elements[Random.Next(Elements.Count)];
+                        element = elements[Random.Next(elements.Count)];
 
-                        Elements.Remove(element);
+                        elements.Remove(element);
 
                         item.AddStat(element, 1, StatSource.Added);
 
                         if (Random.Next(2) == 0)
                         {
-                            element = Elements[Random.Next(Elements.Count)];
+                            element = elements[Random.Next(elements.Count)];
 
-                            Elements.Remove(element);
+                            elements.Remove(element);
 
                             item.AddStat(element, -1, StatSource.Added);
                         }
@@ -2234,27 +2110,27 @@ namespace Server.Envir
                     }
                     else if (Random.Next(40) == 0)
                     {
-                        element = Elements[Random.Next(Elements.Count)];
+                        element = elements[Random.Next(elements.Count)];
 
-                        Elements.Remove(element);
+                        elements.Remove(element);
 
                         item.AddStat(element, -1, StatSource.Added);
                     }
                 }
                 else if (Random.Next(30) == 0)
                 {
-                    element = Elements[Random.Next(Elements.Count)];
+                    element = elements[Random.Next(elements.Count)];
 
-                    Elements.Remove(element);
+                    elements.Remove(element);
 
                     item.AddStat(element, -1, StatSource.Added);
                 }
             }
             else if (Random.Next(10) == 0)
             {
-                Stat element = Elements[Random.Next(Elements.Count)];
+                Stat element = elements[Random.Next(elements.Count)];
 
-                Elements.Remove(element);
+                elements.Remove(element);
 
                 item.AddStat(element, -1, StatSource.Added);
             }
@@ -2574,8 +2450,6 @@ namespace Server.Envir
                     account.ResetKey = string.Empty;
                     account.WrongPasswordCount = 0;
 
-                    EmailService.SendResetPasswordEmail(account, password);
-
                     con.Enqueue(new S.Login { Result = LoginResult.AlreadyLoggedInPassword });
                     return;
                 }
@@ -2666,7 +2540,7 @@ namespace Server.Envir
             }
             if (nowcount > 2 || todaycount > 5)
             {
-                IPBlocks[con.IPAddress] = Now.AddDays(7);
+                IpBlocks[con.IPAddress] = Now.AddDays(7);
 
                 for (int i = Connections.Count - 1; i >= 0; i--)
                     if (Connections[i].IPAddress == con.IPAddress)
@@ -2731,10 +2605,6 @@ namespace Server.Envir
                 else if (maxLevel >= 20) account.HuntGold = 100;
                 else if (maxLevel >= 10) account.HuntGold = 50;
             }
-
-
-
-            EmailService.SendActivationEmail(account);
 
             con.Enqueue(new S.NewAccount { Result = NewAccountResult.Success });
 
@@ -2818,7 +2688,6 @@ namespace Server.Envir
             }
 
             account.Password = CreateHash(p.NewPassword);
-            EmailService.SendChangePasswordEmail(account, con.IPAddress);
             con.Enqueue(new S.ChangePassword { Result = ChangePasswordResult.Success });
 
             Log($"[Password Changed] Account: {account.EMailAddress}, IP Address: {con.IPAddress}, Security: {p.CheckSum}");
@@ -2863,7 +2732,6 @@ namespace Server.Envir
                 return;
             }
 
-            EmailService.SendResetPasswordRequestEmail(account, con.IPAddress);
             con.Enqueue(new S.RequestPasswordReset { Result = RequestPasswordResetResult.Success });
 
             Log($"[Request Password] Account: {account.EMailAddress}, IP Address: {con.IPAddress}, Security: {p.CheckSum}");
@@ -2906,7 +2774,6 @@ namespace Server.Envir
             account.Password = CreateHash(p.NewPassword);
             account.WrongPasswordCount = 0;
 
-            EmailService.SendChangePasswordEmail(account, con.IPAddress);
             con.Enqueue(new S.ResetPassword { Result = ResetPasswordResult.Success });
 
             Log($"[Reset Password] Account: {account.EMailAddress}, IP Address: {con.IPAddress}, Security: {p.CheckSum}");
@@ -2979,7 +2846,6 @@ namespace Server.Envir
                 con.Enqueue(new S.RequestActivationKey { Result = RequestActivationKeyResult.RequestDelay, Duration = account.ActivationTime - Now });
                 return;
             }
-            EmailService.ResendActivationEmail(account);
             con.Enqueue(new S.RequestActivationKey { Result = RequestActivationKeyResult.Success });
             Log($"[Request Activation] Account: {account.EMailAddress}, IP Address: {con.IPAddress}, Security: {p.CheckSum}");
         }
@@ -3267,17 +3133,19 @@ namespace Server.Envir
             {
                 if (++ErrorCount > 200 || String.Compare(ex, LastError, StringComparison.OrdinalIgnoreCase) == 0) return;
 
-                const string LogPath = @".\Errors\";
+                const string logPath = @".\Errors\";
 
                 LastError = ex;
 
-                if (!Directory.Exists(LogPath))
-                    Directory.CreateDirectory(LogPath);
+                if (!Directory.Exists(logPath))
+                    Directory.CreateDirectory(logPath);
 
-                File.AppendAllText($"{LogPath}{Now.Year}-{Now.Month}-{Now.Day}.txt", LastError + Environment.NewLine);
+                File.AppendAllText($"{logPath}{Now.Year}-{Now.Month}-{Now.Day}.txt", LastError + Environment.NewLine);
             }
             catch
-            { }
+            {
+                // ignored
+            }
         }
         public static PlayerObject GetPlayerByCharacter(string name)
         {
@@ -3385,35 +3253,5 @@ namespace Server.Envir
 
             return null;
         }
-    }
-
-    public class WebCommand
-    {
-        public CommandType Command { get; set; }
-        public AccountInfo Account { get; set; }
-
-        public WebCommand(CommandType command, AccountInfo account)
-        {
-            Command = command;
-            Account = account;
-        }
-    }
-
-    public enum CommandType
-    {
-        None,
-        Activation,
-        PasswordReset,
-        AccountDelete
-
-    }
-
-
-    public sealed class IPNMessage
-    {
-        public string Message { get; set; }
-        public bool Verified { get; set; } //Ensures Paypal sent it
-        public string FileName { get; set; }
-        public bool Duplicate { get; set; }
     }
 }
