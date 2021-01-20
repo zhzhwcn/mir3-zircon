@@ -246,7 +246,7 @@ namespace Server.Envir
 
         #region Database
 
-        public static Session Session;
+        public static ServerSession Session;
 
         public static DBCollection<MapInfo> MapInfoList;
         public static DBCollection<SafeZoneInfo> SafeZoneInfoList;
@@ -391,23 +391,40 @@ namespace Server.Envir
             Log("Experience List Loaded.");
         }
 
+        private static void ConfigFreeSql()
+        {
+            FreeSqlHelper.ConfigType(typeof(ItemInfo));
+            FreeSqlHelper.ConfigType(typeof(ItemInfoStat));
+            FreeSqlHelper.ConfigType(typeof(MagicInfo));
+            FreeSqlHelper.ConfigType(typeof(MonsterInfo));
+            FreeSqlHelper.ConfigType(typeof(MonsterInfoStat));
+            FreeSql.CodeFirst.SyncStructure<ItemInfo>();
+            FreeSql.CodeFirst.SyncStructure<ItemInfoStat>();
+            FreeSql.CodeFirst.SyncStructure<MagicInfo>();
+            FreeSql.CodeFirst.SyncStructure<MonsterInfo>();
+            FreeSql.CodeFirst.SyncStructure<MonsterInfoStat>();
+        }
+
         private static void LoadDatabase()
         {
             Random = new Random();
-
-            Session = new Session(SessionMode.Users)
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            ConfigFreeSql();
+            Session = new ServerSession(SessionMode.Both)
             {
                 BackUpDelay = 60,
             };
 
-            Session.Initialize(
+            Session.InitCollection(
                 Assembly.GetAssembly(typeof(ItemInfo)), // returns assembly LibraryCore
                 Assembly.GetAssembly(typeof(AccountInfo)) // returns assembly ServerLibrary
             );
+            Session.LoadDataFromSqlite();
+            Session.LoadDataFromOldVersion();
 
             MapInfoList = Session.GetCollection<MapInfo>();
             SafeZoneInfoList = Session.GetCollection<SafeZoneInfo>();
-            SafeZoneInfoList.Binding.Add(new SafeZoneInfo());
+            //SafeZoneInfoList.Binding.Add(new SafeZoneInfo());
             ItemInfoList = Session.GetCollection<ItemInfo>();
             MonsterInfoList = Session.GetCollection<MonsterInfo>();
             RespawnInfoList = Session.GetCollection<RespawnInfo>();
@@ -1076,19 +1093,13 @@ namespace Server.Envir
         public static void SaveToSqlite()
         {
             if (!Started) return;
-            FreeSqlHelper.ConfigType(typeof(ItemInfo));
-            FreeSqlHelper.ConfigType(typeof(MagicInfo));
-            FreeSqlHelper.ConfigType(typeof(MonsterInfo));
-            FreeSqlHelper.ConfigType(typeof(MonsterInfoStat));
-            FreeSql.CodeFirst.SyncStructure<ItemInfo>();
-            FreeSql.CodeFirst.SyncStructure<MagicInfo>();
-            FreeSql.CodeFirst.SyncStructure<MonsterInfo>();
-            FreeSql.CodeFirst.SyncStructure<MonsterInfoStat>();
+            ConfigFreeSql();
 
             FreeSql.InsertOrUpdate<ItemInfo>().SetSource(ItemInfoList.Binding).ExecuteAffrows();
             FreeSql.InsertOrUpdate<MagicInfo>().SetSource(MagicInfoList.Binding).ExecuteAffrows();
             FreeSql.InsertOrUpdate<MonsterInfo>().SetSource(MonsterInfoList.Binding).ExecuteAffrows();
             FreeSql.InsertOrUpdate<MonsterInfoStat>().SetSource(MonsterInfoList.Binding.SelectMany(m => m.MonsterInfoStats)).ExecuteAffrows();
+            FreeSql.InsertOrUpdate<ItemInfoStat>().SetSource(ItemInfoList.Binding.SelectMany(i => i.ItemStats)).ExecuteAffrows();
         }
 
         private static void CommitChanges(object data)

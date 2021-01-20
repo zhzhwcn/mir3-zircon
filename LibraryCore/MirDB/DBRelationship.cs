@@ -10,7 +10,7 @@ using MirDB;
 
 namespace Library.MirDB
 {
-    internal class DBRelationship
+    public class DBRelationship
     {
         public Type Type { get; set; }
         public Dictionary<int, DBRelationshipTargets> LinkTargets = new Dictionary<int, DBRelationshipTargets>();
@@ -43,7 +43,7 @@ namespace Library.MirDB
         }
     }
 
-    internal class DBRelationshipTargets
+    public class DBRelationshipTargets
     {
         public Dictionary<PropertyInfo, ConcurrentQueue<DBObject>> PropertyTargets = new Dictionary<PropertyInfo, ConcurrentQueue<DBObject>>();
     }

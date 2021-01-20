@@ -38,7 +38,7 @@ namespace Server
             SEnvir.Started = false;
             while (SEnvir.EnvirThread != null)
             {
-                await Task.Delay(5, cancellationToken);
+                await Task.Delay(5);
             }
             if(ConfigReader.ConfigObjects.Count > 0) ConfigReader.Save(typeof(Config).Assembly);
         }

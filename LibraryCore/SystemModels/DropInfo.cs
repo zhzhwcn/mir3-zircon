@@ -12,6 +12,7 @@ namespace Library.SystemModels
             {
                 if (_Monster == value) return;
 
+                MonsterIndex = value.Index;
                 var oldValue = _Monster;
                 _Monster = value;
 
@@ -19,6 +20,8 @@ namespace Library.SystemModels
             }
         }
         private MonsterInfo _Monster;
+
+        public int MonsterIndex { get; set; }
 
         [Association("Drops")]
         public ItemInfo Item
@@ -28,6 +31,7 @@ namespace Library.SystemModels
             {
                 if (_Item == value) return;
 
+                ItemIndex = value.Index;
                 var oldValue = _Item;
                 _Item = value;
 
@@ -36,6 +40,7 @@ namespace Library.SystemModels
         }
         private ItemInfo _Item;
 
+        public int ItemIndex { get; set; }
         public int Chance
         {
             get { return _Chance; }

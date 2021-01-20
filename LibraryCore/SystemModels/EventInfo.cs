@@ -62,6 +62,7 @@ namespace Library.SystemModels
             {
                 if (_Event == value) return;
 
+                EventIndex = value.Index;
                 var oldValue = _Event;
                 _Event = value;
 
@@ -69,6 +70,8 @@ namespace Library.SystemModels
             }
         }
         private EventInfo _Event;
+
+        public int EventIndex { get; set; }
 
         [Association("Events")]
         public MonsterInfo Monster
@@ -78,6 +81,7 @@ namespace Library.SystemModels
             {
                 if (_Monster == value) return;
 
+                MonsterIndex = value.Index;
                 var oldValue = _Monster;
                 _Monster = value;
 
@@ -85,6 +89,8 @@ namespace Library.SystemModels
             }
         }
         private MonsterInfo _Monster;
+
+        public int MonsterIndex { get; set; }
 
         public int DropSet
         {

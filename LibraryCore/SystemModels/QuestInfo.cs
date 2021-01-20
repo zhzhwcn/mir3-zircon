@@ -432,6 +432,7 @@ namespace Library.SystemModels
             {
                 if (_Task == value) return;
 
+                TaskIndex = value.Index;
                 var oldValue = _Task;
                 _Task = value;
 
@@ -439,6 +440,8 @@ namespace Library.SystemModels
             }
         }
         private QuestTask _Task;
+
+        public int TaskIndex { get; set; }
 
         [Association("QuestDetails")]
         public MonsterInfo Monster
@@ -448,6 +451,7 @@ namespace Library.SystemModels
             {
                 if (_Monster == value) return;
 
+                MonsterIndex = value.Index;
                 var oldValue = _Monster;
                 _Monster = value;
 
@@ -455,6 +459,8 @@ namespace Library.SystemModels
             }
         }
         private MonsterInfo _Monster;
+
+        public int MonsterIndex { get; set; }
 
         //Can Be null
         public MapInfo Map
@@ -464,6 +470,7 @@ namespace Library.SystemModels
             {
                 if (_Map == value) return;
 
+                MapIndex = value.Index;
                 var oldValue = _Map;
                 _Map = value;
 
@@ -472,6 +479,8 @@ namespace Library.SystemModels
         }
         private MapInfo _Map;
         
+        public int MapIndex { get; set; }
+
         public int Chance
         {
             get { return _Chance; }

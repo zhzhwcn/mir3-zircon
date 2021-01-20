@@ -13,7 +13,7 @@ namespace MirDB
         public int Index { get; internal set; }
 
         [IgnoreProperty]
-        internal ADBCollection Collection
+        public ADBCollection Collection
         {
             get { return _Collection; }
             set
@@ -305,6 +305,10 @@ namespace MirDB
         public event PropertyChangedEventHandler PropertyChanged;
         protected internal virtual void OnChanged(object oldValue, object newValue, string propertyName)
         {
+            if (Collection?.Session == null)
+            {
+                return;
+            }
             if (Collection.Session.Relationships == null)
                 IsModified = true;
 

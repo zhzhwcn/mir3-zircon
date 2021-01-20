@@ -11,6 +11,7 @@ namespace Library.SystemModels
             set
             {
                 if (_Item == value) return;
+                ItemIndex = value.Index;
 
                 var oldValue = _Item;
                 _Item = value;
@@ -19,6 +20,8 @@ namespace Library.SystemModels
             }
         }
         private ItemInfo _Item;
+
+        public int ItemIndex { get; set; }
 
         public Stat Stat
         {

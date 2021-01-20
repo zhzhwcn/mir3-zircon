@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using MirDB;
 
 namespace Library.MirDB
@@ -25,8 +27,10 @@ namespace Library.MirDB
 
         internal abstract DBObject CreateObject();
 
-        internal abstract DBObject GetObjectByIndex(int index);
+        public abstract DBObject GetObjectByIndex(int index);
         protected internal abstract DBObject GetObjectbyFieldName(string fieldName, object value);
-        internal abstract void OnLoaded();
+        public abstract void OnLoaded();
+
+        public abstract IEnumerable GetCollection();
     }
 }

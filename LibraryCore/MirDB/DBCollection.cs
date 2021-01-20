@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -21,6 +22,11 @@ namespace MirDB
 
         private bool VersionValid;
         private List<T> SaveList;
+
+        public override IEnumerable GetCollection()
+        {
+            return Binding;
+        }
 
 
         public DBCollection(Session session)
@@ -71,7 +77,7 @@ namespace MirDB
         }
 
 
-        internal override DBObject GetObjectByIndex(int index)
+        public override DBObject GetObjectByIndex(int index)
         {
             index = FastFind(index);
 
@@ -232,7 +238,7 @@ namespace MirDB
             return CreateNewObject();
         }
 
-        internal override void OnLoaded()
+        public override void OnLoaded()
         {
             foreach (T ob in Binding)
                 ob.OnLoaded();

@@ -405,6 +405,7 @@ namespace Library.SystemModels
             {
                 if (_Set == value) return;
 
+                SetIndex = value.Index;
                 var oldValue = _Set;
                 _Set = value;
 
@@ -412,10 +413,12 @@ namespace Library.SystemModels
             }
         }
         private SetInfo _Set;
+
+        public int SetIndex { get; set; }
         
         public Stats Stats = new Stats();
 
-        [Association("ItemStats")]
+        [Association("ItemStats", true)]
         public DBBindingList<ItemInfoStat> ItemStats { get; set; }
 
         [Association("Drops", true)]

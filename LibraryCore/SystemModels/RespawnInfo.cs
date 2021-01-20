@@ -12,6 +12,7 @@ namespace Library.SystemModels
             {
                 if (_Monster == value) return;
 
+                MonsterIndex = value.Index;
                 var oldValue = _Monster;
                 _Monster = value;
 
@@ -20,6 +21,8 @@ namespace Library.SystemModels
         }
         private MonsterInfo _Monster;
 
+        public int MonsterIndex { get; set; }
+
         public MapRegion Region
         {
             get { return _Region; }
@@ -27,6 +30,7 @@ namespace Library.SystemModels
             {
                 if (_Region == value) return;
 
+                RegionIndex = value.Index;
                 var oldValue = _Region;
                 _Region = value;
 
@@ -34,6 +38,8 @@ namespace Library.SystemModels
             }
         }
         private MapRegion _Region;
+
+        public int RegionIndex { get; set; }
 
         public bool EventSpawn
         {

@@ -12,7 +12,7 @@ using Library.SystemModels;
 
 namespace MirDB
 {
-    public sealed class Session
+    public class Session
     {
         public const string Extension = @".db";
         public const string TempExtension = @".TMP";
@@ -38,9 +38,9 @@ namespace MirDB
         public byte[] UsersHeader;
 
         //internal ConcurrentQueue<DBObject> KeyedObjects = new ConcurrentQueue<DBObject>();
-        internal Dictionary<Type, DBRelationship> Relationships = new Dictionary<Type, DBRelationship>();
+        public Dictionary<Type, DBRelationship> Relationships = new Dictionary<Type, DBRelationship>();
 
-        private Dictionary<Type, ADBCollection> Collections;
+        protected Dictionary<Type, ADBCollection> Collections;
 
         public Session(string connectionString)
         {
@@ -74,7 +74,7 @@ namespace MirDB
             Mode = mode;
         }
 
-        public void Initialize(params Assembly[] assemblies)
+        public void InitCollection(params Assembly[] assemblies)
         {
             Assemblies = assemblies;
 
@@ -97,6 +97,13 @@ namespace MirDB
                 Collections[type] = (ADBCollection)Activator.CreateInstance(collectionType.MakeGenericType(type), this);
             }
 
+            InitSystemHeader();
+        }
+
+        public void Initialize(params Assembly[] assemblies)
+        {
+            InitCollection(assemblies);
+
             InitializeSystem();
 
             if ((Mode & SessionMode.Users) == SessionMode.Users)
@@ -110,7 +117,7 @@ namespace MirDB
                 pair.Value.OnLoaded();
         }
 
-        private void InitializeSystem()
+        protected List<DBMapping> InitSystemHeader()
         {
             List<DBMapping> mappings = new List<DBMapping>();
             if ((Mode & SessionMode.System) == SessionMode.System)
@@ -134,6 +141,13 @@ namespace MirDB
 
                 mappings.Clear();
             }
+
+            return mappings;
+        }
+
+        private void InitializeSystem()
+        {
+            var mappings = InitSystemHeader();
 
             if (!File.Exists(SystemPath)) return;
 
@@ -159,7 +173,7 @@ namespace MirDB
                     Task.WaitAll(loadingTasks.ToArray());
             }
         }
-        private void InitializeUsers()
+        public void InitializeUsers()
         {
             List<DBMapping> mappings = new List<DBMapping>();
 
@@ -215,11 +229,11 @@ namespace MirDB
         }
         public void Commit()
         {
-            //SaveSystem();
+            SaveSystem();
             SaveUsers();
         }
 
-        private void SaveSystem()
+        protected void SaveSystem()
         {
             if ((Mode & SessionMode.System) != SessionMode.System) return;
 
@@ -306,7 +320,7 @@ namespace MirDB
         {
             return Collections[type];
         }
-        internal DBObject GetObject(Type type, int index)
+        public DBObject GetObject(Type type, int index)
         {
             return Collections[type].GetObjectByIndex(index);
         }
